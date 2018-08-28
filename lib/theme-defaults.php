@@ -1,16 +1,16 @@
 <?php
 /**
- * Genesis Sample.
+ * Genesis Advanced.
  *
- * This file adds the default theme settings to the Genesis Sample Theme.
+ * This file adds the default theme settings to the Genesis Advanced Theme.
  *
- * @package Genesis Sample
+ * @package Genesis Advanced
  * @author  StudioPress
  * @license GPL-2.0+
  * @link    https://www.studiopress.com/
  */
 
-add_filter( 'genesis_theme_settings_defaults', 'genesis_sample_theme_defaults' );
+add_filter( 'genesis_theme_settings_defaults', 'genesis_advanced_theme_defaults' );
 /**
  * Updates theme settings on reset.
  *
@@ -19,7 +19,7 @@ add_filter( 'genesis_theme_settings_defaults', 'genesis_sample_theme_defaults' )
  * @param array $defaults Original theme settings defaults.
  * @return array Modified defaults.
  */
-function genesis_sample_theme_defaults( $defaults ) {
+function genesis_advanced_theme_defaults( $defaults ) {
 
 	$defaults['blog_cat_num']              = 6;
 	$defaults['content_archive']           = 'full';
@@ -32,13 +32,13 @@ function genesis_sample_theme_defaults( $defaults ) {
 
 }
 
-add_action( 'after_switch_theme', 'genesis_sample_theme_setting_defaults' );
+add_action( 'after_switch_theme', 'genesis_advanced_theme_setting_defaults' );
 /**
  * Updates theme settings on activation.
  *
  * @since 2.2.3
  */
-function genesis_sample_theme_setting_defaults() {
+function genesis_advanced_theme_setting_defaults() {
 
 	if ( function_exists( 'genesis_update_settings' ) ) {
 
@@ -59,7 +59,7 @@ function genesis_sample_theme_setting_defaults() {
 
 }
 
-add_filter( 'simple_social_default_styles', 'genesis_sample_social_default_styles' );
+add_filter( 'simple_social_default_styles', 'genesis_advanced_social_default_styles' );
 /**
  * Set Simple Social Icon defaults.
  *
@@ -68,7 +68,7 @@ add_filter( 'simple_social_default_styles', 'genesis_sample_social_default_style
  * @param array $defaults Social style defaults.
  * @return array Modified social style defaults.
  */
-function genesis_sample_social_default_styles( $defaults ) {
+function genesis_advanced_social_default_styles( $defaults ) {
 
 	$args = array(
 		'alignment'              => 'alignleft',

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: Genesis Sample 2.6.0\n"
+"Project-Id-Version: Genesis Advanced 2.6.0\n"
 "POT-Creation-Date: 2018-03-22 14:29-0400\n"
 "PO-Revision-Date: 2018-03-22 14:21-0400\n"
 "Last-Translator: StudioPress <translations@studiopress.com>\n"
@@ -89,7 +89,7 @@ msgid "Next Page"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "Genesis Sample"
+msgid "Genesis Advanced"
 msgstr ""
 
 #. Theme URI of the plugin/theme
@@ -97,7 +97,7 @@ msgid "https://demo.studiopress.com/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "This is the sample theme created for the Genesis Framework."
+msgid "This is the advanced theme created for the Genesis Framework."
 msgstr ""
 
 #. Author of the plugin/theme

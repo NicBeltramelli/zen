@@ -1,12 +1,12 @@
 /**
- * Genesis Sample entry point.
+ * Genesis Advanced entry point.
  *
- * @package GenesisSample\JS
+ * @package Genesisadvanced\JS
  * @author  StudioPress
  * @license GPL-2.0+
  */
 
-var genesisSample = ( function( $ ) {
+var genesisadvanced = ( function( $ ) {
 	'use strict';
 
 	/**
@@ -25,7 +25,7 @@ var genesisSample = ( function( $ ) {
 	},
 
 	/**
-	 * Initialize Genesis Sample.
+	 * Initialize Genesis Advanced.
 	 *
 	 * Internal functions to execute on document load can be called here.
 	 *
@@ -58,4 +58,4 @@ var genesisSample = ( function( $ ) {
 
 })( jQuery );
 
-jQuery( window ).on( 'load', genesisSample.init );
+jQuery( window ).on( 'load', genesisadvanced.init );

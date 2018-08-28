@@ -1,18 +1,18 @@
 <?php
 /**
- * Genesis Sample.
+ * Genesis Advanced.
  *
- * This file adds the landing page template to the Genesis Sample Theme.
+ * This file adds the landing page template to the Genesis Advanced Theme.
  *
  * Template Name: Landing
  *
- * @package Genesis Sample
+ * @package Genesis Advanced
  * @author  StudioPress
  * @license GPL-2.0+
  * @link    https://www.studiopress.com/
  */
 
-add_filter( 'body_class', 'genesis_sample_add_body_class' );
+add_filter( 'body_class', 'genesis_advanced_add_body_class' );
 /**
  * Adds landing page body class.
  *
@@ -21,7 +21,7 @@ add_filter( 'body_class', 'genesis_sample_add_body_class' );
  * @param array $classes Original body classes.
  * @return array Modified body classes.
  */
-function genesis_sample_add_body_class( $classes ) {
+function genesis_advanced_add_body_class( $classes ) {
 
 	$classes[] = 'landing-page';
 	return $classes;
@@ -31,13 +31,13 @@ function genesis_sample_add_body_class( $classes ) {
 // Removes Skip Links.
 remove_action( 'genesis_before_header', 'genesis_skip_links', 5 );
 
-add_action( 'wp_enqueue_scripts', 'genesis_sample_dequeue_skip_links' );
+add_action( 'wp_enqueue_scripts', 'genesis_advanced_dequeue_skip_links' );
 /**
  * Dequeues Skip Links Script.
  *
  * @since 1.0.0
  */
-function genesis_sample_dequeue_skip_links() {
+function genesis_advanced_dequeue_skip_links() {
 
 	wp_dequeue_script( 'skip-links' );
 

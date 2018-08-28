@@ -1,4 +1,6 @@
-# Genesis Sample Theme Changelog
+# Genesis Advanced Theme Changelog
+
+## [develop] - 
 
 ## [2.6.0] - 2018-03-22
 * Fix product gallery bug in WooCommerce 3.0 update.

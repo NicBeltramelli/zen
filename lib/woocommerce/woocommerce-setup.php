@@ -1,10 +1,10 @@
 <?php
 /**
- * Genesis Sample.
+ * Genesis Advanced.
  *
- * This file adds the required WooCommerce setup functions to the Genesis Sample Theme.
+ * This file adds the required WooCommerce setup functions to the Genesis Advanced Theme.
  *
- * @package Genesis Sample
+ * @package Genesis Advanced
  * @author  StudioPress
  * @license GPL-2.0+
  * @link    https://www.studiopress.com/
@@ -19,13 +19,13 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 }
 
-add_action( 'wp_enqueue_scripts', 'genesis_sample_products_match_height', 99 );
+add_action( 'wp_enqueue_scripts', 'genesis_advanced_products_match_height', 99 );
 /**
  * Prints an inline script to the footer to keep products the same height.
  *
  * @since 2.3.0
  */
-function genesis_sample_products_match_height() {
+function genesis_advanced_products_match_height() {
 
 	// If Woocommerce is not activated, or a product page isn't showing, exit early.
 	if ( ! class_exists( 'WooCommerce' ) || ! is_shop() && ! is_product_category() && ! is_product_tag() ) {
@@ -33,20 +33,20 @@ function genesis_sample_products_match_height() {
 	}
 
 	wp_enqueue_script(
-		'genesis-sample-match-height',
+		'genesis-advanced-match-height',
 		get_stylesheet_directory_uri() . '/js/jquery.matchHeight.min.js',
 		array( 'jquery' ),
 		CHILD_THEME_VERSION,
 		true
 	);
 	wp_add_inline_script(
-		'genesis-sample-match-height',
+		'genesis-advanced-match-height',
 		"jQuery(document).ready( function() { jQuery( '.product .woocommerce-LoopProduct-link').matchHeight(); });"
 	);
 
 }
 
-add_filter( 'woocommerce_style_smallscreen_breakpoint', 'genesis_sample_woocommerce_breakpoint' );
+add_filter( 'woocommerce_style_smallscreen_breakpoint', 'genesis_advanced_woocommerce_breakpoint' );
 /**
  * Modifies the WooCommerce breakpoints.
  *
@@ -54,7 +54,7 @@ add_filter( 'woocommerce_style_smallscreen_breakpoint', 'genesis_sample_woocomme
  *
  * @return string Pixel width of the theme's breakpoint.
  */
-function genesis_sample_woocommerce_breakpoint() {
+function genesis_advanced_woocommerce_breakpoint() {
 
 	$current = genesis_site_layout();
 	$layouts = array(
@@ -72,7 +72,7 @@ function genesis_sample_woocommerce_breakpoint() {
 
 }
 
-add_filter( 'genesiswooc_products_per_page', 'genesis_sample_default_products_per_page' );
+add_filter( 'genesiswooc_products_per_page', 'genesis_advanced_default_products_per_page' );
 /**
  * Sets the default products per page.
  *
@@ -80,13 +80,13 @@ add_filter( 'genesiswooc_products_per_page', 'genesis_sample_default_products_pe
  *
  * @return int Number of products to show per page.
  */
-function genesis_sample_default_products_per_page() {
+function genesis_advanced_default_products_per_page() {
 
 	return 8;
 
 }
 
-add_filter( 'woocommerce_pagination_args', 'genesis_sample_woocommerce_pagination' );
+add_filter( 'woocommerce_pagination_args', 'genesis_advanced_woocommerce_pagination' );
 /**
  * Updates the next and previous arrows to the default Genesis style.
  *
@@ -95,22 +95,22 @@ add_filter( 'woocommerce_pagination_args', 'genesis_sample_woocommerce_paginatio
  *
  * @return array New next and previous text arguments.
  */
-function genesis_sample_woocommerce_pagination( $args ) {
+function genesis_advanced_woocommerce_pagination( $args ) {
 
-	$args['prev_text'] = sprintf( '&laquo; %s', __( 'Previous Page', 'genesis-sample' ) );
-	$args['next_text'] = sprintf( '%s &raquo;', __( 'Next Page', 'genesis-sample' ) );
+	$args['prev_text'] = sprintf( '&laquo; %s', __( 'Previous Page', 'genesis-advanced' ) );
+	$args['next_text'] = sprintf( '%s &raquo;', __( 'Next Page', 'genesis-advanced' ) );
 
 	return $args;
 
 }
 
-add_action( 'after_switch_theme', 'genesis_sample_woocommerce_image_dimensions_after_theme_setup', 1 );
+add_action( 'after_switch_theme', 'genesis_advanced_woocommerce_image_dimensions_after_theme_setup', 1 );
 /**
  * Defines WooCommerce image sizes on theme activation.
  *
  * @since 2.3.0
  */
-function genesis_sample_woocommerce_image_dimensions_after_theme_setup() {
+function genesis_advanced_woocommerce_image_dimensions_after_theme_setup() {
 
 	global $pagenow;
 
@@ -119,11 +119,11 @@ function genesis_sample_woocommerce_image_dimensions_after_theme_setup() {
 		return;
 	}
 
-	genesis_sample_update_woocommerce_image_dimensions();
+	genesis_advanced_update_woocommerce_image_dimensions();
 
 }
 
-add_action( 'activated_plugin', 'genesis_sample_woocommerce_image_dimensions_after_woo_activation', 10, 2 );
+add_action( 'activated_plugin', 'genesis_advanced_woocommerce_image_dimensions_after_woo_activation', 10, 2 );
 /**
  * Defines the WooCommerce image sizes on WooCommerce activation.
  *
@@ -131,14 +131,14 @@ add_action( 'activated_plugin', 'genesis_sample_woocommerce_image_dimensions_aft
  *
  * @param string $plugin The path of the plugin being activated.
  */
-function genesis_sample_woocommerce_image_dimensions_after_woo_activation( $plugin ) {
+function genesis_advanced_woocommerce_image_dimensions_after_woo_activation( $plugin ) {
 
 	// Checks to see if WooCommerce is being activated.
 	if ( 'woocommerce/woocommerce.php' !== $plugin ) {
 		return;
 	}
 
-	genesis_sample_update_woocommerce_image_dimensions();
+	genesis_advanced_update_woocommerce_image_dimensions();
 
 }
 
@@ -147,7 +147,7 @@ function genesis_sample_woocommerce_image_dimensions_after_woo_activation( $plug
  *
  * @since 2.3.0
  */
-function genesis_sample_update_woocommerce_image_dimensions() {
+function genesis_advanced_update_woocommerce_image_dimensions() {
 
 	// Updates image size options.
 	update_option( 'woocommerce_single_image_width', 655 );    // Single product image.
@@ -158,7 +158,7 @@ function genesis_sample_update_woocommerce_image_dimensions() {
 
 }
 
-add_filter( 'woocommerce_get_image_size_gallery_thumbnail', 'genesis_sample_gallery_image_thumbnail' );
+add_filter( 'woocommerce_get_image_size_gallery_thumbnail', 'genesis_advanced_gallery_image_thumbnail' );
 /**
  * Filters the WooCommerce gallery image dimensions.
  *
@@ -167,7 +167,7 @@ add_filter( 'woocommerce_get_image_size_gallery_thumbnail', 'genesis_sample_gall
  * @param array $size The gallery image size and crop arguments.
  * @return array The modified gallery image size and crop arguments.
  */
-function genesis_sample_gallery_image_thumbnail( $size ) {
+function genesis_advanced_gallery_image_thumbnail( $size ) {
 
 	$size = array(
 		'width'  => 180,

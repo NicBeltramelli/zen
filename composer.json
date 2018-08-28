@@ -1,23 +1,32 @@
 {
-    "name": "copyblogger/genesis-sample",
-    "description": "Genesis Sample child theme for the Genesis Framework",
+    "name": "genesis-advanced",
+    "type": "wordpress-theme",
+    "license": "GPL-2.0+",
+    "description": "Starter theme for Genesis Framework with a modern development workflow",
+    "homepage": "https://thematicpress.com/genesis-advanced/",
+    "authors": [
+        {
+            "name": "Nic Beltramelli",
+            "email": "nicbeltramelli@gmail.com",
+            "homepage": "https://github.com/NicBeltramelli/"
+        }
+    ],
+    "keywords": [
+    "wordpress",
+    "genesis"
+    ],
+    "require": {
+        "php": ">=7.1",
+        "composer/installers": "~1.0"
+    },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.2",
         "wp-coding-standards/wpcs": "^0.14.1",
         "wimg/php-compatibility": "^8.1",
-        "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
-        "php": "^5.6|^7"
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4"
     },
-    "license": "GPL-2.0+",
-    "authors": [
-        {
-            "name": "StudioPress",
-            "email": "support@studiopress.com"
-        }
-    ],
-    "require": {},
     "scripts": {
         "phpcs": "phpcs",
-        "export": "git archive -o genesis-sample.zip HEAD"
+        "export": "git archive -o genesis-advanced.zip HEAD"
     }
 }
