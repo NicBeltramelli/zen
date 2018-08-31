@@ -1,6 +1,9 @@
 # Genesis Advanced Theme Changelog
 
-## [develop] - 
+## [dev] - 
+* Update compatibility up to PHP 5.4 version
+* Configure composer export script for distribution
+* Rebranding as Genesis Advanced
 
 ## [2.6.0] - 2018-03-22
 * Fix product gallery bug in WooCommerce 3.0 update.
