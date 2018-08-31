@@ -23,10 +23,3 @@
 *.ttf binary
 *.woff binary
 *.woff2 binary
-
-# Omit during export.
-.editorconfig export-ignore
-.gitattributes export-ignore
-.gitignore export-ignore
-composer.json export-ignore
-phpcs.xml.dist export-ignore
