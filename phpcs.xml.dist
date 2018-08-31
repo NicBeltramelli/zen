@@ -39,7 +39,7 @@
 	</rule>
 
 	<!-- Test PHP cross-version compatibility. -->
-	<config name="testVersion" value="5.2-"/>
+	<config name="testVersion" value="5.4-"/>
 	<rule ref="PHPCompatibility"/>
 
 	<!-- Check for correct text domain on all translatable strings. -->
