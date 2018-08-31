@@ -27,6 +27,6 @@
     },
     "scripts": {
         "phpcs": "phpcs",
-        "export": "git archive -o genesis-advanced.zip HEAD"
+        "export": "zip -r ../genesis-advanced.zip * .[^.]* -x '*.log' -x '.git/*' -x '.cache-loader/*' -x 'node_modules/*' -x 'vendor/*'"
     }
 }
