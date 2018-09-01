@@ -2,7 +2,7 @@
 /**
  * Genesis Advanced.
  *
- * This file defines constants and features.
+ * This file sets localization, defines constants and features.
  *
  * @package Genesis Advanced
  * @author  NicBeltramelli
@@ -10,13 +10,10 @@
  * @link    https://github.com/NicBeltramelli/genesis-advanced.git
  */
 
-if( !defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
-// Define child theme constants (do not remove).
-define( 'CHILD_THEME_NAME', 'Genesis Advanced' );
-define( 'CHILD_THEME_URL', 'https://thematicpress.com/genesis-advanced/' );
-define( 'CHILD_THEME_VERSION', filemtime( get_stylesheet_directory() . '/style.css' ) );
-define( 'CHILD_THEME_TEXT_DOMAIN', 'genesis-advanced' );
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Set localization (do not remove).
@@ -27,6 +24,12 @@ add_action( 'after_setup_theme', function () {
 
 	load_child_theme_textdomain( CHILD_THEME_TEXT_DOMAIN, get_stylesheet_directory() . '/languages' );
 });
+
+// Define child theme constants (do not remove).
+define( 'CHILD_THEME_NAME', 'Genesis Advanced' );
+define( 'CHILD_THEME_URL', 'https://thematicpress.com/genesis-advanced/' );
+define( 'CHILD_THEME_VERSION', filemtime( get_stylesheet_directory() . '/style.css' ) );
+define( 'CHILD_THEME_TEXT_DOMAIN', 'genesis-advanced' );
 
 // Set the content width based on the theme's design and stylesheet.
 if ( ! isset( $content_width ) ) {
