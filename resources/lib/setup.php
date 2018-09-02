@@ -20,10 +20,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-add_action( 'after_setup_theme', function () {
+add_action(
+	'after_setup_theme', function () {
 
-	load_child_theme_textdomain( CHILD_THEME_TEXT_DOMAIN, get_stylesheet_directory() . '/languages' );
-});
+		load_child_theme_textdomain( CHILD_THEME_TEXT_DOMAIN, get_stylesheet_directory() . '/languages' );
+	}
+);
 
 // Define child theme constants (do not remove).
 define( 'CHILD_THEME_NAME', 'Genesis Advanced' );
