@@ -44,9 +44,7 @@ class Genesis_Advanced_Manifest {
 		} else {
 
 			$this->manifest = [];
-
 		}
-
 	}
 
 	/**
@@ -56,7 +54,6 @@ class Genesis_Advanced_Manifest {
 
 		return $this->manifest;
 	}
-
 }
 
 /**
@@ -80,6 +77,7 @@ function genesis_advanced_asset_path( $filename ) {
 	if ( array_key_exists( $filename, $manifest->get() ) ) {
 
 		return $dist_path . $manifest->get()[ $filename ];
+
 	} else {
 
 		return $dist_path . $filename;
