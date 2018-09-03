@@ -59,8 +59,9 @@ class Genesis_Advanced_Manifest {
 /**
  * Get paths for assets
  *
- * @param string $filename Asset file name.
  * @since 2.6.0.1
+ *
+ * @param string $filename Asset file name.
  */
 function genesis_advanced_asset_path( $filename ) {
 
