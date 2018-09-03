@@ -20,12 +20,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-add_action(
-	'after_setup_theme', function () {
+add_action( 'after_setup_theme', function () {
 
 		load_child_theme_textdomain( CHILD_THEME_TEXT_DOMAIN, get_stylesheet_directory() . '/languages' );
-	}
-);
+
+} );
 
 // Define child theme constants (do not remove).
 define( 'CHILD_THEME_NAME', 'Genesis Advanced' );
@@ -41,25 +40,25 @@ if ( ! isset( $content_width ) ) {
 
 // Add support for HTML5 markup structure.
 add_theme_support(
-	'html5', array(
+	'html5', [
 		'caption',
 		'comment-form',
 		'comment-list',
 		'gallery',
 		'search-form',
-	)
+	]
 );
 
 // Add support for accessibility.
 add_theme_support(
-	'genesis-accessibility', array(
+	'genesis-accessibility', [
 		'404-page',
 		'drop-down-menu',
 		'headings',
 		'rems',
 		'search-form',
 		'skip-links',
-	)
+	]
 );
 
 // Add viewport meta tag for mobile browsers.
@@ -69,20 +68,20 @@ add_theme_support(
 
 // Add custom logo in Customizer > Site Identity.
 add_theme_support(
-	'custom-logo', array(
+	'custom-logo', [
 		'height'      => 120,
 		'width'       => 700,
 		'flex-height' => true,
 		'flex-width'  => true,
-	)
+	]
 );
 
 // Rename primary and secondary navigation menus.
 add_theme_support(
-	'genesis-menus', array(
+	'genesis-menus', [
 		'primary'   => __( 'Header Menu', 'genesis-advanced' ),
 		'secondary' => __( 'Footer Menu', 'genesis-advanced' ),
-	)
+	]
 );
 
 // Add support for after entry widget.
