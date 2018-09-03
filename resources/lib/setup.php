@@ -1,6 +1,6 @@
 <?php
 /**
- * Genesis Advanced.
+ * Genesis Advanced
  *
  * This file sets localization, defines constants and features.
  *
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Set localization (do not remove).
+ * Set localization (do not remove)
  *
  * @since 1.0.0
  */

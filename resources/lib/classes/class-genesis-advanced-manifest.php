@@ -1,6 +1,6 @@
 <?php
 /**
- * Genesis Advanced.
+ * Genesis Advanced
  *
  * This file configures paths for assets.
  *
