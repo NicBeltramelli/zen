@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Gets default link color for Customizer
+ * Get default link color for Customizer
  *
  * Abstracted here since at least two functions use it.
  *
@@ -31,7 +31,7 @@ function genesis_advanced_customizer_get_default_link_color() {
 }
 
 /**
- * Gets default accent color for Customizer
+ * Get default accent color for Customizer
  *
  * Abstracted here since at least two functions use it.
  *
@@ -46,7 +46,7 @@ function genesis_advanced_customizer_get_default_accent_color() {
 }
 
 /**
- * Calculates if white or gray would contrast more with the provided color
+ * Calculate if white or gray would contrast more with the provided color
  *
  * @since 2.2.3
  *
@@ -67,7 +67,7 @@ function genesis_advanced_color_contrast( $color ) {
 }
 
 /**
- * Generates a lighter or darker color from a starting color
+ * Generate a lighter or darker color from a starting color
  *
  * Used to generate complementary hover tints from user-chosen colors.
  *

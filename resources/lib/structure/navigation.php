@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Defines responsive menu settings
+ * Define responsive menu settings
  *
  * @since 2.3.0
  */
@@ -42,20 +42,20 @@ function genesis_advanced_responsive_menu_settings() {
 
 }
 
-// Removes output of primary navigation right extras.
+// Remove output of primary navigation right extras.
 remove_filter( 'genesis_nav_items', 'genesis_nav_right', 10, 2 );
 remove_filter( 'wp_nav_menu_items', 'genesis_nav_right', 10, 2 );
 
-// Repositions primary navigation menu.
+// Reposition primary navigation menu.
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
 add_action( 'genesis_header', 'genesis_do_nav', 12 );
 
-// Repositions the secondary navigation menu.
+// Reposition the secondary navigation menu.
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 add_action( 'genesis_footer', 'genesis_do_subnav', 10 );
 
 /**
- * Reduces secondary navigation menu to one level depth
+ * Reduce secondary navigation menu to one level depth
  *
  * @since 2.2.3
  *

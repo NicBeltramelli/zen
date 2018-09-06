@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Registers settings and controls with the Customizer
+ * Register settings and controls with the Customizer
  *
  * @since 2.2.3
  *

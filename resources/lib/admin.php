@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Removes output of unused admin settings metaboxes
+ * Remove output of unused admin settings metaboxes
  *
  * @since 2.6.0
  *
@@ -30,7 +30,7 @@ add_action( 'genesis_theme_settings_metaboxes', function ( $_genesis_admin_setti
 } );
 
 /**
- * Removes output of header settings in the Customizer
+ * Remove output of header settings in the Customizer
  *
  * @since 2.6.0
  *
