@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 add_action( 'after_setup_theme', function () {
 
-		load_child_theme_textdomain( CHILD_THEME_TEXT_DOMAIN, get_stylesheet_directory() . '/languages' );
+		load_child_theme_textdomain( 'genesis-advanced', get_stylesheet_directory() . '/languages' );
 
 } );
 
@@ -30,7 +30,6 @@ add_action( 'after_setup_theme', function () {
 define( 'CHILD_THEME_NAME', 'Genesis Advanced' );
 define( 'CHILD_THEME_URL', 'https://thematicpress.com/genesis-advanced/' );
 define( 'CHILD_THEME_VERSION', filemtime( get_stylesheet_directory() . '/style.css' ) );
-define( 'CHILD_THEME_TEXT_DOMAIN', 'genesis-advanced' );
 
 // Set the content width based on the theme's design and stylesheet.
 if ( ! isset( $content_width ) ) {
@@ -79,8 +78,8 @@ add_theme_support(
 // Rename primary and secondary navigation menus.
 add_theme_support(
 	'genesis-menus', [
-		'primary'   => __( 'Header Menu', CHILD_THEME_TEXT_DOMAIN ),
-		'secondary' => __( 'Footer Menu', CHILD_THEME_TEXT_DOMAIN ),
+		'primary'   => __( 'Header Menu', 'genesis-advanced' ),
+		'secondary' => __( 'Footer Menu', 'genesis-advanced' ),
 	]
 );
 
