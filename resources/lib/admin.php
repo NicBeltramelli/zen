@@ -28,3 +28,18 @@ add_action( 'genesis_theme_settings_metaboxes', function ( $_genesis_admin_setti
 	remove_meta_box( 'genesis-theme-settings-nav', $_genesis_admin_settings, 'main' );
 
 } );
+
+/**
+ * Removes output of header settings in the Customizer
+ *
+ * @since 2.6.0
+ *
+ * @param array $config Original Customizer items.
+ * @return array Filtered Customizer items.
+ */
+add_filter( 'genesis_customizer_theme_settings_config', function ( $config ) {
+
+	unset( $config['genesis']['sections']['genesis_header'] );
+	return $config;
+
+} );
