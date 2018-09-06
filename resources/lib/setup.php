@@ -79,8 +79,8 @@ add_theme_support(
 // Rename primary and secondary navigation menus.
 add_theme_support(
 	'genesis-menus', [
-		'primary'   => __( 'Header Menu', 'genesis-advanced' ),
-		'secondary' => __( 'Footer Menu', 'genesis-advanced' ),
+		'primary'   => __( 'Header Menu', CHILD_THEME_TEXT_DOMAIN ),
+		'secondary' => __( 'Footer Menu', CHILD_THEME_TEXT_DOMAIN ),
 	]
 );
 
