@@ -10,9 +10,8 @@
  * @link    https://github.com/NicBeltramelli/genesis-advanced.git
  */
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+	exit; // Exit if accessed directly.
 }
 
 /**
@@ -42,15 +41,15 @@ function genesis_advanced_responsive_menu_settings() {
 
 }
 
-// Remove output of primary navigation right extras.
+/* Remove output of primary navigation right extras */
 remove_filter( 'genesis_nav_items', 'genesis_nav_right', 10, 2 );
 remove_filter( 'wp_nav_menu_items', 'genesis_nav_right', 10, 2 );
 
-// Reposition primary navigation menu.
+/* Reposition primary navigation menu */
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
 add_action( 'genesis_header', 'genesis_do_nav', 12 );
 
-// Reposition the secondary navigation menu.
+/* Reposition the secondary navigation menu */
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 add_action( 'genesis_footer', 'genesis_do_subnav', 10 );
 

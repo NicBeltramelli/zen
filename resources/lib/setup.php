@@ -10,9 +10,8 @@
  * @link    https://github.com/NicBeltramelli/genesis-advanced.git
  */
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+	exit; // Exit if accessed directly.
 }
 
 /**
@@ -26,18 +25,18 @@ add_action( 'after_setup_theme', function () {
 
 } );
 
-// Define child theme constants (do not remove).
+/* Define child theme constants (do not remove) */
 define( 'CHILD_THEME_NAME', 'Genesis Advanced' );
 define( 'CHILD_THEME_URL', 'https://thematicpress.com/genesis-advanced/' );
 define( 'CHILD_THEME_VERSION', filemtime( get_stylesheet_directory() . '/style.css' ) );
 
-// Set the content width based on the theme's design and stylesheet.
+/* Set the content width based on the theme's design and stylesheet */
 if ( ! isset( $content_width ) ) {
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 	$content_width = 702; // Pixels.
 }
 
-// Add support for HTML5 markup structure.
+/* Add support for HTML5 markup structure */
 add_theme_support(
 	'html5', [
 		'caption',
@@ -48,7 +47,7 @@ add_theme_support(
 	]
 );
 
-// Add support for accessibility.
+/* Add support for accessibility */
 add_theme_support(
 	'genesis-accessibility', [
 		'404-page',
@@ -60,12 +59,12 @@ add_theme_support(
 	]
 );
 
-// Add viewport meta tag for mobile browsers.
+/* Add viewport meta tag for mobile browsers */
 add_theme_support(
 	'genesis-responsive-viewport'
 );
 
-// Add custom logo in Customizer > Site Identity.
+/* Add custom logo in Customizer > Site Identity */
 add_theme_support(
 	'custom-logo', [
 		'height'      => 120,
@@ -75,7 +74,7 @@ add_theme_support(
 	]
 );
 
-// Rename primary and secondary navigation menus.
+/* Rename primary and secondary navigation menus */
 add_theme_support(
 	'genesis-menus', [
 		'primary'   => __( 'Header Menu', 'genesis-advanced' ),
@@ -83,14 +82,14 @@ add_theme_support(
 	]
 );
 
-// Add support for after entry widget.
+/* Add support for after entry widget */
 add_theme_support( 'genesis-after-entry-widget-area' );
 
-// Add support for 3-column footer widgets.
+/* Add support for 3-column footer widgets */
 add_theme_support( 'genesis-footer-widgets', 3 );
 
-// Remove header right widget area.
+/* Remove header right widget area */
 unregister_sidebar( 'header-right' );
 
-// Remove secondary sidebar.
+/* Remove secondary sidebar */
 unregister_sidebar( 'sidebar-alt' );

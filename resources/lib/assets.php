@@ -10,9 +10,8 @@
  * @link    https://github.com/NicBeltramelli/genesis-advanced.git
  */
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+	exit; // Exit if accessed directly.
 }
 
 /**
@@ -22,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 add_action('wp_enqueue_scripts', function () {
 
-	// Enqueue Google Fonts.
+	/* Enqueue Google Fonts */
 	wp_enqueue_style(
 		'genesis-advanced-fonts',
 		'//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700',
@@ -30,10 +29,10 @@ add_action('wp_enqueue_scripts', function () {
 		CHILD_THEME_VERSION
 	);
 
-	// Enqueue Dashicons.
+	/* Enqueue Dashicons */
 	wp_enqueue_style( 'dashicons' );
 
-	// Enqueue main style.
+	/* Enqueue main style */
 	wp_enqueue_style(
 		'genesis-advanced-styles',
 		genesis_advanced_asset_path( 'styles/main.css' ),
@@ -41,7 +40,7 @@ add_action('wp_enqueue_scripts', function () {
 		null
 	);
 
-	// Enqueue main script.
+	/* Enqueue main script */
 	wp_enqueue_script(
 		'genesis-advanced-scripts',
 		genesis_advanced_asset_path( 'scripts/main.js' ),
@@ -50,7 +49,7 @@ add_action('wp_enqueue_scripts', function () {
 		true
 	);
 
-	// Enqueue comment reply js.
+	/* Enqueue comment reply js */
 	if (
 		is_single() &&
 		comments_open() &&
@@ -59,7 +58,7 @@ add_action('wp_enqueue_scripts', function () {
 			wp_enqueue_script( 'comment-reply' );
 	}
 
-	// Localize Genesis Responsive Menu.
+	/* Localize Genesis Responsive Menu */
 	wp_localize_script(
 		'genesis-advanced-scripts',
 		'genesis_responsive_menu',

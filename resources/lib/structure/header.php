@@ -10,10 +10,9 @@
  * @link    https://github.com/NicBeltramelli/genesis-advanced.git
  */
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+	exit; // Exit if accessed directly.
 }
 
-// Display custom logo.
+/* Display custom logo */
 add_action( 'genesis_site_title', 'the_custom_logo', 0 );

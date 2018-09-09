@@ -10,9 +10,8 @@
  * @link    https://github.com/NicBeltramelli/genesis-advanced.git
  */
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+	exit; // Exit if accessed directly.
 }
 
 /**
@@ -24,6 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 add_action( 'customize_register', function ( $wp_customize ) {
 
+	/* Link color addition */
 	$wp_customize->add_setting(
 		'genesis_advanced_link_color',
 		[
@@ -45,6 +45,7 @@ add_action( 'customize_register', function ( $wp_customize ) {
 		)
 	);
 
+	/* Accent color addition */
 	$wp_customize->add_setting(
 		'genesis_advanced_accent_color',
 		[
@@ -66,6 +67,7 @@ add_action( 'customize_register', function ( $wp_customize ) {
 		)
 	);
 
+	/* Logo width addition */
 	$wp_customize->add_setting(
 		'genesis_advanced_logo_width',
 		[
@@ -74,7 +76,6 @@ add_action( 'customize_register', function ( $wp_customize ) {
 		]
 	);
 
-	// Add a control for the logo size.
 	$wp_customize->add_control(
 		'genesis_advanced_logo_width',
 		[
