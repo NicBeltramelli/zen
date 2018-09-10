@@ -2,7 +2,7 @@
 /**
  * Genesis Advanced
  *
- * Your custom functions goes here.
+ * This file adds your custom functions.
  *
  * @package Genesis Advanced
  * @author  NicBeltramelli
@@ -10,6 +10,7 @@
  * @link    https://github.com/NicBeltramelli/genesis-advanced.git
  */
 
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+	exit;
 }

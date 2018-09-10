@@ -1,49 +1,46 @@
 <?php
 /**
- * Genesis Advanced
+ * Genesis Advanced.
  *
- * This file adds the WooCommerce styles and the Customizer additions.
+ * This file adds the WooCommerce styles and the Customizer additions for WooCommerce to the Genesis Advanced Theme.
  *
  * @package Genesis Advanced
- * @author  NicBeltramelli
+ * @author  StudioPress
  * @license GPL-2.0+
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://www.studiopress.com/
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
-
+add_filter( 'woocommerce_enqueue_styles', 'genesis_advanced_woocommerce_styles' );
 /**
- * Enqueues the theme's custom WooCommerce styles to the WooCommerce plugin
+ * Enqueues the theme's custom WooCommerce styles to the WooCommerce plugin.
  *
  * @param array $enqueue_styles The WooCommerce styles to enqueue.
  * @since 2.3.0
  *
  * @return array Modified WooCommerce styles to enqueue.
  */
-add_filter( 'woocommerce_enqueue_styles', function ( $enqueue_styles ) {
+function genesis_advanced_woocommerce_styles( $enqueue_styles ) {
 
-	$enqueue_styles['genesis-advanced-woocommerce-styles'] =
-	[
+	$enqueue_styles['genesis-advanced-woocommerce-styles'] = array(
 		'src'     => get_stylesheet_directory_uri() . '/lib/woocommerce/genesis-advanced-woocommerce.css',
 		'deps'    => '',
 		'version' => CHILD_THEME_VERSION,
 		'media'   => 'screen',
-	];
+	);
 
 	return $enqueue_styles;
 
-} );
+}
 
+add_action( 'wp_enqueue_scripts', 'genesis_advanced_woocommerce_css' );
 /**
- * Adds the themes's custom CSS to the WooCommerce stylesheet
+ * Adds the themes's custom CSS to the WooCommerce stylesheet.
  *
  * @since 2.3.0
  *
  * @return string CSS to be outputted after the theme's custom WooCommerce stylesheet.
  */
-add_action( 'wp_enqueue_scripts', function () {
+function genesis_advanced_woocommerce_css() {
 
 	// If WooCommerce isn't active, exit early.
 	if ( ! class_exists( 'WooCommerce' ) ) {
@@ -121,4 +118,4 @@ add_action( 'wp_enqueue_scripts', function () {
 		wp_add_inline_style( 'genesis-advanced-woocommerce-styles', $woo_css );
 	}
 
-} );
+}

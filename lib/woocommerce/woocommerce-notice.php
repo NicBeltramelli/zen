@@ -1,22 +1,25 @@
 <?php
 /**
- * Genesis Advanced.
+ * Genesis Advanced
  *
- * This file adds the Genesis Connect for WooCommerce notice to the Genesis Advanced Theme.
+ * This file adds the Genesis Connect for WooCommerce notice.
  *
  * @package Genesis Advanced
- * @author  StudioPress
+ * @author  NicBeltramelli
  * @license GPL-2.0+
- * @link    https://www.studiopress.com/
+ * @link    https://github.com/NicBeltramelli/genesis-advanced.git
  */
 
-add_action( 'admin_print_styles', 'genesis_advanced_remove_woocommerce_notice' );
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
- * Removes the default WooCommerce Notice.
+ * Removes the default WooCommerce Notice
  *
  * @since 2.3.0
  */
-function genesis_advanced_remove_woocommerce_notice() {
+add_action( 'admin_print_styles', function () {
 
 	// If below version WooCommerce 2.3.0, exit early.
 	if ( ! class_exists( 'WC_Admin_Notices' ) ) {
@@ -25,16 +28,15 @@ function genesis_advanced_remove_woocommerce_notice() {
 
 	WC_Admin_Notices::remove_notice( 'theme_support' );
 
-}
+} );
 
-add_action( 'admin_notices', 'genesis_advanced_woocommerce_theme_notice' );
 /**
  * Adds a prompt to activate Genesis Connect for WooCommerce
- * if WooCommerce is active but Genesis Connect is not.
+ * if WooCommerce is active but Genesis Connect is not
  *
  * @since 2.3.0
  */
-function genesis_advanced_woocommerce_theme_notice() {
+add_action( 'admin_notices', function () {
 
 	// If WooCommerce isn't installed or Genesis Connect is installed, exit early.
 	if ( ! class_exists( 'WooCommerce' ) || function_exists( 'gencwooc_setup' ) ) {
@@ -76,31 +78,35 @@ function genesis_advanced_woocommerce_theme_notice() {
 
 	echo '<div class="notice notice-info is-dismissible genesis-advanced-woocommerce-notice"><p>' . wp_kses_post( $notice_html ) . '</p></div>';
 
-}
+} );
 
-add_action( 'wp_ajax_genesis_advanced_dismiss_woocommerce_notice', 'genesis_advanced_dismiss_woocommerce_notice' );
 /**
- * Adds option to dismiss Genesis Connect for Woocommerce plugin install prompt.
+ * Adds option to dismiss Genesis Connect for Woocommerce plugin install prompt
  *
  * @since 2.3.0
  */
-function genesis_advanced_dismiss_woocommerce_notice() {
+add_action( 'wp_ajax_genesis_advanced_dismiss_woocommerce_notice', function () {
 
 	update_user_option( get_current_user_id(), 'genesis_advanced_woocommerce_message_dismissed', 1 );
 
-}
+} );
 
-add_action( 'admin_enqueue_scripts', 'genesis_advanced_notice_script' );
 /**
- * Enqueues script to clear the Genesis Connect for WooCommerce plugin install prompt on dismissal.
+ * Enqueues script to clear the Genesis Connect for WooCommerce plugin install prompt on dismissal
  *
  * @since 2.3.0
  */
-function genesis_advanced_notice_script() {
+add_action( 'admin_enqueue_scripts', function () {
 
-	wp_enqueue_script( 'genesis_advanced_notice_script', get_stylesheet_directory_uri() . '/lib/woocommerce/js/notice-update.js', array( 'jquery' ), '1.0', true );
+	wp_enqueue_script(
+		'genesis_advanced_notice_script',
+		get_stylesheet_directory_uri() . '/lib/woocommerce/js/notice-update.js',
+		[ 'jquery' ],
+		'1.0',
+		true
+	);
 
-}
+} );
 
 add_action( 'switch_theme', 'genesis_advanced_reset_woocommerce_notice', 10, 2 );
 /**
@@ -124,16 +130,15 @@ function genesis_advanced_reset_woocommerce_notice() {
 
 }
 
-add_action( 'deactivated_plugin', 'genesis_advanced_reset_woocommerce_notice_on_deactivation', 10, 2 );
 /**
- * Clears the Genesis Connect for WooCommerce plugin prompt on deactivation.
+ * Clears the Genesis Connect for WooCommerce plugin prompt on deactivation
  *
  * @since 2.3.0
  *
  * @param string $plugin The plugin slug.
  * @param bool   $network_deactivating Whether the plugin is deactivated for all sites in the network. or just the current site.
  */
-function genesis_advanced_reset_woocommerce_notice_on_deactivation( $plugin, $network_deactivating ) {
+add_action( 'deactivated_plugin', function ( $plugin, $network_deactivating ) {
 
 	// Conditional check to see if we're deactivating WooCommerce or Genesis Connect for WooCommerce.
 	if ( 'woocommerce/woocommerce.php' !== $plugin && 'genesis-connect-woocommerce/genesis-connect-woocommerce.php' !== $plugin ) {
@@ -142,4 +147,4 @@ function genesis_advanced_reset_woocommerce_notice_on_deactivation( $plugin, $ne
 
 	genesis_advanced_reset_woocommerce_notice();
 
-}
+}, 10, 2 );

@@ -1,29 +1,25 @@
 <?php
 /**
- * Genesis Advanced
+ * Genesis Advanced.
  *
- * This file adds the required CSS to the front end.
+ * This file adds the required CSS to the front end to the Genesis Advanced Theme.
  *
  * @package Genesis Advanced
- * @author  NicBeltramelli
+ * @author  StudioPress
  * @license GPL-2.0+
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://www.studiopress.com/
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
-
+add_action( 'wp_enqueue_scripts', 'genesis_advanced_css' );
 /**
- * Check the settings for the link color, accent color and logo width
- *
+ * Checks the settings for the link color, and accent color.
  * If any of these value are set the appropriate CSS is output.
  *
  * @since 2.2.3
  */
-add_action( 'wp_enqueue_scripts', function () {
+function genesis_advanced_css() {
 
-	$handle = 'genesis-advanced-styles';
+	$handle = defined( 'CHILD_THEME_NAME' ) && CHILD_THEME_NAME ? sanitize_title_with_dashes( CHILD_THEME_NAME ) : 'child-theme';
 
 	$color_link   = get_theme_mod( 'genesis_advanced_link_color', genesis_advanced_customizer_get_default_link_color() );
 	$color_accent = get_theme_mod( 'genesis_advanced_accent_color', genesis_advanced_customizer_get_default_accent_color() );
@@ -40,7 +36,6 @@ add_action( 'wp_enqueue_scripts', function () {
 
 	$css = '';
 
-	/* Output link color inline css */
 	$css .= ( genesis_advanced_customizer_get_default_link_color() !== $color_link ) ? sprintf(
 		'
 
@@ -62,7 +57,6 @@ add_action( 'wp_enqueue_scripts', function () {
 		', $color_link
 	) : '';
 
-	/* Output accent color inline css */
 	$css .= ( genesis_advanced_customizer_get_default_accent_color() !== $color_accent ) ? sprintf(
 		'
 
@@ -89,7 +83,6 @@ add_action( 'wp_enqueue_scripts', function () {
 		', $color_accent, genesis_advanced_color_contrast( $color_accent )
 	) : '';
 
-	/* Output custom logo inline css */
 	$css .= ( has_custom_logo() && ( 200 <= $logo_effective_height ) ) ?
 		'
 		.site-header {
@@ -98,7 +91,6 @@ add_action( 'wp_enqueue_scripts', function () {
 		'
 	: '';
 
-	/* Output custom logo inline css */
 	$css .= ( has_custom_logo() && ( 350 !== $logo_max_width ) ) ? sprintf(
 		'
 		.wp-custom-logo .site-container .title-area {
@@ -107,7 +99,7 @@ add_action( 'wp_enqueue_scripts', function () {
 		', $logo_max_width
 	) : '';
 
-	/* Place menu below logo and center logo once it gets big */
+	// Place menu below logo and center logo once it gets big.
 	$css .= ( has_custom_logo() && ( 600 <= $logo_max_width ) ) ?
 		'
 		.wp-custom-logo .title-area,
@@ -133,7 +125,6 @@ add_action( 'wp_enqueue_scripts', function () {
 		'
 	: '';
 
-	/* Output custom logo inline css */
 	$css .= ( has_custom_logo() && $logo_padding ) ? sprintf(
 		'
 		.wp-custom-logo .title-area {
@@ -146,4 +137,4 @@ add_action( 'wp_enqueue_scripts', function () {
 		wp_add_inline_style( $handle, $css );
 	}
 
-} );
+}
