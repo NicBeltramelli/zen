@@ -38,7 +38,7 @@ add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_script(
 		'genesis-advanced-match-height',
 		get_stylesheet_directory_uri() . '/js/jquery.matchHeight.min.js',
-		array( 'jquery' ),
+		[ 'jquery' ],
 		CHILD_THEME_VERSION,
 		true
 	);
@@ -59,12 +59,14 @@ add_action( 'wp_enqueue_scripts', function () {
 add_filter( 'woocommerce_style_smallscreen_breakpoint', function () {
 
 	$current = genesis_site_layout();
-	$layouts = array(
-		'one-sidebar' => array(
+	$layouts =
+	[
+		'one-sidebar' =>
+		[
 			'content-sidebar',
 			'sidebar-content',
-		),
-	);
+		],
+	];
 
 	if ( in_array( $current, $layouts['one-sidebar'], true ) ) {
 		return '1200px';
@@ -166,11 +168,12 @@ function genesis_advanced_update_woocommerce_image_dimensions() {
  */
 add_filter( 'woocommerce_get_image_size_gallery_thumbnail', function ( $size ) {
 
-	$size = array(
+	$size =
+	[
 		'width'  => 180,
 		'height' => 180,
 		'crop'   => 1,
-	);
+	];
 
 	return $size;
 
