@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 add_filter( 'woocommerce_enqueue_styles', function ( $enqueue_styles ) {
 
-	$enqueue_styles['genesis-advanced-woocommerce-styles'] = 
+	$enqueue_styles['genesis-advanced-woocommerce-styles'] =
 	[
 		'src'     => get_stylesheet_directory_uri() . '/lib/woocommerce/genesis-advanced-woocommerce.css',
 		'deps'    => '',
