@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param string $subtitle
  * @param string $title
  *
- * @since 2.6.0.1
+ * @since 2.7.0
  */
 $genesis_advanced_error = function ( $message, $genesis_advanced_subtitle = '', $title = '' ) {
 
