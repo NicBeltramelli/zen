@@ -1,69 +1,69 @@
 <?php
 /**
- * Genesis Advanced.
+ * Genesis Advanced
  *
- * This file adds the landing page template to the Genesis Advanced Theme.
- *
- * Template Name: Landing
+ * Landing page template
  *
  * @package Genesis Advanced
- * @author  StudioPress
+ * @author  NicBeltramelli
  * @license GPL-2.0+
- * @link    https://www.studiopress.com/
+ * @link    https://github.com/NicBeltramelli/genesis-advanced.git
  */
 
-add_filter( 'body_class', 'genesis_advanced_add_body_class' );
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
- * Adds landing page body class.
+ * Add landing page body class
  *
  * @since 1.0.0
  *
  * @param array $classes Original body classes.
  * @return array Modified body classes.
  */
-function genesis_advanced_add_body_class( $classes ) {
+add_filter( 'body_class', function ( $classes ) {
 
 	$classes[] = 'landing-page';
 	return $classes;
 
-}
+} );
 
-// Removes Skip Links.
+/* Remove Skip Links */
 remove_action( 'genesis_before_header', 'genesis_skip_links', 5 );
 
-add_action( 'wp_enqueue_scripts', 'genesis_advanced_dequeue_skip_links' );
 /**
- * Dequeues Skip Links Script.
+ * Dequeue Skip Links Script
  *
  * @since 1.0.0
  */
-function genesis_advanced_dequeue_skip_links() {
+add_action( 'wp_enqueue_scripts', function () {
 
 	wp_dequeue_script( 'skip-links' );
 
-}
+} );
 
-// Forces full width content layout.
+/* Force full width content layout */
 add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
 
-// Removes site header elements.
+/* Remove site header elements */
 remove_action( 'genesis_header', 'genesis_header_markup_open', 5 );
 remove_action( 'genesis_header', 'genesis_do_header' );
 remove_action( 'genesis_header', 'genesis_header_markup_close', 15 );
 
-// Removes navigation.
+/* Remove navigation */
 remove_theme_support( 'genesis-menus' );
 
-// Removes breadcrumbs.
+/* Remove breadcrumbs */
 remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 
-// Removes footer widgets.
+/* Remove footer widgets */
 remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
 
-// Removes site footer elements.
+/* Remove site footer elements */
 remove_action( 'genesis_footer', 'genesis_footer_markup_open', 5 );
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
 
-// Runs the Genesis loop.
+/* Run the Genesis loop */
 genesis();
