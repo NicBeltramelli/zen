@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-/* Adds product gallery support */
+/* Add product gallery support */
 if ( class_exists( 'WooCommerce' ) ) {
 
 	add_theme_support( 'wc-product-gallery-lightbox' );
@@ -24,7 +24,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 }
 
 /**
- * Prints an inline script to the footer to keep products the same height
+ * Print an inline script to the footer to keep products the same height
  *
  * @since 2.3.0
  */
@@ -50,7 +50,7 @@ add_action( 'wp_enqueue_scripts', function () {
 }, 99 );
 
 /**
- * Modifies the WooCommerce breakpoints
+ * Modify the WooCommerce breakpoints
  *
  * @since 2.3.0
  *
@@ -77,7 +77,7 @@ add_filter( 'woocommerce_style_smallscreen_breakpoint', function () {
 } );
 
 /**
- * Sets the default products per page
+ * Set the default products per page
  *
  * @since 2.3.0
  *
@@ -90,7 +90,7 @@ add_filter( 'genesiswooc_products_per_page', function () {
 } );
 
 /**
- * Updates the next and previous arrows to the default Genesis style
+ * Update the next and previous arrows to the default Genesis style
  *
  * @param array $args The previous and next text arguments.
  * @since 2.3.0
@@ -107,7 +107,7 @@ add_filter( 'woocommerce_pagination_args', function ( $args ) {
 } );
 
 /**
- * Defines WooCommerce image sizes on theme activation
+ * Define WooCommerce image sizes on theme activation
  *
  * @since 2.3.0
  */
@@ -115,7 +115,7 @@ add_action( 'after_switch_theme', function () {
 
 	global $pagenow;
 
-	// Checks conditionally to see if we're activating the current theme and that WooCommerce is installed.
+	// Check conditionally to see if we're activating the current theme and that WooCommerce is installed.
 	if ( ! isset( $_GET['activated'] ) || 'themes.php' !== $pagenow || ! class_exists( 'WooCommerce' ) ) { // phpcs:ignore WordPress.CSRF.NonceVerification.NoNonceVerification -- low risk, follows official snippet at https://goo.gl/nnHHQa.
 		return;
 	}
@@ -125,7 +125,7 @@ add_action( 'after_switch_theme', function () {
 }, 1 );
 
 /**
- * Defines the WooCommerce image sizes on WooCommerce activation
+ * Define the WooCommerce image sizes on WooCommerce activation
  *
  * @since 2.3.0
  *
@@ -143,23 +143,23 @@ add_action( 'activated_plugin', function ( $plugin ) {
 }, 10, 2 );
 
 /**
- * Updates WooCommerce image dimensions
+ * Update WooCommerce image dimensions
  *
  * @since 2.3.0
  */
 function genesis_advanced_update_woocommerce_image_dimensions() {
 
-	// Updates image size options.
+	/* Update image size options */
 	update_option( 'woocommerce_single_image_width', 655 );    // Single product image.
 	update_option( 'woocommerce_thumbnail_image_width', 500 ); // Catalog image.
 
-	// Updates image cropping option.
+	/* Update image cropping option */
 	update_option( 'woocommerce_thumbnail_cropping', '1:1' );
 
 }
 
 /**
- * Filters the WooCommerce gallery image dimensions
+ * Filter the WooCommerce gallery image dimensions
  *
  * @since 2.6.0
  *

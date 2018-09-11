@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Removes the default WooCommerce Notice
+ * Remove the default WooCommerce Notice
  *
  * @since 2.3.0
  */
@@ -31,7 +31,7 @@ add_action( 'admin_print_styles', function () {
 } );
 
 /**
- * Adds a prompt to activate Genesis Connect for WooCommerce
+ * Add a prompt to activate Genesis Connect for WooCommerce
  * if WooCommerce is active but Genesis Connect is not
  *
  * @since 2.3.0
@@ -81,7 +81,7 @@ add_action( 'admin_notices', function () {
 } );
 
 /**
- * Adds option to dismiss Genesis Connect for Woocommerce plugin install prompt
+ * Add option to dismiss Genesis Connect for Woocommerce plugin install prompt
  *
  * @since 2.3.0
  */
@@ -92,7 +92,7 @@ add_action( 'wp_ajax_genesis_advanced_dismiss_woocommerce_notice', function () {
 } );
 
 /**
- * Enqueues script to clear the Genesis Connect for WooCommerce plugin install prompt on dismissal
+ * Enqueue script to clear the Genesis Connect for WooCommerce plugin install prompt on dismissal
  *
  * @since 2.3.0
  */
@@ -110,7 +110,7 @@ add_action( 'admin_enqueue_scripts', function () {
 
 add_action( 'switch_theme', 'genesis_advanced_reset_woocommerce_notice', 10, 2 );
 /**
- * Clears the Genesis Connect for WooCommerce plugin install prompt on theme change.
+ * Clear the Genesis Connect for WooCommerce plugin install prompt on theme change
  *
  * @since 2.3.0
  */
@@ -131,7 +131,7 @@ function genesis_advanced_reset_woocommerce_notice() {
 }
 
 /**
- * Clears the Genesis Connect for WooCommerce plugin prompt on deactivation
+ * Clear the Genesis Connect for WooCommerce plugin prompt on deactivation
  *
  * @since 2.3.0
  *

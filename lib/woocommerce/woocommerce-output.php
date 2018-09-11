@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Enqueues the theme's custom WooCommerce styles to the WooCommerce plugin
+ * Enqueue the theme's custom WooCommerce styles to the WooCommerce plugin
  *
  * @param array $enqueue_styles The WooCommerce styles to enqueue.
  * @since 2.3.0
@@ -37,7 +37,7 @@ add_filter( 'woocommerce_enqueue_styles', function ( $enqueue_styles ) {
 } );
 
 /**
- * Adds the themes's custom CSS to the WooCommerce stylesheet
+ * Add the themes's custom CSS to the WooCommerce stylesheet
  *
  * @since 2.3.0
  *
