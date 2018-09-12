@@ -35,13 +35,6 @@ add_action( 'wp_enqueue_scripts', function () {
 		return;
 	}
 
-	wp_enqueue_script(
-		'genesis-advanced-match-height',
-		get_stylesheet_directory_uri() . '/js/jquery.matchHeight.min.js',
-		[ 'jquery' ],
-		CHILD_THEME_VERSION,
-		true
-	);
 	wp_add_inline_script(
 		'genesis-advanced-match-height',
 		"jQuery(document).ready( function() { jQuery( '.product .woocommerce-LoopProduct-link').matchHeight(); });"

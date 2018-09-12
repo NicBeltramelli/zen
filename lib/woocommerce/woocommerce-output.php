@@ -26,7 +26,7 @@ add_filter( 'woocommerce_enqueue_styles', function ( $enqueue_styles ) {
 
 	$enqueue_styles['genesis-advanced-woocommerce-styles'] =
 	[
-		'src'     => get_stylesheet_directory_uri() . '/lib/woocommerce/genesis-advanced-woocommerce.css',
+		'src'     => genesis_advanced_asset_path( 'styles/woocommerce.css' ),
 		'deps'    => '',
 		'version' => CHILD_THEME_VERSION,
 		'media'   => 'screen',

@@ -65,4 +65,4 @@ add_action('wp_enqueue_scripts', function () {
 		genesis_advanced_responsive_menu_settings()
 	);
 
-}, 100 );
+} );

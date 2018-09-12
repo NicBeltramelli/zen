@@ -98,10 +98,10 @@ function genesis_advanced_dismiss_woocommerce_notice() {
 add_action( 'admin_enqueue_scripts', function () {
 
 	wp_enqueue_script(
-		'genesis_advanced_notice_script',
-		get_stylesheet_directory_uri() . '/lib/woocommerce/js/notice-update.js',
+		'genesis-advanced-scripts',
+		genesis_advanced_asset_path( 'scripts/woocommerce-notice-update.js' ),
 		[ 'jquery' ],
-		'1.0',
+		null,
 		true
 	);
 
