@@ -80,16 +80,15 @@ add_action( 'admin_notices', function () {
 
 } );
 
+add_action( 'wp_ajax_genesis_advanced_dismiss_woocommerce_notice', 'genesis_advanced_dismiss_woocommerce_notice' );
 /**
- * Add option to dismiss Genesis Connect for Woocommerce plugin install prompt
+ * Add option to dismiss Genesis Connect for WooCommerce plugin install prompt
  *
  * @since 2.3.0
  */
-add_action( 'wp_ajax_genesis_advanced_dismiss_woocommerce_notice', function () {
-
+function genesis_advanced_dismiss_woocommerce_notice() {
 	update_user_option( get_current_user_id(), 'genesis_advanced_woocommerce_message_dismissed', 1 );
-
-} );
+}
 
 /**
  * Enqueue script to clear the Genesis Connect for WooCommerce plugin install prompt on dismissal
