@@ -12,10 +12,12 @@
 	<file>.</file>
 
 	<!-- Prevent sniffs of some directories. -->
-	<exclude-pattern>/vendor/</exclude-pattern>
-	<exclude-pattern>/node_modules/</exclude-pattern>
-	<exclude-pattern>/dist/</exclude-pattern>
 	<exclude-pattern>/.cache-loader/</exclude-pattern>
+	<exclude-pattern>/dist/</exclude-pattern>
+	<exclude-pattern>/languages/</exclude-pattern>
+	<exclude-pattern>/node_modules/</exclude-pattern>
+	<exclude-pattern>/vendor/</exclude-pattern>
+	<exclude-pattern>/xml/</exclude-pattern>
 
 	<!-- Pass flags to PHPCS:
 		 p: Show progress of the run.
@@ -31,11 +33,6 @@
 	<rule ref="WordPress">
 		<exclude name="WordPress.VIP"/>
 		<exclude name="Squiz.PHP.CommentedOutCode.Found"/>
-	</rule>
-
-	<!-- Page templates currently use underscores for historic reasons. -->
-	<rule ref="WordPress.Files.FileName.NotHyphenatedLowercase">
-		<exclude-pattern>page_landing.php</exclude-pattern>
 	</rule>
 
 	<!-- Test PHP cross-version compatibility. -->
