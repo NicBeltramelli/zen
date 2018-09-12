@@ -1,6 +1,4 @@
 /**
- * Genesis Advanced
- *
  * Trigger AJAX request to save state when the WooCommerce notice is dismissed.
  *
  * @package Genesis Advanced

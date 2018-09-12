@@ -1,6 +1,4 @@
 /**
- * Genesis Advanced
- *
  * @package Genesis Advanced
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
