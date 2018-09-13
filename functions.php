@@ -32,13 +32,13 @@ $genesis_advanced_includes = [
 	'lib/classes/class-genesis-advanced-manifest.php', // Configure paths for assets.
 
 	/* Theme Setup */
+	'lib/assets.php', // Enqueue assets.
 	'lib/defaults.php', // Default theme settings.
 	'lib/helpers.php', // Helper functions.
 	'lib/customize.php', // Customizer additions.
 	'lib/output.php', // Output front-end css.
 	'lib/admin.php', // Admin dashboard setting.
 	'lib/setup.php', // Localization, constants and features.
-	'lib/assets.php', // Enqueue assets.
 	'lib/extras.php', // Custom functions.
 
 	/* Structure */
