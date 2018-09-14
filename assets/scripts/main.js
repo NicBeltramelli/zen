@@ -1,9 +1,4 @@
-/**
- * @package Genesis Advanced
- * @author  NicBeltramelli
- * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
- */
+/* Primary JS entry point */
 
 // import external dependencies
 import 'jquery';

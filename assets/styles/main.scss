@@ -1,25 +1,10 @@
-/**
- * @package Genesis Advanced
- * @author  NicBeltramelli
- * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
- */
+/* Primary CSS entry point */
 
-/** Import variables */
+/* Import variables */
 @import "main/variables";
 
-/** Import everything from autoload */
+/* Import everything from autoload */
 @import "./autoload/**/*";
 
-/**
- * Import npm dependencies
- *
- * Prefix your imports with `~` to grab from node_modules/
- * @see https://github.com/webpack-contrib/sass-loader#imports
- */
-// @import "~some-node-module";
-
-/** Import styles */
-
-// Main
+/* Import styles */
 @import "main/global";

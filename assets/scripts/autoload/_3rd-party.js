@@ -1,3 +1,5 @@
+/* 3rd party JS */
+
 // Import FitVids.js
 import 'FitVids.js/jquery.fitvids';
 

@@ -7,5 +7,6 @@ export default {
 
     // FitVids
     $("body").fitVids();
+
   },
 };

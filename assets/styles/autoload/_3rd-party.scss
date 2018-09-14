@@ -1,3 +1,9 @@
+/* 3rd party css */
+
+// Prefix your imports with `~` to grab from node_modules/
+// @see https://github.com/webpack-contrib/sass-loader#imports
+// @import "~some-node-module";
+
 // Import normalize-scss
 @import "~normalize-scss/sass/normalize";
 
