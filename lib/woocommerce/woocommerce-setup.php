@@ -26,7 +26,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 /**
  * Print an inline script to the footer to keep products the same height
  *
- * @since 2.3.0
+ * @since 2.7.0
  */
 add_action( 'wp_enqueue_scripts', function () {
 
@@ -36,7 +36,7 @@ add_action( 'wp_enqueue_scripts', function () {
 	}
 
 	wp_add_inline_script(
-		'genesis-advanced-match-height',
+		'genesis-advanced-scripts',
 		"jQuery(document).ready( function() { jQuery( '.product .woocommerce-LoopProduct-link').matchHeight(); });"
 	);
 
