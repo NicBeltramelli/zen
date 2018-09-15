@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Define paths for assets
  *
- * @since 2.7.0
+ * @since 3.0.0
  */
 class Genesis_Advanced_Manifest {
 
@@ -58,7 +58,7 @@ class Genesis_Advanced_Manifest {
 /**
  * Get paths for assets
  *
- * @since 2.7.0
+ * @since 3.0.0
  *
  * @param string $filename Asset file name.
  */

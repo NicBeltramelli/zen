@@ -26,7 +26,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 /**
  * Print an inline script to the footer to keep products the same height
  *
- * @since 2.7.0
+ * @since 3.0.0
  */
 add_action( 'wp_enqueue_scripts', function () {
 
@@ -45,7 +45,7 @@ add_action( 'wp_enqueue_scripts', function () {
 /**
  * Modify the WooCommerce breakpoints
  *
- * @since 2.3.0
+ * @since 3.0.0
  *
  * @return string Pixel width of the theme's breakpoint.
  */
@@ -72,7 +72,7 @@ add_filter( 'woocommerce_style_smallscreen_breakpoint', function () {
 /**
  * Set the default products per page
  *
- * @since 2.3.0
+ * @since 3.0.0
  *
  * @return int Number of products to show per page.
  */
@@ -85,9 +85,9 @@ add_filter( 'genesiswooc_products_per_page', function () {
 /**
  * Update the next and previous arrows to the default Genesis style
  *
- * @param array $args The previous and next text arguments.
- * @since 2.3.0
+ * @since 3.0.0
  *
+ * @param array $args The previous and next text arguments.
  * @return array New next and previous text arguments.
  */
 add_filter( 'woocommerce_pagination_args', function ( $args ) {
@@ -102,7 +102,7 @@ add_filter( 'woocommerce_pagination_args', function ( $args ) {
 /**
  * Define WooCommerce image sizes on theme activation
  *
- * @since 2.3.0
+ * @since 3.0.0
  */
 add_action( 'after_switch_theme', function () {
 
@@ -120,7 +120,7 @@ add_action( 'after_switch_theme', function () {
 /**
  * Define the WooCommerce image sizes on WooCommerce activation
  *
- * @since 2.3.0
+ * @since 3.0.0
  *
  * @param string $plugin The path of the plugin being activated.
  */
@@ -138,7 +138,7 @@ add_action( 'activated_plugin', function ( $plugin ) {
 /**
  * Update WooCommerce image dimensions
  *
- * @since 2.3.0
+ * @since 3.0.0
  */
 function genesis_advanced_update_woocommerce_image_dimensions() {
 
@@ -154,7 +154,7 @@ function genesis_advanced_update_woocommerce_image_dimensions() {
 /**
  * Filter the WooCommerce gallery image dimensions
  *
- * @since 2.6.0
+ * @since 3.0.0
  *
  * @param array $size The gallery image size and crop arguments.
  * @return array The modified gallery image size and crop arguments.

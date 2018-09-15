@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Abstracted here since at least two functions use it.
  *
- * @since 2.2.3
+ * @since 3.0.0
  *
  * @return string Hex color code for link color.
  */
@@ -34,7 +34,7 @@ function genesis_advanced_customizer_get_default_link_color() {
  *
  * Abstracted here since at least two functions use it.
  *
- * @since 2.2.3
+ * @since 3.0.0
  *
  * @return string Hex color code for accent color.
  */
@@ -47,7 +47,7 @@ function genesis_advanced_customizer_get_default_accent_color() {
 /**
  * Calculate if white or gray would contrast more with the provided color
  *
- * @since 2.2.3
+ * @since 3.0.0
  *
  * @param string $color A color in hex format.
  * @return string The hex code for the most contrasting color: dark grey or white.
@@ -70,7 +70,7 @@ function genesis_advanced_color_contrast( $color ) {
  *
  * Used to generate complementary hover tints from user-chosen colors.
  *
- * @since 2.2.3
+ * @since 3.0.0
  *
  * @param string $color A color in hex format.
  * @param int    $change The amount to reduce or increase brightness by.

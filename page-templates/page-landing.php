@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Add landing page body class
  *
- * @since 1.0.0
+ * @since 3.0.0
  *
  * @param array $classes Original body classes.
  * @return array Modified body classes.
@@ -35,7 +35,7 @@ remove_action( 'genesis_before_header', 'genesis_skip_links', 5 );
 /**
  * Dequeue Skip Links Script
  *
- * @since 1.0.0
+ * @since 3.0.0
  */
 add_action( 'wp_enqueue_scripts', function () {
 

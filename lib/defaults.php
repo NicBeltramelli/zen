@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Update theme settings on reset
  *
- * @since 2.2.3
+ * @since 3.0.0
  *
  * @param array $defaults Original theme settings defaults.
  * @return array Modified defaults.
@@ -38,7 +38,7 @@ add_filter( 'genesis_theme_settings_defaults', function ( $defaults ) {
 /**
  * Update theme settings on activation
  *
- * @since 2.2.3
+ * @since 3.0.0
  */
 add_action( 'after_switch_theme', function () {
 
@@ -61,7 +61,7 @@ add_action( 'after_switch_theme', function () {
 /**
  * Set Simple Social Icon defaults
  *
- * @since 1.0.0
+ * @since 3.0.0
  *
  * @param array $defaults Social style defaults.
  * @return array Modified social style defaults.

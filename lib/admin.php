@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Remove output of unused admin settings metaboxes
  *
- * @since 2.6.0
+ * @since 3.0.0
  *
  * @param string $_genesis_admin_settings The admin screen to remove meta boxes from.
  */
@@ -31,7 +31,7 @@ add_action( 'genesis_theme_settings_metaboxes', function ( $_genesis_admin_setti
 /**
  * Remove output of header settings in the Customizer
  *
- * @since 2.6.0
+ * @since 3.0.0
  *
  * @param array $config Original Customizer items.
  * @return array Filtered Customizer items.

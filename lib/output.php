@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * If any of these value are set the appropriate CSS is output.
  *
- * @since 2.2.3
+ * @since 3.0.0
  */
 add_action( 'wp_enqueue_scripts', function () {
 

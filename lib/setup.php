@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Set localization (do not remove)
  *
- * @since 1.0.0
+ * @since 3.0.0
  */
 add_action( 'after_setup_theme', function () {
 

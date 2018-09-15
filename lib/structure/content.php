@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Modify the size of the Gravatar in the author box
  *
- * @since 2.2.3
+ * @since 3.0.0
  *
  * @param int $size Original icon size.
  * @return int Modified icon size.
@@ -31,7 +31,7 @@ add_filter( 'genesis_author_box_gravatar_size', function ( $size ) {
 /**
  * Modify the size of the Gravatar in the entry comments
  *
- * @since 2.2.3
+ * @since 3.0.0
  *
  * @param array $args Gravatar settings.
  * @return array Gravatar settings with modified size.

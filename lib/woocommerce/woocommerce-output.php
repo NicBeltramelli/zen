@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Enqueue the theme's custom WooCommerce styles to the WooCommerce plugin
  *
- * @param array $enqueue_styles The WooCommerce styles to enqueue.
- * @since 2.3.0
+ * @since 3.0.0
  *
+ * @param array $enqueue_styles The WooCommerce styles to enqueue.
  * @return array Modified WooCommerce styles to enqueue.
  */
 add_filter( 'woocommerce_enqueue_styles', function ( $enqueue_styles ) {
@@ -39,7 +39,7 @@ add_filter( 'woocommerce_enqueue_styles', function ( $enqueue_styles ) {
 /**
  * Add the themes's custom CSS to the WooCommerce stylesheet
  *
- * @since 2.3.0
+ * @since 3.0.0
  *
  * @return string CSS to be outputted after the theme's custom WooCommerce stylesheet.
  */

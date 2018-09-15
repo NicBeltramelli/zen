@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Register settings and controls with the Customizer
  *
- * @since 2.2.3
+ * @since 3.0.0
  *
  * @param WP_Customize_Manager $wp_customize Customizer object.
  */
