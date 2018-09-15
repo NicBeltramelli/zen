@@ -1,10 +1,12 @@
 /* Primary CSS entry point */
 
 /* Import variables */
-@import "main/variables";
+@import "utility/variables";
 
 /* Import everything from autoload */
 @import "./autoload/**/*";
 
 /* Import styles */
-@import "main/global";
+
+/* Utility */
+@import "utility/reset";
