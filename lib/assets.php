@@ -24,7 +24,7 @@ add_action('wp_enqueue_scripts', function () {
 	/* Enqueue Google Fonts */
 	wp_enqueue_style(
 		'genesis-advanced-fonts',
-		'//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700',
+		'//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700|Roboto+Mono',
 		[],
 		CHILD_THEME_VERSION
 	);
