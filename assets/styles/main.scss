@@ -12,9 +12,9 @@
 @import "utility/functions";
 @import "utility/mixins";
 @import "utility/@extend";
-@import "utility/reset";
 
 /* Elements */
+@import "elements/reset";
 @import "elements/typography";
 @import "elements/objects";
 @import "elements/gallery";
