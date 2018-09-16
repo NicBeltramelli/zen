@@ -1,0 +1,165 @@
+/**
+* Typography
+*
+*	- Typographical Elements
+*	- Headings
+*/
+
+/* Typographical Elements
+--------------------------------------------- */
+
+html {
+	font-size: root-font-size(phone);
+
+	@include mq($from: tablet) {
+		font-size: root-font-size(tablet);
+	}
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+
+	> div { // Chrome fix.
+
+		@extend %font-size-m;
+	}
+	background-color: color(light, soft);
+	color: color(dark, strong);
+	font-family: $base-font-serif;
+
+	@extend %font-size-m;
+	font-weight: 400;
+	margin: 0;
+}
+
+button {
+	transition: all $base-transition;
+}
+
+input {
+
+	&:focus,
+	&[type="button"],
+	&[type="reset"],
+	&[type="submit"] {
+		transition: all $base-transition;
+	}
+}
+
+textarea:focus,
+.button,
+.gallery img {
+	transition: all $base-transition;
+}
+
+a {
+	color: color(primary, base);
+	text-decoration: underline;
+	transition: color $base-transition, background-color $base-transition;
+
+	&:focus,
+	&:hover {
+		color: color(dark, strong);
+		text-decoration: none;
+	}
+}
+
+p {
+	margin: space(stack, s);
+	padding: 0;
+}
+
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+hr {
+	border: 0;
+	border-collapse: collapse;
+	border-top: 1px solid color(border);
+	margin-top: calc(2rem - 1px); // Compensate border.
+	margin-bottom: space(s);
+	clear: both;
+}
+
+b,
+strong {
+	font-weight: 700;
+}
+
+blockquote,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+mark {
+	background: color(light, strong);
+	color: color(dark, strong);
+}
+
+blockquote {
+	margin: space(s);
+
+	&::before {
+		content: "\201C";
+		display: block;
+
+		@extend %font-size-xl;
+		height: 0;
+		left: -(space(s));
+		position: relative;
+		top: -(space(xs));
+	}
+}
+
+/* Headings
+--------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $base-font-sans;
+	margin: space(stack, s);
+}
+
+h1 {
+
+	@extend %font-size-xxl;
+}
+
+h2 {
+
+	@extend %font-size-xl;
+}
+
+h3 {
+
+	@extend %font-size-l;
+}
+
+h4 {
+
+	@extend %font-size-m;
+}
+
+h5 {
+
+	@extend %font-size-s;
+}
+
+h6 {
+
+	@extend %font-size-xs;
+}

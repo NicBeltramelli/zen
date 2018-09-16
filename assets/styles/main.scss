@@ -9,4 +9,12 @@
 /* Import styles */
 
 /* Utility */
+@import "utility/functions";
+@import "utility/mixins";
+@import "utility/@extend";
 @import "utility/reset";
+
+/* Elements */
+@import "elements/typography";
+@import "elements/objects";
+@import "elements/gallery";

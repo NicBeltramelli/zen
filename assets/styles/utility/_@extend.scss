@@ -1,0 +1,70 @@
+/**
+* @extend
+*
+* 	- Font Sizes
+* 	- Box Shadow
+*/
+
+/* Font Sizes
+--------------------------------------------- */
+
+%font-size-xxl {
+	font-size: font-size(phone, xxl);
+	line-height: line-height(xxl);
+
+	@include mq($from: tablet) {
+		font-size: font-size(tablet, xxl);
+	}
+}
+
+%font-size-xl {
+	font-size: font-size(phone, xl);
+	line-height: line-height(xl);
+
+	@include mq($from: tablet) {
+		font-size: font-size(tablet, xl);
+	}
+}
+
+%font-size-l {
+	font-size: font-size(phone, l);
+	line-height: line-height(l);
+
+	@include mq($from: tablet) {
+		font-size: font-size(tablet, l);
+	}
+}
+
+%font-size-m {
+	font-size: font-size(phone, m);
+	line-height: line-height(m);
+
+	@include mq($from: tablet) {
+		font-size: font-size(tablet, m);
+	}
+}
+
+%font-size-s {
+	font-size: font-size(phone, s);
+	line-height: line-height(s);
+
+	@include mq($from: tablet) {
+		font-size: font-size(tablet, s);
+	}
+}
+
+%font-size-xs {
+	font-size: font-size(phone, xs);
+	line-height: line-height(xs);
+
+	@include mq($from: tablet) {
+		font-size: font-size(tablet, xs);
+	}
+}
+
+/* Box Shadow
+--------------------------------------------- */
+%box-shadow-light {
+
+	@include box-shadow (0, 0, 2px, color(light, base), false);
+}
