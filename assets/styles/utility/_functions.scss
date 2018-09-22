@@ -1,6 +1,7 @@
 /**
 * Functions
 *
+*	- Breakpoint
 *	- Root Font Size
 *	- Font Size
 *	- Line Height
@@ -8,48 +9,67 @@
 *	- Color
 */
 
-/* Root Font Size
+/* Breakpoint
 ---------------------------------------------
-* Retrieve values from $base-grid map defined in utility/variables.
-* Usage: html { font-size: root-font-size(phone); }
+* Retrieve values from $mq-breakpoints map defined in utility/variables.
+* Usage example: div { max-width: breakpoint(desktop); }
 --------------------------------------------- */
 
-@function root-font-size($media, $size:null) {
+@function breakpoint($size, $size-variant:null) {
 
-	@if ($size != null) {
+	@if ($size-variant != null) {
 		// map inception
-		@return map-get(map-get($base-grid, $media), $size);
+		@return map-get(map-get($mq-breakpoints, $size), $size-variant);
 	}
 
 	@else {
 
-		@return map-get($base-grid, $media);
+		@return map-get($mq-breakpoints, $size);
+	}
+}
+
+/* Root Font Size
+---------------------------------------------
+* Retrieve values from $base-grid map defined in utility/variables.
+* Usage example: html { font-size: root-font-size(phone); }
+--------------------------------------------- */
+
+@function root-font-size($size, $size-variant:null) {
+
+	@if ($size-variant != null) {
+		// map inception
+		@return map-get(map-get($base-grid, $size), $size-variant);
+	}
+
+	@else {
+
+		@return map-get($base-grid, $size);
 	}
 }
 
 /* Font Size
 ---------------------------------------------
 * Retrieve values from $font-size map defined in utility/variables.
-* Usage: p { font-size: font-size(phone, m); }
+* Usage example: p { font-size: font-size(phone, m); }
 --------------------------------------------- */
 
-@function font-size($media, $size:null) {
+@function font-size($size, $size-variant:null) {
 
-	@if ($size != null) {
+	@if ($size-variant != null) {
 		// map inception
-		@return map-get(map-get($base-font-sizes, $media), $size);
+		@return map-get(map-get($base-font-sizes, $size), $size-variant);
 	}
 
 	@else {
 
-		@return map-get($base-font-sizes, $media);
+		@return map-get($base-font-sizes, $size);
 	}
 }
 
 /* Line Height
 ---------------------------------------------
 * Retrieve values from $base-line-height map defined in utility/variables.
-* Usage: p { line-height: line-height(m); }
+* Usage example: p { line-height: line-height(m); }
 --------------------------------------------- */
 
 @function line-height($size, $size-variant:null) {
@@ -68,8 +88,8 @@
 /* Space
 ---------------------------------------------
 * Retrieve values from $base-space map defined in utility/variables.
-* Usage: p { margin: space(m); }
-* Usage with nested values: p { margin: space(stack, m); }
+* Usage example: p { margin: space(m); }
+* Usage example with nested values: p { margin: space(stack, m); }
 --------------------------------------------- */
 
 // Retrieve values from $base-space map ie: space(stack, m)
@@ -89,8 +109,8 @@
 /* Color
 ---------------------------------------------
 * Retrieve values from $base-colors map defined in utility/variables.
-* Usage: div { border: 1px solid color(border); }
-* Usage with nested values: a { color: color(primary, base); }
+* Usage example: div { border: 1px solid color(border); }
+* Usage example with nested values: a { color: color(primary, base); }
 --------------------------------------------- */
 
 @function color($color-name, $color-variant:null) {
