@@ -108,15 +108,15 @@ mark {
 
 blockquote {
 	margin: space(s);
+	position: relative;
 
 	&::before {
 		content: "\201C";
+		position: absolute;
 		display: block;
 
 		@extend %font-size-xl;
-		height: 0;
 		left: -(space(s));
-		position: relative;
 		top: -(space(xs));
 	}
 }
