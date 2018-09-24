@@ -2,7 +2,7 @@
 /**
  * Genesis Advanced
  *
- * Landing page template
+ * Template Name: Landing Page
  *
  * @package Genesis Advanced
  * @author  NicBeltramelli
@@ -13,23 +13,6 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-
-/**
- * Add landing page body class
- *
- * @since 3.0.0
- *
- * @param array $classes Original body classes.
- * @return array Modified body classes.
- */
-add_filter(
-	'body_class', function ( $classes ) {
-
-		$classes[] = 'landing-page';
-		return $classes;
-
-	}
-);
 
 /* Remove Skip Links */
 remove_action( 'genesis_before_header', 'genesis_skip_links', 5 );
