@@ -17,11 +17,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Helper function for prettying up errors
  *
+ * @since 3.0.0
+ *
  * @param string $message
  * @param string $subtitle
  * @param string $title
- *
- * @since 3.0.0
  */
 $genesis_advanced_error = function ( $message, $genesis_advanced_subtitle = '', $title = '' ) {
 
