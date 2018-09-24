@@ -39,6 +39,7 @@ $genesis_advanced_includes = [
 	'lib/output.php', // Output front-end css.
 	'lib/admin.php', // Admin dashboard setting.
 	'lib/setup.php', // Localization, constants and features.
+	'lib/body-classes.php', // Body classes.
 	'lib/extras.php', // Custom functions.
 
 	/* Structure */
