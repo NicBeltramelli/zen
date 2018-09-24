@@ -27,6 +27,7 @@
     },
     "scripts": {
         "phpcs": "phpcs",
+        "phpcbf": "phpcbf --report=diff -vv",
         "export": "zip -r ../genesis-advanced.zip * .[^.]* -x '*.log' -x '.git/*' -x '.cache-loader/*' -x 'node_modules/*' -x 'vendor/*'"
     }
 }
