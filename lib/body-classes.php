@@ -2,7 +2,7 @@
 /**
  * Genesis Advanced
  *
- * This file adds the body classes.
+ * This file adds body classes to the body tag.
  *
  * @package Genesis Advanced
  * @author  NicBeltramelli
@@ -59,4 +59,38 @@ add_filter(
 
 		return $classes;
 	}
+);
+
+/**
+ * Echo out the script that changes 'no-js' class to 'js'
+ *
+ * Adds a no-js body class to the front end, and a script on the genesis_before
+ * hook which immediately changes the class to js if JavaScript is enabled.
+ * This is how WP does things on the back end, to allow different styles
+ * for the same elements depending if JavaScript is active or not.
+ *
+ * Outputting the script immediately also reduces a flash of incorrectly styled
+ * content, as the page does not load with no-js styles, then switch to js
+ * once everything has finished loading.
+ *
+ * @since  3.0.0
+ *
+ * @return void
+ */
+add_action(
+	'genesis_before', function () {
+
+		?>
+	<script>
+	//<![CDATA[
+	(function(){
+		var c = document.body.classList;
+		c.remove( 'no-js' );
+		c.add( 'js' );
+	})();
+	//]]>
+	</script>
+		<?php
+
+	}, 1
 );
