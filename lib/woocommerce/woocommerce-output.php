@@ -22,19 +22,21 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param array $enqueue_styles The WooCommerce styles to enqueue.
  * @return array Modified WooCommerce styles to enqueue.
  */
-add_filter( 'woocommerce_enqueue_styles', function ( $enqueue_styles ) {
+add_filter(
+	'woocommerce_enqueue_styles', function ( $enqueue_styles ) {
 
-	$enqueue_styles['genesis-advanced-woocommerce-styles'] =
-	[
-		'src'     => genesis_advanced_asset_path( 'styles/woocommerce.css' ),
-		'deps'    => '',
-		'version' => CHILD_THEME_VERSION,
-		'media'   => 'screen',
-	];
+		$enqueue_styles['genesis-advanced-woocommerce-styles'] =
+		[
+			'src'     => genesis_advanced_asset_path( 'styles/woocommerce.css' ),
+			'deps'    => '',
+			'version' => CHILD_THEME_VERSION,
+			'media'   => 'screen',
+		];
 
-	return $enqueue_styles;
+		return $enqueue_styles;
 
-} );
+	}
+);
 
 /**
  * Add the themes's custom CSS to the WooCommerce stylesheet
@@ -43,20 +45,21 @@ add_filter( 'woocommerce_enqueue_styles', function ( $enqueue_styles ) {
  *
  * @return string CSS to be outputted after the theme's custom WooCommerce stylesheet.
  */
-add_action( 'wp_enqueue_scripts', function () {
+add_action(
+	'wp_enqueue_scripts', function () {
 
-	// If WooCommerce isn't active, exit early.
-	if ( ! class_exists( 'WooCommerce' ) ) {
-		return;
-	}
+		// If WooCommerce isn't active, exit early.
+		if ( ! class_exists( 'WooCommerce' ) ) {
+			return;
+		}
 
-	$color_link   = get_theme_mod( 'genesis_advanced_link_color', genesis_advanced_customizer_get_default_link_color() );
-	$color_accent = get_theme_mod( 'genesis_advanced_accent_color', genesis_advanced_customizer_get_default_accent_color() );
+		$color_link   = get_theme_mod( 'genesis_advanced_link_color', genesis_advanced_customizer_get_default_link_color() );
+		$color_accent = get_theme_mod( 'genesis_advanced_accent_color', genesis_advanced_customizer_get_default_accent_color() );
 
-	$woo_css = '';
+		$woo_css = '';
 
-	$woo_css .= ( genesis_advanced_customizer_get_default_link_color() !== $color_link ) ? sprintf(
-		'
+		$woo_css .= ( genesis_advanced_customizer_get_default_link_color() !== $color_link ) ? sprintf(
+			'
 
 		.woocommerce div.product p.price,
 		.woocommerce div.product span.price,
@@ -73,10 +76,10 @@ add_action( 'wp_enqueue_scripts', function () {
 		}
 
 	', $color_link
-	) : '';
+		) : '';
 
-	$woo_css .= ( genesis_advanced_customizer_get_default_accent_color() !== $color_accent ) ? sprintf(
-		'
+		$woo_css .= ( genesis_advanced_customizer_get_default_accent_color() !== $color_accent ) ? sprintf(
+			'
 		.woocommerce a.button:hover,
 		.woocommerce a.button:focus,
 		.woocommerce a.button.alt:hover,
@@ -115,10 +118,11 @@ add_action( 'wp_enqueue_scripts', function () {
 		}
 
 	', $color_accent, genesis_advanced_color_contrast( $color_accent )
-	) : '';
+		) : '';
 
-	if ( $woo_css ) {
-		wp_add_inline_style( 'genesis-advanced-woocommerce-styles', $woo_css );
+		if ( $woo_css ) {
+			wp_add_inline_style( 'genesis-advanced-woocommerce-styles', $woo_css );
+		}
+
 	}
-
-} );
+);

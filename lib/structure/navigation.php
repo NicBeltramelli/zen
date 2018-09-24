@@ -61,13 +61,15 @@ add_action( 'genesis_footer', 'genesis_do_subnav', 10 );
  * @param array $args Original menu options.
  * @return array Menu options with depth set to 1.
  */
-add_filter( 'wp_nav_menu_args', function ( $args ) {
+add_filter(
+	'wp_nav_menu_args', function ( $args ) {
 
-	if ( 'secondary' !== $args['theme_location'] ) {
+		if ( 'secondary' !== $args['theme_location'] ) {
+			return $args;
+		}
+
+		$args['depth'] = 1;
 		return $args;
+
 	}
-
-	$args['depth'] = 1;
-	return $args;
-
-} );
+);

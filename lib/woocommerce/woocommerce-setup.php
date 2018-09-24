@@ -28,19 +28,21 @@ if ( class_exists( 'WooCommerce' ) ) {
  *
  * @since 3.0.0
  */
-add_action( 'wp_enqueue_scripts', function () {
+add_action(
+	'wp_enqueue_scripts', function () {
 
-	// If Woocommerce is not activated, or a product page isn't showing, exit early.
-	if ( ! class_exists( 'WooCommerce' ) || ! is_shop() && ! is_product_category() && ! is_product_tag() ) {
-		return;
-	}
+		// If Woocommerce is not activated, or a product page isn't showing, exit early.
+		if ( ! class_exists( 'WooCommerce' ) || ! is_shop() && ! is_product_category() && ! is_product_tag() ) {
+			return;
+		}
 
-	wp_add_inline_script(
-		'genesis-advanced-scripts',
-		"jQuery(document).ready( function() { jQuery( '.product .woocommerce-LoopProduct-link').matchHeight(); });"
-	);
+		wp_add_inline_script(
+			'genesis-advanced-scripts',
+			"jQuery(document).ready( function() { jQuery( '.product .woocommerce-LoopProduct-link').matchHeight(); });"
+		);
 
-}, 99 );
+	}, 99
+);
 
 /**
  * Modify the WooCommerce breakpoints
@@ -49,25 +51,27 @@ add_action( 'wp_enqueue_scripts', function () {
  *
  * @return string Pixel width of the theme's breakpoint.
  */
-add_filter( 'woocommerce_style_smallscreen_breakpoint', function () {
+add_filter(
+	'woocommerce_style_smallscreen_breakpoint', function () {
 
-	$current = genesis_site_layout();
-	$layouts =
-	[
-		'one-sidebar' =>
+		$current = genesis_site_layout();
+		$layouts =
 		[
-			'content-sidebar',
-			'sidebar-content',
-		],
-	];
+			'one-sidebar' =>
+			[
+				'content-sidebar',
+				'sidebar-content',
+			],
+		];
 
-	if ( in_array( $current, $layouts['one-sidebar'], true ) ) {
-		return '1200px';
+		if ( in_array( $current, $layouts['one-sidebar'], true ) ) {
+			return '1200px';
+		}
+
+		return '860px';
+
 	}
-
-	return '860px';
-
-} );
+);
 
 /**
  * Set the default products per page
@@ -76,11 +80,13 @@ add_filter( 'woocommerce_style_smallscreen_breakpoint', function () {
  *
  * @return int Number of products to show per page.
  */
-add_filter( 'genesiswooc_products_per_page', function () {
+add_filter(
+	'genesiswooc_products_per_page', function () {
 
-	return 8;
+		return 8;
 
-} );
+	}
+);
 
 /**
  * Update the next and previous arrows to the default Genesis style
@@ -90,32 +96,36 @@ add_filter( 'genesiswooc_products_per_page', function () {
  * @param array $args The previous and next text arguments.
  * @return array New next and previous text arguments.
  */
-add_filter( 'woocommerce_pagination_args', function ( $args ) {
+add_filter(
+	'woocommerce_pagination_args', function ( $args ) {
 
-	$args['prev_text'] = sprintf( '&laquo; %s', __( 'Previous Page', 'genesis-advanced' ) );
-	$args['next_text'] = sprintf( '%s &raquo;', __( 'Next Page', 'genesis-advanced' ) );
+		$args['prev_text'] = sprintf( '&laquo; %s', __( 'Previous Page', 'genesis-advanced' ) );
+		$args['next_text'] = sprintf( '%s &raquo;', __( 'Next Page', 'genesis-advanced' ) );
 
-	return $args;
+		return $args;
 
-} );
+	}
+);
 
 /**
  * Define WooCommerce image sizes on theme activation
  *
  * @since 3.0.0
  */
-add_action( 'after_switch_theme', function () {
+add_action(
+	'after_switch_theme', function () {
 
-	global $pagenow;
+		global $pagenow;
 
-	// Check conditionally to see if we're activating the current theme and that WooCommerce is installed.
-	if ( ! isset( $_GET['activated'] ) || 'themes.php' !== $pagenow || ! class_exists( 'WooCommerce' ) ) { // phpcs:ignore WordPress.CSRF.NonceVerification.NoNonceVerification -- low risk, follows official snippet at https://goo.gl/nnHHQa.
-		return;
-	}
+		// Check conditionally to see if we're activating the current theme and that WooCommerce is installed.
+		if ( ! isset( $_GET['activated'] ) || 'themes.php' !== $pagenow || ! class_exists( 'WooCommerce' ) ) { // phpcs:ignore WordPress.CSRF.NonceVerification.NoNonceVerification -- low risk, follows official snippet at https://goo.gl/nnHHQa.
+			return;
+		}
 
-	genesis_advanced_update_woocommerce_image_dimensions();
+		genesis_advanced_update_woocommerce_image_dimensions();
 
-}, 1 );
+	}, 1
+);
 
 /**
  * Define the WooCommerce image sizes on WooCommerce activation
@@ -124,16 +134,18 @@ add_action( 'after_switch_theme', function () {
  *
  * @param string $plugin The path of the plugin being activated.
  */
-add_action( 'activated_plugin', function ( $plugin ) {
+add_action(
+	'activated_plugin', function ( $plugin ) {
 
-	// Checks to see if WooCommerce is being activated.
-	if ( 'woocommerce/woocommerce.php' !== $plugin ) {
-		return;
-	}
+		// Checks to see if WooCommerce is being activated.
+		if ( 'woocommerce/woocommerce.php' !== $plugin ) {
+			return;
+		}
 
-	genesis_advanced_update_woocommerce_image_dimensions();
+		genesis_advanced_update_woocommerce_image_dimensions();
 
-}, 10, 2 );
+	}, 10, 2
+);
 
 /**
  * Update WooCommerce image dimensions
@@ -159,15 +171,17 @@ function genesis_advanced_update_woocommerce_image_dimensions() {
  * @param array $size The gallery image size and crop arguments.
  * @return array The modified gallery image size and crop arguments.
  */
-add_filter( 'woocommerce_get_image_size_gallery_thumbnail', function ( $size ) {
+add_filter(
+	'woocommerce_get_image_size_gallery_thumbnail', function ( $size ) {
 
-	$size =
-	[
-		'width'  => 180,
-		'height' => 180,
-		'crop'   => 1,
-	];
+		$size =
+		[
+			'width'  => 180,
+			'height' => 180,
+			'crop'   => 1,
+		];
 
-	return $size;
+		return $size;
 
-} );
+	}
+);

@@ -22,11 +22,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param int $size Original icon size.
  * @return int Modified icon size.
  */
-add_filter( 'genesis_author_box_gravatar_size', function ( $size ) {
+add_filter(
+	'genesis_author_box_gravatar_size', function ( $size ) {
 
-	return 90;
+		return 90;
 
-} );
+	}
+);
 
 /**
  * Modify the size of the Gravatar in the entry comments
@@ -36,9 +38,11 @@ add_filter( 'genesis_author_box_gravatar_size', function ( $size ) {
  * @param array $args Gravatar settings.
  * @return array Gravatar settings with modified size.
  */
-add_filter( 'genesis_comment_list_args', function ( $args ) {
+add_filter(
+	'genesis_comment_list_args', function ( $args ) {
 
-	$args['avatar_size'] = 60;
-	return $args;
+		$args['avatar_size'] = 60;
+		return $args;
 
-} );
+	}
+);

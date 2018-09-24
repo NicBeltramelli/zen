@@ -22,12 +22,14 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param array $classes Original body classes.
  * @return array Modified body classes.
  */
-add_filter( 'body_class', function ( $classes ) {
+add_filter(
+	'body_class', function ( $classes ) {
 
-	$classes[] = 'landing-page';
-	return $classes;
+		$classes[] = 'landing-page';
+		return $classes;
 
-} );
+	}
+);
 
 /* Remove Skip Links */
 remove_action( 'genesis_before_header', 'genesis_skip_links', 5 );
@@ -37,11 +39,13 @@ remove_action( 'genesis_before_header', 'genesis_skip_links', 5 );
  *
  * @since 3.0.0
  */
-add_action( 'wp_enqueue_scripts', function () {
+add_action(
+	'wp_enqueue_scripts', function () {
 
-	wp_dequeue_script( 'skip-links' );
+		wp_dequeue_script( 'skip-links' );
 
-} );
+	}
+);
 
 /* Force full width content layout */
 add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );

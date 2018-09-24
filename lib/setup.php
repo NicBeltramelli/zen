@@ -19,11 +19,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 3.0.0
  */
-add_action( 'after_setup_theme', function () {
+add_action(
+	'after_setup_theme', function () {
 
 		load_child_theme_textdomain( 'genesis-advanced', get_stylesheet_directory() . '/languages' );
 
-} );
+	}
+);
 
 /* Define child theme constants (do not remove) */
 define( 'CHILD_THEME_NAME', 'Genesis Advanced' );
