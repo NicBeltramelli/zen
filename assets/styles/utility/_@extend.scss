@@ -64,6 +64,16 @@
 
 /* Box Shadow
 --------------------------------------------- */
+%box-shadow-default {
+
+	@include box-shadow (0, 0, 20px, rgba(0,0,0,0.05), false);
+}
+
+%box-shadow-dark {
+
+	@include box-shadow (0, 2px, 2px, color(dark, trans), false);
+}
+
 %box-shadow-light {
 
 	@include box-shadow (0, 0, 2px, color(light, base), false);
