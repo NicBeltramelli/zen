@@ -50,9 +50,7 @@ add_action(
 		.entry-title a:hover,
 		.genesis-nav-menu a:focus,
 		.genesis-nav-menu a:hover,
-		.genesis-nav-menu .current-menu-item > a,
-		.genesis-nav-menu .sub-menu .current-menu-item > a:focus,
-		.genesis-nav-menu .sub-menu .current-menu-item > a:hover,
+		.genesis-nav-menu .menu-item.current-menu-item > a,
 		.menu-toggle:focus,
 		.menu-toggle:hover,
 		.sub-menu-toggle:focus,
@@ -80,12 +78,16 @@ add_action(
 		input[type="submit"]:focus,
 		input[type="submit"]:hover,
 		.button:focus,
-		.button:hover,
-		.genesis-nav-menu > .menu-highlight > a:hover,
-		.genesis-nav-menu > .menu-highlight > a:focus,
-		.genesis-nav-menu > .menu-highlight.current-menu-item > a {
-			background-color: %s;
-			color: %s;
+		.button:hover {
+			background-color: %1$s;
+		}
+
+		@media only screen and (min-width: 900px) {
+			.genesis-nav-menu > .menu-item.menu-highlight > a:hover,
+			.genesis-nav-menu > .menu-item.menu-highlight > a:focus,
+			.genesis-nav-menu > .menu-item.menu-highlight.current-menu-item > a {
+				background-color: %1$s;
+			}
 		}
 		', $color_accent, genesis_advanced_color_contrast( $color_accent )
 		) : '';
@@ -122,7 +124,7 @@ add_action(
 			text-align: center;
 		}
 
-		@media only screen and (min-width: 960px) {
+		@media only screen and (min-width: 900px) {
 			.wp-custom-logo .nav-primary {
 				text-align: center;
 			}
