@@ -46,3 +46,18 @@ add_filter(
 
 	}
 );
+
+/**
+ * Add single sost navigation
+ *
+ * @since 3.0.0
+ */
+add_action(
+	'genesis_before_while', function () {
+
+		if ( is_singular( 'post' ) ) {
+			genesis_prev_next_post_nav();
+		}
+
+	}
+);
