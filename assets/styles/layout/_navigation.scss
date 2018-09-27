@@ -1,0 +1,272 @@
+/**
+* Navigation
+*
+*	- Site Navigation
+*	- Responsive Menu
+*	- Header Menu
+*	- Footer Menu
+*/
+
+/* Site Navigation
+--------------------------------------------- */
+
+.genesis-nav-menu {
+	clear: both;
+	width: 100%;
+
+	a {
+		display: block;
+		font-family: $base-font-sans;
+		color: color(dark, base);
+		outline-offset: -1px;
+		text-decoration: none;
+		padding-bottom: space(xxs);
+		padding-top: space(xxs);
+
+		@extend %font-size-s;
+
+		&:focus,
+		&:hover {
+			color: color(primary, base);
+			text-decoration: none;
+		}
+	}
+
+	.sub-menu {
+		width: 100%;
+		clear: both;
+		display: none;
+		left: -9999px;
+		margin: 0;
+		opacity: 1;
+		padding-left: space(xs);
+		position: static;
+		z-index: 99;
+
+		@include mq($from: tablet) {
+			width: 180px;
+			border-top: 1px solid color(border);
+			opacity: 0;
+			padding-left: 0;
+			position: absolute;
+
+			.sub-menu {
+				margin: -(space(m)) 0 0 179px;
+			}
+		}
+
+		a {
+			width: 100%;
+			background: color(light, soft);
+			position: relative;
+			word-wrap: break-word;
+			padding-right: 3rem;
+
+			@include mq($from: tablet) {
+				width: 180px;
+				border: 1px solid color(border);
+				border-top: 0;
+				padding-right: 0;
+			}
+
+		}
+	}
+
+	.menu-item {
+		display: block;
+		float: none;
+		position: relative;
+
+		&:hover > .sub-menu,
+		&.sfHover > ul.sub-menu,
+		a:focus + ul.sub-menu {
+			left: auto;
+			opacity: 1;
+		}
+
+		&.current-menu-item {
+
+			> a {
+				color: color(primary, base);
+				text-decoration: none;
+			}
+		}
+
+		@include mq($from: tablet) {
+			display: inline-block;
+
+			&.menu-bold {
+
+				> a {
+					font-weight: 700;
+				}
+			}
+
+			&.menu-highlight {
+				margin-left: 1.5rem;
+
+				> a {
+					background: color(dark, base);
+					color: color(light, soft);
+					border-radius: $base-border-radius;
+					font-weight: 700;
+					padding-left: space(xs);
+					padding-right: space(xs);
+
+					&:focus,
+					&:hover {
+						background-color: color(primary, base);
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Responsive Menu
+--------------------------------------------- */
+
+.js {
+
+	.genesis-responsive-menu {
+		display: none;
+
+		@include mq($from: tablet) {
+			display: block;
+		}
+	}
+}
+
+.menu-toggle {
+	float: none;
+	margin: 0 auto;
+	padding: 1.5rem 0;
+	position: relative;
+	z-index: 1000;
+
+	&::before {
+		float: left;
+		margin-right: 5px;
+		position: relative;
+	}
+
+	&.activated::before {
+		content: "\f335";
+	}
+
+	@include mq($from: small-phone) {
+		float: right;
+	}
+}
+
+.sub-menu-toggle {
+	float: right;
+	padding: space(xs);
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 100;
+
+	&::before {
+		display: inline-block;
+		text-rendering: auto;
+		transform: rotate(0);
+		transition: transform 0.25s ease-in-out;
+	}
+
+	&.activated::before {
+		transform: rotate(180deg);
+	}
+}
+
+.menu-toggle,
+.sub-menu-toggle {
+	background-color: transparent;
+	border-width: 0;
+	color: color(dark, base);
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+	text-align: center;
+	visibility: visible;
+
+	@extend %font-size-s;
+
+	&:focus,
+	&:hover {
+		color: color(primary, base);
+		background-color: transparent;
+	}
+
+	&::before {
+		font-size: 2rem;
+		line-height: line-height(s);
+		width: auto;
+		height: auto;
+		text-rendering: auto;
+	}
+
+	@include mq($from: tablet) {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+/* Header Menu
+--------------------------------------------- */
+
+.nav-primary {
+	clear: left;
+	width: 100%;
+
+	@include mq($from: tablet) {
+		clear: none;
+		float: right;
+		padding-top: space(xs);
+		padding-bottom: space(xs);
+		width: auto;
+	}
+
+	.genesis-nav-menu {
+		padding-bottom: space(xs);
+
+		@include mq($from: small-phone) {
+			padding-top: space(xs);
+		}
+
+		@include mq($from: tablet) {
+			padding: 0;
+		}
+
+		.menu-item > a {
+			padding-bottom: space(xs);
+			padding-top: space(xs);
+
+			@include mq($from: tablet) {
+				padding: space(xxs) 1.5rem;
+			}
+		}
+	}
+}
+
+/* Footer Menu
+--------------------------------------------- */
+
+.nav-secondary {
+	padding-top: space(xs);
+	padding-bottom: space(xs);
+
+	.genesis-nav-menu {
+
+		.menu-item {
+			display: inline-block;
+			margin-bottom: space(xs);
+
+			a {
+				margin-left: 1.5rem;
+				margin-right: 1.5rem;
+				padding: 0;
+			}
+		}
+	}
+}
