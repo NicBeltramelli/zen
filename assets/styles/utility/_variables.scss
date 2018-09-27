@@ -21,6 +21,7 @@
 --------------------------------------------- */
 
 $mq-breakpoints: (
+	small-phone:	375px,
 	phone:			600px,
 	admin-bar:		782px,
 	tablet:			900px,
@@ -63,21 +64,21 @@ $base-font-sizes: (
 	// Nested values
 	// See: https://www.modularscale.com/?1.6&rem&1.125
 	phone: (
-		xxl:		2.278rem,
+		xxl:		3.244rem,	// Skip intermediate values
 		xl:			2.025rem,
 		l:			1.8rem,
-		m:			1.6rem,     // base value: 16px - ratio: 1.125
+		m:			1.6rem,		// Base value: 16px - ratio: 1.125
 		s:			1.422rem,
 		xs:			1.264rem
 	),
-	// See: https://www.modularscale.com/?1.333&rem&1.333
+	// See: https://www.modularscale.com/?1.333&rem&1.2
 	tablet: (
-		xxl:		3.157rem,
-		xl:			2.369rem,
-		l:			1.777rem,
-		m:			1.333rem,  // base value: 18px - ratio: 1.333
-		s:			1rem,
-		xs:			0.75rem
+		xxl:		3.317rem,	// Skip intermediate values
+		xl:			1.92rem,
+		l:			1.6rem,
+		m:			1.333rem,	// Base value: 18px - ratio: 1.2
+		s:			1.111rem,
+		xs:			0.926rem
 	)
 );
 
@@ -87,11 +88,11 @@ $base-font-sizes: (
 // Common values for all breakpoints (multiple of grid height)
 $base-line-height: (
 	xxl:			4rem,
-	xl:				4rem,
+	xl:				2rem,
 	l:				2rem,
 	m:				2rem,
 	s:				2rem,
-	xs:				2rem
+	xs:				1rem
 );
 
 /* Spaces
