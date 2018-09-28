@@ -34,9 +34,7 @@
 	z-index: 100000; /* Above WP toolbar */
 	text-decoration: none;
 	border: none;
-	padding: space(inset-squish, xxs);
 
-	@extend %font-size-s;
 	@extend %box-shadow-dark;
 }
 
