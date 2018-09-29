@@ -15,7 +15,7 @@
 
 	// Entry
 	.entry {
-		margin: space(stack, s);
+		margin: space(stack, m);
 
 		.entry-content {
 
@@ -71,10 +71,6 @@
 			background-color: color(light, base);
 			padding: space(s);
 		}
-
-		@include mq($from: tablet) {
-			margin: space(stack, m);
-		}
 	}
 
 	// Pagination
@@ -125,7 +121,7 @@
 	.entry-comments,
 	.comment-respond,
 	.entry-pings {
-		margin: space(stack, s);
+		margin: space(stack, m);
 
 		@include mq($from: tablet) {
 			margin: space(stack, m);
@@ -137,15 +133,19 @@
 		ol.comment-list {
 
 			li {
-				margin: space(stack, m);
+				margin: space(stack, s);
 				padding: space(left, s);
 
 				&.depth-1 {
+					margin: space(stack, m);
 					padding: 0;
 				}
 
 				article {
+					background: color(light, trans);
+					border-radius: $base-border-radius;
 					margin: space(stack, s);
+					padding: space(s);
 
 					.comment-header {
 						margin-bottom: space(s);
@@ -164,6 +164,13 @@
 								list-style-type: disc;
 							}
 						}
+					}
+
+					.comment-meta,
+					.comment-edit-link,
+					.comment-reply {
+
+						@extend %font-size-s;
 					}
 				}
 			}
