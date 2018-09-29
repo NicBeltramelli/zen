@@ -9,11 +9,15 @@ table {
 
 td,
 th {
-	background: color(light, base);
 	text-align: left;
 	padding: space(xs);
 }
 
+td {
+	background: color(light, trans);
+}
+
 th {
+	background: color(light, base);
 	font-family: $base-font-sans;
 }
