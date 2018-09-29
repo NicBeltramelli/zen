@@ -48,7 +48,7 @@ add_filter(
 );
 
 /**
- * Add single sost navigation
+ * Add single post navigation
  *
  * @since 3.0.0
  */
@@ -58,6 +58,23 @@ add_action(
 		if ( is_singular( 'post' ) ) {
 			genesis_prev_next_post_nav();
 		}
+
+	}
+);
+
+/**
+ * Disable Comments URL field
+ *
+ * @since 3.0.0
+ *
+ * @param array $fiels Default comment fields.
+ * @return array Comment form fields.
+ */
+add_filter(
+	'comment_form_default_fields', function ( $fields ) {
+
+		unset( $fields['url'] );
+		return $fields;
 
 	}
 );
