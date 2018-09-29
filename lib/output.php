@@ -64,27 +64,27 @@ add_action(
 		/* Output accent color inline css */
 		$css .= ( genesis_advanced_customizer_get_default_accent_color() !== $color_accent ) ? sprintf(
 			'
-
-		button:focus,
-		button:hover,
-		input[type="button"]:focus,
-		input[type="button"]:hover,
-		input[type="reset"]:focus,
-		input[type="reset"]:hover,
-		input[type="submit"]:focus,
-		input[type="submit"]:hover,
-		input[type="reset"]:focus,
-		input[type="reset"]:hover,
-		input[type="submit"]:focus,
-		input[type="submit"]:hover,
-		.button:focus,
-		.button:hover {
+		.button.accent,
+		a.button.accent,
+		button.accent,
+		input[type="button"].accent,
+		input[type="reset"].accent,
+		input[type="submit"].accent {
 			background-color: %1$s;
 		}
 
+		.button.outline.accent,
+		a.button.outline.accent,
+		button.outline.accent,
+		input[type="button"].outline.accent,
+		input[type="reset"].outline.accent,
+		input[type="submit"].outline.accent {
+			border-color: %1$s;
+			color: %1$s;
+		}
+
 		@media only screen and (min-width: 900px) {
-			.genesis-nav-menu > .menu-item.menu-highlight > a:hover,
-			.genesis-nav-menu > .menu-item.menu-highlight > a:focus,
+			.genesis-nav-menu > .menu-item.menu-highlight > a,
 			.genesis-nav-menu > .menu-item.menu-highlight.current-menu-item > a {
 				background-color: %1$s;
 			}
