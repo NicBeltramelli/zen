@@ -1,0 +1,19 @@
+/* Tables
+--------------------------------------------- */
+
+table {
+	border-spacing: space(xxs);
+	margin: space(stack, m);
+	width: 100%;
+}
+
+td,
+th {
+	background: color(light, base);
+	text-align: left;
+	padding: space(xs);
+}
+
+th {
+	font-family: $base-font-sans;
+}
