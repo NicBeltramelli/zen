@@ -1,0 +1,64 @@
+/* Forms
+--------------------------------------------- */
+
+input,
+select,
+textarea {
+	background: color(light, soft);
+	border: 1px solid color(border);
+	border-radius: $base-border-radius;
+	color: color(dark, base);
+	font-weight: 400;
+	padding: space(xs);
+	width: 100%;
+
+	@extend %font-size-m;
+}
+
+input {
+	height: space(m); // Preserve height despite border
+
+	&[type="checkbox"],
+	&[type="image"],
+	&[type="radio"] {
+		margin: 0;
+		padding: 0;
+		width: auto;
+	}
+
+	&[type="checkbox"],
+	&[type="radio"] {
+		height: space(s); // Preserve height despite border
+	}
+}
+
+input[type="search"] {
+
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-results-button {
+		display: none;
+	}
+}
+
+textarea {
+	height: space(xxl); // Preserve height despite border
+}
+
+input,
+textarea {
+
+	&:focus {
+		border: 1px solid color(dark, soft);
+		outline: none;
+		transition: all $base-transition;
+	}
+}
+
+::-moz-placeholder {
+	color: color(dark, base);
+	opacity: 1;
+}
+
+::-webkit-input-placeholder {
+	color: color(dark, base);
+}
