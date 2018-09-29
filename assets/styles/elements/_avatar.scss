@@ -1,0 +1,29 @@
+/* Avatar
+--------------------------------------------- */
+
+.avatar {
+	border-radius: 50%;
+	float: left;
+}
+
+.author-box {
+
+	.avatar,
+	.avatar {
+		margin-right: space(s);
+	}
+}
+
+.alignright {
+
+	.avatar {
+		margin-left: space(s);
+	}
+}
+
+.comment {
+
+	.avatar {
+		margin: 0 space(xs) space(s) 0;
+	}
+}
