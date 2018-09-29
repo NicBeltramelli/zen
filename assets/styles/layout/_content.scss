@@ -19,10 +19,17 @@
 
 		.entry-content {
 
+			p {
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
 			ol,
 			ul {
 				margin-bottom: space(s);
-				margin-left: space(s);
+				margin-left: space(m);
 			}
 
 			ol {
@@ -130,27 +137,32 @@
 		ol.comment-list {
 
 			li {
-				padding: space(s) 0 0 space(xs);
+				margin: space(stack, m);
+				padding: space(left, s);
 
 				&.depth-1 {
-					padding-left: 0;
+					padding: 0;
 				}
 
-				.comment-header {
-					margin-bottom: space(s);
+				article {
+					margin: space(stack, s);
 
-					p {
-						margin-bottom: 0;
+					.comment-header {
+						margin-bottom: space(s);
+
+						p {
+							margin-bottom: 0;
+						}
 					}
-				}
 
-				.comment-content {
-					clear: both;
+					.comment-content {
+						clear: both;
 
-					ul {
+						ul {
 
-						> li {
-							list-style-type: disc;
+							> li {
+								list-style-type: disc;
+							}
 						}
 					}
 				}
@@ -160,17 +172,35 @@
 
 	.comment-respond {
 
-		input {
-
-			&[type="email"],
-			&[type="text"],
-			&[type="url"] {
-				width: 50%;
-			}
-		}
-
 		label {
 			display: block;
+		}
+
+		.comment-form-author,
+		.comment-form-email {
+			float: left;
+			margin-left: $margin-left;
+			width: $one-half;
+		}
+
+		.comment-form-author {
+			clear: both;
+			margin-left: 0;
+		}
+
+		.comment-form-cookies-consent {
+			float: left;
+			clear: both;
+
+			input,
+			label {
+				display: inline-block;
+			}
+
+			input {
+				margin-right: space(xs);
+				vertical-align: middle;
+			}
 		}
 	}
 

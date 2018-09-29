@@ -191,7 +191,7 @@ $base-space: (
 // See: https://coolors.co/cccccc-0073e5-ed254e-00a878-1b1b1b
 $dark:				#1b1b1b;
 $light:				#ccc;
-$primary:			#0073e5;
+$accent:			#0073e5;
 $danger:			#ed254e;
 $success:			#00a878;
 $stars:				#e6c229;
@@ -217,11 +217,11 @@ $base-colors: (
 		strong:		darken($light, $color-shade-amount),
 		trans:		transparentize($light, $color-trans-amount)
 	),
-	primary: (
-		base:		$primary,
-		soft:		lighten($primary, $color-shade-amount),
-		strong:		darken($primary, $color-shade-amount),
-		trans:		transparentize($primary, $color-trans-amount)
+	accent: (
+		base:		$accent,
+		soft:		lighten($accent, $color-shade-amount),
+		strong:		darken($accent, $color-shade-amount),
+		trans:		transparentize($accent, $color-trans-amount)
 	),
 	danger: (
 		base:		$danger,

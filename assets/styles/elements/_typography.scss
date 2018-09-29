@@ -33,28 +33,8 @@ body {
 	margin: 0;
 }
 
-button {
-	transition: all $base-transition;
-}
-
-input {
-
-	&:focus,
-	&[type="button"],
-	&[type="reset"],
-	&[type="submit"] {
-		transition: all $base-transition;
-	}
-}
-
-textarea:focus,
-.button,
-.gallery img {
-	transition: all $base-transition;
-}
-
 a {
-	color: color(primary, base);
+	color: color(accent, base);
 	text-decoration: underline;
 	transition: color $base-transition, background-color $base-transition;
 
@@ -118,6 +98,20 @@ blockquote {
 		@extend %font-size-xl;
 		left: -(space(s));
 		top: -(space(xs));
+	}
+}
+
+label,
+.small {
+
+	@extend %font-size-s;
+}
+
+label {
+	font-family: $base-font-sans;
+
+	.required {
+		color: color(danger, base);
 	}
 }
 

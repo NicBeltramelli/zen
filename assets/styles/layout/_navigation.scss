@@ -27,7 +27,7 @@
 
 		&:focus,
 		&:hover {
-			color: color(primary, base);
+			color: color(accent, base);
 			text-decoration: none;
 		}
 	}
@@ -87,7 +87,7 @@
 		&.current-menu-item {
 
 			> a {
-				color: color(primary, base);
+				color: color(accent, base);
 				text-decoration: none;
 			}
 		}
@@ -112,10 +112,12 @@
 					font-weight: 700;
 					padding-left: space(xs);
 					padding-right: space(xs);
+					transition: all $base-transition;
 
 					&:focus,
 					&:hover {
-						background-color: color(primary, base);
+						box-shadow: inset 0 0 0 20rem rgba(0, 0, 0, 0.1), 0 2rem 2rem rgba(0, 0, 0, 0.1);
+						opacity: 1;
 					}
 				}
 			}
@@ -194,7 +196,7 @@
 
 	&:focus,
 	&:hover {
-		color: color(primary, base);
+		color: color(accent, base);
 		background-color: transparent;
 	}
 

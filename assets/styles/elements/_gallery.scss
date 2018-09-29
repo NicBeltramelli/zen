@@ -4,6 +4,10 @@
 .gallery {
 	overflow: hidden;
 
+	img {
+		transition: all $base-transition;
+	}
+
 	.gallery-item {
 		float: left;
 		margin: space(stack, s);
