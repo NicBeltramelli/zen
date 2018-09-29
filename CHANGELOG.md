@@ -1,6 +1,22 @@
 # Genesis Advanced Theme Changelog
 
-## [dev] - 
+## [master] - 
+* Rewrite theme style sheets
+* Fix the genesis responsive menu flashing on mobile
+* Add consistent classes to the body tag
+* Fix php sniff violations
+* Add composer script for php code beautifier and fixer
+* Add theme assets
+* Add webpack configuration
+* Add stylelint configuration
+* Add ESLint configuring 
+* Update phpcs ruleset
+* Use a valid SPDX license identifier
+* Add yarn configuration
+* Add landing page template
+* Add front page template
+* Rewrite WooCommerce functions 
+* Rewrite theme php library 
 * Update compatibility up to PHP 5.4 version
 * Configure composer export script for distribution
 * Rebranding as Genesis Advanced
