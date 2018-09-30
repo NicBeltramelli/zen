@@ -130,8 +130,12 @@
 
 .js {
 
-	.genesis-responsive-menu {
-		display: none;
+	nav {
+		display: none; // Prevent responsive menu flashing on mobile
+
+		&.nav-secondary {
+			display: block;
+		}
 
 		@include mq($from: tablet) {
 			display: block;
@@ -141,6 +145,7 @@
 
 .menu-toggle {
 	float: none;
+	height: auto; // Prevent height of default buttons
 	margin: 0 auto;
 	padding: 1.5rem 0;
 	position: relative;
@@ -196,8 +201,9 @@
 
 	&:focus,
 	&:hover {
-		color: color(accent, base);
 		background-color: transparent;
+		box-shadow: none; // Prevent box shadow of default buttons
+		color: color(accent, base);
 	}
 
 	&::before {
