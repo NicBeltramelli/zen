@@ -5,6 +5,8 @@ table {
 	border-spacing: space(xxs);
 	margin: space(stack, m);
 	width: 100%;
+
+	@extend %font-size-s-break; // Break vertical rhythm.
 }
 
 td,

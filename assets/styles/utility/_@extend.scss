@@ -53,7 +53,33 @@
 	}
 }
 
+/* -------------------------------------------
+* Decrease the line height to appear better in some contexts.
+* It will break the vertical rhythm.
+--------------------------------------------- */
+%font-size-s-break {
+	font-size: font-size(phone, s);
+	line-height: line-height(xs);
+
+	@include mq($from: tablet) {
+		font-size: font-size(tablet, s);
+	}
+}
+
 %font-size-xs {
+	font-size: font-size(phone, xs);
+	line-height: line-height(s);
+
+	@include mq($from: tablet) {
+		font-size: font-size(tablet, xs);
+	}
+}
+
+/* -------------------------------------------
+* Decrease the line height to appear better in some contexts.
+* It will break the vertical rhythm.
+--------------------------------------------- */
+%font-size-xs-break {
 	font-size: font-size(phone, xs);
 	line-height: line-height(xs);
 

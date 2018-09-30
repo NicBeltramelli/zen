@@ -239,6 +239,7 @@ p.entry-meta {
 
 	.entry-meta {
 		border-top: 1px solid color(border);
+		margin-top: -1px; // Compensate border
 		padding-top: space(s);
 	}
 }
