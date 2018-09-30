@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 add_filter(
 	'genesis_author_box_gravatar_size', function ( $size ) {
 
-		return 90;
+		return 80;
 
 	}
 );
@@ -41,7 +41,7 @@ add_filter(
 add_filter(
 	'genesis_comment_list_args', function ( $args ) {
 
-		$args['avatar_size'] = 60;
+		$args['avatar_size'] = 80;
 		return $args;
 
 	}
@@ -78,3 +78,6 @@ add_filter(
 
 	}
 );
+
+/* Display author box on single posts */
+add_filter( 'get_the_author_genesis_author_box_single', '__return_true' );
