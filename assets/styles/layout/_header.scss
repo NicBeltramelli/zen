@@ -10,11 +10,11 @@
 
 .site-header {
 	background-color: color(light, soft);
-	padding: 0 space(s);
 
 	@extend %box-shadow-default;
 
 	@include mq($from: tablet) {
+		padding: space(column, s);
 		position: fixed;
 		width: 100%;
 		z-index: 9999;
@@ -24,6 +24,27 @@
 			margin: 0 auto;
 		}
 	}
+
+	.genesis-responsive-menu {
+		padding-left: space(s);
+		padding-right: space(s);
+
+		@include mq($from: tablet) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	.menu-toggle {
+
+		@include mq($from: small-phone) {
+			padding-right: space(s);
+		}
+
+		@include mq($from: tablet) {
+			padding-right: 0;
+		}
+	}
 }
 
 /* Title Area
@@ -31,13 +52,18 @@
 
 .title-area {
 	float: left;
-	padding: 1.5rem 0;
+	padding: space(left, s);
+
+	@include mq($from: tablet) {
+		padding: 0;
+	}
 }
 
 .site-title {
 	font-family: $base-font-sans;
 	font-weight: 700;
 	margin-bottom: 0;
+	padding: 1.5rem 0;
 
 	@extend %font-size-l;
 
@@ -61,6 +87,11 @@
 			float: left;
 			margin-top: 0;
 			text-align: inherit;
+			padding: space(left, s);
+		}
+
+		@include mq($from: tablet) {
+			padding: 0;
 		}
 
 		img {
