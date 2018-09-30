@@ -4,26 +4,13 @@
 .avatar {
 	border-radius: 50%;
 	float: left;
-}
-
-.author-box {
-
-	.avatar,
-	.avatar {
-		margin-right: space(s);
-	}
+	width: space(l);
+	margin: space(right, xs);
 }
 
 .alignright {
 
 	.avatar {
-		margin-left: space(s);
-	}
-}
-
-.comment {
-
-	.avatar {
-		margin: 0 space(xs) space(s) 0;
+		margin: space(left, xs);
 	}
 }
