@@ -17,16 +17,16 @@
 @import "elements/reset";
 @import "elements/accessibility";
 @import "elements/typography";
+@import "elements/titles";
 @import "elements/objects";
 @import "elements/gallery";
 @import "elements/forms";
 @import "elements/buttons";
 @import "elements/tables";
-@import "elements/avatar";
+@import "elements/wordpress";
 @import "elements/genesis";
 @import "elements/search-form";
-@import "elements/titles";
-@import "elements/wordpress";
+@import "elements/avatar";
 
 /* layout */
 @import "layout/structure";
@@ -34,3 +34,4 @@
 @import "layout/navigation";
 @import "layout/content";
 @import "layout/widgets";
+@import "layout/sidebar";
