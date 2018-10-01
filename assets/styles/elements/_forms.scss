@@ -16,7 +16,7 @@ textarea {
 }
 
 input {
-	height: space(m); // Preserve height despite border
+	height: space(m); // Preserve height despite border.
 
 	&[type="checkbox"],
 	&[type="image"],
@@ -28,7 +28,7 @@ input {
 
 	&[type="checkbox"],
 	&[type="radio"] {
-		height: space(s); // Preserve height despite border
+		height: space(s); // Preserve height despite border.
 	}
 }
 
@@ -41,7 +41,7 @@ input[type="search"] {
 }
 
 textarea {
-	height: space(xxl); // Preserve height despite border
+	height: space(xxl); // Preserve height despite border.
 }
 
 input,
