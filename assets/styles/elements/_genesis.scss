@@ -2,17 +2,24 @@
 --------------------------------------------- */
 
 .after-entry,
-.archive-description,
 .author-box {
 	margin-bottom: space(m);
+
+	@extend %box-shadow-default;
 }
 
 .after-entry {
-	padding: space(inset-squish, s);
+	padding: space(s);
 
-	@extend %box-shadow-default;
+	@include mq($from: tablet) {
+		padding: space(inset-squish, s);
+	}
 
 	.widget:last-of-type {
+		margin-bottom: 0;
+	}
+
+	p:last-of-type {
 		margin-bottom: 0;
 	}
 }
@@ -25,10 +32,29 @@
 	padding-bottom: space(m);
 }
 
-.archive-description,
 .author-box {
 
-	&:last-child {
-		margin-bottom: 0;
+	background: color(light, trans);
+	padding: space(s);
+
+	@include mq($from: tablet) {
+		padding: space(inset-squish, s);
+	}
+
+	.author-box-title {
+		padding-top: space(s);
+	}
+
+	.author-box-content {
+		clear: both;
+		float: left;
+		padding-top: space(xs);
+
+		p {
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
 	}
 }

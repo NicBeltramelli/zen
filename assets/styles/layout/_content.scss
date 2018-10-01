@@ -18,6 +18,7 @@
 		margin: space(stack, m);
 
 		.entry-content {
+			margin: space(stack, s);
 
 			p {
 
@@ -68,8 +69,11 @@
 		}
 
 		&.sticky {
-			background-color: color(light, base);
+			background-color: color(light, trans);
+			border-radius: $base-border-radius;
 			padding: space(s);
+
+			@extend %box-shadow-default;
 		}
 	}
 
@@ -147,11 +151,21 @@
 					margin: space(stack, s);
 					padding: space(s);
 
+					@extend %box-shadow-default;
+
 					.comment-header {
-						margin-bottom: space(s);
+						margin-bottom: space(xs);
 
 						p {
 							margin-bottom: 0;
+
+							&.comment-author {
+
+								span:nth-of-type(1) {
+									font-family: $base-font-sans;
+									font-weight: 700;
+								}
+							}
 						}
 					}
 
