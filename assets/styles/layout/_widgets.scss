@@ -1,0 +1,60 @@
+/* Widgets
+--------------------------------------------- */
+
+.widget {
+
+	margin: space(stack, m);
+
+	p {
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	li {
+
+		li {
+			border: 0;
+			margin: space(left, s);
+			padding: 0;
+		}
+	}
+
+	ol {
+
+		> li {
+			list-style-position: inside;
+			list-style-type: decimal;
+			padding-left: space(s);
+			text-indent: -(space(s));
+		}
+	}
+
+	ul {
+
+		li {
+			margin: space(stack, s);
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&.widget_calendar {
+
+		table {
+			width: 100%;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+
+			td,
+			th {
+				text-align: center;
+			}
+		}
+	}
+}

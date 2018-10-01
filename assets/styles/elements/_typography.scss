@@ -115,6 +115,14 @@ label {
 	}
 }
 
+caption {
+	font-family: $base-font-sans;
+	font-weight: 700;
+	margin: space(stack, s);
+
+	@extend %font-size-m;
+}
+
 /* Headings
 --------------------------------------------- */
 
