@@ -1,4 +1,12 @@
-/* Genesis
+/**
+* Genesis
+*
+*	- After Entry & Author Box
+*	- Breadcrumbs
+*	- Featured Content
+*/
+
+/* After Entry & Author Box
 --------------------------------------------- */
 
 .after-entry,
@@ -24,14 +32,6 @@
 	}
 }
 
-.breadcrumb {
-	border-bottom: 1px solid color(border);
-	font-size: 16px;
-	font-size: 1.6rem;
-	margin-bottom: calc(4rem - 1px); // Compensate border.
-	padding-bottom: space(m);
-}
-
 .author-box {
 
 	background: color(light, trans);
@@ -55,6 +55,61 @@
 			&:last-child {
 				margin-bottom: 0;
 			}
+		}
+	}
+}
+
+/* Breadcrumbs
+--------------------------------------------- */
+
+.breadcrumb {
+	border-bottom: 1px solid color(border);
+	font-size: 16px;
+	font-size: 1.6rem;
+	margin-bottom: calc(4rem - 1px); // Compensate border.
+	padding-bottom: space(m);
+}
+
+/* Featured Content
+--------------------------------------------- */
+
+.featured-content {
+
+	.entry {
+		border-bottom: 1px solid color(border);
+		margin: space(stack, s);
+		padding: space(stack, s);
+
+		&:last-of-type {
+			border-bottom: none;
+			margin-bottom: 0;
+		}
+
+		img {
+			height: space(xl);
+			width: space(xl);
+
+			@include mq($from: tablet) {
+				height: space(l);
+				width: space(l);
+			}
+		}
+
+		a {
+
+			&.alignleft,
+			&.alignright {
+				margin-bottom: 0;
+			}
+		}
+
+		.entry-title {
+			margin-bottom: 0;
+		}
+
+		.entry-content {
+
+			@extend %font-size-s-break; // Break vertical rhythm.
 		}
 	}
 }
