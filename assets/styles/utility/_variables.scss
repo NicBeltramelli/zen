@@ -92,7 +92,7 @@ $base-line-height: (
 	l:				2rem,
 	m:				2rem,
 	s:				2rem,
-	xs:				1.5rem,		// Break vertical rhythm
+	xs:				1.5rem		// Break vertical rhythm
 );
 
 /* Spaces
@@ -116,6 +116,15 @@ $base-space: (
 		s:			0 0 2rem 0,
 		xs:			0 0 1rem 0,
 		xxs:		0 0 0.5rem 0
+	),
+	top: (
+		xxl:		12rem 0 0 0,
+		xl:			8rem 0 0 0,
+		l:			6rem 0 0 0,
+		m:			4rem 0 0 0,
+		s:			2rem 0 0 0,
+		xs:			1rem 0 0 0,
+		xxs:		0.5rem 0 0 0
 	),
 	left: (
 		xxl:		0 0 0 12rem,

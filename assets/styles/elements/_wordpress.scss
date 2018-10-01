@@ -83,7 +83,7 @@ a {
 .gallery-caption,
 .wp-caption-text {
 	font-weight: 700;
-	margin: 0;
+	margin: space(top, xxs);
 	text-align: center;
 
 	@extend %font-size-s-break; // Break vertical rhythm.
