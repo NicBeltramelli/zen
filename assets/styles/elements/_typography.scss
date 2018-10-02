@@ -123,6 +123,15 @@ caption {
 	@extend %font-size-m;
 }
 
+i,
+.dashicons {
+	height: auto;
+	text-decoration: none;
+	width: auto;
+
+	@extend %font-size-l;
+}
+
 /* Headings
 --------------------------------------------- */
 

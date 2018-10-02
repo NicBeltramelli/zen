@@ -23,6 +23,10 @@
 		padding: space(inset-squish, s);
 	}
 
+	.widget-title {
+		text-align: center;
+	}
+
 	.widget:last-of-type {
 		margin-bottom: 0;
 	}

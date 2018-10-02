@@ -30,7 +30,7 @@
 			ol,
 			ul {
 				margin-bottom: space(s);
-				margin-left: space(m);
+				margin-left: space(s);
 			}
 
 			ol {
@@ -82,6 +82,8 @@
 		clear: both;
 		margin: space(divider, m);
 
+		font-family: $base-font-sans;
+
 		&.archive-pagination {
 
 			ul li {
@@ -116,8 +118,23 @@
 			}
 		}
 
+		// Single post pagination
 		&.adjacent-entry-pagination {
-			margin-bottom: 0;
+			margin-bottom: space(s);
+
+			@include mq($from: tablet) {
+				padding: space(column, m);
+			}
+
+			.pagination-previous,
+			.pagination-next {
+				clear: both;
+				float: left;
+				font-weight: 700;
+				margin: space(stack, s);
+				text-align: center;
+				width: 100%;
+			}
 		}
 	}
 
@@ -136,7 +153,7 @@
 
 		ol.comment-list {
 
-			li {
+			li.comment {
 				margin: space(stack, s);
 				padding: space(left, s);
 
@@ -172,10 +189,31 @@
 					.comment-content {
 						clear: both;
 
+						ol,
+						ul {
+							margin-bottom: space(s);
+							margin-left: space(s);
+						}
+
+						ol {
+
+							> li {
+								list-style-type: decimal;
+							}
+
+							ol {
+								margin-bottom: 0;
+							}
+						}
+
 						ul {
 
 							> li {
 								list-style-type: disc;
+							}
+
+							ul {
+								margin-bottom: 0;
 							}
 						}
 					}
