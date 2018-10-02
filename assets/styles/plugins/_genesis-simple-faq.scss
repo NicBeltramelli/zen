@@ -1,0 +1,43 @@
+/* Genesis Simple FAQ
+--------------------------------------------- */
+
+.gs-faq {
+	margin-top: -5px; // Compensate inline padding.
+	margin-bottom: -5px; // Compensate inline padding.
+
+	.gs-faq__question {
+		background: color(light, trans);
+		color: color(dark, strong);
+
+		margin: space(top, xs); // Break vertical rhythm.
+
+		&:first-of-type {
+			margin-top: 0;
+		}
+
+		&:focus,
+		&:hover {
+			background: color(light, base);
+		}
+
+		&::after {
+			content: "\f132";
+			font-family: dashicons; // stylelint-disable-line font-family-no-missing-generic-family-keyword
+			float: right;
+		}
+
+		&.gs-faq--expanded {
+			background: color(light, base);
+
+			@extend %box-shadow-buttons;
+
+			&::after {
+				content: "\f460";
+			}
+		}
+	}
+
+	.gs-faq__answer {
+		margin: calc(2rem - 5px) calc(1rem - 5px); // Compensate inline padding.
+	}
+}
