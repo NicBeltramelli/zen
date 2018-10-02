@@ -28,10 +28,13 @@
 @import "elements/search-form";
 @import "elements/avatar";
 
-/* layout */
+/* Layout */
 @import "layout/structure";
 @import "layout/header";
 @import "layout/navigation";
 @import "layout/content";
 @import "layout/widgets";
 @import "layout/sidebar";
+
+/* Plugins */
+@import "plugins/genesis-enews-extended";

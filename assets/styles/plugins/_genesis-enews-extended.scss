@@ -1,0 +1,64 @@
+/* Genesis eNews Extended
+--------------------------------------------- */
+
+.enews-widget {
+
+	.enews {
+		float: left;
+		clear: both;
+
+		input {
+			margin: space(stack, xs); // Break vertical rhythm.
+
+			&[type="submit"] {
+				margin: 0;
+				width: 100%;
+			}
+		}
+
+		form + p {
+			margin-top: space(s);
+		}
+
+		.enews-privacy {
+			clear: both;
+			float: left;
+			margin: space(top, xs);
+			width: 100%;
+		}
+	}
+}
+
+.sidebar {
+
+	.enews {
+		background: color(light, trans);
+		padding: space(s);
+
+		@extend %box-shadow-default;
+
+	}
+}
+
+.after-entry {
+
+	.enews-widget {
+
+		.enews {
+			text-align: center;
+			width: 100%;
+
+			@include mq($from: phone) {
+				padding: space(column, m);
+			}
+
+			form {
+				margin: space(top, s);
+			}
+
+			input {
+				text-align: center;
+			}
+		}
+	}
+}
