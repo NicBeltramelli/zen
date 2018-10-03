@@ -6,5 +6,12 @@
 /* Import everything from autoload */
 @import "./autoload/**/*";
 
+/* Import styles */
+
+/* Utility */
+@import "utility/functions";
+@import "utility/mixins";
+@import "utility/@extend";
+
 /* Import WooCommerce styles */
-@import "plugins/woocommerce";
+@import "plugins/woocommerce/woocommerce-global";
