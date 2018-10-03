@@ -1,0 +1,16 @@
+/* Alerts
+--------------------------------------------- */
+
+.alert {
+	border: 1px solid color(danger, base);
+	border-radius: $base-border-radius;
+	color: color(danger, base);
+	margin-bottom: calc(2rem - 2px); // Compensate border.
+	padding: space(xs);
+
+	@extend %font-size-s;
+
+	@include mq($from: tablet) {
+		text-align: center;
+	}
+}
