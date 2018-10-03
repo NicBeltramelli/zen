@@ -15,30 +15,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Enqueue the theme's custom WooCommerce styles to the WooCommerce plugin
- *
- * @since 3.0.0
- *
- * @param array $enqueue_styles The WooCommerce styles to enqueue.
- * @return array Modified WooCommerce styles to enqueue.
- */
-add_filter(
-	'woocommerce_enqueue_styles', function ( $enqueue_styles ) {
-
-		$enqueue_styles['genesis-advanced-woocommerce-styles'] =
-		[
-			'src'     => genesis_advanced_asset_path( 'styles/woocommerce.css' ),
-			'deps'    => '',
-			'version' => CHILD_THEME_VERSION,
-			'media'   => 'screen',
-		];
-
-		return $enqueue_styles;
-
-	}
-);
-
-/**
  * Add the themes's custom CSS to the WooCommerce stylesheet
  *
  * @since 3.0.0
