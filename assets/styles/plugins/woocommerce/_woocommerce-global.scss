@@ -28,6 +28,7 @@
 		border-radius: 0;
 		font-family: $base-font-sans;
 		min-height: auto;
+		padding: space(inset-squish, xxs);
 
 		@extend %font-size-s;
 	}

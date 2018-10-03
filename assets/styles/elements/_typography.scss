@@ -36,7 +36,7 @@ body {
 a {
 	color: color(accent, base);
 	text-decoration: underline;
-	transition: color $base-transition, background-color $base-transition;
+	transition: $base-transition;
 
 	&:focus,
 	&:hover {
