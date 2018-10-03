@@ -65,10 +65,10 @@ add_filter(
 		];
 
 		if ( in_array( $current, $layouts['one-sidebar'], true ) ) {
-			return '1200px';
+			return '900px';
 		}
 
-		return '860px';
+		return '600px'; // Show mobile styles immediately.
 
 	}
 );
