@@ -69,7 +69,7 @@ add_theme_support(
 /* Add custom logo in Customizer > Site Identity */
 add_theme_support(
 	'custom-logo', [
-		'height'      => 67,
+		'height'      => 67.5,
 		'width'       => 350,
 		'flex-height' => true,
 		'flex-width'  => true,
