@@ -63,7 +63,7 @@
 	font-family: $base-font-sans;
 	font-weight: 700;
 	margin-bottom: 0;
-	padding: 1.5rem 0;
+	padding: space(divider, s);
 
 	@extend %font-size-l;
 
@@ -78,20 +78,20 @@
 	.title-area {
 		float: none;
 		text-align: center;
-		margin-top: 1.5rem;
+		margin-top: space(xs);
 		max-width: 350px;
-		height: 5rem;
-		padding: 0;
+		height: 6rem;
+		padding: space(xxs);
 
 		@include mq($from: small-phone) {
 			float: left;
 			margin-top: 0;
 			text-align: inherit;
-			padding: space(left, s);
+			padding: space(xxs) 0  space(xxs) space(s);
 		}
 
 		@include mq($from: tablet) {
-			padding: 0;
+			padding: space(divider, xxs);
 		}
 
 		img {

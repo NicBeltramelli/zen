@@ -3,6 +3,7 @@
 
 .sidebar {
 	display: none;
+	margin: space(stack, m);
 
 	@extend %font-size-s;
 
@@ -12,6 +13,14 @@
 
 	.widget {
 		margin: space(stack, m);
+
+		&.widget_search {
+			margin: space(stack, s);
+		}
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
 
 		ul {
 

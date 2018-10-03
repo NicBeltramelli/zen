@@ -12,10 +12,11 @@
 --------------------------------------------- */
 
 .content {
+	margin: space(stack, m);
 
 	// Entry
 	.entry {
-		margin: space(stack, m);
+		margin: space(stack, l);
 
 		.entry-content {
 			margin: space(stack, s);
@@ -126,13 +127,20 @@
 				clear: both;
 				float: left;
 				font-weight: 700;
-				margin: space(stack, s);
 				text-align: center;
 				width: 100%;
 
 				@include mq($from: tablet) {
 					padding: space(column, m);
 				}
+			}
+
+			.pagination-previous {
+				margin: space(stack, s);
+			}
+
+			.pagination-next {
+				margin-bottom: 0;
 			}
 		}
 	}

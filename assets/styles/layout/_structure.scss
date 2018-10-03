@@ -33,10 +33,10 @@
 .site-inner {
 	clear: both;
 	margin: 0 auto;
-	padding: 3rem space(s) 0;
+	padding: space(s) space(s) 0;
 
 	@include mq($from: tablet) {
-		margin-top: 5rem;
+		margin: space(top, l);
 		max-width: breakpoint(desktop);
 		padding-left: space(m);
 		padding-right: space(m);

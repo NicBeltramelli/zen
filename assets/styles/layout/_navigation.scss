@@ -67,6 +67,7 @@
 				border: 1px solid color(border);
 				border-top: 0;
 				padding-right: 0;
+				line-height: line-height(xs);
 			}
 
 		}
@@ -147,7 +148,7 @@
 	float: none;
 	height: auto; // Prevent height of default buttons.
 	margin: 0 auto;
-	padding: 1.5rem 0;
+	padding: space(s) 0;
 	position: relative;
 	z-index: 1000;
 
@@ -251,7 +252,7 @@
 			padding-top: space(xs);
 
 			@include mq($from: tablet) {
-				padding: space(xxs) 1.5rem;
+				padding: space(xs) 1.5rem;
 			}
 		}
 	}

@@ -8,10 +8,10 @@
 		clear: both;
 
 		input {
-			margin: space(stack, xs); // Break vertical rhythm.
+			margin: space(stack, xs);
 
 			&[type="submit"] {
-				margin: 0;
+				margin: space(top, xs);
 				width: 100%;
 			}
 		}

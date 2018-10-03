@@ -81,12 +81,13 @@
 
 	.entry {
 		border-bottom: 1px solid color(border);
-		margin: space(stack, s);
+		margin-bottom: calc(4rem - 1px); // Compensate border.
 		padding: space(stack, s);
 
 		&:last-of-type {
 			border-bottom: none;
 			margin-bottom: 0;
+			padding-bottom: 0;
 		}
 
 		img {
