@@ -15,13 +15,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Disable WooCommerce Default CSS
- *
- * @since 3.0.0
- */
-add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
-
-/**
  * Enqueue the theme's custom WooCommerce styles to the WooCommerce plugin
  *
  * @since 3.0.0
