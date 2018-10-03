@@ -3,8 +3,8 @@
 *
 *	- Site Navigation
 *	- Responsive Menu
-*	- Header Menu
 *	- Footer Menu
+*	- Header Menu
 */
 
 /* Site Navigation
@@ -15,13 +15,13 @@
 	width: 100%;
 
 	a {
+		color: color(dark, base);
 		display: block;
 		font-family: $base-font-sans;
-		color: color(dark, base);
 		outline-offset: -1px;
-		text-decoration: none;
 		padding-bottom: space(xxs);
 		padding-top: space(xxs);
+		text-decoration: none;
 
 		@extend %font-size-s;
 
@@ -33,7 +33,6 @@
 	}
 
 	.sub-menu {
-		width: 100%;
 		clear: both;
 		display: none;
 		left: -9999px;
@@ -41,14 +40,15 @@
 		opacity: 1;
 		padding-left: space(xs);
 		position: static;
+		width: 100%;
 		z-index: 99;
 
 		@include mq($from: tablet) {
-			width: 180px;
 			border-top: 1px solid color(border);
 			opacity: 0;
 			padding-left: 0;
 			position: absolute;
+			width: 180px;
 
 			.sub-menu {
 				margin: -(space(m)) 0 0 179px;
@@ -56,18 +56,18 @@
 		}
 
 		a {
-			width: 100%;
 			background: color(light, soft);
 			position: relative;
-			word-wrap: break-word;
 			padding-right: 3rem;
+			width: 100%;
+			word-wrap: break-word;
 
 			@include mq($from: tablet) {
-				width: 180px;
 				border: 1px solid color(border);
 				border-top: 0;
-				padding-right: 0;
 				line-height: line-height(xs);
+				padding-right: 0;
+				width: 180px;
 			}
 
 		}
@@ -108,11 +108,11 @@
 
 				> a {
 					background: color(dark, base);
-					color: color(light, soft);
 					border-radius: $base-border-radius;
+					color: color(light, soft);
 					font-weight: 700;
-					padding-left: space(xs);
-					padding-right: space(xs);
+					margin: 0;
+					padding: 0.5rem, 1.5rem;
 					transition: all $base-transition;
 
 					&:focus,
@@ -209,15 +209,38 @@
 
 	&::before {
 		font-size: 2rem;
-		line-height: line-height(s);
-		width: auto;
 		height: auto;
+		line-height: line-height(s);
 		text-rendering: auto;
+		width: auto;
 	}
 
 	@include mq($from: tablet) {
 		display: none;
 		visibility: hidden;
+	}
+}
+
+/* Footer Menu
+--------------------------------------------- */
+
+.nav-secondary {
+	padding: 1.5rem 0;
+
+	.genesis-nav-menu {
+
+		.menu-item {
+			display: inline-block;
+
+			> a {
+				margin: 0 1.5rem;
+
+				@include mq($from: tablet) {
+					margin: 0;
+					padding: space(xxs) 1.5rem;
+				}
+			}
+		}
 	}
 }
 
@@ -231,8 +254,8 @@
 	@include mq($from: tablet) {
 		clear: none;
 		float: right;
-		padding-top: space(xs);
 		padding-bottom: space(xs);
+		padding-top: space(xs);
 		width: auto;
 	}
 
@@ -247,32 +270,26 @@
 			padding: 0;
 		}
 
-		.menu-item > a {
-			padding-bottom: space(xs);
-			padding-top: space(xs);
-
-			@include mq($from: tablet) {
-				padding: space(xs) 1.5rem;
-			}
-		}
-	}
-}
-
-/* Footer Menu
---------------------------------------------- */
-
-.nav-secondary {
-	padding: space(divider, s);
-
-	.genesis-nav-menu {
-
 		.menu-item {
-			display: inline-block;
 
-			a {
-				margin-left: 1.5rem;
-				margin-right: 1.5rem;
-				padding: 0;
+			> a {
+				padding-bottom: space(xs);
+				padding-top: space(xs);
+
+				@include mq($from: tablet) {
+					padding: space(xs) 1.5rem;
+				}
+			}
+
+			&.menu-highlight {
+
+				> a {
+
+					@include mq($from: tablet) {
+						margin: space(divider, xxs);
+						padding: space(xxs) 1.5rem;
+					}
+				}
 			}
 		}
 	}
