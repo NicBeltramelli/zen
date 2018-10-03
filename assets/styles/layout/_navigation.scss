@@ -261,14 +261,12 @@
 --------------------------------------------- */
 
 .nav-secondary {
-	padding-top: space(xs);
-	padding-bottom: space(xs);
+	padding: space(divider, s);
 
 	.genesis-nav-menu {
 
 		.menu-item {
 			display: inline-block;
-			margin-bottom: space(xs);
 
 			a {
 				margin-left: 1.5rem;

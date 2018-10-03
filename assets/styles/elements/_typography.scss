@@ -45,9 +45,17 @@ a {
 	}
 }
 
-p {
+p,
+dl,
+dd,
+pre {
 	margin: space(stack, s);
 	padding: 0;
+}
+
+dt {
+	font-family: $base-font-sans;
+	font-weight: 700;
 }
 
 ol,

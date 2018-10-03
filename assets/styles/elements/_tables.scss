@@ -3,7 +3,7 @@
 
 table {
 	border-spacing: space(xxs);
-	margin: space(stack, m);
+	margin: space(stack, s);
 	width: 100%;
 
 	@extend %font-size-s-break; // Break vertical rhythm.

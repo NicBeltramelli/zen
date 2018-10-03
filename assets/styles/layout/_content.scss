@@ -95,7 +95,6 @@
 					cursor: pointer;
 					display: inline-block;
 					font-weight: 700;
-					margin: space(stack, xxs);
 					padding: space(inset-squish, xxs);
 					text-decoration: none;
 
@@ -120,11 +119,7 @@
 
 		// Single post pagination
 		&.adjacent-entry-pagination {
-			margin-bottom: space(s);
-
-			@include mq($from: tablet) {
-				padding: space(column, m);
-			}
+			margin: space(divider, m);
 
 			.pagination-previous,
 			.pagination-next {
@@ -134,6 +129,10 @@
 				margin: space(stack, s);
 				text-align: center;
 				width: 100%;
+
+				@include mq($from: tablet) {
+					padding: space(column, m);
+				}
 			}
 		}
 	}
