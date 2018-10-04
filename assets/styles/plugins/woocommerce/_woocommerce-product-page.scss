@@ -17,6 +17,26 @@
 		span.price {
 			color: color(accent, base);
 			font-family: $base-font-sans;
+
+			@extend %font-size-l;
+		}
+
+		.woocommerce-product-rating,
+		.woocommerce-variation-price,
+		form.cart {
+			margin-bottom: space(s);
+		}
+
+		.woocommerce-product-rating,
+		.product_meta {
+
+			@extend %font-size-s;
+		}
+
+		div.images,
+		div.summary,
+		.woocommerce-tabs {
+			margin: space(stack, m);
 		}
 
 		form.cart {
@@ -30,16 +50,13 @@
 			}
 		}
 
-		.woocommerce-variation-price {
-			margin-bottom: space(s);
-		}
-
 		// Product Tabs
 		.woocommerce-tabs {
 			padding: 0;
 
 			ul.tabs {
 				padding: 0;
+				margin: space(stack, s);
 
 				&::before,
 				li {
@@ -72,6 +89,10 @@
 						}
 					}
 				}
+			}
+
+			.panel {
+				margin: space(stack, s);
 			}
 		}
 	}
