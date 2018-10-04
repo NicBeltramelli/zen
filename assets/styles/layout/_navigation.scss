@@ -121,6 +121,13 @@
 						opacity: 1;
 					}
 				}
+
+				&.current-menu-item {
+
+					> a {
+						color: color(light, soft);
+					}
+				}
 			}
 		}
 	}
