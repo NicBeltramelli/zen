@@ -1,4 +1,11 @@
-/* WooCommerce Shop Page
+/**
+* WooCommerce Shop Page
+*
+*	- Shop
+*		- Pagination
+*/
+
+/* Shop
 --------------------------------------------- */
 
 .woocommerce {
@@ -41,7 +48,8 @@
 		}
 	}
 
-	// Pagination
+	/* Pagination */
+
 	nav.woocommerce-pagination {
 		clear: both;
 		font-family: $base-font-sans;
