@@ -1,7 +1,17 @@
-/* WooCommerce Cart Page
+/**
+* WooCommerce Cart Page
+*
+*	- Cart
+*		- Cart Table
+*		- Cart Collaterals
+*/
+
+/* Cart
 --------------------------------------------- */
 
 .woocommerce-cart {
+
+	/* Cart Table */
 
 	table.cart {
 
@@ -132,6 +142,8 @@
 			}
 		}
 	}
+
+	/* Cart Collaterals */
 
 	.cart-collaterals {
 
