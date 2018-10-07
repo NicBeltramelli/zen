@@ -15,6 +15,9 @@
 
 /* Import WooCommerce styles */
 @import "plugins/woocommerce/woocommerce-global";
+@import "plugins/woocommerce/woocommerce-tables";
 @import "plugins/woocommerce/woocommerce-product-gallery";
 @import "plugins/woocommerce/woocommerce-shop-page";
 @import "plugins/woocommerce/woocommerce-product-page";
+@import "plugins/woocommerce/woocommerce-cart-page";
+@import "plugins/woocommerce/woocommerce-checkout-page";

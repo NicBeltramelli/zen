@@ -1,0 +1,44 @@
+/* WooCommerce Tables
+--------------------------------------------- */
+
+.woocommerce {
+
+	table {
+
+		&.shop_table,
+		&.shop_table td {
+			border-radius: 0;
+			word-break: normal;
+
+			@extend %font-size-s;
+		}
+
+		&.shop_table {
+			border: 0;
+			margin: space(stack, m);
+
+			.order-number {
+				min-width: 75px;
+			}
+
+			th,
+			td {
+				font-family: $base-font-sans;
+			}
+
+			th {
+				padding: space(xs);
+
+				@include mq($from: phone) {
+					background: color(light, trans);
+				}
+			}
+
+			td {
+				border-bottom: 1px solid color(border);
+				border-top: 0;
+				padding: 1rem 1rem calc(1rem - 1px); // Compensate bottom border.
+			}
+		}
+	}
+}

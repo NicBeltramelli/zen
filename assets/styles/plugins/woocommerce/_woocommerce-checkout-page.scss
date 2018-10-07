@@ -1,0 +1,66 @@
+/* WooCommerce Checkout Page
+--------------------------------------------- */
+.woocommerce-checkout,
+#add_payment_method {
+
+	#payment {
+
+		ul.payment_methods {
+
+			li {
+				list-style-type: none;
+			}
+		}
+
+		div.form-row {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.woocommerce-checkout {
+
+	table {
+
+		&.woocommerce-checkout-review-order-table {
+
+			thead {
+
+				th {
+
+					@include mq($until: phone) {
+						background: color(light, trans);
+					}
+				}
+			}
+
+			tfoot {
+
+				tr {
+
+					th,
+					td {
+						border: 0;
+						padding: 1rem;
+					}
+
+					&.cart-subtotal {
+
+						th,
+						td {
+							background: color(light, soft);
+						}
+					}
+
+					&.order-total {
+
+						th,
+						td {
+							background: color(light, trans);
+						}
+					}
+				}
+			}
+		}
+	}
+}
