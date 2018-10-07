@@ -2,24 +2,25 @@
 --------------------------------------------- */
 
 table {
-	border-spacing: space(xxs);
+	border-spacing: 0;
 	margin: space(stack, s);
 	width: 100%;
-
-	@extend %font-size-s-break; // Break vertical rhythm.
 }
 
-td,
-th {
+th,
+td {
+	font-family: $base-font-sans;
 	text-align: left;
-	padding: space(xs);
 }
+
+th {
+	background: color(light, trans);
+	padding: 1rem;
+}
+
 
 td {
-	background: color(light, trans);
-}
-
-th {
-	background: color(light, base);
-	font-family: $base-font-sans;
+	border-bottom: 1px solid color(border);
+	border-top: 0;
+	padding: 1rem 1rem calc(1rem - 1px); // Compensate bottom border.
 }
