@@ -18,7 +18,7 @@ input[type="submit"] {
 	cursor: pointer;
 	font-weight: 700;
 	font-family: $base-font-sans;
-	height: 4rem; // Preserve height despite border width.
+	height: space(m); // Preserve height despite borders.
 	padding: space(inset-squish, xs);
 	text-decoration: none;
 	transition: all $base-transition;
