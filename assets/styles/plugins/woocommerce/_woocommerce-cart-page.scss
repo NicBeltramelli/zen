@@ -101,8 +101,12 @@
 
 				.quantity {
 
-					input {
+					.qty {
+						margin-right: 0;
 						height: space(s);
+						padding: space(column, xxs);
+
+						@extend %font-size-s;
 					}
 				}
 			}
@@ -129,14 +133,8 @@
 						margin: space(stack, xs);
 					}
 
-					input.input-text {
-						border-color: color(border);
+					.input-text {
 						margin: space(right, xxs);
-						padding: 1rem;
-
-						@include mq($from: small-phone) {
-							width: auto;
-						}
 					}
 				}
 			}

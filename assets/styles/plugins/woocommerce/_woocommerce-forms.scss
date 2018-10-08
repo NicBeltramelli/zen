@@ -1,0 +1,116 @@
+/* WooCommerce Forms
+--------------------------------------------- */
+
+.woocommerce {
+
+	a.button,
+	button.button,
+	input.button,
+	#respond input#submit {
+		background-color: color(dark, base);
+		border: none;
+		border-radius: $base-border-radius;
+		color: color(light, soft);
+		cursor: pointer;
+		font-weight: 700;
+		font-family: $base-font-sans;
+		padding: space(inset-squish, xs);
+		text-decoration: none;
+		transition: all $base-transition;
+		white-space: normal;
+		width: auto;
+
+		@extend %font-size-s;
+
+		&:focus,
+		&:hover {
+			opacity: 1;
+
+			@extend %box-shadow-buttons;
+		}
+
+		&.disabled,
+		&:disabled,
+		&:disabled[disabled] {
+			background: color(light, strong);
+			color: color(light, soft);
+			padding: space(inset-squish, xs);
+
+			&:focus,
+			&:hover {
+				background: color(light, strong);
+				box-shadow: none;
+				color: color(light, soft);
+			}
+		}
+	}
+
+	#reviews {
+
+		#comment {
+			height: 10rem;
+		}
+	}
+
+	.quantity {
+
+		.qty {
+			margin-right: space(xxs);
+			padding: space(xs);
+			width: space(l);
+
+			@extend %font-size-m;
+		}
+	}
+
+	form {
+
+		.form-row {
+
+			input.input-text,
+			textarea {
+				padding: space(inset-squish, xs);
+
+				@extend %font-size-m;
+			}
+		}
+
+		&.checkout_coupon,
+		&.login,
+		&.register,
+		.form-row .select2-container,
+		.form-row.woocommerce-validated input.input-text,
+		.form-row.woocommerce-validated select,
+		.form-row.woocommerce-validated .select2-container {
+			border-color: color(border);
+			border-radius: 0;
+		}
+	}
+}
+
+.woocommerce-cart,
+.woocommerce-checkout,
+#add_payment_method {
+
+	table.cart {
+
+		td.actions {
+
+			.coupon {
+
+				.input-text {
+					border-color: color(border);
+					padding: space(xs);
+
+					@include mq($from: small-phone) {
+						width: auto;
+					}
+				}
+			}
+		}
+
+		input {
+			vertical-align: middle;
+		}
+	}
+}
