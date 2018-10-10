@@ -40,7 +40,7 @@ function genesis_advanced_customizer_get_default_link_color() {
  */
 function genesis_advanced_customizer_get_default_accent_color() {
 
-	return '#0073e5';
+	return '#d30c7b';
 
 }
 
