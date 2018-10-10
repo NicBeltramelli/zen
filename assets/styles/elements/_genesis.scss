@@ -68,10 +68,11 @@
 
 .breadcrumb {
 	border-bottom: 1px solid color(border);
-	font-size: 16px;
-	font-size: 1.6rem;
-	margin-bottom: calc(4rem - 1px); // Compensate border.
-	padding-bottom: space(m);
+	margin-top: -1px; // Compensate border.
+	margin-bottom: space(m);
+	padding-bottom: space(s);
+
+	@extend %font-size-s;
 }
 
 /* Featured Content

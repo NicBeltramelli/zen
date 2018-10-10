@@ -57,13 +57,13 @@ input[type="submit"] {
 		}
 	}
 
-	&.light {
-		background: color(dark, trans);
-		border-color: color(dark, trans);
+	&.info {
+		background: color(info, base);
+		border-color: color(info, base);
 
 		&.outline {
 			background-color: color(light, soft);
-			color: color(dark, trans);
+			color: color(info, base);
 		}
 	}
 
@@ -77,6 +77,16 @@ input[type="submit"] {
 		}
 	}
 
+	&.light {
+		background: color(light, strong);
+		border-color: color(light, strong);
+
+		&.outline {
+			background-color: color(light, soft);
+			color: color(dark, soft);
+		}
+	}
+
 	&.success {
 		background: color(success, base);
 		border-color: color(success, base);
@@ -84,6 +94,16 @@ input[type="submit"] {
 		&.outline {
 			background-color: color(light, soft);
 			color: color(success, base);
+		}
+	}
+
+	&.warning {
+		background: color(warning, base);
+		border-color: color(warning, base);
+
+		&.outline {
+			background-color: color(light, soft);
+			color: color(warning, base);
 		}
 	}
 }

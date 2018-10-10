@@ -200,16 +200,18 @@ $base-space: (
 // See: https://coolors.co/cccccc-0073e5-ed254e-00a878-1b1b1b
 $dark:				#1b1b1b;
 $light:				#e3e3e3;
-$accent:			#0073e5;
+$accent:			#d30c7b;
+$info:				#0073e5;
 $danger:			#ed254e;
+$star:				#f2ff49;
 $success:			#00a878;
-$stars:				#e6c229;
+$warning:			#f15025;
 
 // Variations
 $color-shade-amount: 25%;
 $color-trans-amount: 0.6;
 
-// Map
+// Colors Map
 $base-colors: (
 	border:			$light,
 	outline:		transparentize($dark, $color-trans-amount),
@@ -232,11 +234,23 @@ $base-colors: (
 		strong:		darken($accent, $color-shade-amount),
 		trans:		transparentize($accent, $color-trans-amount)
 	),
+	info: (
+		base:		$info,
+		soft:		lighten($info, $color-shade-amount),
+		strong:		darken($info, $color-shade-amount),
+		trans:		transparentize($info, $color-trans-amount)
+	),
 	danger: (
 		base:		$danger,
 		soft:		lighten($danger, $color-shade-amount),
 		strong:		darken($danger, $color-shade-amount),
 		trans:		transparentize($danger, $color-trans-amount)
+	),
+	star: (
+		base:		$star,
+		soft:		lighten($star, $color-shade-amount),
+		strong:		darken($star, $color-shade-amount),
+		trans:		transparentize($star, $color-trans-amount)
 	),
 	success: (
 		base:		$success,
@@ -244,11 +258,11 @@ $base-colors: (
 		strong:		darken($success, $color-shade-amount),
 		trans:		transparentize($success, $color-trans-amount)
 	),
-	stars: (
-		base:		$stars,
-		soft:		lighten($stars, $color-shade-amount),
-		strong:		darken($stars, $color-shade-amount),
-		trans:		transparentize($stars, $color-trans-amount)
+	warning: (
+		base:		$warning,
+		soft:		lighten($warning, $color-shade-amount),
+		strong:		darken($warning, $color-shade-amount),
+		trans:		transparentize($warning, $color-trans-amount)
 	)
 );
 
@@ -262,7 +276,7 @@ $base-border-radius: 3px;
 
 $base-transition: 0.2s ease-in-out;
 
-/* Columns width
+/* Columns Width
 --------------------------------------------- */
 
 $margin-left:		2.564102564102564%;

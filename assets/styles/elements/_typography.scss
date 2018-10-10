@@ -34,7 +34,7 @@ body {
 }
 
 a {
-	color: color(accent, base);
+	color: color(info, base);
 	text-decoration: underline;
 	transition: $base-transition;
 
@@ -90,7 +90,7 @@ i {
 }
 
 mark {
-	background: color(light, strong);
+	background: color(star, base);
 	color: color(dark, strong);
 }
 
