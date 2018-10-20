@@ -15,37 +15,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Enqueue the theme's custom WooCommerce styles to the WooCommerce plugin
+ * Enqueue custom WooCommerce style
  *
  * @since 3.0.0
- *
- * @param array $enqueue_styles The WooCommerce styles to enqueue.
- * @return array Modified WooCommerce styles to enqueue.
  */
-add_filter(
-	'woocommerce_enqueue_styles', function ( $enqueue_styles ) {
+add_action(
+	'wp_enqueue_scripts', function () {
 
-		$enqueue_styles['genesis-advanced-woocommerce-styles'] =
-		[
-			'src'     => genesis_advanced_asset_path( 'styles/woocommerce.css' ),
-			'deps'    => '',
-			'version' => CHILD_THEME_VERSION,
-			'media'   => 'screen',
-		];
+		if ( class_exists( 'woocommerce' ) ) {
 
-		return $enqueue_styles;
+			wp_enqueue_style(
+				'genesis-advanced-woocommerce-styles',
+				genesis_advanced_asset_path( 'styles/woocommerce.css' ),
+				false,
+				null
+			);
+
+		}
 
 	}
 );
-
-/* Add product gallery support */
-if ( class_exists( 'WooCommerce' ) ) {
-
-	add_theme_support( 'wc-product-gallery-lightbox' );
-	add_theme_support( 'wc-product-gallery-slider' );
-	add_theme_support( 'wc-product-gallery-zoom' );
-
-}
 
 /**
  * Print an inline script to the footer to keep products the same height
@@ -67,6 +56,15 @@ add_action(
 
 	}, 99
 );
+
+/* Add product gallery support */
+if ( class_exists( 'WooCommerce' ) ) {
+
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+
+}
 
 /**
  * Modify the WooCommerce breakpoints
