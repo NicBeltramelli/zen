@@ -1,0 +1,206 @@
+/**
+* WooCommerce Widgets
+*
+*	- Product Search
+*	- Product List
+*	- Shopping Cart Widget
+*	- Layered Nav Widget
+*	- Price Filter Widget
+*	- Rating Filter Widget
+*/
+
+/* Product Search */
+
+.woocommerce-product-search {
+	overflow: hidden;
+	width: 100%;
+
+	button[type="submit"] {
+		border: 0;
+		clip: rect(0, 0, 0, 0);
+		height: 1px;
+		margin: -1px;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+}
+
+.woocommerce {
+
+	/* Product List */
+
+	ul.cart_list,
+	ul.product_list_widget {
+
+		li {
+			padding: 0;
+			margin: space(stack, s);
+
+			img {
+				margin-left: space(xxs);
+				width: space(l);
+				height: auto;
+				box-shadow: none;
+			}
+
+			dl {
+				border: 0;
+				font-family: $base-font-sans;
+				margin: space(left, xxs);
+				padding: 0;
+
+				dt,
+				dd {
+					margin-bottom: 0;
+					padding-bottom: 0;
+				}
+			}
+		}
+	}
+
+	/* Shopping Cart Widget */
+
+	&.widget_shopping_cart,
+	.widget_shopping_cart {
+
+		.total {
+			border-top: 1px solid color(border);
+			padding: calc(2rem - 1px) 0 0; // Compensate top border.
+
+			strong {
+				display: inline-block;
+			}
+
+			.amount {
+				float: right;
+			}
+		}
+
+		.cart_list li {
+
+			a.remove {
+
+				@extend %font-size-s;
+			}
+		}
+
+		.buttons {
+			text-align: right;
+
+			a {
+				margin-bottom: 0;
+				margin-left: space(xxs);
+			}
+		}
+	}
+
+	/* Layered Nav Widget */
+
+	.woocommerce-widget-layered-nav-list {
+		margin: inherit;
+
+		.woocommerce-widget-layered-nav-list__item {
+			padding: 0;
+
+			a,
+			span {
+				padding: 0;
+			}
+		}
+
+		.woocommerce-widget-layered-nav-list__item--chosen a::before {
+			color: $red;
+		}
+	}
+
+	.woocommerce-widget-layered-nav-dropdown__submit {
+		margin-top: space(s);
+	}
+
+	.widget_layered_nav_filters ul {
+
+		li {
+			padding: 0;
+
+			a {
+
+				&::before {
+					color: $red;
+				}
+			}
+		}
+	}
+
+	/* Price Filter Widget */
+
+	.widget_price_filter {
+
+		.price_slider {
+			margin-bottom: calc(2rem - 0.5rem); // Compensate ui slider height.
+		}
+
+		.price_slider_amount {
+			font-family: $base-font-sans;
+			font-weight: 700;
+
+			@extend %font-size-s;
+
+			.button {
+
+				@extend %font-size-s;
+			}
+
+			.price_label {
+				padding: space(top, xs);
+			}
+		}
+
+		.ui-slider {
+
+			.ui-slider-handle {
+				background-color: $primary;
+			}
+
+			.ui-slider-range {
+				background-color: $primary;
+			}
+		}
+
+		.price_slider_wrapper .ui-widget-content {
+			background-color: $primary - #444;
+		}
+
+		.ui-slider-horizontal {
+			height: space(xxs);
+		}
+	}
+
+	/* Rating Filter Widget */
+
+	.widget_rating_filter {
+
+		ul {
+
+			li {
+				padding: 0;
+
+				a {
+					padding: 0;
+				}
+
+				.star-rating {
+					float: left;
+					margin-right: 1em;
+				}
+
+				&.chosen {
+
+					a::before {
+						color: $red;
+					}
+				}
+			}
+		}
+	}
+}

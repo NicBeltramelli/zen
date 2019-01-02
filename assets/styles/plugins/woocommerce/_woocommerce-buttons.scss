@@ -1,0 +1,95 @@
+/* WooCommerce Buttons */
+
+.woocommerce {
+
+	a.button,
+	button.button,
+	input.button,
+	#respond input#submit {
+		background-color: color(dark, base);
+		border-radius: $base-border-radius;
+		color: color(light, soft);
+		font-family: $base-font-sans;
+		padding: space(inset-squish, xs);
+		transition: all $base-transition;
+		white-space: normal;
+		width: auto;
+
+		@extend %font-size-s;
+
+		&.loading {
+			padding-right: 0;
+
+			&::after {
+				color: $primary;
+				right: -(space(s));
+				top: space(xxs);
+				vertical-align: middle;
+
+				@extend %font-size-xs;
+			}
+		}
+
+		&.added {
+
+			&::after {
+				margin-left: space(xs);
+				vertical-align: middle;
+
+				@extend %font-size-xs;
+			}
+		}
+
+		&:focus,
+		&:hover {
+			background-color: color(dark, base);
+			color: color(light, soft);
+			opacity: 1;
+
+			@extend %box-shadow-buttons;
+		}
+
+		&.alt {
+			background-color: $primary;
+			color: color(light, soft);
+			-webkit-font-smoothing: antialiased;
+
+			&:focus,
+			&:hover {
+				background-color: $primary;
+				opacity: 1;
+
+				@extend %box-shadow-buttons;
+			}
+
+			&.disabled,
+			&:disabled,
+			&:disabled[disabled] {
+				background-color: color(light, base);
+				color: color(dark, soft);
+				cursor: not-allowed;
+
+				&:hover {
+					background-color: color(light, base);
+					box-shadow: none;
+					color: color(dark, soft);
+				}
+			}
+		}
+
+		&.disabled,
+		&:disabled,
+		&:disabled[disabled] {
+			background-color: color(light, base);
+			color: color(dark, soft);
+			cursor: not-allowed;
+			padding: space(inset-squish, xs);
+
+			&:hover {
+				background-color: color(light, base);
+				box-shadow: none;
+				color: color(dark, soft);
+			}
+		}
+	}
+}

@@ -1,43 +1,148 @@
-/* WooCommerce Tables
---------------------------------------------- */
+/**
+* WooCommerce Tables
+*
+*	- Table Default
+*	- Table Shop Attributes
+*	- Table Account Orders
+*/
 
 .woocommerce {
 
-	table {
+	/* Table Default */
 
-		&.shop_table,
-		&.shop_table td {
-			border-radius: 0;
-			word-break: normal;
+	table.shop_table {
+		border-collapse: collapse;
+		border-radius: 0;
+		border-bottom: 0;
+		border-left: 0;
+		border-right: 0;
+		border-top: 1px solid color(border);
+		margin: -1px 0 space(m); // Compensate top border.
+		word-break: normal;
+
+		th,
+		td {
+			border-bottom: 1px solid color(border);
+			border-left: 1px solid color(border);
+			border-right: 1px solid color(border);
+			border-top: 0;
+			font-family: $base-font-sans;
+			padding: space(xs);
+			text-align: left;
+
+			@include mq($until: phone) {
+
+				padding-bottom: calc(1rem - 1px); // Compensate bottom border for small screen.
+			}
+		}
+
+		thead {
+
+			th {
+				text-transform: uppercase;
+			}
+		}
+
+		tfoot {
+
+			th,
+			td {
+				border-top: 0;
+			}
+
+			td {
+				font-weight: inherit;
+			}
+		}
+	}
+
+	td.product-name {
+
+		.variation {
+			font-weight: 400;
+			margin-left: space(xs);
 
 			@extend %font-size-s;
 		}
 
-		&.shop_table {
-			border: 0;
-			margin: space(stack, m);
+		p.backorder_notification {
 
-			.order-number {
-				min-width: 75px;
+			@extend %font-size-s;
+		}
+
+		ul.wc-item-meta {
+			margin-left: space(xs);
+
+			li {
+				list-style-type: none;
+			}
+		}
+	}
+
+	/* Table Shop Attributes */
+
+	table.shop_attributes {
+		border-collapse: collapse;
+		border-top: 1px solid color(border);
+		margin-bottom: calc(2rem - 1px); // Compensate top border.
+
+		th,
+		td {
+			border-bottom: 1px solid color(border);
+			font-style: inherit;
+			line-height: line-height(s);
+			padding: space(xs);
+
+			@include mq($until: phone) {
+
+				padding-bottom: calc(1rem - 1px); // Compensate bottom border for small screen.
 			}
 
-			th,
-			td {
-				font-family: $base-font-sans;
+			p {
+				padding: 0;
 			}
+		}
 
-			th {
-				padding: space(xs);
+		tr:nth-child(even) td,
+		tr:nth-child(even) th {
+			background: $even;
+		}
+	}
 
-				@include mq($from: phone) {
-					background: color(light, trans);
-				}
+	/* Table Account Orders */
+
+	table.my_account_orders {
+		border-collapse: collapse;
+
+		@extend %font-size-s;
+
+		th,
+		td {
+			border-bottom: 1px solid color(border);
+			border-top: 0;
+			font-family: $base-font-sans;
+			padding: space(xs);
+
+			@extend %font-size-s;
+
+			@include mq($until: phone) {
+
+				padding-bottom: calc(1rem - 1px); // Compensate bottom border for small screen.
 			}
+		}
 
-			td {
-				border-bottom: 1px solid color(border);
-				border-top: 0;
-				padding: 1rem 1rem calc(1rem - 1px); // Compensate bottom border.
+		.order-actions,
+		.woocommerce-orders-table__cell-order-actions {
+			text-align: center;
+			padding-bottom: space(xxs);
+			padding-top: space(xxs);
+
+			.button {
+				height: 3rem;
+				margin: 0;
+				padding: space(inset-squish, xxs);
+
+				@extend %font-size-xs;
 			}
 		}
 	}

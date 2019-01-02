@@ -1,59 +1,106 @@
-/* WooCommerce Global
---------------------------------------------- */
+/**
+* WooCommerce Global
+*
+*	- Store Notice
+*	- Typography
+*	- Breadcrumb
+*	- Product Remove
+*	- Product on Sale
+*/
 
-.woocommerce,
-.woocommerce-page {
+/* Store Notice */
 
-	&.full-width-content {
+.woocommerce-store-notice,
+p.demo_store {
+	padding: space(divider, xs);
+	text-align: center;
+	background-color: $primary;
+	color: $primarytext;
 
-		.content {
-			width: 100%;
-		}
+	@extend %box-shadow-default;
+	@extend %font-size-m;
+
+	a {
+		color: $primarytext;
+		text-decoration: underline;
 	}
 }
 
 .woocommerce {
 
-	.entry.product {
-		padding: 0;
-	}
+	/* Typography */
 
 	abbr.required,
 	ins {
 		text-decoration: none;
 	}
 
+	fieldset {
+		border: 2px solid color(border);
+		margin-bottom: space(s);
+		padding: calc(1rem - 1px) space(xs); // Compensate border.
+
+		legend {
+			font-family: $base-font-sans;
+			font-weight: 700;
+		}
+	}
+
+	small.note {
+		color: $subtext;
+		margin-top: 0;
+
+		@extend %font-size-s;
+	}
+
+	a {
+
+		&.added_to_cart {
+			padding: space(divider, xxs);
+
+			@extend %font-size-s;
+		}
+	}
+
+	.quantity,
+	.amount,
+	.total {
+		font-family: $base-font-sans;
+	}
+
+	/* Breadcrumb */
+
+	.woocommerce-breadcrumb {
+		color: $subtext;
+		margin-bottom: space(m);
+
+		@extend %font-size-s;
+
+		a {
+			color: $subtext;
+		}
+	}
+
+	/* Product Remove */
+
+	a.remove {
+		display: block;
+		height: space(s);
+		width: space(s);
+
+		@extend %font-size-xl;
+	}
+
+	/* Product on Sale */
+
 	span.onsale {
-		background-color: color(accent, base);
+		background-color: $primary;
 		border-radius: 0;
+		color: $highlightext;
 		font-family: $base-font-sans;
 		min-height: auto;
 		padding: space(inset-squish, xxs);
 
 		@extend %font-size-s;
-	}
-
-	fieldset {
-		margin-bottom: space(s);
-	}
-
-	.products {
-
-		.star-rating {
-			padding: space(xs);
-		}
-	}
-
-	p.stars {
-
-		a,
-		&:focus,
-		&:hover {
-			outline: 0;
-		}
-	}
-
-	.woocommerce-LoopProduct-link {
-		display: block;
 	}
 }

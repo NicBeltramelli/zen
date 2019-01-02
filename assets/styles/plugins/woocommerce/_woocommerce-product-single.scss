@@ -1,0 +1,268 @@
+/**
+* WooCommerce Product Single
+*
+*	- Product Gallery
+*	- Product Summary
+*	- Product Cart
+*	- Product Tabs
+*/
+
+.woocommerce {
+
+	div.product {
+
+		/* Product Gallery */
+
+		div.images {
+			margin: space(stack, m);
+
+			div.thumbnails {
+				padding-top: space(s);
+			}
+
+			.woocommerce-product-gallery__trigger {
+				border-width: 0;
+				right: space(xs);
+				top: space(xs);
+			}
+
+			.woocommerce-product-gallery {
+				overflow: hidden;
+
+				.flex-control-nav {
+					user-select: none;
+				}
+			}
+		}
+
+		/* Product Summary */
+
+		div.summary {
+			margin: space(stack, m);
+		}
+
+		span.price,
+		p.price {
+			color: color(dark, base);
+			font-family: $base-font-sans;
+			font-weight: 700;
+
+			@extend %font-size-m;
+		}
+
+		p.stock {
+
+			@extend %font-size-s;
+		}
+
+		.stock {
+			color: $highlight;
+		}
+
+		.out-of-stock {
+			color: $red;
+		}
+
+		.woocommerce-product-rating,
+		.woocommerce-variation-price,
+		div.social {
+			margin-bottom: space(s);
+		}
+
+		.woocommerce-product-rating,
+		.product_meta {
+
+			@extend %font-size-s;
+		}
+
+		.product_meta {
+			clear: both;
+			float: left;
+			font-family: $base-font-sans;
+			width: 100%;
+
+			> span {
+				clear: both;
+				float: left;
+				margin: space(stack, s);
+				width: 100%;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		/* Product Cart */
+
+		p.cart {
+			margin-bottom: space(s);
+		}
+
+		form.cart {
+			margin-bottom: space(s);
+
+			div.quantity {
+				margin: space(right, xxs);
+			}
+
+			table {
+				border-width: 0;
+			}
+
+			.variations {
+				margin-bottom: 0;
+				margin-top: space(xs);
+				table-layout: fixed;
+
+				td {
+					padding-top: 0;
+
+					@extend %font-size-s;
+
+					&.label {
+						padding-right: space(xs);
+						padding-top: space(xxs);
+						width: 30%;
+					}
+
+					&.value {
+						padding-right: 0;
+					}
+				}
+
+				select {
+					height: 3rem;
+					margin-right: 0;
+					padding: 0;
+				}
+			}
+
+			.reset_variations {
+				color: $red;
+				float: right;
+				font-weight: 700;
+				margin-bottom: -(space(xs));
+				padding: space(top, xs);
+				position: relative;
+				text-decoration: none;
+
+				@extend %font-size-s;
+
+				&::before {
+					font-family: WooCommerce; // stylelint-disable-line font-family-no-missing-generic-family-keyword
+					content: "\e031";
+					display: inline-block;
+					left: -2rem;
+					padding-right: 1rem;
+					position: absolute;
+				}
+			}
+
+			.woocommerce-variation-description p {
+				margin-bottom: space(s);
+			}
+
+			.woocommerce-variation-price,
+			.woocommerce-variation-availability {
+				display: inline-block;
+			}
+
+			.woocommerce-variation-availability {
+				margin-left: space(s);
+			}
+
+			.button {
+				line-height: line-height(s);
+			}
+
+			.group_table {
+
+				td.woocommerce-grouped-product-list-item__label {
+					padding-right: space(xs);
+					padding-left: space(xs);
+				}
+
+				td {
+					padding-bottom: space(xxs);
+				}
+			}
+		}
+
+		/* Product Tabs */
+
+		.woocommerce-tabs {
+			margin: space(stack, m);
+			padding: 0;
+
+			ul.tabs {
+				padding-left: 5px;
+				margin: space(stack, s);
+
+				li {
+					border: 1px solid color(border);
+					background-color: color(light, base);
+					border-radius: 0;
+					height: space(m); // Preserve height despite border.
+					padding: 0;
+
+					a {
+						color: color(dark, soft);
+						font-family: $base-font-sans;
+						outline: none;
+						padding: space(inset-squish, xs);
+						text-transform: uppercase;
+
+						@extend %font-size-s;
+
+						&:hover {
+							color: $primary;
+						}
+					}
+
+					&.active {
+						background: $contentbg;
+						border-bottom-color: $contentbg;
+
+						&::before {
+							box-shadow: 2px 2px 0 $contentbg;
+						}
+
+						&::after {
+							box-shadow: -2px 2px 0 $contentbg;
+						}
+
+						a {
+							color: $primary;
+						}
+					}
+
+					&::before,
+					&::after {
+						border: 1px solid color(border);
+					}
+
+					&::before {
+						border-bottom-right-radius: 0;
+						border-width: 0 1px 1px 0;
+						box-shadow: 2px 2px 0 color(light, base);
+					}
+
+					&::after {
+						border-bottom-left-radius: 0;
+						border-width: 0 0 1px 1px;
+						box-shadow: -2px 2px 0 color(light, base);
+					}
+				}
+
+				&::before {
+					border-bottom: 1px solid color(border);
+				}
+			}
+
+			.panel {
+				margin: space(stack, s);
+			}
+		}
+	}
+}

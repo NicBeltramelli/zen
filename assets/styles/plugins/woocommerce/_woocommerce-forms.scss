@@ -1,116 +1,251 @@
-/* WooCommerce Forms
---------------------------------------------- */
+/**
+* WooCommerce Forms
+*
+*	- Select
+*	- Form Default
+*	- Shipping Calculator
+*	- Shipping Method
+*	- Quantity
+*/
 
 .woocommerce {
 
-	a.button,
-	button.button,
-	input.button,
-	#respond input#submit {
-		background-color: color(dark, base);
-		border: none;
-		border-radius: $base-border-radius;
-		color: color(light, soft);
-		cursor: pointer;
-		font-weight: 700;
+	/* Select */
+
+	select {
+		height: space(m);
+		vertical-align: middle;
+	}
+
+	.select2-container,
+	.select2-container--default {
 		font-family: $base-font-sans;
-		padding: space(inset-squish, xs);
-		text-decoration: none;
-		transition: all $base-transition;
-		white-space: normal;
-		width: auto;
+		vertical-align: middle;
 
-		@extend %font-size-s;
+		.select2-selection--single {
+			border: 1px solid color(border);
+			border-radius: $base-border-radius;
+			height: space(m);
+			line-height: line-height(s);
+			margin: 0;
+			text-align: left;
 
-		&:focus,
-		&:hover {
-			opacity: 1;
+			.select2-selection__rendered {
+				color: color(dark, base);
+				line-height: line-height(s);
+				padding: space(xs);
 
-			@extend %box-shadow-buttons;
-		}
+				.select2-selection__placeholder {
+					color: color(dark, base);
+					line-height: line-height(s);
+				}
+			}
 
-		&.disabled,
-		&:disabled,
-		&:disabled[disabled] {
-			background: color(light, strong);
-			color: color(light, soft);
-			padding: space(inset-squish, xs);
+			.select2-selection__arrow {
+				height: space(s);
+				right: space(xs);
+				top: space(xs);
 
-			&:focus,
-			&:hover {
-				background: color(light, strong);
-				box-shadow: none;
-				color: color(light, soft);
+				b {
+					border-color: color(dark, base) transparent transparent transparent;
+				}
 			}
 		}
 	}
 
-	#reviews {
+	/* Form Default */
 
-		#comment {
-			height: 10rem;
+	form .form-row {
+		font-family: $base-font-sans;
+		margin: space(stack, s);
+		padding: 0;
+
+		&:last-child {
+			margin: space(stack, s);
 		}
-	}
 
-	.quantity {
+		label {
+			color: color(dark, soft);
+			font-weight: 700;
+			line-height: line-height(s);
+			vertical-align: middle;
+		}
 
-		.qty {
-			margin-right: space(xxs);
+		em {
+			clear: both;
+			float: left;
 			padding: space(xs);
-			width: space(l);
+			width: 100%;
 
-			@extend %font-size-m;
-		}
-	}
-
-	form {
-
-		.form-row {
-
-			input.input-text,
-			textarea {
-				padding: space(inset-squish, xs);
-
-				@extend %font-size-m;
-			}
+			@extend %font-size-s;
 		}
 
-		&.checkout_coupon,
-		&.login,
-		&.register,
-		.form-row .select2-container,
-		.form-row.woocommerce-validated input.input-text,
-		.form-row.woocommerce-validated select,
-		.form-row.woocommerce-validated .select2-container {
-			border-color: color(border);
-			border-radius: 0;
-		}
-	}
-}
+		.woocommerce-input-wrapper {
+			line-height: space(m);
 
-.woocommerce-cart,
-.woocommerce-checkout,
-#add_payment_method {
+			.description {
+				background: $blue;
+				border-radius: $base-border-radius;
+				color: color(light, soft);
+				margin: space(top, xxs);
+				padding: space(inset-squish, xxs);
 
-	table.cart {
+				@extend %font-size-s;
 
-		td.actions {
+				a {
+					color: color(light, soft);
+				}
 
-			.coupon {
-
-				.input-text {
-					border-color: color(border);
-					padding: space(xs);
-
-					@include mq($from: small-phone) {
-						width: auto;
-					}
+				&::before {
+					border-color: $blue transparent transparent transparent;
 				}
 			}
 		}
 
+		.required {
+			color: $red;
+		}
+
+		input.input-text,
+		textarea {
+			padding: space(xs);
+
+			@extend %font-size-s;
+		}
+
+		input.input-checkbox {
+			margin: -2px space(xxs) 0 0;
+			height: space(s); // Preserve height despite border.
+		}
+
+		textarea {
+			height: space(l);
+		}
+
+		&.woocommerce-invalid {
+
+			label {
+				color: $red;
+			}
+
+			.select2-container,
+			input.input-text,
+			select {
+				border-color: $red;
+			}
+		}
+
+		&.woocommerce-validated {
+
+			.select2-container,
+			input.input-text,
+			select {
+				border-color: $green - #111;
+			}
+		}
+
+		::-webkit-input-placeholder {
+			line-height: line-height(s);
+		}
+
+		:-moz-placeholder {
+			line-height: line-height(s);
+		}
+
+		:-ms-input-placeholder {
+			line-height: line-height(s);
+		}
+	}
+
+	form.login,
+	form.checkout_coupon,
+	form.register {
+		border: 1px solid darken($secondary, 10%);
+		border-radius: $base-border-radius;
+		margin: space(stack, s);
+		padding: space(xs);
+
+		@extend %font-size-s;
+
+		#rememberme {
+			margin: 0 space(xxs) 0 space(xs);
+		}
+	}
+
+	/* Form Shipping */
+
+	form.woocommerce-shipping-calculator {
+
+		p {
+			margin-bottom: 0;
+
+			&.form-row {
+				margin: space(stack, xs);
+			}
+		}
+
+		input,
+		button {
+			height: 3rem;
+		}
+
 		input {
-			vertical-align: middle;
+			padding: space(xxs);
+		}
+
+		button {
+			padding: space(inset-squish, xxs);
+
+			@extend %font-size-xs;
+		}
+
+		.shipping-calculator-form {
+			margin: space(top, xs); // Break vertical rhythm.
+
+			.select2-selection--single {
+				height: 3rem;
+
+				.select2-selection__rendered {
+					padding: space(xxs);
+				}
+
+				.select2-selection__arrow {
+					right: space(xxs);
+					top: space(xxs);
+				}
+			}
+		}
+	}
+
+	/* Shipping Method */
+
+	ul#shipping_method {
+
+		li {
+			line-height: line-height(s);
+			margin: 0;
+			padding: 0;
+
+			input {
+				margin: space(xxs) 0.5ex;
+			}
+		}
+
+		.amount {
+			font-weight: inherit;
+		}
+	}
+
+	/* Quantity */
+
+	.quantity {
+
+		.qty {
+			padding: space(xs);
+			text-align: center;
+			width: space(l);
+
+			@extend %font-size-m;
 		}
 	}
 }

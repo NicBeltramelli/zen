@@ -1,0 +1,67 @@
+/**
+* WooCommerce Account
+*
+*	- Account Navigation
+*	- Addresses
+*	- Table Order Details
+*/
+
+.woocommerce-account {
+
+	/* Account Navigation */
+
+	.woocommerce-MyAccount-navigation {
+		display: block; // Fix genesis responsive menu inheritance.
+		margin-bottom: space(s);
+
+		ul {
+			margin-bottom: 0;
+			margin-left: 0;
+
+			li {
+				font-family: $base-font-sans;
+				list-style-type: none;
+				margin: space(divider, xs);
+
+				@extend %font-size-s;
+
+				&.is-active > a {
+					color: $primary;
+				}
+
+				a {
+					color: color(dark, base);
+					font-weight: 700;
+					text-decoration: none;
+					text-transform: uppercase;
+
+					&:focus,
+					&:hover {
+						color: $primary;
+					}
+				}
+			}
+		}
+	}
+
+	/* Addresses */
+
+	.addresses {
+
+		address,
+		.edit {
+			font-family: $base-font-sans;
+
+			@extend %font-size-s;
+		}
+	}
+
+	/* Table Order Details */
+
+	table.order_details {
+
+		th.product-total {
+			min-width: 110px;
+		}
+	}
+}

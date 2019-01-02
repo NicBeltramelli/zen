@@ -1,0 +1,96 @@
+/* WooCommerce Reviews */
+
+.woocommerce {
+
+	#reviews {
+
+		h2 small {
+			color: $subtext;
+			margin: 0;
+
+			@extend %font-size-s;
+
+			a {
+				color: $subtext;
+			}
+		}
+
+		#comment {
+			height: space(xl);
+		}
+
+		#comments {
+
+			ol.commentlist {
+				margin: space(stack, m);
+
+				li {
+
+					list-style-type: none;
+					margin: space(stack, s);
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+
+					.meta {
+						color: $subtext;
+
+						@extend %font-size-s;
+					}
+
+					img.avatar {
+						background: transparent;
+						padding: 0;
+						width: space(m);
+						border: 0;
+					}
+
+					.comment-text {
+						border: 1px solid color(border);
+						border-radius: $base-border-radius;
+						margin: 0 0 0 5rem;
+						padding: calc(1rem - 1px) 1rem; // Compensate border.
+
+						p {
+							margin: space(stack, s);
+
+							@extend %font-size-s;
+
+							&:last-child {
+								margin-bottom: 0;
+							}
+						}
+
+						p.meta {
+
+							@extend %font-size-s;
+						}
+					}
+				}
+
+				ul.children {
+					margin: space(s) 0 0 5rem;
+				}
+
+				#respond {
+					border: 1px solid darken($secondary, 3%);
+					border-radius: $base-border-radius;
+					margin: 0 0 0 5rem;
+					padding: calc(1rem - 1px) 1rem; // Compensate border.
+				}
+			}
+		}
+	}
+
+	#review_form #respond {
+
+		p {
+			margin: space(stack, s);
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,60 @@
+/* WooCommerce Alerts */
+
+.woocommerce-message,
+.woocommerce-error,
+.woocommerce-info {
+	background-color: color(light, trans);
+	border-top: 3px solid;
+	color: color(dark, base);
+	font-weight: 700;
+	margin: space(stack, m) !important; // Fix default entry-content ul margin.
+	padding: calc(1rem - 1.5px) 0.5rem calc(1rem - 1.5px) 2.5rem; // Compensate top border.
+
+	@extend %box-shadow-default;
+	@extend %font-size-s;
+
+	&::before {
+		left: 0.5rem;
+		top: calc(1rem - 1.5px);
+	}
+
+	a.button {
+		height: auto;
+		margin-left: space(xxs);
+		padding: space(inset-squish, xxs);
+	}
+
+	@include mq($from: small-phone) {
+
+		padding-left: 3rem;
+		padding-right: 1rem;
+
+		&::before {
+			left: 1rem;
+		}
+	}
+}
+
+.woocommerce-message {
+	border-top-color: $primary;
+
+	&::before {
+		color: $primary;
+	}
+}
+
+.woocommerce-info {
+	border-top-color: $info;
+
+	&::before {
+		color: $info;
+	}
+}
+
+.woocommerce-error {
+	border-top-color: $red;
+
+	&::before {
+		color: $red;
+	}
+}

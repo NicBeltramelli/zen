@@ -1,0 +1,142 @@
+/**
+* WooCommerce Order Received
+*
+*	- Order Details
+*	- Customer Details
+*	- Content Sidebar Layout
+*/
+
+.woocommerce {
+
+	.woocommerce-order-downloads,
+	.woocommerce-customer-details,
+	.woocommerce-order-details {
+		margin: space(stack, m);
+	}
+
+	/* Order Details */
+
+	ul.order_details {
+		border: 1px dashed color(border);
+		font-family: $base-font-sans;
+		margin: 0 0 calc(4rem - 1px) 0; // Compensate border.
+		padding: space(column, xs);
+
+		li {
+			border-right: 1px dashed color(border);
+			margin: space(xs) space(s) space(xs) 0;
+			padding-right: space(s);
+			list-style-type: none;
+
+			@extend %font-size-xs;
+
+			&:last-of-type {
+				border: none;
+			}
+
+			strong {
+
+				@extend %font-size-s;
+			}
+
+			@include mq($until: desktop) {
+
+				margin: space(divider, xs);
+
+				&.order,
+				&.total {
+					border-right: 1px dashed color(border);
+					padding-right: space(s);
+					width: 50%;
+				}
+
+				&.email {
+					border-bottom: 1px dashed color(border);
+					border-right: 0;
+					border-top: 1px dashed color(border);
+					margin: 0;
+					padding: calc(2rem - 1px) 0; // Compensate border.
+					padding-right: 0;
+					width: 100%;
+				}
+
+				&.date,
+				&.method {
+					border-right: 0;
+					padding-left: space(s);
+					padding-right: 0;
+					width: 50%;
+				}
+			}
+		}
+	}
+
+	/* Customer Details */
+
+	.woocommerce-customer-details {
+		margin-bottom: 0;
+
+		address {
+			border: 1px dashed color(border);
+			border-radius: 0;
+			font-family: $base-font-sans;
+			padding: calc(1rem - 1px) 1rem; // Compensate border.
+
+			@extend %font-size-s;
+		}
+
+		.woocommerce-customer-details--phone,
+		.woocommerce-customer-details--email {
+			margin-bottom: 0;
+			padding-left: 1.5em;
+
+			&::after,
+			&::before {
+				margin-left: -1.5em;
+				line-height: line-height(s);
+				position: absolute;
+			}
+		}
+	}
+}
+
+/* Content Sidebar Layout */
+
+.content-sidebar .woocommerce,
+.sidebar-content .woocommerce {
+
+	ul.order_details {
+
+		li {
+
+			@include mq($from: desktop) {
+
+				margin: space(divider, xs);
+
+				&.order,
+				&.total {
+					border-right: 1px dashed color(border);
+					padding-right: space(s);
+					width: 50%;
+				}
+
+				&.email {
+					border-bottom: 1px dashed color(border);
+					border-right: 0;
+					border-top: 1px dashed color(border);
+					margin: 0;
+					padding: calc(1rem - 1px) 0; // Compensate border.
+					width: 100%;
+				}
+
+				&.date,
+				&.method {
+					border-right: 0;
+					padding-left: space(s);
+					padding-right: 0;
+					width: 50%;
+				}
+			}
+		}
+	}
+}

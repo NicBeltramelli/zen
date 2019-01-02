@@ -1,0 +1,279 @@
+/**
+* WooCommerce Layout
+*
+*	- General Layout
+*	- Product Page
+*	- Product Loop
+*	- Cart Page
+*	- Cart Sidebar
+*	- Forms
+*	- oEmbeds
+*	- Account Navigation
+*	- RTL Style
+*/
+
+.woocommerce,
+.woocommerce-page {
+
+	/* General Layout */
+
+	&.full-width-content {
+
+		.content {
+			width: 100%;
+		}
+	}
+
+	.woocommerce-message,
+	.woocommerce-error,
+	.woocommerce-info {
+
+		.button {
+
+		}
+	}
+
+	.col2-set {
+		margin: space(stack, m);
+
+		.col-1,
+		.col-2 {
+			margin: space(stack, m);
+		}
+	}
+
+	img {
+
+	}
+
+	/* Product Page */
+
+	div.product,
+	#content div.product {
+
+		div.thumbnails {
+
+			a {
+				margin-bottom: space(xs);
+			}
+		}
+	}
+
+	/* Product Loop */
+
+	ul.products {
+
+		li.product {
+			margin-bottom: space(m);
+		}
+	}
+
+	/* Cart Page */
+
+	table.cart,
+	#content table.cart {
+
+		th {
+
+			&.product-name {
+				min-width: 140px;
+			}
+
+			&.product-price,
+			&.product-quantity,
+			&.product-subtotal,
+			&.product-total {
+				min-width: 110px;
+			}
+		}
+
+		img {
+			height: space(m);
+			vertical-align: middle;
+			width: auto;
+		}
+
+		td.actions {
+
+			.input-text {
+				width: auto;
+			}
+
+			.coupon {
+
+				label {
+
+				}
+			}
+		}
+	}
+
+	.cart-collaterals {
+
+		.related {
+
+		}
+
+		.cross-sells {
+
+			ul.products {
+
+				li {
+
+				}
+			}
+		}
+
+		.shipping_calculator {
+
+			.col2-set {
+
+				.col-1,
+				.col-2 {
+
+				}
+			}
+		}
+
+		.cart_totals {
+
+		}
+	}
+
+	/* Cart Sidebar */
+
+	ul.cart_list,
+	ul.product_list_widget {
+
+		li {
+
+		}
+	}
+
+	/* Forms */
+
+	form {
+
+		.form-row {
+
+			label {
+
+				&.checkbox {
+					display: inline-block;
+				}
+			}
+
+			select {
+
+			}
+
+			.input-text {
+
+			}
+		}
+
+		.form-row-first,
+		.form-row-last {
+
+		}
+
+		.form-row-first {
+
+		}
+
+		.form-row-last {
+
+		}
+
+		.form-row-wide {
+
+		}
+	}
+
+	#payment {
+
+		.form-row {
+
+			select {
+			}
+		}
+
+		.wc-terms-and-conditions,
+		.terms {
+			padding: 0;
+		}
+
+		#place_order {
+
+		}
+	}
+
+	.woocommerce-billing-fields,
+	.woocommerce-shipping-fields {
+
+	}
+
+	.woocommerce-terms-and-conditions {
+		margin: space(stack, s);
+		padding: space(xs);
+	}
+
+	/* oEmbeds */
+
+	.woocommerce-oembed {
+
+	}
+}
+
+/* Account Navigation */
+
+.woocommerce-account {
+
+	.woocommerce-MyAccount-navigation {
+		width: 25%;
+	}
+
+	.woocommerce-MyAccount-content {
+		width: 72%;
+	}
+
+	&.content-sidebar.woocommerce-account,
+	&.sidebar-content.woocommerce-account {
+
+		.woocommerce-MyAccount-navigation {
+			margin-right: 0;
+			width: 100%;
+
+			ul {
+
+				li {
+					text-align: center;
+				}
+			}
+		}
+
+		.woocommerce-MyAccount-content {
+			width: 100%;
+		}
+	}
+}
+
+/* RTL Style */
+
+.rtl {
+
+	.woocommerce,
+	.woocommerce-page {
+
+		.col2-set {
+
+			.col-1 {
+
+			}
+
+			.col-2 {
+
+			}
+		}
+	}
+}

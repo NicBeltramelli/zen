@@ -1,0 +1,339 @@
+/**
+* WooCommerce Cart Checkout
+*
+*	- Table Cart
+*	- Table Checkout Review Order
+*	- Cart Collaterals
+*		- Cross Sells
+*		- Cart Totals
+*	- Checkout
+*	- Payment
+*	- Terms and Conditions
+*/
+
+.woocommerce-cart,
+.woocommerce-checkout,
+#add_payment_method {
+
+	table {
+		border-collapse: collapse;
+
+		/* Table Cart */
+
+		&.cart {
+			border-collapse: collapse;
+
+			td {
+
+				&.product-remove {
+
+					a.remove {
+
+						@extend %font-size-xl;
+					}
+				}
+
+				&.product-thumbnail {
+					min-width: space(l);
+					text-align: center;
+				}
+
+				&.product-quantity {
+
+					.quantity {
+
+						.qty {
+							margin-right: 0;
+							height: space(s);
+							padding: space(column, xxs);
+
+							@extend %font-size-s;
+						}
+					}
+				}
+
+				&.actions {
+					border: 0;
+					padding: calc(2rem - 1px) 0 0; // Fix vertical rhythm.
+
+					.coupon {
+
+						.input-text {
+							border: 1px solid color(border);
+							padding: space(xs);
+							margin: space(right, xxs);
+						}
+					}
+				}
+			}
+		}
+
+		/* Checkout Review Order Table */
+
+		&.woocommerce-checkout-review-order-table,
+		&.order_details {
+
+			tfoot {
+
+				tr {
+
+					th,
+					td {
+						background: color(light, soft);
+						border-bottom: 1px solid color(border);
+						border-collapse: collapse;
+						border-top: 0;
+						padding: space(xs);
+
+						@include mq($until: phone) {
+
+							padding-bottom: calc(1rem - 1px); // Compensate bottom border for small screen.
+						}
+					}
+
+					&:last-of-type {
+
+						th {
+							text-transform: uppercase;
+						}
+
+						td {
+							font-weight: 700;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/* Cart Collaterals */
+
+	.cart-collaterals {
+
+		/* Cross Sells */
+
+		.cross-sells {
+
+			ul.products {
+
+				li.product {
+
+				}
+			}
+		}
+
+		/* Cart Totals */
+
+		.cart_totals {
+
+			small,
+			p small {
+
+				@extend %font-size-s;
+			}
+
+			table {
+				border-collapse: collapse;
+				border-top: 1px solid color(border);
+				box-shadow: none;
+				margin: -1px 0 space(s); // Compensate top border.
+
+				tr {
+
+					&:first-child {
+
+						th,
+						td {
+							border-top: 0;
+						}
+					}
+
+					&.order-total {
+
+						th,
+						td {
+							text-transform: uppercase;
+						}
+					}
+				}
+
+				td,
+				th {
+					background: color(light, soft);
+					border-top: 0;
+					border-left: 1px solid color(border);
+					border-right: 1px solid color(border);
+					border-bottom: 1px solid color(border);
+					padding: space(xs);
+
+					@extend %font-size-s;
+
+					@include mq($until: phone) {
+
+						padding-bottom: calc(1rem - 1px); // Compensate bottom border for small screen.
+					}
+				}
+			}
+		}
+
+		.shipping-calculator-button {
+			margin-top: 0;
+		}
+
+		.wc-proceed-to-checkout {
+			padding: 0;
+
+			a.checkout-button {
+				margin-bottom: 0;
+				padding: space(inset-squish, xs);
+
+				@extend %font-size-s;
+			}
+		}
+	}
+
+	/* Checkout */
+
+	.checkout {
+
+		.create-account small {
+
+			@extend %font-size-s;
+		}
+
+		.shipping_address {
+			margin: space(stack, s);
+		}
+
+		#ship-to-different-address {
+			height: space(s);
+		}
+	}
+
+	/* Payment */
+
+	#payment {
+		background: color(light, trans);
+		border-radius: 0;
+		padding: space(s);
+
+		ul.payment_methods {
+			border-bottom: 1px solid color(dark, trans);
+			margin: space(stack, s);
+			padding: 0 0 calc(2rem - 1px); // Compensate border bottom.
+
+			li {
+				line-height: line-height(s);
+				list-style-type: none;
+
+				label {
+					font-weight: 700;
+				}
+
+				input {
+
+					&[type="radio"] {
+						vertical-align: middle;
+					}
+				}
+
+				img {
+					margin: -2px 0 0 calc(0.5rem + 2px);
+				}
+			}
+		}
+
+		div.form-row {
+			margin-bottom: 0;
+			padding: 0;
+		}
+
+		div.payment_box {
+			background: color(light, soft);
+			border: 1px solid color(border);
+			border-radius: 0;
+			color: color(dark, base);
+			margin: calc(1rem - 1px) 0; // Compensate border.
+			padding: space(xs);
+
+			@extend %font-size-s;
+
+			&::before {
+				display: none;
+			}
+
+			.woocommerce-SavedPaymentMethods {
+
+				.woocommerce-SavedPaymentMethods-token,
+				.woocommerce-SavedPaymentMethods-new {
+					margin: space(stack, xs);
+				}
+
+				.woocommerce-SavedPaymentMethods-tokenInput {
+					margin: -3px calc(1rem + 3px) 0 0;
+				}
+			}
+
+			.wc-credit-card-form {
+				margin: space(s) 0 0;
+			}
+
+			.wc-credit-card-form-card-number,
+			.wc-credit-card-form-card-expiry,
+			.wc-credit-card-form-card-cvc {
+				padding: space(xs);
+				background-position: right 0.618em center;
+				background-size: 32px 20px;
+
+				@extend %font-size-s;
+			}
+
+			span.help {
+				color: $subtext;
+
+				@extend %font-size-s;
+			}
+
+			.form-row {
+				margin: space(stack, s);
+			}
+		}
+
+		.payment_method_paypal {
+
+			.about_paypal {
+
+				@extend %font-size-s;
+			}
+
+			img {
+				max-height: space(m);
+			}
+		}
+	}
+}
+
+/* Terms and Conditions */
+
+.woocommerce-terms-and-conditions-wrapper {
+	margin: space(stack, s);
+
+	@extend %font-size-s;
+
+	p.validate-required {
+		margin: space(top, s);
+	}
+
+	.woocommerce-terms-and-conditions {
+		border: 1px solid color(border);
+		box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+		background: color(light, base);
+	}
+
+	.woocommerce-invalid {
+
+		#terms {
+			outline: 2px solid $red;
+		}
+	}
+}
