@@ -3,7 +3,7 @@
 *
 *	- Site Navigation
 *	- Responsive Menu
-*	- Footer Menu
+*	- Secondary Menu
 *	- Header Menu
 */
 
@@ -115,6 +115,10 @@
 					padding: 0.5rem, 1.5rem;
 					transition: all $base-transition;
 
+					@include mq($from: tablet) {
+						background: color(accent, base);
+					}
+
 					&:focus,
 					&:hover {
 						box-shadow: inset 0 0 0 20rem rgba(0, 0, 0, 0.1), 0 2rem 2rem rgba(0, 0, 0, 0.1);
@@ -152,7 +156,6 @@
 }
 
 .menu-toggle {
-	float: none;
 	height: auto; // Prevent height of default buttons.
 	margin: 0 auto;
 	padding: space(s) 0;
@@ -167,10 +170,6 @@
 
 	&.activated::before {
 		content: "\f335";
-	}
-
-	@include mq($from: small-phone) {
-		float: right;
 	}
 }
 
@@ -228,16 +227,22 @@
 	}
 }
 
-/* Footer Menu
+/* Secondary Menu
 --------------------------------------------- */
 
 .nav-secondary {
-	padding: 1.5rem 0;
+	border-top: 1px solid color(border);
+	padding: calc(2rem - 1px) 0 space(s); // Compensate top border.
+	text-align: center;
 
 	.genesis-nav-menu {
 
 		.menu-item {
-			display: inline-block;
+			display: block;
+
+			@include mq($from: tablet) {
+				display: inline-block;
+			}
 
 			> a {
 				margin: 0 1.5rem;

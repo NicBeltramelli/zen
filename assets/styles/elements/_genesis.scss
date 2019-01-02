@@ -67,10 +67,7 @@
 --------------------------------------------- */
 
 .breadcrumb {
-	border-bottom: 1px solid color(border);
-	margin-top: -1px; // Compensate border.
 	margin-bottom: space(m);
-	padding-bottom: space(s);
 
 	@extend %font-size-s;
 }
@@ -81,9 +78,7 @@
 .featured-content {
 
 	.entry {
-		border-bottom: 1px solid color(border);
-		margin-bottom: calc(4rem - 1px); // Compensate border.
-		padding: space(stack, s);
+		margin: space(stack, s);
 
 		&:last-of-type {
 			border-bottom: none;
@@ -92,7 +87,7 @@
 		}
 
 		img {
-			height: space(xl);
+			height: auto;
 			width: space(xl);
 
 			@include mq($from: tablet) {

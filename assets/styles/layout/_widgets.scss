@@ -54,16 +54,19 @@
 	&.widget_calendar {
 
 		table {
+			border-collapse: separate;
 			border-spacing: space(xxs);
+			border-top: 0;
 			font-family: $base-font-sans;
-			margin-bottom: 1.5rem; // Compensate table bottom border spacing.
+			margin-bottom: 1.5rem; // Compensate bottom border spacing.
+			margin-top: 0;
 
 			&:last-of-type {
-				margin-bottom: -(space(xxs)); // Compensate last table bottom border spacing.
+				margin-bottom: -(space(xxs)); // Compensate last bottom border spacing.
 			}
 
 			caption {
-				margin-bottom: 1.5rem; // Compensate table top border spacing.
+				margin-bottom: 1.5rem; // Compensate top border spacing.
 			}
 
 			td,

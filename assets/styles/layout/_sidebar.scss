@@ -12,7 +12,7 @@
 	}
 
 	.widget {
-		margin: space(stack, m);
+		margin: space(stack, l);
 
 		&.widget_search {
 			margin: space(stack, s);
@@ -22,10 +22,19 @@
 			margin-bottom: 0;
 		}
 
+		.widget-title {
+			border-bottom: 1px solid;
+			padding-bottom: calc(2rem - 1px); // Compensate bottom border.
+		}
+
 		ul {
 
 			li {
 				margin-bottom: 0;
+
+				ul {
+					padding: space(left, xs);
+				}
 
 				a {
 					color: color(dark, base);

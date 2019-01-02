@@ -43,6 +43,13 @@ a {
 		color: color(dark, strong);
 		text-decoration: none;
 	}
+
+	&.post-edit-link {
+		float: left;
+		padding: space(divider, xs);
+
+		@extend %font-size-s;
+	}
 }
 
 p,

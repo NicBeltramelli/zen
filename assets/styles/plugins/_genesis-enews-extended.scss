@@ -37,6 +37,11 @@
 
 		@extend %box-shadow-default;
 
+		.widget-title {
+			border-bottom: 0;
+			padding-bottom: 0;
+		}
+
 	}
 }
 

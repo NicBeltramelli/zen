@@ -20,16 +20,18 @@ input {
 	height: space(m); // Preserve height despite border.
 
 	&[type="checkbox"],
-	&[type="image"],
 	&[type="radio"] {
-		margin: 0;
+		margin: -2px space(xxs) 0 0;
+		height: space(s); // Preserve height despite border.
 		padding: 0;
+		vertical-align: middle;
 		width: auto;
 	}
 
-	&[type="checkbox"],
-	&[type="radio"] {
-		height: space(s); // Preserve height despite border.
+	&[type="image"] {
+		margin: 0;
+		padding: 0;
+		width: auto;
 	}
 }
 

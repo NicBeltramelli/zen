@@ -47,7 +47,8 @@
 
 .site-footer {
 	background-color: color(light, soft);
-	padding: space(m) 0 space(s);
+	margin: space(stack, s);
+	padding: space(s) 0;
 	text-align: center;
 
 	@extend %font-size-s;

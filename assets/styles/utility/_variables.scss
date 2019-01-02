@@ -22,7 +22,7 @@
 
 $mq-breakpoints: (
 	small-phone:	375px,
-	phone:			600px,
+	phone:			601px,
 	admin-bar:		782px,
 	tablet:			900px,
 	desktop:		1200px,
@@ -61,6 +61,7 @@ $base-grid: (
 --------------------------------------------- */
 
 $base-font-sizes: (
+
 	// Nested values
 	// See: https://www.modularscale.com/?1.6&rem&1.125
 	phone: (
@@ -71,6 +72,7 @@ $base-font-sizes: (
 		s:			1.422rem,
 		xs:			1.264rem
 	),
+
 	// See: https://www.modularscale.com/?1.333&rem&1.2
 	tablet: (
 		xxl:		3.317rem,	// Skip intermediate values
@@ -107,6 +109,7 @@ $base-space: (
 	s:				2rem,
 	xs:				1rem,
 	xxs:			0.5rem,
+
 	// Nested values
 	stack: (
 		xxl:		0 0 12rem 0,
@@ -197,7 +200,6 @@ $base-space: (
 /* Colors
 --------------------------------------------- */
 
-// See: https://coolors.co/cccccc-0073e5-ed254e-00a878-1b1b1b
 $dark:				#1b1b1b;
 $light:				#e3e3e3;
 $accent:			#d30c7b;
@@ -208,13 +210,15 @@ $success:			#00a878;
 $warning:			#f15025;
 
 // Variations
-$color-shade-amount: 25%;
+$color-shade-amount: 30%;
 $color-trans-amount: 0.6;
+$color-intermediate-shade-amount: 15%;
 
 // Colors Map
 $base-colors: (
-	border:			$light,
+	border:			darken($light, $color-intermediate-shade-amount),
 	outline:		transparentize($dark, $color-trans-amount),
+
 	// Nested values
 	dark: (
 		base:		$dark,

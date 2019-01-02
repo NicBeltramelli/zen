@@ -18,63 +18,63 @@
 	.entry {
 		margin: space(stack, l);
 
-		.entry-content {
-			margin: space(stack, s);
-
-			p {
-
-				&:last-child {
-					margin-bottom: 0;
-				}
-			}
-
-			ol,
-			ul {
-				margin-bottom: space(s);
-				margin-left: space(s);
-			}
-
-			ol {
-
-				> li {
-					list-style-type: decimal;
-				}
-
-				ol {
-					margin-bottom: 0;
-				}
-			}
-
-			ul {
-
-				> li {
-					list-style-type: disc;
-				}
-
-				ul {
-					margin-bottom: 0;
-				}
-			}
-
-			code {
-				background-color: color(light, base);
-			}
-
-			.caption {
-				font-weight: 700;
-				margin-top: -(space(s));
-				text-align: center;
-
-				@extend %font-size-s;
-			}
-		}
-
 		&.sticky {
 			background-color: color(light, trans);
 			border-radius: $base-border-radius;
 			padding: space(s);
 
 			@extend %box-shadow-default;
+		}
+	}
+
+	.entry-content {
+		margin: space(stack, s);
+
+		p {
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		ol,
+		ul {
+			margin-bottom: space(s);
+			margin-left: space(s);
+		}
+
+		ol {
+
+			> li {
+				list-style-type: decimal;
+			}
+
+			ol {
+				margin-bottom: 0;
+			}
+		}
+
+		ul {
+
+			> li {
+				list-style-type: disc;
+			}
+
+			ul {
+				margin-bottom: 0;
+			}
+		}
+
+		code {
+			background-color: color(light, base);
+		}
+
+		.caption {
+			font-weight: 700;
+			margin-top: -(space(s));
+			text-align: center;
+
+			@extend %font-size-s;
 		}
 	}
 
@@ -238,6 +238,15 @@
 
 	.comment-respond {
 
+		.comment-reply-title {
+			display: inline-block;
+			font-family: $base-font-sans;
+			font-weight: 700;
+			margin: space(stack, s);
+
+			@extend %font-size-l;
+		}
+
 		label {
 			display: block;
 		}
@@ -285,6 +294,11 @@ p.entry-meta {
 	margin-bottom: 0;
 
 	@extend %font-size-s;
+
+	a.post-edit-link {
+		float: none;
+		padding: 0;
+	}
 }
 
 .entry-header {
@@ -309,6 +323,8 @@ p.entry-meta {
 }
 
 .entry-comments-link {
+
+	white-space: nowrap;
 
 	&::before {
 		content: "\2014";

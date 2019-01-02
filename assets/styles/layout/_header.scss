@@ -36,10 +36,8 @@
 	}
 
 	.menu-toggle {
-
-		@include mq($from: small-phone) {
-			padding-right: space(s);
-		}
+		float: right;
+		padding-right: space(s);
 
 		@include mq($from: tablet) {
 			padding-right: 0;

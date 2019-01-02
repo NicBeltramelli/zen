@@ -2,25 +2,21 @@
 --------------------------------------------- */
 
 table {
+	border-collapse: collapse;
 	border-spacing: 0;
-	margin: space(stack, s);
+	border-top: 1px solid color(border);
+	margin: -1px 0 space(m); // Compensate top border.
 	width: 100%;
 }
 
 th,
 td {
-	font-family: $base-font-sans;
-	text-align: left;
-}
-
-th {
-	background: color(light, trans);
-	padding: 1rem;
-}
-
-
-td {
+	border-left: 1px solid color(border);
+	border-right: 1px solid color(border);
 	border-bottom: 1px solid color(border);
-	border-top: 0;
-	padding: 1rem 1rem calc(1rem - 1px); // Compensate bottom border.
+	font-family: $base-font-sans;
+	padding: space(xs);
+	text-align: left;
+
+	@extend %font-size-s;
 }
