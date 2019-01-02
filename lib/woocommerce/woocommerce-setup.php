@@ -32,7 +32,6 @@ add_action(
 			);
 
 		}
-
 	}
 );
 
@@ -44,8 +43,13 @@ add_action(
 add_action(
 	'wp_enqueue_scripts', function () {
 
-		// If Woocommerce is not activated, or a product page isn't showing, exit early.
-		if ( ! class_exists( 'WooCommerce' ) || ! is_shop() && ! is_product_category() && ! is_product_tag() ) {
+		if ( ! class_exists( 'WooCommerce' ) ||
+			! is_shop() &&
+			! is_product_category() &&
+			! is_product_tag() &&
+			! is_product() &&
+			! is_cart() ) {
+
 			return;
 		}
 
@@ -87,7 +91,7 @@ add_filter(
 		];
 
 		if ( in_array( $current, $layouts['one-sidebar'], true ) ) {
-			return '900px';
+			return '600px';
 		}
 
 		return '600px'; // Show mobile styles immediately.
