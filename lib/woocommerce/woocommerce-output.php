@@ -2,7 +2,7 @@
 /**
  * Genesis Advanced
  *
- * This file adds the WooCommerce styles and the Customizer additions.
+ * This file adds the WooCommerce inline styles.
  *
  * @package Genesis Advanced
  * @author  NicBeltramelli
@@ -36,13 +36,6 @@ add_action(
 
 		$woo_css .= ( genesis_advanced_customizer_get_default_link_color() !== $color_link ) ? sprintf(
 			'
-
-		.woocommerce div.product p.price,
-		.woocommerce div.product span.price,
-		.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover,
-		.woocommerce div.product .woocommerce-tabs ul.tabs li a:focus,
-		.woocommerce ul.products li.product h3:hover,
-		.woocommerce ul.products li.product .price,
 		.woocommerce .woocommerce-breadcrumb a:hover,
 		.woocommerce .woocommerce-breadcrumb a:focus,
 		.woocommerce .widget_layered_nav ul li.chosen a::before,
@@ -56,39 +49,32 @@ add_action(
 
 		$woo_css .= ( genesis_advanced_customizer_get_default_accent_color() !== $color_accent ) ? sprintf(
 			'
-		.woocommerce a.button:hover,
-		.woocommerce a.button:focus,
+		.woocommerce a.button.alt,
+		.woocommerce a.button.alt,
+		.woocommerce button.button.alt,
+		.woocommerce button.button.alt,
+		.woocommerce input.button.alt,
+		.woocommerce input.button.alt,
 		.woocommerce a.button.alt:hover,
 		.woocommerce a.button.alt:focus,
-		.woocommerce button.button:hover,
-		.woocommerce button.button:focus,
 		.woocommerce button.button.alt:hover,
 		.woocommerce button.button.alt:focus,
-		.woocommerce input.button:hover,
-		.woocommerce input.button:focus,
 		.woocommerce input.button.alt:hover,
 		.woocommerce input.button.alt:focus,
-		.woocommerce input[type="submit"]:hover,
-		.woocommerce input[type="submit"]:focus,
 		.woocommerce span.onsale,
-		.woocommerce #respond input#submit:hover,
-		.woocommerce #respond input#submit:focus,
-		.woocommerce #respond input#submit.alt:hover,
-		.woocommerce #respond input#submit.alt:focus,
 		.woocommerce.widget_price_filter .ui-slider .ui-slider-handle,
 		.woocommerce.widget_price_filter .ui-slider .ui-slider-range {
 			background-color: %1$s;
 			color: %2$s;
 		}
 
-		.woocommerce-error,
-		.woocommerce-info,
 		.woocommerce-message {
 			border-top-color: %1$s;
 		}
 
-		.woocommerce-error::before,
-		.woocommerce-info::before,
+		.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover,
+		.woocommerce div.product .woocommerce-tabs ul.tabs li a:focus,
+		.woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
 		.woocommerce-message::before {
 			color: %1$s;
 		}
