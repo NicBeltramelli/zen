@@ -5,8 +5,7 @@
 * 	- Box Shadow
 */
 
-/* Font Sizes
---------------------------------------------- */
+/* Font Sizes */
 
 %font-size-xxl {
 	font-size: font-size(phone, xxl);
@@ -53,13 +52,9 @@
 	}
 }
 
-/* -------------------------------------------
-* Decrease the line height to appear better in some contexts.
-* It will break the vertical rhythm.
---------------------------------------------- */
 %font-size-s-break {
 	font-size: font-size(phone, s);
-	line-height: line-height(xs);
+	line-height: line-height(xs); // Break the vertical rhythm.
 
 	@include mq($from: tablet) {
 		font-size: font-size(tablet, s);
@@ -75,21 +70,16 @@
 	}
 }
 
-/* -------------------------------------------
-* Decrease the line height to appear better in some contexts.
-* It will break the vertical rhythm.
---------------------------------------------- */
 %font-size-xs-break {
 	font-size: font-size(phone, xs);
-	line-height: line-height(xs);
+	line-height: line-height(xs); // Break the vertical rhythm.
 
 	@include mq($from: tablet) {
 		font-size: font-size(tablet, xs);
 	}
 }
 
-/* Box Shadow
---------------------------------------------- */
+/* Box Shadow */
 
 %box-shadow-buttons {
 

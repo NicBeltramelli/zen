@@ -6,8 +6,7 @@
 *	- Outline on Focus
 */
 
-/* Screen Reader Text
---------------------------------------------- */
+/* Screen Reader Text */
 
 .screen-reader-text,
 .screen-reader-text span,
@@ -31,7 +30,7 @@
 	font-weight: 700;
 	color: color(dark, strong);
 	background: color(light, soft);
-	z-index: 100000; /* Above WP toolbar */
+	z-index: 100000; // Above WP toolbar.
 	text-decoration: none;
 	border: none;
 
@@ -42,8 +41,7 @@
 	position: relative;
 }
 
-/* Skip Links
---------------------------------------------- */
+/* Skip Links */
 
 .genesis-skip-link {
 	margin: 0;
@@ -60,8 +58,7 @@
 	}
 }
 
-/* Outline on Focus
---------------------------------------------- */
+/* Outline on Focus */
 
 :focus {
 	color: color(dark, base);

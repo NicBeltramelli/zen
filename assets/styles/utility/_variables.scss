@@ -13,12 +13,13 @@
 *	- Columns width
 */
 
-/* Breakpoints
----------------------------------------------
+/*
+* Breakpoints
+*
 * Use em media queries to perform consistently across all browsers
 * See: https://github.com/sass-mq/sass-mq/
 * See: https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
---------------------------------------------- */
+*/
 
 $mq-breakpoints: (
 	small-phone:	375px,
@@ -31,38 +32,38 @@ $mq-breakpoints: (
 
 $mq-media-type: screen;
 
-/* Font Stacks
---------------------------------------------- */
+/* Font Stacks */
 
 $base-font-sans:	"Roboto", sans-serif !default;
 $base-font-serif:	"Roboto Slab", serif !default;
 $base-font-mono:	"Roboto Mono", monospace !default;
 
-/* Grid Height (based on root font size)
----------------------------------------------
+/*
+* Grid Height (based on root font size)
+*
 * Define the ideal base font size and ideal line height for good redability on
 * different screens.
 * In this case, for phone screens, font-size: 16px and line-height: 20px.
 * Set the grid height as 1/2 of ideal line height (20px) and assign the value
 * of 1rem based on the html (root) font size.
---------------------------------------------- */
+*/
 
 $base-grid: (
 	phone:			62.5%,    // 10px = (16px * 1.25)/2
 	tablet:			84.375%   // 13.5px = (18px * 1.5)/2
 );
 
-/* Font Sizes
----------------------------------------------
+/*
+* Font Sizes
+*
 * Define the base font size relative to the grid height.
 * In this case, for phone screens: font-size: 16px = 1.6rem.
 * Get consistent font size values from a modular scale build upon the base
 * font-size and a preferred ratio.
---------------------------------------------- */
+*/
 
 $base-font-sizes: (
 
-	// Nested values
 	// See: https://www.modularscale.com/?1.6&rem&1.125
 	phone: (
 		xxl:		3.244rem,	// Skip intermediate values
@@ -84,10 +85,13 @@ $base-font-sizes: (
 	)
 );
 
-/* Line Height
---------------------------------------------- */
+/*
+* Line Height
+*
+* Common values for all breakpoints (multiple of grid height preserve vertical
+* rhythm)
+*/
 
-// Common values for all breakpoints (multiple of grid height)
 $base-line-height: (
 	xxl:			4rem,
 	xl:				2rem,
@@ -97,10 +101,12 @@ $base-line-height: (
 	xs:				1.5rem		// Break vertical rhythm
 );
 
-/* Spaces
---------------------------------------------- */
+/*
+* Spaces
+*
+* See: https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62
+*/
 
-// See: https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62
 $base-space: (
 	xxl:			12rem,
 	xl:				8rem,
@@ -197,8 +203,7 @@ $base-space: (
 	)
 );
 
-/* Colors
---------------------------------------------- */
+/* Colors */
 
 $dark:				#1b1b1b;
 $light:				#e3e3e3;
@@ -270,18 +275,15 @@ $base-colors: (
 	)
 );
 
-/* Borders
---------------------------------------------- */
+/* Borders */
 
 $base-border-radius: 3px;
 
-/* Transitions
---------------------------------------------- */
+/* Transitions */
 
 $base-transition: 0.2s ease-in-out;
 
-/* Columns Width
---------------------------------------------- */
+/* Columns Width */
 
 $margin-left:		2.564102564102564%;
 $one-half:			48.717948717948715%;

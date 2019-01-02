@@ -4,8 +4,8 @@
 *	- Box Shadow
 */
 
-/* Box Shadow
---------------------------------------------- */
+/* Box Shadow */
+
 @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
 
 	@if $inset {

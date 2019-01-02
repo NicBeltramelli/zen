@@ -7,8 +7,7 @@
 *	- Column Classes
 */
 
-/* Site Container
---------------------------------------------- */
+/* Site Container */
 
 .site-container {
 	animation: fadein 1s;
@@ -26,9 +25,7 @@
 	}
 }
 
-
-/* Site Inner
---------------------------------------------- */
+/* Site Inner */
 
 .site-inner {
 	clear: both;
@@ -43,8 +40,7 @@
 	}
 }
 
-/* Layouts
---------------------------------------------- */
+/* Layouts */
 
 @include mq($from: tablet) {
 
@@ -84,8 +80,7 @@
 	}
 }
 
-/* Column Classes
---------------------------------------------- */
+/* Column Classes */
 
 @include mq($from: tablet) {
 

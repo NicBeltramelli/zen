@@ -8,13 +8,12 @@
 *	- Entry Meta
 */
 
-/* Content
---------------------------------------------- */
+/* Content */
 
 .content {
 	margin: space(stack, m);
 
-	// Entry
+	/* Entry */
 	.entry {
 		margin: space(stack, l);
 
@@ -78,7 +77,7 @@
 		}
 	}
 
-	// Pagination
+	/* Pagination */
 	.pagination {
 		clear: both;
 		margin: space(divider, m);
@@ -118,7 +117,7 @@
 			}
 		}
 
-		// Single post pagination
+		/* Single post pagination */
 		&.adjacent-entry-pagination {
 			margin: space(divider, m);
 
@@ -145,7 +144,7 @@
 		}
 	}
 
-	// Comments
+	/* Comments */
 	.entry-comments,
 	.comment-respond,
 	.entry-pings {
@@ -287,8 +286,7 @@
 	}
 }
 
-/* Entry Meta
---------------------------------------------- */
+/* Entry Meta */
 
 p.entry-meta {
 	margin-bottom: 0;
