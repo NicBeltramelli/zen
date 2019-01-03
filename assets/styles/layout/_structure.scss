@@ -38,6 +38,23 @@
 		padding-left: space(m);
 		padding-right: space(m);
 	}
+
+	@include mq($from: large-screen) {
+		max-width: breakpoint(large-screen);
+	}
+}
+
+.wrap {
+	margin-left: auto;
+	margin-right: auto;
+
+	@include mq($from: tablet) {
+		max-width: breakpoint(desktop);
+	}
+
+	@include mq($from: large-screen) {
+		max-width: breakpoint(large-screen);
+	}
 }
 
 /* Layouts */

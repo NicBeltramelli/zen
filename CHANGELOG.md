@@ -1,4 +1,7 @@
-# Genesis Advanced Theme Changelog
+# Genesis Advanced Changelog
+
+## [master] -
+* Improve style for large screen
 
 ## [3.0.0] - 2019-01-02
 * Add woocommerce styles

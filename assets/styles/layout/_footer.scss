@@ -14,29 +14,19 @@
 
 	@extend %box-shadow-default;
 
-	.wrap {
-		margin-left: auto;
-		margin-right: auto;
+	.footer-widget-area {
+		margin-bottom: space(m);
+		padding: space(column, s);
 
-		@include mq($from: tablet) {
-
-			max-width: breakpoint(desktop);
+		&:last-of-type,
+		.widget:last-of-type {
+			margin-bottom: 0;
 		}
 
-		.footer-widget-area {
-			margin-bottom: space(m);
-			padding: space(column, s);
-
-			&:last-of-type,
-			.widget:last-of-type {
-				margin-bottom: 0;
-			}
-
-			@include mq($from: tablet) {
-				float: left;
-				margin-bottom: 0;
-				width: calc(100% / 3);
-			}
+		@include mq($from: tablet) {
+			float: left;
+			margin-bottom: 0;
+			width: calc(100% / 3);
 		}
 	}
 }
@@ -50,14 +40,6 @@
 	text-align: center;
 
 	@extend %font-size-s;
-
-	.wrap {
-
-		@include mq($from: tablet) {
-			max-width: breakpoint(desktop);
-			margin: 0 auto;
-		}
-	}
 
 	p {
 		margin-bottom: 0;
