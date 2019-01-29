@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
-## [master] -
+## [3.1.0] - dev
+* Add support for Gutenberg editor color palette
 * Improve style for large screen
 
 ## [3.0.0] - 2019-01-02
