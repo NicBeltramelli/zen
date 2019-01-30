@@ -17,7 +17,7 @@ p.demo_store {
 	background-color: $primary;
 	color: $primarytext;
 
-	@extend %box-shadow-default;
+	@extend %box-shadow;
 	@extend %font-size-m;
 
 	a {

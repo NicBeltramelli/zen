@@ -10,7 +10,7 @@
 .site-header {
 	background-color: color(light, soft);
 
-	@extend %box-shadow-default;
+	@extend %box-shadow;
 
 	@include mq($from: tablet) {
 		padding: space(column, s);
@@ -88,6 +88,17 @@
 		img {
 			max-height: 100%;
 			width: auto;
+		}
+	}
+
+	.site-header {
+
+		.menu-toggle {
+
+			@include mq($until: small-phone) {
+				float: none;
+				padding-right: 0;
+			}
 		}
 	}
 }

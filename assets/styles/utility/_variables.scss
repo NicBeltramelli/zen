@@ -215,14 +215,16 @@ $success:			#00a878;
 $warning:			#f15025;
 
 // Variations
-$color-shade-amount: 30%;
-$color-trans-amount: 0.6;
-$color-intermediate-shade-amount: 15%;
+$color-shade-amount: 15%;
+$color-strong-shade-amount: 85%;
+$color-trans-amount: 0.7;
+$color-strong-trans-amount: 0.9;
 
 // Colors Map
 $base-colors: (
-	border:			darken($light, $color-intermediate-shade-amount),
+	border:			darken(lighten($dark, $color-strong-shade-amount), $color-shade-amount),
 	outline:		transparentize($dark, $color-trans-amount),
+	shadow:			transparentize(darken($dark, $color-shade-amount), $color-strong-trans-amount),
 
 	// Nested values
 	dark: (
@@ -232,10 +234,10 @@ $base-colors: (
 		trans:		transparentize($dark, $color-trans-amount)
 	),
 	light: (
-		base:		$light,
-		soft:		lighten($light, $color-shade-amount),
-		strong:		darken($light, $color-shade-amount),
-		trans:		transparentize($light, $color-trans-amount)
+		base:		lighten($dark, $color-strong-shade-amount),
+		soft:		lighten(lighten($dark, $color-strong-shade-amount), $color-shade-amount),
+		strong:		darken(lighten($dark, $color-strong-shade-amount), $color-shade-amount),
+		trans:		transparentize(lighten($dark, $color-strong-shade-amount), $color-trans-amount)
 	),
 	accent: (
 		base:		$accent,

@@ -1,6 +1,8 @@
 # Genesis Advanced Changelog
 
 ## [3.1.0] - dev
+* Improve global style
+* Update inline styles
 * Add support for Gutenberg editor color palette
 * Improve style for large screen
 

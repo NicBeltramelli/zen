@@ -12,7 +12,7 @@
 .author-box {
 	margin-bottom: space(m);
 
-	@extend %box-shadow-default;
+	@extend %box-shadow;
 }
 
 .after-entry {
@@ -37,7 +37,6 @@
 
 .author-box {
 
-	background: color(light, trans);
 	padding: space(s);
 
 	@include mq($from: tablet) {

@@ -18,11 +18,11 @@
 		margin: space(stack, l);
 
 		&.sticky {
-			background-color: color(light, trans);
+			background-color: color(light, base);
 			border-radius: $base-border-radius;
 			padding: space(s);
 
-			@extend %box-shadow-default;
+			@extend %box-shadow;
 		}
 	}
 
@@ -169,12 +169,12 @@
 				}
 
 				article {
-					background: color(light, trans);
+					background: color(light, base);
 					border-radius: $base-border-radius;
 					margin: space(stack, s);
 					padding: space(s);
 
-					@extend %box-shadow-default;
+					@extend %box-shadow;
 
 					.comment-header {
 						margin-bottom: space(xs);

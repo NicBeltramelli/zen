@@ -34,7 +34,7 @@
 	text-decoration: none;
 	border: none;
 
-	@extend %box-shadow-default;
+	@extend %box-shadow;
 }
 
 .more-link {

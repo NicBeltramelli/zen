@@ -31,10 +31,8 @@
 .sidebar {
 
 	.enews {
-		background: color(light, trans);
+		background: color(light, base);
 		padding: space(s);
-
-		@extend %box-shadow-default;
 
 		.widget-title {
 			border-bottom: 0;

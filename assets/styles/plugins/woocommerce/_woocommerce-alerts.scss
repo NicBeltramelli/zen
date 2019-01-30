@@ -3,14 +3,14 @@
 .woocommerce-message,
 .woocommerce-error,
 .woocommerce-info {
-	background-color: color(light, trans);
+	background-color: color(light, base);
 	border-top: 3px solid;
 	color: color(dark, base);
 	font-weight: 700;
 	margin: space(stack, m) !important; // Fix default entry-content ul margin.
 	padding: calc(1rem - 1.5px) 0.5rem calc(1rem - 1.5px) 2.5rem; // Compensate top border.
 
-	@extend %box-shadow-default;
+	@extend %box-shadow;
 	@extend %font-size-s;
 
 	&::before {

@@ -1,14 +1,14 @@
 /* Alerts */
 
 .alert {
-	background-color: color(light, trans);
+	background-color: color(light, base);
 	border-top: 3px solid color(danger, base);
 	color: color(dark, base);
 	font-weight: 700;
 	margin: space(stack, s);
 	padding: calc(1rem - 1.5px) space(xs); // Compensate top border.
 
-	@extend %box-shadow-default;
+	@extend %box-shadow;
 	@extend %font-size-s;
 
 	@include mq($from: tablet) {
