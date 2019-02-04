@@ -1,6 +1,6 @@
 # Genesis Advanced Changelog
 
-## [3.1.0] - dev
+## [3.1.0] - 2019-02-04
 * Improve global style
 * Update inline styles
 * Add support for Gutenberg editor color palette
@@ -13,7 +13,7 @@
 * Fix the genesis responsive menu flashing on mobile
 * Disable Comments URL field
 * Reposition secondary navigation menu
-* Add author box on archive pages and single posts
+* Add author box on archive pages and single post
 * Add single post navigation
 * Add landing page template
 * Add front page template
@@ -24,7 +24,7 @@
 * Add theme assets
 * Add webpack configuration
 * Add stylelint configuration
-* Add ESLint configuring
+* Add ESLint configuration
 * Update phpcs ruleset
 * Use a valid SPDX license identifier
 * Add yarn configuration
