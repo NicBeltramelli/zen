@@ -59,7 +59,7 @@
 					.coupon {
 
 						.input-text {
-							border: 1px solid color(border);
+							border: 1px solid $border;
 							padding: space(xs);
 							margin: space(right, xxs);
 						}
@@ -79,8 +79,8 @@
 
 					th,
 					td {
-						background: color(light, soft);
-						border-bottom: 1px solid color(border);
+						background: $contentbg;
+						border-bottom: 1px solid $border;
 						border-collapse: collapse;
 						border-top: 0;
 						padding: space(xs);
@@ -129,14 +129,18 @@
 			small,
 			p small {
 
-				@extend %font-size-s;
+				@extend %font-size-xs;
 			}
 
 			table {
 				border-collapse: collapse;
-				border-top: 1px solid color(border);
+				border-top: 1px solid $border;
 				box-shadow: none;
 				margin: -1px 0 space(s); // Compensate top border.
+
+				small {
+					color: $subtext;
+				}
 
 				tr {
 
@@ -159,11 +163,11 @@
 
 				td,
 				th {
-					background: color(light, soft);
+					background: $contentbg;
 					border-top: 0;
-					border-left: 1px solid color(border);
-					border-right: 1px solid color(border);
-					border-bottom: 1px solid color(border);
+					border-left: 1px solid $border;
+					border-right: 1px solid $border;
+					border-bottom: 1px solid $border;
 					padding: space(xs);
 
 					@extend %font-size-s;
@@ -173,6 +177,10 @@
 						padding-bottom: calc(1rem - 1px); // Compensate bottom border for small screen.
 					}
 				}
+			}
+
+			.woocommerce-shipping-destination {
+				padding: 0;
 			}
 		}
 
@@ -213,18 +221,19 @@
 	/* Payment */
 
 	#payment {
-		background: color(light, base);
+		background: $secondarybg;
 		border-radius: 0;
 		padding: space(s);
 
 		ul.payment_methods {
-			border-bottom: 1px solid color(dark, trans);
-			margin: space(stack, s);
-			padding: 0 0 calc(2rem - 1px); // Compensate border bottom.
+			border-bottom: none;
+			margin: 0;
+			padding: 0;
 
 			li {
 				line-height: line-height(s);
 				list-style-type: none;
+				margin: space(stack, xs);
 
 				label {
 					font-weight: 700;
@@ -232,13 +241,12 @@
 
 				input {
 
-					&[type="radio"] {
-						vertical-align: middle;
-					}
+					margin: 0 0.5em 0 0;
+					vertical-align: middle;
 				}
 
 				img {
-					margin: -2px 0 0 calc(0.5rem + 2px);
+					margin: 0;
 				}
 			}
 		}
@@ -249,11 +257,11 @@
 		}
 
 		div.payment_box {
-			background: color(light, soft);
-			border: 1px solid color(border);
+			background: $contentbg;
+			border: none;
 			border-radius: 0;
-			color: color(dark, base);
-			margin: calc(1rem - 1px) 0; // Compensate border.
+			color: $primarytext;
+			margin: space(divider, xs);
 			padding: space(xs);
 
 			@extend %font-size-s;
@@ -325,9 +333,9 @@
 	}
 
 	.woocommerce-terms-and-conditions {
-		border: 1px solid color(border);
-		box-shadow: inset 0 1px 2px color(shadow);
-		background: color(light, base);
+		border: 1px solid $border;
+		box-shadow: inset 0 1px 2px $shadow;
+		background: $secondarybg;
 	}
 
 	.woocommerce-invalid {

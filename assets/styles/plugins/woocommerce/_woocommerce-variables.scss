@@ -13,14 +13,8 @@ $star:				color(star, base);
 // Primary color for buttons (alt)
 $primary:			color(accent, base);
 
-// Text on primary color bg
-$primarytext:		desaturate(lighten($primary, 50%), 18%);
-
-// Secondary buttons
-$secondary:			desaturate(lighten($primary, 40%), 21%);
-
-// Text on secondary color bg
-$secondarytext:		desaturate(darken($secondary, 60%), 21%);
+// Text on primary color bg - Buttons bg
+$primarytext:		color(dark, base);
 
 // Prices, In stock labels, sales flash
 $highlight:			adjust-hue($primary, 150deg);
@@ -28,11 +22,20 @@ $highlight:			adjust-hue($primary, 150deg);
 // Text on highlight color bg
 $highlightext:		desaturate(lighten($highlight, 50%), 18%);
 
-// Content BG - Tabs (active state)
+// Content BG - Tabs (active state) - Buttons color
 $contentbg:			color(light, soft);
 
-// Small, breadcrumbs etc
+// Secondary background - Buttons disabled bg
+$secondarybg:		color(light, base);
+
+// Small - breadcrumbs - Labels - Buttons disabled color
 $subtext:			color(dark, soft);
+
+// Border
+$border:			color(border);
+
+// Box shadow
+$shadow:			color(shadow);
 
 // Even tab row on small screen
 $even:				rgba(0, 0, 0, 0.025);

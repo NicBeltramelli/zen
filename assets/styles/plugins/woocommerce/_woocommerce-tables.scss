@@ -16,15 +16,15 @@
 		border-bottom: 0;
 		border-left: 0;
 		border-right: 0;
-		border-top: 1px solid color(border);
+		border-top: 1px solid $border;
 		margin: -1px 0 space(m); // Compensate top border.
 		word-break: normal;
 
 		th,
 		td {
-			border-bottom: 1px solid color(border);
-			border-left: 1px solid color(border);
-			border-right: 1px solid color(border);
+			border-bottom: 1px solid $border;
+			border-left: 1px solid $border;
+			border-right: 1px solid $border;
 			border-top: 0;
 			font-family: $base-font-sans;
 			padding: space(xs);
@@ -83,12 +83,12 @@
 
 	table.shop_attributes {
 		border-collapse: collapse;
-		border-top: 1px solid color(border);
+		border-top: 1px solid $border;
 		margin-bottom: calc(2rem - 1px); // Compensate top border.
 
 		th,
 		td {
-			border-bottom: 1px solid color(border);
+			border-bottom: 1px solid $border;
 			font-style: inherit;
 			line-height: line-height(s);
 			padding: space(xs);
@@ -118,7 +118,7 @@
 
 		th,
 		td {
-			border-bottom: 1px solid color(border);
+			border-bottom: 1px solid $border;
 			border-top: 0;
 			font-family: $base-font-sans;
 			padding: space(xs);

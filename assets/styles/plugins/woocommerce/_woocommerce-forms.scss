@@ -23,7 +23,7 @@
 		vertical-align: middle;
 
 		.select2-selection--single {
-			border: 1px solid color(border);
+			border: 1px solid $border;
 			border-radius: $base-border-radius;
 			height: space(m);
 			line-height: line-height(s);
@@ -31,12 +31,12 @@
 			text-align: left;
 
 			.select2-selection__rendered {
-				color: color(dark, base);
+				color: $primarytext;
 				line-height: line-height(s);
 				padding: space(xs);
 
 				.select2-selection__placeholder {
-					color: color(dark, base);
+					color: $primarytext;
 					line-height: line-height(s);
 				}
 			}
@@ -47,7 +47,7 @@
 				top: space(xs);
 
 				b {
-					border-color: color(dark, base) transparent transparent transparent;
+					border-color: $primarytext transparent transparent transparent;
 				}
 			}
 		}
@@ -65,7 +65,7 @@
 		}
 
 		label {
-			color: color(dark, soft);
+			color: $subtext;
 			font-weight: 700;
 			line-height: line-height(s);
 			vertical-align: middle;
@@ -86,14 +86,14 @@
 			.description {
 				background: $blue;
 				border-radius: $base-border-radius;
-				color: color(light, soft);
+				color: $contentbg;
 				margin: space(top, xxs);
 				padding: space(inset-squish, xxs);
 
 				@extend %font-size-s;
 
 				a {
-					color: color(light, soft);
+					color: $contentbg;
 				}
 
 				&::before {
@@ -114,7 +114,7 @@
 		}
 
 		input.input-checkbox {
-			margin: -2px space(xxs) 0 0;
+			margin: 0 0.5em 0 0;
 			height: space(s); // Preserve height despite border.
 		}
 
@@ -160,7 +160,7 @@
 	form.login,
 	form.checkout_coupon,
 	form.register {
-		border: 1px solid darken($secondary, 10%);
+		border: 1px solid $border;
 		border-radius: $base-border-radius;
 		margin: space(stack, s);
 		padding: space(xs);
@@ -223,11 +223,10 @@
 
 		li {
 			line-height: line-height(s);
-			margin: 0;
-			padding: 0;
+			margin: space(stack, xxs);
 
 			input {
-				margin: space(xxs) 0.5ex;
+				margin: 0 0.5em 0 0;
 			}
 		}
 

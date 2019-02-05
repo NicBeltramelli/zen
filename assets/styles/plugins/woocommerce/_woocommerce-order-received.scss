@@ -17,13 +17,13 @@
 	/* Order Details */
 
 	ul.order_details {
-		border: 1px dashed color(border);
+		border: 1px dashed $border;
 		font-family: $base-font-sans;
 		margin: 0 0 calc(4rem - 1px) 0; // Compensate border.
 		padding: space(column, xs);
 
 		li {
-			border-right: 1px dashed color(border);
+			border-right: 1px dashed $border;
 			margin: space(xs) space(s) space(xs) 0;
 			padding-right: space(s);
 			list-style-type: none;
@@ -45,15 +45,15 @@
 
 				&.order,
 				&.total {
-					border-right: 1px dashed color(border);
+					border-right: 1px dashed $border;
 					padding-right: space(s);
 					width: 50%;
 				}
 
 				&.email {
-					border-bottom: 1px dashed color(border);
+					border-bottom: 1px dashed $border;
 					border-right: 0;
-					border-top: 1px dashed color(border);
+					border-top: 1px dashed $border;
 					margin: 0;
 					padding: calc(2rem - 1px) 0; // Compensate border.
 					padding-right: 0;
@@ -77,7 +77,7 @@
 		margin-bottom: 0;
 
 		address {
-			border: 1px dashed color(border);
+			border: 1px dashed $border;
 			border-radius: 0;
 			font-family: $base-font-sans;
 			padding: calc(1rem - 1px) 1rem; // Compensate border.
@@ -115,15 +115,15 @@
 
 				&.order,
 				&.total {
-					border-right: 1px dashed color(border);
+					border-right: 1px dashed $border;
 					padding-right: space(s);
 					width: 50%;
 				}
 
 				&.email {
-					border-bottom: 1px dashed color(border);
+					border-bottom: 1px dashed $border;
 					border-right: 0;
-					border-top: 1px dashed color(border);
+					border-top: 1px dashed $border;
 					margin: 0;
 					padding: calc(1rem - 1px) 0; // Compensate border.
 					width: 100%;

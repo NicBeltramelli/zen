@@ -1,5 +1,8 @@
 # Genesis Advanced Changelog
 
+## [master] - 
+* Improve woocommerce style
+
 ## [3.1.0] - 2019-02-04
 * Improve global style
 * Update inline styles

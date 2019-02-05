@@ -36,7 +36,7 @@ p.demo_store {
 	}
 
 	fieldset {
-		border: 2px solid color(border);
+		border: 2px solid $border;
 		margin-bottom: space(s);
 		padding: calc(1rem - 1px) space(xs); // Compensate border.
 

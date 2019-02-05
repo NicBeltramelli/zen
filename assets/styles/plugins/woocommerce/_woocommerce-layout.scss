@@ -191,6 +191,8 @@
 	}
 
 	#payment {
+		float: right;
+    	width: 48%;
 
 		.form-row {
 
@@ -204,7 +206,8 @@
 		}
 
 		#place_order {
-
+			float: inherit;
+			width: 100%;
 		}
 	}
 
@@ -247,7 +250,7 @@
 			ul {
 
 				li {
-					text-align: center;
+					text-align: inherit;
 				}
 			}
 		}

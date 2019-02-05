@@ -1,6 +1,7 @@
 /**
 * WooCommerce Small Screen
 *
+*	- Tablet
 *	- General Layout
 *	- Tables
 *		- Global Responsive Tables
@@ -18,6 +19,23 @@
 
 .woocommerce,
 .woocommerce-page {
+
+	@include mq($until: tablet) {
+		/* Tablet */
+
+		.cart-collaterals {
+
+			.cart_totals {
+				width: 100%;
+    			float: none;
+    		}
+    	}
+
+    	#payment {
+    		width: 100%;
+    		float: none;
+    	}
+    }
 
 	@include mq($until: phone) {
 
@@ -75,7 +93,7 @@
 		table.my_account_orders {
 
 			tr {
-				border-top: 1px solid color(border);
+				border-top: 1px solid $border;
 				margin-bottom: calc(2rem - 1px); // Compensate top border.
 
 				td {
@@ -101,7 +119,7 @@
 			margin: space(stack, m);
 
 			tr {
-				border-top: 1px solid color(border);
+				border-top: 1px solid $border;
 				margin-bottom: calc(2rem - 1px); // Compensate top border.
 
 				&:last-of-type {
@@ -223,11 +241,11 @@
 						margin: 0;
 
 						&:last-child {
-							border-bottom: 1px solid color(border);
+							border-bottom: 1px solid $border;
 						}
 
 						&.active {
-							border-bottom-color: color(border);
+							border-bottom-color: $border;
 
 							a::after {
 								font-family: WooCommerce; // stylelint-disable-line font-family-no-missing-generic-family-keyword
@@ -291,7 +309,7 @@
 		ul.order_details {
 
 			li {
-				border-bottom: 1px dashed color(border);
+				border-bottom: 1px dashed $border;
 				margin: 0;
 				padding: space(xs) 0 calc(1rem - 1px); // Compensate bottom border.
 				width: 100%;

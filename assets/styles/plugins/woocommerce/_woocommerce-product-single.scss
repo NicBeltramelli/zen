@@ -43,7 +43,7 @@
 
 		span.price,
 		p.price {
-			color: color(dark, base);
+			color: $primarytext;
 			font-family: $base-font-sans;
 			font-weight: 700;
 
@@ -200,14 +200,14 @@
 				margin: space(stack, s);
 
 				li {
-					border: 1px solid color(border);
-					background-color: color(light, base);
+					border: 1px solid $border;
+					background-color: $secondarybg;
 					border-radius: 0;
 					height: space(m); // Preserve height despite border.
 					padding: 0;
 
 					a {
-						color: color(dark, soft);
+						color: $subtext;
 						font-family: $base-font-sans;
 						outline: none;
 						padding: space(inset-squish, xs);
@@ -239,24 +239,24 @@
 
 					&::before,
 					&::after {
-						border: 1px solid color(border);
+						border: 1px solid $border;
 					}
 
 					&::before {
 						border-bottom-right-radius: 0;
 						border-width: 0 1px 1px 0;
-						box-shadow: 2px 2px 0 color(light, base);
+						box-shadow: 2px 2px 0 $secondarybg;
 					}
 
 					&::after {
 						border-bottom-left-radius: 0;
 						border-width: 0 0 1px 1px;
-						box-shadow: -2px 2px 0 color(light, base);
+						box-shadow: -2px 2px 0 $secondarybg;
 					}
 				}
 
 				&::before {
-					border-bottom: 1px solid color(border);
+					border-bottom: 1px solid $border;
 				}
 			}
 

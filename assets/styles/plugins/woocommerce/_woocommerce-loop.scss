@@ -55,7 +55,7 @@
 		h3,
 		.woocommerce-loop-product__title,
 		.woocommerce-loop-category__title {
-			color: color(dark, base);
+			color: $primarytext;
 			margin: space(stack, xs);
 			padding: 0;
 
@@ -75,7 +75,7 @@
 		}
 
 		.price {
-			color: color(dark, base);
+			color: $primarytext;
 			margin: space(stack, xs);
 
 			@extend %font-size-s;
@@ -128,16 +128,16 @@
 				}
 
 				a {
-					background-color: color(light, base);
-					color: color(dark, base);
+					background-color: $secondarybg;
+					color: $primarytext;
 					cursor: pointer;
 				}
 
 				span.current,
 				a:hover,
 				a:focus {
-					background-color: color(dark, base);
-					color: color(light, soft);
+					background-color: $primarytext;
+					color: $contentbg;
 				}
 			}
 		}

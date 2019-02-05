@@ -3,9 +3,9 @@
 .woocommerce-message,
 .woocommerce-error,
 .woocommerce-info {
-	background-color: color(light, base);
+	background-color: $secondarybg;
 	border-top: 3px solid;
-	color: color(dark, base);
+	color: $primarytext;
 	font-weight: 700;
 	margin: space(stack, m) !important; // Fix default entry-content ul margin.
 	padding: calc(1rem - 1.5px) 0.5rem calc(1rem - 1.5px) 2.5rem; // Compensate top border.

@@ -47,7 +47,7 @@
 					}
 
 					.comment-text {
-						border: 1px solid color(border);
+						border: 1px solid $border;
 						border-radius: $base-border-radius;
 						margin: 0 0 0 5rem;
 						padding: calc(1rem - 1px) 1rem; // Compensate border.
@@ -74,7 +74,7 @@
 				}
 
 				#respond {
-					border: 1px solid darken($secondary, 3%);
+					border: 1px solid $border;
 					border-radius: $base-border-radius;
 					margin: 0 0 0 5rem;
 					padding: calc(1rem - 1px) 1rem; // Compensate border.

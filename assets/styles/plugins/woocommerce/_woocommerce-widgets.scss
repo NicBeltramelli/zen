@@ -65,7 +65,7 @@
 	.widget_shopping_cart {
 
 		.total {
-			border-top: 1px solid color(border);
+			border-top: 1px solid $border;
 			padding: calc(2rem - 1px) 0 0; // Compensate top border.
 
 			strong {
@@ -168,7 +168,7 @@
 		}
 
 		.price_slider_wrapper .ui-widget-content {
-			background-color: $primary - #444;
+			background-color: $border;
 		}
 
 		.ui-slider-horizontal {
