@@ -28,12 +28,21 @@
 			.cart_totals {
 				width: 100%;
     			float: none;
+
+    			.wc-proceed-to-checkout {
+    				float: left;
+    				width: auto;
+    			}
     		}
     	}
 
     	#payment {
-    		width: 100%;
     		float: none;
+    		width: 100%;
+
+    		#place_order {
+    			width: auto;
+    		}
     	}
     }
 
@@ -43,9 +52,8 @@
 
 		.col2-set {
 
-			.col-1,
-			.col-2 {
-
+			.col-1 {
+				margin: space(stack, m);
 			}
 
 			.woocommerce-column {
@@ -281,6 +289,10 @@
 				.woocommerce-shipping-calculator {
 					text-align: left;
 				}
+
+				.wc-proceed-to-checkout {
+					width: 100%;
+				}
 			}
 		}
 
@@ -302,6 +314,7 @@
 
 			#place_order {
 				margin-bottom: 0;
+				width: 100%;
 			}
 		}
 
