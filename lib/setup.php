@@ -84,7 +84,11 @@ add_theme_support(
 	]
 );
 
-/* Add support for Gutenberg editor color palette */
+/**
+ * Add support for Gutenberg editor color palette
+ *
+ * @since 3.1.0
+ */
 add_theme_support(
 	'editor-color-palette', [
 		[
