@@ -20,18 +20,18 @@
 				padding-top: space(s);
 			}
 
-			.woocommerce-product-gallery__trigger {
-				border-width: 0;
-				right: space(xs);
-				top: space(xs);
-			}
-
-			.woocommerce-product-gallery {
+			&.woocommerce-product-gallery {
 				overflow: hidden;
 
 				.flex-control-nav {
 					user-select: none;
 				}
+			}
+
+			.woocommerce-product-gallery__trigger {
+				border-width: 0;
+				right: space(xs);
+				top: space(xs);
 			}
 		}
 
