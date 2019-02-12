@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
-## [master] - 
+## [dev-3.1.1] - 
+* Change number of thumbnails per row on product gallery
 * Improve woocommerce style
 
 ## [3.1.0] - 2019-02-04

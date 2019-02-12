@@ -211,3 +211,22 @@ add_filter(
 
 	}
 );
+
+/**
+ * Change number of thumbnails per row on product gallery
+ *
+ * @since 3.1.1
+ *
+ * @param array $wrapper_classes The number of thumbnails per row.
+ * @return array The modified number of thumbnails per row.
+ */
+add_filter(
+	'woocommerce_single_product_image_gallery_classes', function ( $wrapper_classes ) {
+
+		$columns            = 5;
+		$wrapper_classes[2] = 'woocommerce-product-gallery--columns-' . absint( $columns );
+
+		return $wrapper_classes;
+
+	}
+);
