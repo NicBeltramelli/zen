@@ -1,5 +1,43 @@
-/* Jetpack */
+/**
+* Jetpack
+*
+*	- Global
+*	- Sharedaddy
+*/
+
+/* Global */
 
 #wpstats {
 	display: none;
+}
+
+/* Sharedaddy */
+
+.site-inner {
+
+	div.sharedaddy {
+
+		h3.sd-title {
+			font-family: $base-font-sans;
+			font-weight: 700;
+			margin: 0;
+
+			@extend %font-size-s;
+
+			&::before {
+				content: none;
+			}
+		}
+
+		.sd-content ul {
+			clear: both;
+			float: left;
+			margin: space(xs) 0 space(xxs) !important;
+			width: 100%;
+
+			li {
+				margin: 0 space(xxs) space(xxs) 0;
+			}
+		}
+	}
 }

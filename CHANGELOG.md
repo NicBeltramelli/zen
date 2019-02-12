@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev-3.1.1] - 
+* Improve jetpack sharing buttons style
 * Change number of thumbnails per row on product gallery
 * Improve woocommerce style
 
