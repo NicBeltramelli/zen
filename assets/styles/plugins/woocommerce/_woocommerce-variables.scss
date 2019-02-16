@@ -16,11 +16,11 @@ $primary:			color(accent, base);
 // Text on primary color bg - Buttons bg
 $primarytext:		color(dark, base);
 
-// Prices, In stock labels, sales flash
-$highlight:			adjust-hue($primary, 150deg);
+// Sales flash
+$highlight:			color(accent, base);
 
 // Text on highlight color bg
-$highlightext:		desaturate(lighten($highlight, 50%), 18%);
+$highlightext:		color(light, soft);
 
 // Content BG - Tabs (active state) - Buttons color
 $contentbg:			color(light, soft);
