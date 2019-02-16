@@ -18,11 +18,11 @@
 	div.sharedaddy {
 
 		h3.sd-title {
-			font-family: $base-font-sans;
+			color: color(dark, soft);
 			font-weight: 700;
-			margin: 0;
+			margin: space(stack, xs);
 
-			@extend %font-size-s;
+			@extend %font-size-xs;
 
 			&::before {
 				content: none;
@@ -32,11 +32,11 @@
 		.sd-content ul {
 			clear: both;
 			float: left;
-			margin: space(xs) 0 space(xxs) !important;
+			margin: space(stack, s) !important;
 			width: 100%;
 
 			li {
-				margin: 0 space(xxs) space(xxs) 0;
+				margin: space(right, xxs);
 			}
 		}
 	}
