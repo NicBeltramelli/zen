@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev-3.1.1] - 
+* Add style for woocommerce product loop grid
 * Add style for seven and eight grid
 * Improve jetpack sharing buttons style
 * Change number of thumbnails per row on product gallery

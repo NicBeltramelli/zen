@@ -219,9 +219,14 @@
 		ul.products[class*="columns-"] {
 
 			li.product {
-				margin: space(stack, m);
+				clear: none;
+				float: left;
+				margin: 0 0 space(stack, m) $margin-left;
+				width: $one-half;
 
-				&:nth-child(2n) {
+				&:nth-child(odd) {
+					clear: both;
+					margin-left: 0;
 				}
 			}
 		}
