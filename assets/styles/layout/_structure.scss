@@ -34,9 +34,10 @@
 
 	@include mq($from: tablet) {
 		margin-top: space(l);
+	}
+
+	@include mq($from: desktop) {
 		max-width: breakpoint(desktop);
-		padding-left: space(m);
-		padding-right: space(m);
 	}
 
 	@include mq($from: large-screen) {
@@ -45,10 +46,10 @@
 }
 
 .wrap {
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0 auto;
+	padding: space(column, s);
 
-	@include mq($from: tablet) {
+	@include mq($from: desktop) {
 		max-width: breakpoint(desktop);
 	}
 
