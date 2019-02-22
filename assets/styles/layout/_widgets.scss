@@ -9,7 +9,11 @@
 
 .widget {
 
-	margin: space(stack, m);
+	margin-bottom: space(m);
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 
 	p {
 
