@@ -35,7 +35,8 @@ html {
 .site-header::before,
 .site-inner::before,
 .widget::before,
-.wrap::before {
+.wrap::before,
+.widget-area::before {
 	content: " ";
 	display: table;
 }
@@ -53,7 +54,8 @@ html {
 .site-header::after,
 .site-inner::after,
 .widget::after,
-.wrap::after {
+.wrap::after,
+.widget-area::after {
 	clear: both;
 	content: " ";
 	display: table;
