@@ -1,6 +1,8 @@
 # Genesis Advanced Changelog
 
 ## [dev-3.1.1] - 
+* Add clearfix mixin
+* Improve style for widgets
 * Add style for woocommerce product loop grid
 * Add style for seven and eight grid
 * Improve jetpack sharing buttons style
