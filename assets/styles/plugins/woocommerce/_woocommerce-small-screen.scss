@@ -44,6 +44,10 @@
     			width: auto;
     		}
     	}
+
+    	&.widget {
+			width: 100%; // Fix responsive width.
+		}
     }
 
 	@include mq($until: phone) {
