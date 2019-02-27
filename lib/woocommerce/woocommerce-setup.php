@@ -56,7 +56,6 @@ add_action(
 		}
 
 		wp_add_inline_script(
-
 			'genesis-advanced-scripts',
 			"jQuery(document).ready( function() { jQuery( '.product .woocommerce-LoopProduct-link').matchHeight(); });"
 		);
