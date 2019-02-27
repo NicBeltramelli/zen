@@ -42,22 +42,18 @@ add_action(
  */
 add_action(
 	'wp_enqueue_scripts', function () {
-
 		if ( ! class_exists( 'WooCommerce' ) ||
 			! is_shop() &&
 			! is_product_category() &&
 			! is_product_tag() &&
 			! is_product() &&
 			! is_cart() ) {
-
 			return;
 		}
-
 		wp_add_inline_script(
 			'genesis-advanced-scripts',
 			"jQuery(document).ready( function() { jQuery( '.product .woocommerce-LoopProduct-link').matchHeight(); });"
 		);
-
 	}, 99
 );
 
