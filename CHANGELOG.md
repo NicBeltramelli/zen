@@ -1,6 +1,6 @@
 # Genesis Advanced Changelog
 
-## [dev-3.1.1] - 
+## [3.1.1] - 2019-03-06
 * Add clearfix mixin
 * Improve style for widgets
 * Add style for woocommerce product loop grid
