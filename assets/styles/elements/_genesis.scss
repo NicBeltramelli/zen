@@ -40,11 +40,18 @@
 	padding: space(s);
 
 	@include mq($from: tablet) {
-		padding: space(inset-squish, s);
+		padding: space(s);
+	}
+
+	img {
+		margin-bottom: 0;
 	}
 
 	.author-box-title {
-		padding-top: space(s);
+		padding-top: space(xs);
+		margin-bottom: space(xs);
+
+		@extend %font-size-xl;
 	}
 
 	.author-box-content {
