@@ -1,5 +1,8 @@
 # Genesis Advanced Changelog
 
+## [master] - 
+* Exclude all dev files from production package
+
 ## [3.1.1] - 2019-03-06
 * Add clearfix mixin
 * Improve style for widgets
