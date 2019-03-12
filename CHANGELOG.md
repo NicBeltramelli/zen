@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [master] - 
+* Improve woocommerce style
 * Exclude all dev files from production package
 
 ## [3.1.1] - 2019-03-06

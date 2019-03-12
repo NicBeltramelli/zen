@@ -7,31 +7,38 @@
 	border-top: 3px solid;
 	color: $primarytext;
 	font-weight: 700;
-	margin: space(stack, m) !important; // Fix default entry-content ul margin.
-	padding: calc(1rem - 1.5px) 0.5rem calc(1rem - 1.5px) 2.5rem; // Compensate top border.
+	margin: space(stack, s) !important; // Fix default entry-content ul margin.
+	padding: calc(1rem - 1.5px) 0.5rem calc(5rem - 1.5px) 3rem; // Compensate top border.
 
 	@extend %box-shadow;
 	@extend %font-size-s;
 
 	&::before {
-		left: 0.5rem;
+		left: 1rem;
 		top: calc(1rem - 1.5px);
 	}
 
 	a.button {
+		bottom: space(xs);
 		height: auto;
-		margin-left: space(xxs);
+		left: 3rem;
+		margin-left: 0;
+		position: absolute;
 		padding: space(inset-squish, xxs);
+
+		@include mq($from: phone) {
+			margin-left: space(xxs);
+			position: static;
+		}
 	}
 
 	@include mq($from: small-phone) {
 
-		padding-left: 3rem;
 		padding-right: 1rem;
+	}
 
-		&::before {
-			left: 1rem;
-		}
+	@include mq($from: phone) {
+		padding-bottom: calc(1rem - 1.5px);
 	}
 }
 
@@ -44,10 +51,10 @@
 }
 
 .woocommerce-info {
-	border-top-color: $info;
+	border-top-color: $primary;
 
 	&::before {
-		color: $info;
+		color: $primary;
 	}
 }
 

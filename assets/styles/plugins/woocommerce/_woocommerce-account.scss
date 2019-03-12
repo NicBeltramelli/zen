@@ -13,15 +13,20 @@
 	.woocommerce-MyAccount-navigation {
 		display: block; // Fix genesis responsive menu inheritance.
 		margin-bottom: space(s);
+		padding: space(column, xs);
+
+		@extend %box-shadow;
 
 		ul {
 			margin-bottom: 0;
 			margin-left: 0;
+			padding: space(xs);
 
-			li {
+			li.woocommerce-MyAccount-navigation-link {
 				font-family: $base-font-sans;
 				list-style-type: none;
-				margin: space(divider, xs);
+				margin: 0;
+				padding: space(divider, xs);
 
 				@extend %font-size-s;
 
