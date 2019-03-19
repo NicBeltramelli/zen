@@ -44,7 +44,7 @@ if (process.env.NODE_ENV === undefined) {
  * If your publicPath differs between environments, but you know it at compile time,
  * then set GENESIS_ADVANCED_DIST_PATH as an environment variable before compiling.
  * Example:
- *   GENESIS_ADVANCED_DIST_PATH=/wp-content/themes/genesis-advanced/dist yarn build:production
+ *   GENESIS_ADVANCED_DIST_PATH=/wp-content/themes/genesis-advanced/dist/ yarn build:production
  */
 if (process.env.GENESIS_ADVANCED_DIST_PATH) {
   module.exports.publicPath = process.env.GENESIS_ADVANCED_DIST_PATH;
