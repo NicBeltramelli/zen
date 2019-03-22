@@ -1,6 +1,19 @@
 # Genesis Advanced Changelog
 
-## [master] - 
+## [3.2.0] - 2019-03-22
+* Add Travis CI
+* Require php 7.1+
+* Require Node 8+
+* Decrease optipng level
+* Ignore vendor folder only on the root directory
+* Add custom stylelint at-rules
+* Dispatch event when firing routes
+* Update deps
+* Normalize and enforce single quotes
+* Add .stylelintrc filename extension
+* Double quotes for styles
+* Remove popper.js webpack config
+* Fix GENESIS_ADVANCED_DIST_PATH example path
 * Improve woocommerce style
 * Exclude all dev files from production package
 
