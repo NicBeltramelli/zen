@@ -49,11 +49,11 @@ $genesis_advanced_error = function ( $message, $genesis_advanced_subtitle = '', 
 /**
  * Ensure compatible version of PHP is used
  */
-if ( version_compare( '5.4', phpversion(), '>=' ) ) {
+if ( version_compare( '7.1', phpversion(), '>=' ) ) {
 
 	$genesis_advanced_error(
 		esc_html__(
-			'You must be using PHP 5.4 or greater.',
+			'You must be using PHP 7.1 or greater.',
 			'genesis-advanced'
 		),
 		esc_html__(
