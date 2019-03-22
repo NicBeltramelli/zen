@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [3.2.0] - 2019-03-22
+* Fix composer package name
 * Add Travis CI
 * Require php 7.1+
 * Require Node 8+
