@@ -1,5 +1,11 @@
 # Genesis Advanced Changelog
 
+## [master]
+* Add copyright notice
+* Add license
+* Add shields
+* Update composer package name
+
 ## [3.2.0] - 2019-03-22
 * Fix composer package name
 * Add Travis CI
