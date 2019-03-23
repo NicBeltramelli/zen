@@ -3,7 +3,11 @@
 [![Build Status](https://img.shields.io/travis/NicBeltramelli/genesis-advanced.svg?style=for-the-badge)](https://travis-ci.org/NicBeltramelli/genesis-advanced)
 
 
-Genesis Advanced is a starter child theme for the Genesis Framework widh a modern development workflow. Tested up to WordPress 5.1.1 and Genesis 2.8.1. [Live Demo](https://thematicpress.com/genesis-advanced).
+Genesis Advanced is a starter child theme for the Genesis Framework widh a modern development workflow. 
+
+Tested up to WordPress 5.1.1 and Genesis 2.8.1. 
+
+[Theme Live Demo](https://thematicpress.com/genesis-advanced).
 
 
 ## Features
@@ -52,15 +56,15 @@ themes/your-theme-name/  # → Root of your child theme
 │   ├── structure/       # → Theme structure
 │   ├── woocommerce/     # → WooCommerce PHP library
 │   ├── admin.php        # → Adds the admin dashboard setting
-│	├── assets.php  	 # → Enqueue fonts, stylesheets and scripts
-│	├── body-classes.php # → Adds consistent classes to the body tag
-│	├── customize.php    # → Adds the Customizer addition
-│	├── defaults.php     # → Configures the default theme settings
-│	├── errors.php       # → Displays error messages
-│	├── extras.php       # → Custom functions
-│	├── helpers.php      # → Adds the required helper functions
-│	├── output.php       # → Adds the required CSS to the front-end
-│	└── setup.php        # → Defines theme constants and features
+│   ├── assets.php  	 # → Enqueue fonts, stylesheets and scripts
+│   ├── body-classes.php # → Adds consistent classes to the body tag
+│   ├── customize.php    # → Adds the Customizer addition
+│   ├── defaults.php     # → Configures the default theme settings
+│   ├── errors.php       # → Displays error messages
+│   ├── extras.php       # → Custom functions
+│   ├── helpers.php      # → Adds the required helper functions
+│   ├── output.php       # → Adds the required CSS to the front-end
+│   └── setup.php        # → Defines theme constants and features
 ├── node_modules/        # → Node.js packages (never edit)
 ├── page-templates/      # → Custom page templates
 ├── vendor/              # → Composer packages (never edit)
@@ -76,14 +80,14 @@ themes/your-theme-name/  # → Root of your child theme
 
 ## Theme setup
 
-* Edit `lib/setup.php` to define child theme constants and features support
-* Edit `style.css` to define your theme meta information (name, URI, description, version, author)
+1. Edit `lib/setup.php` to define child theme constants and features support
+2. Edit `style.css` to define your theme meta information (name, URI, description, version, author)
 
 
 ## Theme development
 
-* Run `yarn` from the theme directory to install dependencies
-* Update `assets/config.json` settings:
+1. Run `yarn` from the theme directory to install dependencies
+2. Update `assets/config.json` settings:
   * `publicPath` should reflect your WordPress folder structure (`/wp-content/themes/your-theme-name` for non-[Bedrock](https://github.com/roots/bedrock) installs)
   * `devUrl` should reflect your local development hostname
 
