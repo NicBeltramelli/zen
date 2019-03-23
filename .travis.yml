@@ -23,6 +23,10 @@ cache:
     - $HOME/.yarn-cache
     - vendor
 
+branches:
+  except:
+  - dev
+
 before_install:
   - composer self-update
   - source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION && nvm use $TRAVIS_NODE_VERSION
