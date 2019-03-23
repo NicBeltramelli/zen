@@ -71,7 +71,7 @@ themes/your-theme-name/  # → Root of your child theme
 ├── composer.json        # → Composer dependencies and scripts
 ├── composer.lock        # → Composer lock file (never edit)
 ├── front-page.php       # → Front page template
-├── function.php         # → Includes the theme code library
+├── function.php         # → Includes the theme PHP library
 ├── package.json         # → Node.js dependencies and scripts
 ├── style.css            # → Theme meta informations
 └── yarn.lock            # → Yarn lock file (never edit)
