@@ -1,5 +1,8 @@
 # Genesis Advanced Changelog
 
+## [master]
+* Update composer deps
+
 ## [3.2.1] - 2019-03-24
 * Update docs
 * Update theme info
