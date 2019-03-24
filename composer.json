@@ -3,7 +3,7 @@
     "type": "wordpress-theme",
     "license": "GPL-2.0-or-later",
     "description": "Starter theme for Genesis Framework with a modern development workflow",
-    "homepage": "https://nicbeltramelli.com/genesis-advanced/",
+    "homepage": "https://thematicpress.com/genesis-advanced/",
     "authors": [
         {
             "name": "Nic Beltramelli",
@@ -28,6 +28,6 @@
     "scripts": {
         "phpcs": "phpcs",
         "phpcbf": "phpcbf --report=diff -vv",
-        "export": "zip -r ../genesis-advanced.zip * .[^.]* -x '.*' '.git/*' '*.log' '*.lock' '.cache-loader/*' 'phpcs.xml.dist' 'composer.json' 'package.json' 'assets/*' 'node_modules/*' 'vendor/*'"
+        "export": "zip -r ../genesis-advanced.zip * .[^.]* -x '.git/*' '*.log' '.cache-loader/*' 'assets/config-local.json*' 'node_modules/*' 'vendor/*'"
     }
 }

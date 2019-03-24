@@ -29,7 +29,7 @@ add_action(
 
 /* Define child theme constants (do not remove) */
 define( 'CHILD_THEME_NAME', 'Genesis Advanced' );
-define( 'CHILD_THEME_URL', 'https://nicbeltramelli.com/genesis-advanced/' );
+define( 'CHILD_THEME_URL', 'https://thematicpress.com/genesis-advanced/' );
 define( 'CHILD_THEME_VERSION', filemtime( get_stylesheet_directory() . '/style.css' ) );
 
 /* Set the content width based on the theme's design and stylesheet */

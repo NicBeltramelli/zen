@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 $genesis_advanced_error = function ( $message, $genesis_advanced_subtitle = '', $title = '' ) {
 
-	$docs_url = 'https://nicbeltramelli.com/genesis-advanced/docs';
+	$docs_url = 'https://thematicpress.com/genesis-advanced/docs';
 
 	$title = $title ?: esc_html__(
 		'Genesis Advanced &rsaquo; Error',
