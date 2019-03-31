@@ -20,7 +20,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 3.2.2
  */
 add_action(
-	'wp_enqueue_scripts', function () {
+	'wp_enqueue_scripts',
+	function () {
 
 		/* Enqueue Google Fonts */
 		wp_enqueue_style(
@@ -31,7 +32,9 @@ add_action(
 		);
 
 		/* Enqueue Dashicons */
-		wp_enqueue_style( 'dashicons' );
+		wp_enqueue_style(
+			'dashicons'
+		);
 
 		/* Enqueue main style */
 		wp_enqueue_style(
@@ -56,7 +59,9 @@ add_action(
 		comments_open() &&
 		get_option( 'thread_comments' ) ) {
 
-			wp_enqueue_script( 'comment-reply' );
+			wp_enqueue_script(
+				'comment-reply'
+			);
 		}
 
 		/* Localize Genesis Responsive Menu */

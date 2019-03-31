@@ -20,7 +20,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 3.2.2
  */
 add_action(
-	'wp_enqueue_scripts', function () {
+	'wp_enqueue_scripts',
+	function () {
 
 		if ( class_exists( 'woocommerce' ) ) {
 
@@ -41,8 +42,8 @@ add_action(
  * @since 3.2.2
  */
 add_action(
-
-	'wp_enqueue_scripts', function () {
+	'wp_enqueue_scripts',
+	function () {
 
 		if ( ! class_exists( 'WooCommerce' ) ||
 			! is_shop() &&
@@ -66,9 +67,15 @@ add_action(
 /* Add product gallery support */
 if ( class_exists( 'WooCommerce' ) ) {
 
-	add_theme_support( 'wc-product-gallery-lightbox' );
-	add_theme_support( 'wc-product-gallery-slider' );
-	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support(
+		'wc-product-gallery-lightbox'
+	);
+	add_theme_support(
+		'wc-product-gallery-slider'
+	);
+	add_theme_support(
+		'wc-product-gallery-zoom'
+	);
 
 }
 
@@ -80,7 +87,8 @@ if ( class_exists( 'WooCommerce' ) ) {
  * @return string Pixel width of the theme's breakpoint.
  */
 add_filter(
-	'woocommerce_style_smallscreen_breakpoint', function () {
+	'woocommerce_style_smallscreen_breakpoint',
+	function () {
 
 		$current = genesis_site_layout();
 		$layouts =
@@ -93,7 +101,9 @@ add_filter(
 		];
 
 		if ( in_array( $current, $layouts['one-sidebar'], true ) ) {
+
 			return '600px';
+
 		}
 
 		return '600px'; // Show mobile styles immediately.
@@ -109,7 +119,8 @@ add_filter(
  * @return int Number of products to show per page.
  */
 add_filter(
-	'genesiswooc_products_per_page', function () {
+	'genesiswooc_products_per_page',
+	function () {
 
 		return 8;
 
@@ -125,7 +136,8 @@ add_filter(
  * @return array New next and previous text arguments.
  */
 add_filter(
-	'woocommerce_pagination_args', function ( $args ) {
+	'woocommerce_pagination_args',
+	function ( $args ) {
 
 		$args['prev_text'] = sprintf( '&laquo; %s', __( 'Previous Page', 'genesis-advanced' ) );
 		$args['next_text'] = sprintf( '%s &raquo;', __( 'Next Page', 'genesis-advanced' ) );
@@ -141,7 +153,8 @@ add_filter(
  * @since 3.0.0
  */
 add_action(
-	'after_switch_theme', function () {
+	'after_switch_theme',
+	function () {
 
 		global $pagenow;
 
@@ -163,7 +176,8 @@ add_action(
  * @param string $plugin The path of the plugin being activated.
  */
 add_action(
-	'activated_plugin', function ( $plugin ) {
+	'activated_plugin',
+	function ( $plugin ) {
 
 		// Checks to see if WooCommerce is being activated.
 		if ( 'woocommerce/woocommerce.php' !== $plugin ) {
@@ -200,7 +214,8 @@ function genesis_advanced_update_woocommerce_image_dimensions() {
  * @return array The modified gallery image size and crop arguments.
  */
 add_filter(
-	'woocommerce_get_image_size_gallery_thumbnail', function ( $size ) {
+	'woocommerce_get_image_size_gallery_thumbnail',
+	function ( $size ) {
 
 		$size =
 		[
@@ -223,7 +238,8 @@ add_filter(
  * @return array The modified number of thumbnails per row.
  */
 add_filter(
-	'woocommerce_single_product_image_gallery_classes', function ( $wrapper_classes ) {
+	'woocommerce_single_product_image_gallery_classes',
+	function ( $wrapper_classes ) {
 
 		$columns            = 5;
 		$wrapper_classes[2] = 'woocommerce-product-gallery--columns-' . absint( $columns );
