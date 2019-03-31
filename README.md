@@ -1,6 +1,6 @@
 # Genesis Advanced
 [![Packagist](https://img.shields.io/packagist/v/nicbeltramelli/genesis-advanced.svg?style=for-the-badge)](https://packagist.org/packages/nicbeltramelli/genesis-advanced)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7062e310ad2f4c2ba0fbce7cc32f6064)](https://www.codacy.com/app/NicBeltramelli/genesis-advanced?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=NicBeltramelli/genesis-advanced&amp;utm_campaign=Badge_Grade)
+[![Codacy grade](https://img.shields.io/codacy/grade/7062e310ad2f4c2ba0fbce7cc32f6064.svg?style=for-the-badge)](https://www.codacy.com/app/NicBeltramelli/genesis-advanced?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=NicBeltramelli/genesis-advanced&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://img.shields.io/travis/NicBeltramelli/genesis-advanced.svg?style=for-the-badge)](https://travis-ci.org/NicBeltramelli/genesis-advanced)
 
 
