@@ -24,7 +24,7 @@ require_once get_template_directory() . '/lib/init.php'; // Initialize Genesis F
  * Add or remove files to the array as needed.
  * Please note that missing files will produce a fatal error.
  *
- * @since 3.0.0
+ * @since 3.2.2
  */
 $genesis_advanced_includes = [
 
@@ -55,9 +55,9 @@ $genesis_advanced_includes = [
 
 ];
 
-foreach ( $genesis_advanced_includes as $file ) {
+foreach ( $genesis_advanced_includes as $genesis_advanced_file ) {
 
-	if ( ! locate_template( $file, true, true ) ) {
+	if ( ! locate_template( $genesis_advanced_file, true, true ) ) {
 
 		$genesis_advanced_error(
 			sprintf(
@@ -68,7 +68,7 @@ foreach ( $genesis_advanced_includes as $file ) {
 				),
 				sprintf(
 					'<code>%s</code>',
-					esc_html( $file )
+					esc_html( $genesis_advanced_file )
 				)
 			),
 			esc_html__(
@@ -78,4 +78,4 @@ foreach ( $genesis_advanced_includes as $file ) {
 		);
 	}
 }
-unset( $file );
+unset( $genesis_advanced_file );

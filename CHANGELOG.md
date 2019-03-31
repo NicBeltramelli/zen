@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
-## [master-3.2.2] 
+## [3.2.2] - 2019-03-31
+* Improve code quality
 * Add version and priority to functions loading assets
 * Update composer deps
 

@@ -20,7 +20,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 3.0.0
  */
 add_action(
-	'after_setup_theme', function () {
+	'after_setup_theme',
+	function () {
 
 		load_child_theme_textdomain( 'genesis-advanced', get_stylesheet_directory() . '/languages' );
 
@@ -40,7 +41,8 @@ if ( ! isset( $content_width ) ) {
 
 /* Add support for HTML5 markup structure */
 add_theme_support(
-	'html5', [
+	'html5',
+	[
 		'caption',
 		'comment-form',
 		'comment-list',
@@ -51,7 +53,8 @@ add_theme_support(
 
 /* Add support for accessibility */
 add_theme_support(
-	'genesis-accessibility', [
+	'genesis-accessibility',
+	[
 		'404-page',
 		'drop-down-menu',
 		'headings',
@@ -68,7 +71,8 @@ add_theme_support(
 
 /* Add custom logo in Customizer > Site Identity */
 add_theme_support(
-	'custom-logo', [
+	'custom-logo',
+	[
 		'height'      => 67.5,
 		'width'       => 350,
 		'flex-height' => true,
@@ -78,7 +82,8 @@ add_theme_support(
 
 /* Rename primary and secondary navigation menus */
 add_theme_support(
-	'genesis-menus', [
+	'genesis-menus',
+	[
 		'primary'   => __( 'Header Menu', 'genesis-advanced' ),
 		'secondary' => __( 'Footer Menu', 'genesis-advanced' ),
 	]
@@ -90,7 +95,8 @@ add_theme_support(
  * @since 3.1.0
  */
 add_theme_support(
-	'editor-color-palette', [
+	'editor-color-palette',
+	[
 		[
 			'name'  => __( 'Accent', 'genesis-advanced' ),
 			'slug'  => 'accent',
@@ -205,13 +211,22 @@ add_theme_support(
 );
 
 /* Add support for after entry widget */
-add_theme_support( 'genesis-after-entry-widget-area' );
+add_theme_support(
+	'genesis-after-entry-widget-area'
+);
 
 /* Add support for 3-column footer widgets */
-add_theme_support( 'genesis-footer-widgets', 3 );
+add_theme_support(
+	'genesis-footer-widgets',
+	3
+);
 
 /* Remove header right widget area */
-unregister_sidebar( 'header-right' );
+unregister_sidebar(
+	'header-right'
+);
 
 /* Remove secondary sidebar */
-unregister_sidebar( 'sidebar-alt' );
+unregister_sidebar(
+	'sidebar-alt'
+);

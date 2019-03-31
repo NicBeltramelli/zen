@@ -15,4 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /* Display custom logo */
-add_action( 'genesis_site_title', 'the_custom_logo', 0 );
+add_action(
+	'genesis_site_title',
+	'the_custom_logo',
+	0
+);

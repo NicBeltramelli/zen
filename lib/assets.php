@@ -71,5 +71,6 @@ add_action(
 			genesis_advanced_responsive_menu_settings()
 		);
 
-	}, 99
+	},
+	99
 );

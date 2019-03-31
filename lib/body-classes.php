@@ -24,7 +24,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 3.0.0
  */
 add_filter(
-	'body_class', function ( $classes ) {
+	'body_class',
+	function ( $classes ) {
 
 		if ( is_home() ) {
 			$classes[] = 'page-blog';
@@ -78,7 +79,8 @@ add_filter(
  * @return void
  */
 add_action(
-	'genesis_before', function () {
+	'genesis_before',
+	function () {
 
 		?>
 	<script>
@@ -92,5 +94,6 @@ add_action(
 	</script>
 		<?php
 
-	}, 1
+	},
+	1
 );

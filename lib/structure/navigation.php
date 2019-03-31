@@ -42,16 +42,40 @@ function genesis_advanced_responsive_menu_settings() {
 }
 
 /* Remove output of primary navigation right extras */
-remove_filter( 'genesis_nav_items', 'genesis_nav_right', 10, 2 );
-remove_filter( 'wp_nav_menu_items', 'genesis_nav_right', 10, 2 );
+remove_filter(
+	'genesis_nav_items',
+	'genesis_nav_right',
+	10,
+	2
+);
+remove_filter(
+	'wp_nav_menu_items',
+	'genesis_nav_right',
+	10,
+	2
+);
 
 /* Reposition primary navigation menu */
-remove_action( 'genesis_after_header', 'genesis_do_nav' );
-add_action( 'genesis_header', 'genesis_do_nav', 12 );
+remove_action(
+	'genesis_after_header',
+	'genesis_do_nav'
+);
+add_action(
+	'genesis_header',
+	'genesis_do_nav',
+	12
+);
 
 /* Reposition the secondary navigation menu */
-remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-add_action( 'genesis_after_footer', 'genesis_do_subnav', 10 );
+remove_action(
+	'genesis_after_header',
+	'genesis_do_subnav'
+);
+add_action(
+	'genesis_after_footer',
+	'genesis_do_subnav',
+	10
+);
 
 /**
  * Reduce secondary navigation menu to one level depth
@@ -62,14 +86,16 @@ add_action( 'genesis_after_footer', 'genesis_do_subnav', 10 );
  * @return array Menu options with depth set to 1.
  */
 add_filter(
-	'wp_nav_menu_args', function ( $args ) {
+	'wp_nav_menu_args',
+	function ( $args ) {
 
 		if ( 'secondary' !== $args['theme_location'] ) {
+
 			return $args;
 		}
 
 		$args['depth'] = 1;
-		return $args;
 
+		return $args;
 	}
 );
