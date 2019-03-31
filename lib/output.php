@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * If any of these value are set the appropriate CSS is output.
  *
- * @since 3.1.0
+ * @since 3.2.2
  */
 add_action(
 	'wp_enqueue_scripts', function () {
@@ -160,5 +160,5 @@ add_action(
 			wp_add_inline_style( $handle, $css );
 		}
 
-	}
+	}, 100
 );
