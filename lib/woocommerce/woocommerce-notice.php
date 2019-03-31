@@ -81,8 +81,10 @@ add_action(
 					),
 					'install-plugin_' . $plugin_slug
 				),
-				__('install and activate Genesis Connect for WooCommerce',
-				'genesis-advanced')
+				__(
+					'install and activate Genesis Connect for WooCommerce',
+					'genesis-advanced'
+				)
 			);
 
 			/* translators: 1: plugin install prompt presented as link, 2: child theme name */
