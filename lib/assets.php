@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Enqueue assets
  *
- * @since 3.0.0
+ * @since 3.2.2
  */
 add_action(
 	'wp_enqueue_scripts', function () {
@@ -37,8 +37,8 @@ add_action(
 		wp_enqueue_style(
 			'genesis-advanced-styles',
 			genesis_advanced_asset_path( 'styles/main.css' ),
-			false,
-			null
+			[],
+			CHILD_THEME_VERSION
 		);
 
 		/* Enqueue main script */
@@ -46,7 +46,7 @@ add_action(
 			'genesis-advanced-scripts',
 			genesis_advanced_asset_path( 'scripts/main.js' ),
 			[ 'jquery' ],
-			null,
+			CHILD_THEME_VERSION,
 			true
 		);
 
@@ -66,5 +66,5 @@ add_action(
 			genesis_advanced_responsive_menu_settings()
 		);
 
-	}
+	}, 99
 );

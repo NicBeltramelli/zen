@@ -17,12 +17,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Add the themes's custom CSS to the WooCommerce stylesheet
  *
- * @since 3.1.0
+ * @since 3.2.2
  *
  * @return string CSS to be outputted after the theme's custom WooCommerce stylesheet.
  */
 add_action(
 	'wp_enqueue_scripts', function () {
+
+		$handle = 'genesis-advanced-woocommerce-styles';
 
 		// If WooCommerce isn't active, exit early.
 		if ( ! class_exists( 'WooCommerce' ) ) {
@@ -80,8 +82,8 @@ add_action(
 		) : '';
 
 		if ( $woo_css ) {
-			wp_add_inline_style( 'genesis-advanced-woocommerce-styles', $woo_css );
+			wp_add_inline_style( $handle, $woo_css );
 		}
 
-	}
+	}, 100
 );

@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Enqueue custom WooCommerce style
  *
- * @since 3.0.0
+ * @since 3.2.2
  */
 add_action(
 	'wp_enqueue_scripts', function () {
@@ -27,18 +27,18 @@ add_action(
 			wp_enqueue_style(
 				'genesis-advanced-woocommerce-styles',
 				genesis_advanced_asset_path( 'styles/woocommerce.css' ),
-				false,
-				null
+				[],
+				CHILD_THEME_VERSION
 			);
 
 		}
-	}
+	}, 99
 );
 
 /**
  * Print an inline script to the footer to keep products the same height
  *
- * @since 3.0.0
+ * @since 3.2.2
  */
 add_action(
 
