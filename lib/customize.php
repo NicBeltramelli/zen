@@ -22,7 +22,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param WP_Customize_Manager $wp_customize Customizer object.
  */
 add_action(
-	'customize_register', function ( $wp_customize ) {
+	'customize_register',
+	function ( $wp_customize ) {
 
 		/* Link color addition */
 		$wp_customize->add_setting(

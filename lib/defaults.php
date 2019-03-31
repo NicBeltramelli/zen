@@ -23,7 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return array Modified defaults.
  */
 add_filter(
-	'genesis_theme_settings_defaults', function ( $defaults ) {
+	'genesis_theme_settings_defaults',
+	function ( $defaults ) {
 
 		$defaults['blog_cat_num']              = 6;
 		$defaults['content_archive']           = 'full';
@@ -43,7 +44,8 @@ add_filter(
  * @since 3.0.0
  */
 add_action(
-	'after_switch_theme', function () {
+	'after_switch_theme',
+	function () {
 
 		if ( function_exists( 'genesis_update_settings' ) ) {
 
@@ -73,7 +75,8 @@ add_action(
  * @return array Modified social style defaults.
  */
 add_filter(
-	'simple_social_default_styles', function ( $defaults ) {
+	'simple_social_default_styles',
+	function ( $defaults ) {
 
 		$args = [
 			'alignment'              => 'alignleft',

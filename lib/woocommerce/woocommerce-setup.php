@@ -33,7 +33,8 @@ add_action(
 			);
 
 		}
-	}, 99
+	},
+	99
 );
 
 /**
@@ -61,7 +62,8 @@ add_action(
 			"jQuery(document).ready( function() { jQuery( '.product .woocommerce-LoopProduct-link').matchHeight(); });"
 		);
 
-	}, 99
+	},
+	99
 );
 
 /* Add product gallery support */
@@ -165,7 +167,8 @@ add_action(
 
 		genesis_advanced_update_woocommerce_image_dimensions();
 
-	}, 1
+	},
+	1
 );
 
 /**
@@ -186,7 +189,9 @@ add_action(
 
 		genesis_advanced_update_woocommerce_image_dimensions();
 
-	}, 10, 2
+	},
+	10,
+	2
 );
 
 /**

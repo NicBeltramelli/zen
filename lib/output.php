@@ -22,7 +22,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 3.2.2
  */
 add_action(
-	'wp_enqueue_scripts', function () {
+	'wp_enqueue_scripts',
+	function () {
 
 		$handle = 'genesis-advanced-styles';
 
@@ -47,7 +48,9 @@ add_action(
 			a {
 				color: %s;
 			}
-			', $color_link, genesis_advanced_color_contrast( $color_link )
+			',
+			$color_link,
+			genesis_advanced_color_contrast( $color_link )
 		) : '';
 
 		/* Output accent color inline css */
@@ -100,7 +103,9 @@ add_action(
 					background-color: %1$s;
 				}
 			}
-			', $color_accent, genesis_advanced_color_contrast( $color_accent )
+			',
+			$color_accent,
+			genesis_advanced_color_contrast( $color_accent )
 		) : '';
 
 		/* Output custom logo inline css */
@@ -118,7 +123,8 @@ add_action(
 			.wp-custom-logo .site-container .title-area {
 				max-width: %spx;
 			}
-			', $logo_max_width
+			',
+			$logo_max_width
 		) : '';
 
 		/* Place menu below logo and center logo once it gets big */
@@ -153,12 +159,14 @@ add_action(
 			.wp-custom-logo .title-area {
 				padding-top: %spx;
 			}
-			', $logo_padding + 5
+			',
+			$logo_padding + 5
 		) : '';
 
 		if ( $css ) {
 			wp_add_inline_style( $handle, $css );
 		}
 
-	}, 100
+	},
+	100
 );

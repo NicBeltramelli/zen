@@ -23,7 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return int Modified icon size.
  */
 add_filter(
-	'genesis_author_box_gravatar_size', function ( $size ) {
+	'genesis_author_box_gravatar_size',
+	function ( $size ) {
 
 		return 80;
 
@@ -39,7 +40,8 @@ add_filter(
  * @return array Gravatar settings with modified size.
  */
 add_filter(
-	'genesis_comment_list_args', function ( $args ) {
+	'genesis_comment_list_args',
+	function ( $args ) {
 
 		$args['avatar_size'] = 80;
 		return $args;
@@ -53,7 +55,8 @@ add_filter(
  * @since 3.0.0
  */
 add_action(
-	'genesis_before_while', function () {
+	'genesis_before_while',
+	function () {
 
 		if ( is_singular( 'post' ) ) {
 			genesis_prev_next_post_nav();
@@ -71,7 +74,8 @@ add_action(
  * @return array Comment form fields.
  */
 add_filter(
-	'comment_form_default_fields', function ( $fields ) {
+	'comment_form_default_fields',
+	function ( $fields ) {
 
 		unset( $fields['url'] );
 		return $fields;
@@ -80,7 +84,13 @@ add_filter(
 );
 
 /* Display author box on single posts */
-add_filter( 'get_the_author_genesis_author_box_single', '__return_true' );
+add_filter(
+	'get_the_author_genesis_author_box_single',
+	'__return_true'
+);
 
 /* Display author box on archive pages */
-add_filter( 'get_the_author_genesis_author_box_archive', '__return_true' );
+add_filter(
+	'get_the_author_genesis_author_box_archive',
+	'__return_true'
+);

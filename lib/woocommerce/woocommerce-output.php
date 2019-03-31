@@ -22,7 +22,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return string CSS to be outputted after the theme's custom WooCommerce stylesheet.
  */
 add_action(
-	'wp_enqueue_scripts', function () {
+	'wp_enqueue_scripts',
+	function () {
 
 		$handle = 'genesis-advanced-woocommerce-styles';
 
@@ -45,7 +46,9 @@ add_action(
 			.woocommerce .widget_rating_filter ul li.chosen a::before {
 				color: %s;
 			}
-			', $color_link, genesis_advanced_color_contrast( $color_link )
+			',
+			$color_link,
+			genesis_advanced_color_contrast( $color_link )
 		) : '';
 
 		$woo_css .= ( genesis_advanced_customizer_get_default_accent_color() !== $color_accent ) ? sprintf(
@@ -78,12 +81,18 @@ add_action(
 			.woocommerce-message::before {
 				color: %1$s;
 			}
-			', $color_accent, genesis_advanced_color_contrast( $color_accent )
+			',
+			$color_accent,
+			genesis_advanced_color_contrast( $color_accent )
 		) : '';
 
 		if ( $woo_css ) {
-			wp_add_inline_style( $handle, $woo_css );
+			wp_add_inline_style(
+				$handle,
+				$woo_css
+			);
 		}
 
-	}, 100
+	},
+	100
 );

@@ -22,7 +22,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param string $_genesis_admin_settings The admin screen to remove meta boxes from.
  */
 add_action(
-	'genesis_theme_settings_metaboxes', function ( $_genesis_admin_settings ) {
+	'genesis_theme_settings_metaboxes',
+	function ( $_genesis_admin_settings ) {
 
 		remove_meta_box( 'genesis-theme-settings-header', $_genesis_admin_settings, 'main' );
 		remove_meta_box( 'genesis-theme-settings-nav', $_genesis_admin_settings, 'main' );
@@ -39,7 +40,8 @@ add_action(
  * @return array Filtered Customizer items.
  */
 add_filter(
-	'genesis_customizer_theme_settings_config', function ( $config ) {
+	'genesis_customizer_theme_settings_config',
+	function ( $config ) {
 
 		unset( $config['genesis']['sections']['genesis_header'] );
 		return $config;
