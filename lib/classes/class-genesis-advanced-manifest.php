@@ -58,7 +58,7 @@ class Genesis_Advanced_Manifest {
 /**
  * Get paths for assets
  *
- * @since 3.0.0
+ * @since 3.2.2
  *
  * @param string $filename Asset file name.
  */
@@ -68,18 +68,18 @@ function genesis_advanced_asset_path( $filename ) {
 
 	static $manifest;
 
-	if ( empty( $manifest ) ) {
+	if ( empty( $manifest ) ) :
 
 		$manifest_path = get_theme_file_path() . '/dist/assets.json';
 		$manifest      = new Genesis_Advanced_Manifest( $manifest_path );
-	}
+	endif;
 
-	if ( array_key_exists( $filename, $manifest->get() ) ) {
+	if ( array_key_exists( $filename, $manifest->get() ) ) :
 
 		return $dist_path . $manifest->get()[ $filename ];
 
-	} else {
+	endif;
 
-		return $dist_path . $filename;
-	}
+	return $dist_path . $filename;
+
 }
