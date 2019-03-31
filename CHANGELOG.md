@@ -1,5 +1,9 @@
 # Genesis Advanced Changelog
 
+## [master]
+* Add codacy grade badge
+* Improve code quality
+
 ## [3.2.2] - 2019-03-31
 * Improve code quality
 * Add version and priority to functions loading assets
