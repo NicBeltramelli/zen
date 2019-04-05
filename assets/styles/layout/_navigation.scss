@@ -47,10 +47,10 @@
 			opacity: 0;
 			padding-left: 0;
 			position: absolute;
-			width: 180px;
+			width: 15rem;
 
 			.sub-menu {
-				margin: -(space(m)) 0 0 179px;
+				margin: -3rem 0 0 calc(15rem - 1px);
 			}
 		}
 
@@ -66,7 +66,7 @@
 				border-top: 0;
 				line-height: line-height(xs);
 				padding-right: 0;
-				width: 180px;
+				width: 15rem;
 			}
 
 		}
@@ -80,8 +80,9 @@
 		&:hover > .sub-menu,
 		&.sfHover > ul.sub-menu,
 		a:focus + ul.sub-menu {
-			left: auto;
+			left: 50%;
 			opacity: 1;
+			transform: translateX(-50%);
 		}
 
 		&.current-menu-item {

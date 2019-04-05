@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [master]
+* Improve style
 * Exclude all dev files from production package
 * Add codacy grade badge
 * Improve code quality
