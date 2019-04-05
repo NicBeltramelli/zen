@@ -30,7 +30,7 @@
 .site-inner {
 	clear: both;
 	margin: 0 auto;
-	padding: space(s) space(s) 0;
+	padding: space(m) space(s) 0;
 
 	@include mq($from: tablet) {
 		margin-top: space(l);
