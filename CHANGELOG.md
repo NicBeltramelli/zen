@@ -1,6 +1,8 @@
 # Genesis Advanced Changelog
 
-## [master]
+## [master-3.3.0]
+* Move gutenberg support to blocks folder
+
 * Fix package url
 * Improve style
 * Exclude all dev files from production package

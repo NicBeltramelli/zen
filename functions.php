@@ -42,6 +42,9 @@ $genesis_advanced_includes = [
 	'lib/body-classes.php', // Body classes.
 	'lib/extras.php', // Custom functions.
 
+	/* Gutenberg Blocks */
+	'lib/blocks/setup.php', // Gutenberg blocks theme support.
+
 	/* Structure */
 	'lib/structure/content.php',
 	'lib/structure/header.php',
