@@ -1,0 +1,274 @@
+/**
+* Gutenberg Blocks Front-end
+*
+*	- Color Palette
+*/
+
+/* Color Palette */
+
+/* Accent */
+
+.has-accent-background-color {
+	background-color: color(accent, base);
+}
+
+.has-accent-color {
+	color: color(accent, base);
+}
+
+/* Light */
+
+.has-light-soft-background-color {
+	background-color: color(light, soft);
+}
+
+.has-light-soft-color {
+	color: color(light, soft);
+}
+
+.has-light-trans-background-color {
+	background-color: color(light, trans);
+}
+
+.has-light-trans-color {
+	color: color(light, trans);
+}
+
+.has-light-background-color {
+	background-color: color(light, base);
+}
+
+.has-light-color {
+	color: color(light, base);
+}
+
+.has-light-strong-background-color {
+	background-color: color(light, strong);
+}
+
+.has-light-strong-color {
+	color: color(light, strong);
+}
+
+/* Dark */
+
+.has-dark-soft-background-color {
+	background-color: color(dark, soft);
+}
+
+.has-dark-soft-color {
+	color: color(dark, soft);
+}
+
+.has-dark-trans-background-color {
+	background-color: color(dark, trans);
+}
+
+.has-dark-trans-color {
+	color: color(dark, trans);
+}
+
+.has-dark-background-color {
+	background-color: color(dark, base);
+}
+
+.has-dark-color {
+	color: color(dark, base);
+}
+
+.has-dark-strong-background-color {
+	background-color: color(dark, strong);
+}
+
+.has-dark-strong-color {
+	color: color(dark, strong);
+}
+
+/* Info */
+
+.has-info-soft-background-color {
+	background-color: color(info, soft);
+}
+
+.has-info-soft-color {
+	color: color(info, soft);
+}
+
+.has-info-trans-background-color {
+	background-color: color(info, trans);
+}
+
+.has-info-trans-color {
+	color: color(info, trans);
+}
+
+.has-info-background-color {
+	background-color: color(info, base);
+}
+
+.has-info-color {
+	color: color(info, base);
+}
+
+.has-info-strong-background-color {
+	background-color: color(info, strong);
+}
+
+.has-info-strong-color {
+	color: color(info, strong);
+}
+
+/* Danger */
+
+.has-danger-soft-background-color {
+	background-color: color(danger, soft);
+}
+
+.has-danger-soft-color {
+	color: color(danger, soft);
+}
+
+.has-danger-trans-background-color {
+	background-color: color(danger, trans);
+}
+
+.has-danger-trans-color {
+	color: color(danger, trans);
+}
+
+.has-danger-background-color {
+	background-color: color(danger, base);
+}
+
+.has-danger-color {
+	color: color(danger, base);
+}
+
+.has-danger-strong-background-color {
+	background-color: color(danger, strong);
+}
+
+.has-danger-strong-color {
+	color: color(danger, strong);
+}
+
+/* Success */
+
+.has-success-soft-background-color {
+	background-color: color(success, soft);
+}
+
+.has-success-soft-color {
+	color: color(success, soft);
+}
+
+.has-success-trans-background-color {
+	background-color: color(success, trans);
+}
+
+.has-success-trans-color {
+	color: color(success, trans);
+}
+
+.has-success-background-color {
+	background-color: color(success, base);
+}
+
+.has-success-color {
+	color: color(success, base);
+}
+
+.has-success-strong-background-color {
+	background-color: color(success, strong);
+}
+
+.has-success-strong-color {
+	color: color(success, strong);
+}
+
+/* Warning */
+
+.has-warning-soft-background-color {
+	background-color: color(warning, soft);
+}
+
+.has-warning-soft-color {
+	color: color(warning, soft);
+}
+
+.has-warning-trans-background-color {
+	background-color: color(warning, trans);
+}
+
+.has-warning-trans-color {
+	color: color(warning, trans);
+}
+
+.has-warning-background-color {
+	background-color: color(warning, base);
+}
+
+.has-warning-color {
+	color: color(warning, base);
+}
+
+.has-warning-strong-background-color {
+	background-color: color(warning, strong);
+}
+
+.has-warning-strong-color {
+	color: color(warning, strong);
+}
+
+/* Star */
+
+.has-star-soft-background-color {
+	background-color: color(star, soft);
+}
+
+.has-star-soft-color {
+	color: color(star, soft);
+}
+
+.has-star-trans-background-color {
+	background-color: color(star, trans);
+}
+
+.has-star-trans-color {
+	color: color(star, trans);
+}
+
+.has-star-background-color {
+	background-color: color(star, base);
+}
+
+.has-star-color {
+	color: color(star, base);
+}
+
+.has-star-strong-background-color {
+	background-color: color(star, strong);
+}
+
+.has-star-strong-color {
+	color: color(star, strong);
+}
+
+/* Extras */
+
+.color-palette {
+
+	div {
+		padding: space(inset-strech, s);
+		text-align: center;
+
+		&.firts {
+			margin-top: space(s);
+		}
+
+		@include mq($from: tablet) {
+			margin: space(stack, s);
+			padding: space(xxl) space(xs);
+		}
+	}
+}
