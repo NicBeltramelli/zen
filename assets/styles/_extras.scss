@@ -1,0 +1,24 @@
+/**
+* Extras
+*
+*	- Color Palette
+*/
+
+/* Color Palette */
+
+.color-palette {
+
+	div {
+		padding: space(inset-strech, s);
+		text-align: center;
+
+		&.firts {
+			margin-top: space(s);
+		}
+
+		@include mq($from: tablet) {
+			margin: space(stack, s);
+			padding: space(xxl) space(xs);
+		}
+	}
+}

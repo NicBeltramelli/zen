@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [master-3.3.0]
+* Move extras syle to separate file
 * Move gutenberg support to blocks folder
 
 * Fix package url
