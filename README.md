@@ -118,7 +118,6 @@ themes/your-theme-name/  # → Root of your child theme
 
 ### Front-end dependencies
 
- * [FitVids.js](https://github.com/davatron5000/FitVids.js/)
  * [ResponsiveMenus.js](https://github.com/studiopress/responsive-menus)
  * [jquery.matchHeight.js](https://github.com/liabru/jquery-match-height)
  * [jquery.scrollTo](https://github.com/flesler/jquery.scrollTo)
