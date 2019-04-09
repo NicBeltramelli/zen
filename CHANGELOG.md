@@ -1,8 +1,9 @@
 # Genesis Advanced Changelog
 
 ## [master-3.3.0]
+* Unset the $content_width variable
 * Add front-end blocks style
-* Move extras syle to separate file
+* Move extras syle to a separate file
 * Move gutenberg support to blocks folder
 
 * Fix package url

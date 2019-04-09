@@ -33,12 +33,6 @@ define( 'CHILD_THEME_NAME', 'Genesis Advanced' );
 define( 'CHILD_THEME_URL', 'https://thematicpress.com/genesis-advanced/' );
 define( 'CHILD_THEME_VERSION', filemtime( get_stylesheet_directory() . '/style.css' ) );
 
-/* Set the content width based on the theme's design and stylesheet */
-if ( ! isset( $content_width ) ) {
-	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$content_width = 702; // Pixels.
-}
-
 /* Add support for HTML5 markup structure */
 add_theme_support(
 	'html5',
