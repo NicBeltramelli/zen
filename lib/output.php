@@ -19,13 +19,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * If any of these value are set the appropriate CSS is output.
  *
- * @since 3.2.2
+ * @since 3.3.0
  */
 add_action(
 	'wp_enqueue_scripts',
 	function () {
-
-		$handle = 'genesis-advanced-styles';
 
 		$color_link   = get_theme_mod( 'genesis_advanced_link_color', genesis_advanced_customizer_get_default_link_color() );
 		$color_accent = get_theme_mod( 'genesis_advanced_accent_color', genesis_advanced_customizer_get_default_accent_color() );
@@ -164,7 +162,10 @@ add_action(
 		) : '';
 
 		if ( $css ) {
-			wp_add_inline_style( $handle, $css );
+			wp_add_inline_style(
+				CHILD_THEME_HANDLE . '-styles',
+				$css
+			);
 		}
 
 	},

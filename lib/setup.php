@@ -28,9 +28,12 @@ add_action(
 	}
 );
 
-/* Define child theme constants (do not remove) */
-define( 'CHILD_THEME_NAME', 'Genesis Advanced' );
-define( 'CHILD_THEME_URL', 'https://thematicpress.com/genesis-advanced/' );
+/**
+ * Define child theme constants
+ *
+ * @since 3.3.0
+ */
+define( 'CHILD_THEME_HANDLE', sanitize_title_with_dashes( wp_get_theme()->get( 'Name' ) ) );
 define( 'CHILD_THEME_VERSION', filemtime( get_stylesheet_directory() . '/style.css' ) );
 
 /* Add support for HTML5 markup structure */

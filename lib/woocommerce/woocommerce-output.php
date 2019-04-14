@@ -17,15 +17,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Add the themes's custom CSS to the WooCommerce stylesheet
  *
- * @since 3.2.2
+ * @since 3.3.0
  *
  * @return string CSS to be outputted after the theme's custom WooCommerce stylesheet.
  */
 add_action(
 	'wp_enqueue_scripts',
 	function () {
-
-		$handle = 'genesis-advanced-woocommerce-styles';
 
 		// If WooCommerce isn't active, exit early.
 		if ( ! class_exists( 'WooCommerce' ) ) {
@@ -88,7 +86,7 @@ add_action(
 
 		if ( $woo_css ) {
 			wp_add_inline_style(
-				$handle,
+				CHILD_THEME_HANDLE . '-woocommerce-styles',
 				$woo_css
 			);
 		}

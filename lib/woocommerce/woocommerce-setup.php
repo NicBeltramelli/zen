@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Enqueue custom WooCommerce style
  *
- * @since 3.2.2
+ * @since 3.3.0
  */
 add_action(
 	'wp_enqueue_scripts',
@@ -26,7 +26,7 @@ add_action(
 		if ( class_exists( 'woocommerce' ) ) {
 
 			wp_enqueue_style(
-				'genesis-advanced-woocommerce-styles',
+				CHILD_THEME_HANDLE . '-woocommerce-styles',
 				genesis_advanced_asset_path( 'styles/woocommerce.css' ),
 				[],
 				CHILD_THEME_VERSION
@@ -40,7 +40,7 @@ add_action(
 /**
  * Print an inline script to the footer to keep products the same height
  *
- * @since 3.2.2
+ * @since 3.3.0
  */
 add_action(
 	'wp_enqueue_scripts',
@@ -58,7 +58,7 @@ add_action(
 		}
 
 		wp_add_inline_script(
-			'genesis-advanced-scripts',
+			CHILD_THEME_HANDLE . '-scripts',
 			"jQuery(document).ready( function() { jQuery( '.product .woocommerce-LoopProduct-link').matchHeight(); });"
 		);
 

@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [master-3.3.0]
+* Add common style element
 * Remove FitVids.js
 * Unset the $content_width variable
 * Add front-end blocks style
