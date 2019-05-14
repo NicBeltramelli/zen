@@ -45,8 +45,7 @@ add_action(
 				color: %s;
 			}
 			',
-			$color_link,
-			genesis_advanced_color_contrast( $color_link )
+			$color_link
 		) : '';
 
 		$woo_css .= ( genesis_advanced_customizer_get_default_accent_color() !== $color_accent ) ? sprintf(
