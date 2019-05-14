@@ -1,0 +1,66 @@
+/**
+* Helper Classes
+*
+*	- Visibility
+*	- Centering
+*	- Flexbox
+*	- No Scroll
+*/
+
+/* Visibility */
+
+.hide-phone {
+
+	@include mq($until: phone) {
+		display: none;
+	}
+}
+
+.visible-phone {
+	display: block;
+
+	@include mq($from: phone) {
+		display: none;
+	}
+}
+
+.hide-tablet {
+
+	@include mq($until: tablet) {
+		display: none;
+	}
+}
+
+.visible-tablet {
+	display: block;
+
+	@include mq($from: tablet) {
+		display: none;
+	}
+}
+
+/* Centering */
+
+.center {
+	text-align: center;
+}
+
+.center-x {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Flexbox */
+
+.align-stretch {
+	align-items: stretch;
+}
+
+.align-baseline {
+	align-items: baseline;
+}
+
+/* No Scroll */
+.no-scroll {
+	overflow: hidden;
+}
