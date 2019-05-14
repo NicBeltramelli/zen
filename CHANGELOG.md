@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev-3.3.0]
+* Improve configuration and style of site header
 * Prevent body scrolling when responsive menu is activated 
 * Improve style of genesis responsive menu
 * Add the CHILD_THEME_HANDLE constant

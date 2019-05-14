@@ -66,12 +66,16 @@ add_theme_support(
 	'genesis-responsive-viewport'
 );
 
-/* Add custom logo in Customizer > Site Identity */
+/**
+ * Add custom logo in Customizer > Site Identity
+ *
+ * @since 3.3.0
+ */
 add_theme_support(
 	'custom-logo',
 	[
-		'height'      => 67.5,
-		'width'       => 350,
+		'height'      => 120,
+		'width'       => 500,
 		'flex-height' => true,
 		'flex-width'  => true,
 	]

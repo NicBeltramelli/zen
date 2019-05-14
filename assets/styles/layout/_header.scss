@@ -13,7 +13,6 @@
 	@extend %box-shadow;
 
 	@include mq($from: tablet) {
-		padding: space(column, s);
 		position: fixed;
 		width: 100%;
 		z-index: 9999;
@@ -21,11 +20,26 @@
 
 	.wrap {
 		padding: 0;
+
+		@include mq($from: tablet) {
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			padding: space(column, xs);
+
+			// Prevent pseudo-elements from impacting the space-between calculation.
+			&::after,
+			&::before {
+				content: none;
+			}
+		}
+
+		@include mq($from: desktop) {
+			padding: 0;
+		}
 	}
 
 	.genesis-responsive-menu {
-		padding-left: space(s);
-		padding-right: space(s);
 
 		@include mq($from: tablet) {
 			padding-left: 0;
@@ -35,6 +49,7 @@
 
 	.menu-toggle {
 		float: right;
+		padding-left: space(xs);
 		padding-right: space(s);
 
 		@include mq($from: tablet) {
@@ -71,38 +86,30 @@
 .wp-custom-logo {
 
 	.title-area {
-		float: none;
-		text-align: center;
-		margin-top: space(xs);
-		max-width: 350px;
+		float: left;
 		height: 6rem;
-		padding: space(xxs);
+		margin-left: space(xs);
+		max-width: 68%;
+		padding: 0;
+		position: relative;
+		width: 100%;
 
 		@include mq($from: small-phone) {
-			float: left;
-			margin-top: 0;
+			max-width: 250px;
 			text-align: inherit;
-			padding: space(xxs) 0  space(xxs) space(s);
 		}
 
 		@include mq($from: tablet) {
-			padding: space(divider, xxs);
+			margin-left: 0;
 		}
 
 		img {
+			position: absolute;
 			max-height: 100%;
+			left: 0;
+			top: 50%;
+			transform: translate(0, -50%);
 			width: auto;
-		}
-	}
-
-	.site-header {
-
-		.menu-toggle {
-
-			@include mq($until: small-phone) {
-				float: none;
-				padding-right: 0;
-			}
 		}
 	}
 }
