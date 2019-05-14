@@ -4,7 +4,7 @@
 *	- Site Navigation
 *	- Responsive Menu
 *	- Secondary Menu
-*	- Header Menu
+*	- Primary Menu
 */
 
 /* Site Navigation */
@@ -37,38 +37,82 @@
 		left: -9999px;
 		margin: 0;
 		opacity: 1;
-		padding-left: space(xs);
 		position: static;
+		text-align: center;
 		width: 100%;
 		z-index: 99;
 
 		@include mq($from: tablet) {
-			border-top: 1px solid color(border);
+			left: 50%;
 			opacity: 0;
-			padding-left: 0;
 			position: absolute;
+			transform: translateX(-50%);
 			width: 15rem;
+
+			@include box-shadow (0, 0, 2rem, color(shadow), false);
+
+			&::before {
+				border: 0.5rem solid transparent;
+				border-bottom-color: color(border);
+				content: "";
+				display: block;
+				left: 50%;
+				position: absolute;
+				top: -1rem;
+				transform: translateX(-50%);
+			}
+
+			> li {
+				background: color(light, soft);
+				border-left: 1px solid color(border);
+				border-right: 1px solid color(border);
+
+				&::after {
+					border: 0.5px solid color(border);
+					content: "";
+					display: block;
+					margin: 0 auto;
+					width: 80%;
+				}
+
+				&:first-child {
+					border-top: 1px solid color(border);
+					border-top-left-radius: $base-border-radius;
+					border-top-right-radius: $base-border-radius;
+				}
+
+				&:last-child {
+					border-bottom: 1px solid color(border);
+					border-bottom-left-radius: $base-border-radius;
+					border-bottom-right-radius: $base-border-radius;
+
+					&::after {
+						border: none;
+					}
+				}
+			}
 
 			.sub-menu {
 				margin: -2rem 0 0 calc(15rem - 1px);
+
+				&::before {
+					border: none;
+				}
 			}
 		}
 
 		a {
 			background: color(light, soft);
 			position: relative;
-			padding-right: 3rem;
 			width: 100%;
 			word-wrap: break-word;
 
 			@include mq($from: tablet) {
-				border: 1px solid color(border);
-				border-top: 0;
+				border-radius: $base-border-radius;
 				line-height: line-height(xs);
 				padding-right: 0;
 				width: 15rem;
 			}
-
 		}
 	}
 
@@ -80,9 +124,12 @@
 		&:hover > .sub-menu,
 		&.sfHover > ul.sub-menu,
 		a:focus + ul.sub-menu {
-			left: 50%;
-			opacity: 1;
-			transform: translateX(-50%);
+
+			@include mq($from: tablet) {
+				left: 50%;
+				opacity: 1;
+				transform: translateX(-50%);
+			}
 		}
 
 		&.current-menu-item {
@@ -95,6 +142,7 @@
 
 		@include mq($from: tablet) {
 			display: inline-block;
+			text-align: center;
 
 			&.menu-bold {
 
@@ -154,6 +202,46 @@
 	}
 }
 
+.genesis-responsive-menu {
+
+	@include mq($until: tablet) {
+		height: calc(100vh - 6rem);
+		overflow: scroll;
+		padding: space(divider, m);
+		text-align: left;
+
+		.menu-item {
+
+			& > a {
+				font-size: font-size(phone, m);
+				line-height: line-height(m);
+				padding-left: space(s);
+				padding-right: space(s);
+			}
+		}
+
+		.sub-menu {
+			padding-left: space(s);
+			text-align: left;
+		}
+	}
+
+	.admin-bar & {
+
+		@include mq($until: admin-bar) {
+			height: calc(100vh - 6rem - 46px);
+		}
+
+		@include mq($from: admin-bar) {
+			height: calc(100vh - 6rem - 32px);
+		}
+
+		@include mq($from: tablet) {
+			height: auto;
+		}
+	}
+}
+
 .menu-toggle {
 	height: auto; // Prevent height of default buttons.
 	margin: 0 auto;
@@ -163,8 +251,13 @@
 
 	&::before {
 		float: left;
+		height: auto;
+		font-size: 2rem;
+		line-height: line-height(s);
 		margin-right: 5px;
 		position: relative;
+		text-rendering: auto;
+		width: auto;
 	}
 
 	&.activated::before {
@@ -174,6 +267,7 @@
 
 .sub-menu-toggle {
 	float: right;
+	height: auto;
 	padding: space(xs);
 	position: absolute;
 	right: 0;
@@ -182,9 +276,11 @@
 
 	&::before {
 		display: inline-block;
+		height: auto;
+		line-height: line-height(s);
 		text-rendering: auto;
-		transform: rotate(0);
 		transition: transform 0.25s ease-in-out;
+		width: auto;
 	}
 
 	&.activated::before {
@@ -197,7 +293,6 @@
 	background-color: transparent;
 	border-width: 0;
 	color: color(dark, base);
-	display: block;
 	margin: 0 auto;
 	overflow: hidden;
 	text-align: center;
@@ -210,14 +305,6 @@
 		background-color: transparent;
 		box-shadow: none; // Prevent box shadow of default buttons.
 		color: color(accent, base);
-	}
-
-	&::before {
-		font-size: 2rem;
-		height: auto;
-		line-height: line-height(s);
-		text-rendering: auto;
-		width: auto;
 	}
 
 	@include mq($from: tablet) {
@@ -254,7 +341,7 @@
 	}
 }
 
-/* Header Menu */
+/* Primary Menu */
 
 .nav-primary {
 	clear: left;
@@ -265,19 +352,11 @@
 		float: right;
 		padding-bottom: space(xs);
 		padding-top: space(xs);
+		text-align: right;
 		width: auto;
 	}
 
 	.genesis-nav-menu {
-		padding-bottom: space(xs);
-
-		@include mq($from: small-phone) {
-			padding-top: space(xs);
-		}
-
-		@include mq($from: tablet) {
-			padding: 0;
-		}
 
 		.menu-item {
 

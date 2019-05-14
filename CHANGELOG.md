@@ -1,6 +1,8 @@
 # Genesis Advanced Changelog
 
-## [master-3.3.0]
+## [dev-3.3.0]
+* Improve style of genesis responsive menu
+* Add the CHILD_THEME_HANDLE constant
 * Add common style element
 * Remove FitVids.js
 * Unset the $content_width variable
