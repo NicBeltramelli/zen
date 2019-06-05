@@ -19,9 +19,11 @@ input[type="submit"] {
 	font-family: $base-font-sans;
 	height: space(m); // Preserve height despite borders.
 	padding: space(inset-squish, xs);
+	text-align: center;
 	text-decoration: none;
 	transition: all $base-transition;
 	white-space: normal;
+	min-width: space(xl);
 	width: auto;
 
 	@extend %font-size-s;
@@ -35,6 +37,7 @@ input[type="submit"] {
 
 	&.small {
 		height: 3rem; // Break vertical rhythm.
+		min-width: space(l);
 		padding: space(inset-squish, xxs);
 
 		@extend %font-size-xs;

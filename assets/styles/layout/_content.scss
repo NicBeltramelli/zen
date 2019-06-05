@@ -36,44 +36,32 @@
 			}
 		}
 
-		ol,
-		ul {
+		> ol,
+		> ul {
 			margin-bottom: space(s);
-			margin-left: space(s);
 		}
 
 		ol {
+			padding-left: 1em;
 
 			> li {
 				list-style-type: decimal;
 			}
-
-			ol {
-				margin-bottom: 0;
-			}
 		}
 
 		ul {
+			padding-left: 1em;
 
 			> li {
 				list-style-type: disc;
+
+				> ul {
+
+					> li {
+						list-style-type: circle;
+					}
+				}
 			}
-
-			ul {
-				margin-bottom: 0;
-			}
-		}
-
-		code {
-			background-color: color(light, base);
-		}
-
-		.caption {
-			font-weight: 700;
-			margin-top: -(space(s));
-			text-align: center;
-
-			@extend %font-size-s;
 		}
 	}
 

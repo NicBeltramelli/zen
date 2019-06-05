@@ -1,23 +1,27 @@
 /**
 * WordPress
 *
-*	- General
-*	- Color Palette
+*	- Alignment
+*	- Caption
 */
 
-/* General */
+/* Alignment */
 
 .aligncenter {
+	margin-left: auto;
+	margin-right: auto;
 	text-align: center;
 }
 
 .alignleft {
 	float: left;
+	margin-right: space(s);
 	text-align: left;
 }
 
 .alignright {
 	float: right;
+	margin-left: space(s);
 	text-align: right;
 }
 
@@ -25,89 +29,19 @@
 	margin: space(stack, s);
 }
 
-img {
-	max-width: 100%;
-
-	&.alignleft {
-		margin: space(right-bottom, s);
-	}
-
-	&.alignright {
-		margin: space(left-bottom, s);
-	}
-
-	&.alignnone {
-		margin-bottom: space(s);
-	}
-
-	&.centered,
-	&.aligncenter {
-		display: block;
-		margin: 0 auto space(s);
-	}
-}
-
-a {
-
-	&.aligncenter {
-
-		img {
-			display: block;
-			margin: 0 auto;
-		}
-	}
-
-	&.alignleft {
-		margin: space(right-bottom, s);
-	}
-
-	&.alignright {
-		margin: space(left-bottom, s);
-	}
-
-	&.alignnone {
-		display: inline-block;
-	}
-
-	&.alignleft,
-	a.alignnone,
-	a.alignright {
-		max-width: 100%;
-	}
-}
+/* Caption */
 
 .wp-caption {
 
-	&.alignleft {
-		margin: space(right-bottom, s);
-	}
-
-	&.alignright {
-		margin: space(left-bottom, s);
+	&.aligncenter {
+		margin-bottom: space(s);
 	}
 }
 
 .gallery-caption,
 .wp-caption-text {
-	font-weight: 700;
-	margin: space(top, xxs);
-	text-align: center;
+	font-family: $base-font-sans;
+	text-align: left;
 
-	@extend %font-size-s-break; // Break vertical rhythm.
-}
-
-.entry-content {
-
-	p {
-
-		&.wp-caption-text {
-			margin-bottom: 0;
-		}
-	}
-
-	.wp-audio-shortcode,
-	.wp-playlist,
-	.wp-video {
-		margin: space(stack, m);
-	}
+	@extend %font-size-s;
 }

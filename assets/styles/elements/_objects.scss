@@ -11,9 +11,20 @@ video,
 
 img {
 	height: auto;
+	max-width: 100%;
 	vertical-align: top;
 }
 
 figure {
 	margin: 0;
+}
+
+p {
+
+	img {
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 }

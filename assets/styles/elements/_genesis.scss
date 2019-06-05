@@ -37,19 +37,14 @@
 
 .author-box {
 
-	padding: space(s);
-
-	@include mq($from: tablet) {
-		padding: space(s);
-	}
+	padding: space(s) space(s) 0;
 
 	img {
-		margin-bottom: 0;
+		margin-bottom: space(s);
 	}
 
 	.author-box-title {
-		padding-top: space(xs);
-		margin-bottom: space(xs);
+		margin: space(divider, s);
 
 		@extend %font-size-xl;
 	}
@@ -57,14 +52,6 @@
 	.author-box-content {
 		clear: both;
 		float: left;
-		padding-top: space(xs);
-
-		p {
-
-			&:last-child {
-				margin-bottom: 0;
-			}
-		}
 	}
 }
 

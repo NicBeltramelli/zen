@@ -1,9 +1,27 @@
 /**
 * Typography
 *
+*	- Body
 *	- Typographical Elements
 *	- Headings
 */
+
+/* Body */
+
+body {
+
+	> div { // Chrome fix.
+
+		@extend %font-size-m;
+	}
+	background-color: color(light, soft);
+	color: color(dark, base);
+	font-family: $base-font-serif;
+	font-weight: 400;
+	margin: 0;
+
+	@extend %font-size-m;
+}
 
 /* Typographical Elements */
 
@@ -14,7 +32,7 @@ a {
 
 	&:focus,
 	&:hover {
-		color: color(dark, strong);
+		color: color(info, strong);
 		text-decoration: none;
 	}
 
@@ -35,6 +53,18 @@ pre {
 	padding: 0;
 }
 
+code,
+pre {
+	color: color(dark, base);
+	font-family: $base-font-mono;
+
+	@extend %font-size-s;
+}
+
+code {
+	background-color: color(light, base);
+}
+
 dt {
 	font-family: $base-font-sans;
 	font-weight: 700;
@@ -42,12 +72,14 @@ dt {
 
 ol,
 ul {
+	list-style-type: none;
 	margin: 0;
 	padding: 0;
-}
 
-li {
-	list-style-type: none;
+	li {
+		list-style-type: none;
+		margin-bottom: 0;
+	}
 }
 
 hr {
@@ -55,8 +87,8 @@ hr {
 	border-collapse: collapse;
 	border-top: 1px solid color(border);
 	clear: both;
-	margin-top: calc(2rem - 1px); // Compensate border.
-	margin-bottom: space(s);
+	margin-top: space(s);
+	margin-bottom: calc(2rem - 1px); // Compensate border.
 }
 
 b,
@@ -97,6 +129,16 @@ label,
 	@extend %font-size-s;
 }
 
+.small {
+
+	&.s-break {
+
+		@include mq($from: tablet) {
+			line-height: line-height(xs); // Break the vertical rhythm.
+		}
+	}
+}
+
 label {
 	font-family: $base-font-sans;
 
@@ -107,10 +149,9 @@ label {
 
 caption {
 	font-family: $base-font-sans;
-	font-weight: 700;
 	margin: space(stack, s);
 
-	@extend %font-size-m;
+	@extend %font-size-s;
 }
 
 i,

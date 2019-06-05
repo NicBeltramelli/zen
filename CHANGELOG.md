@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev-3.3.0]
+* Improve style
 * Add support for gutenbeg blocks
 * Improve configuration and style of site header
 * Prevent body scrolling when responsive menu is activated 
@@ -11,7 +12,6 @@
 * Unset the $content_width variable
 * Move extras syle to a separate file
 * Fix package url
-* Improve style
 * Exclude all dev files from production package
 * Add codacy grade badge
 * Improve code quality

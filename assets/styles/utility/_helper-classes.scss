@@ -5,6 +5,7 @@
 *	- Centering
 *	- Flexbox
 *	- No Scroll
+*	- Box Shadow
 */
 
 /* Visibility */
@@ -63,4 +64,10 @@
 /* No Scroll */
 .no-scroll {
 	overflow: hidden;
+}
+
+/* Box Shadow */
+.has-box-shadow {
+
+	@extend %box-shadow;
 }

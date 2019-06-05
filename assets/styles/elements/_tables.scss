@@ -4,7 +4,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 	border-top: 1px solid color(border);
-	margin: -1px 0 space(m); // Compensate top border.
+	margin: 0 0 calc(4rem - 1px); // Compensate top border.
 	width: 100%;
 }
 
