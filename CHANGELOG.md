@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev-3.3.0]
+* Add support for gutenbeg blocks
 * Improve configuration and style of site header
 * Prevent body scrolling when responsive menu is activated 
 * Improve style of genesis responsive menu
@@ -8,10 +9,7 @@
 * Add common style element
 * Remove FitVids.js
 * Unset the $content_width variable
-* Add front-end blocks style
 * Move extras syle to a separate file
-* Move gutenberg support to blocks folder
-
 * Fix package url
 * Improve style
 * Exclude all dev files from production package

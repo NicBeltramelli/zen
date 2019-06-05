@@ -1,0 +1,143 @@
+/**
+* Gutenberg Blocks Editor
+*
+*	- Common
+*	- Paragraph
+*	- Lists
+*	- Code
+*	- Components Panel
+*		- Buttons
+*		- Separators
+*/
+
+/* Common */
+
+* {
+
+	@extend %font-size-m;
+}
+
+.mce-content-body {
+	color: color(dark, strong);
+	font-family: $base-font-serif;
+	font-weight: 400;
+
+	@extend %font-size-m;
+}
+
+.editor-post-title__input {
+	font-family: $base-font-sans;
+}
+
+/* Paragraph */
+
+.wp-block-paragraph {
+
+	@extend %font-size-m;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+/* Lists */
+
+.block-library-list {
+
+	ol,
+	ul {
+
+		&.block-editor-rich-text__editable {
+			margin-bottom: space(s);
+		}
+	}
+
+	ol {
+		margin-left: 0;
+		padding-left: 1em;
+
+		> li {
+			list-style-type: decimal;
+		}
+	}
+
+	ul {
+		margin-left: 0;
+		padding-left: 1em;
+
+		> li {
+			list-style-type: disc;
+
+			> ul {
+
+				> li {
+					list-style-type: circle;
+				}
+			}
+		}
+
+		&.is-style-checkbox {
+
+			li {
+				padding-left: 0.25rem;
+
+				&::before {
+					top: 0;
+					transform: scale(0.5);
+
+					@include mq($from: phone) {
+						top: 4.25px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* --------- Development --------- */
+
+
+/* Block Code */
+
+.wp-block-code {
+	background-color: color(light, base);
+	font-family: $base-font-mono;
+	padding: space(xs);
+
+	@extend %font-size-s;
+
+	.editor-plain-text {
+		background-color: color(light, base);
+		font-family: $base-font-mono;
+
+		@extend %font-size-s;
+	}
+}
+
+/* Components Panel */
+
+&.editor-block-preview__content {
+
+	/* Buttons */
+	.wp-block-button {
+		left: 50%;
+		top: 50%;
+		position: absolute;
+		transform: translate(-50%, -50%);
+	}
+
+	/* Separators */
+	.wp-block-separator {
+		margin-left: auto;
+		margin-right: auto;
+
+		&.is-style-dots {
+			margin-top: 1rem;
+
+			&::before {
+				letter-spacing: 0.8em;
+				padding-left: 0.8em;
+			}
+		}
+	}
+}

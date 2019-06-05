@@ -4,6 +4,12 @@
 			"./scripts/main.js",
 			"./styles/main.scss"
 		],
+		"blocks": [
+			"./scripts/blocks.js"
+		],
+		"editor": [
+			"./styles/editor.scss"
+		],
 		"woocommerce": [
 			"./styles/woocommerce.scss"
 		],

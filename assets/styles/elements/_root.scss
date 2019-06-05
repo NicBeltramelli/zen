@@ -1,0 +1,11 @@
+/* Root */
+
+html {
+	font-size: root-font-size(phone);
+
+	@include mq($from: tablet) {
+		font-size: root-font-size(tablet);
+	}
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
