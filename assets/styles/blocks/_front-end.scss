@@ -1,5 +1,5 @@
 /**
-* Gutenberg Blocks Front-end
+* Blocks Front-end
 *
 *	- Alignment
 *	- Preformatted
@@ -7,6 +7,7 @@
 *	- Color Palette
 *	- Buttons
 *	- Lists
+*	- Tables
 *	- Separators
 */
 
@@ -44,14 +45,9 @@ pre.wp-block-preformatted {
 
 p {
 
-	&.has-background {
+	&.has-background,
+	&.has-box-shadow {
 		padding: space(xs);
-	}
-
-	&.box-shadow {
-		padding: space(xs);
-
-		@extend %box-shadow;
 	}
 
 	&.has-drop-cap:not(:focus)::first-letter {
@@ -71,7 +67,6 @@ p {
 		&.has-drop-cap:not(:focus)::first-letter {
 			line-height: line-height(drop-cap-s);
 			font-size: 4rem;
-			margin-top: 0;
 		}
 
 		&.s-break {
@@ -102,8 +97,7 @@ p {
 
 		&.has-drop-cap:not(:focus)::first-letter {
 			line-height: line-height(drop-cap-xl);
-			font-size: 10rem;
-			margin-top: 1.5rem;
+			font-size: 7rem;
 		}
 	}
 
@@ -249,22 +243,6 @@ $color-palette: (
 
 		ul {
 
-			&.is-style-checkbox {
-
-				li {
-					padding-left: 0.25rem;
-
-					&::before {
-						top: 0;
-						transform: scale(0.5);
-
-						@include mq($from: phone) {
-							top: 4.25px;
-						}
-					}
-				}
-			}
-
 			&.wp-block-latest-posts,
 			&.wp-block-latest-posts,
 			&.wp-block-categories,
@@ -294,17 +272,31 @@ $color-palette: (
 	}
 }
 
+/* Tables */
+
+.wp-block-table {
+
+	&.is-style-stripes {
+		border-bottom: none;
+		border-top-color: transparent;
+	}
+}
+
 /* Separators */
 
 .wp-block-separator {
+	width: 20%;
 
-	&.is-style-default {
-		max-width: 20%;
+	&.is-style-empty,
+	&.is-style-dots,
+	&.is-style-wide {
+		min-width: 100%;
+		width: 100%;
 	}
 
 	&.is-style-dots {
 		line-height: line-height(m);
-		margin-top: space(s);
+		margin: space(divider, s);
 
 		&::before {
 			float: left;
@@ -317,8 +309,8 @@ $color-palette: (
 
 	&.is-style-empty {
 		border: none;
+		height: space(s);
 		margin: 0;
-		min-width: 100%;
-		padding: space(divider, xs);
+		padding: 0;
 	}
 }

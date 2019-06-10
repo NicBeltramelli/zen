@@ -4,7 +4,6 @@
 *	- Visibility
 *	- Centering
 *	- Flexbox
-*	- No Scroll
 *	- Box Shadow
 */
 
@@ -59,11 +58,6 @@
 
 .align-baseline {
 	align-items: baseline;
-}
-
-/* No Scroll */
-.no-scroll {
-	overflow: hidden;
 }
 
 /* Box Shadow */

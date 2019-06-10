@@ -30,6 +30,7 @@
 .site-inner {
 	clear: both;
 	margin: 0 auto;
+	min-height: calc(100vh - 6rem);
 	padding: space(m) space(s) 0;
 
 	@include mq($from: tablet) {
@@ -42,6 +43,17 @@
 
 	@include mq($from: large-screen) {
 		max-width: breakpoint(large-screen);
+	}
+
+	.admin-bar & {
+
+		@include mq($until: admin-bar) {
+			min-height: calc(100vh - 6rem - 46px);
+		}
+
+		@include mq($from: admin-bar) {
+			min-height: calc(100vh - 6rem - 32px);
+		}
 	}
 }
 

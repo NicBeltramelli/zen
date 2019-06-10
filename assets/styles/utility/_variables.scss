@@ -93,7 +93,8 @@ $base-font-sizes: (
 
 $base-line-height: (
 	xxl:			4rem,
-	xl:				3rem,
+	xl-break:		3rem,		// Break vertical rhythm
+	xl:				2rem,
 	l-break:		2.5rem,		// Break vertical rhythm
 	l:				2rem,
 	m:				2rem,

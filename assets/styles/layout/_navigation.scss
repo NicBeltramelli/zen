@@ -205,7 +205,7 @@
 .genesis-responsive-menu {
 
 	@include mq($until: tablet) {
-		height: calc(100vh - 6rem);
+		min-height: calc(100vh - 6rem);
 		overflow: scroll;
 		padding: space(divider, m);
 		text-align: left;
@@ -229,15 +229,15 @@
 	.admin-bar & {
 
 		@include mq($until: admin-bar) {
-			height: calc(100vh - 6rem - 46px);
+			min-height: calc(100vh - 6rem - 46px);
 		}
 
 		@include mq($from: admin-bar) {
-			height: calc(100vh - 6rem - 32px);
+			min-height: calc(100vh - 6rem - 32px);
 		}
 
 		@include mq($from: tablet) {
-			height: auto;
+			min-height: 0;
 		}
 	}
 }

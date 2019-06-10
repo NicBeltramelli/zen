@@ -1,10 +1,12 @@
 /**
-* Gutenberg Blocks Editor
+* Blocks Editor
 *
 *	- Common
-*	- Paragraph
+*	- Post Title
 *	- Lists
+*	- Tables
 *	- Code
+*	- Columns
 *	- Components Panel
 *		- Buttons
 *		- Separators
@@ -12,31 +14,62 @@
 
 /* Common */
 
-* {
+.editor-block-list__layout {
+	padding: 0;
 
-	@extend %font-size-m;
+	> .block-editor-block-list__block {
+
+		> .block-editor-block-list__block-edit {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
 }
 
-.mce-content-body {
-	color: color(dark, strong);
+.wp-block {
+	border: none;
+	color: color(dark, base);
 	font-family: $base-font-serif;
-	font-weight: 400;
+	max-width: none;
 
 	@extend %font-size-m;
 }
 
-.editor-post-title__input {
-	font-family: $base-font-sans;
-}
+/* Post Title */
 
-/* Paragraph */
+.editor-post-title {
+	margin-top: -6px; // Keep space for the permalink editor.
+	padding: 0;
 
-.wp-block-paragraph {
+	@include mq($from: tablet) {
+		margin-top: -20px; // Subtract the post title input padding.
+	}
 
-	@extend %font-size-m;
+	.editor-post-title__block {
+		padding-top: 0;
+		padding-bottom: 0;
 
-	&:last-child {
-		margin-bottom: 0;
+		.editor-post-title__input {
+			border-right-width: 1px; // Fix right border.
+			color: color(dark, strong);
+			font-family: $base-font-sans;
+			margin-bottom: space(s);
+			padding-left: 14px;
+			padding-right: 14px;
+
+			@extend %font-size-xxl;
+
+			@include mq($until: tablet) {
+				border-right-width: 1px; // Fix right border.
+			}
+		}
+
+		.editor-post-permalink {
+
+			@media (max-width: 599px) { // Fix permalink editor position.
+				left: 3px;
+			}
+		}
 	}
 }
 
@@ -46,15 +79,15 @@
 
 	ol,
 	ul {
+		margin-left: 0;
+		padding-left: 1em;
 
 		&.block-editor-rich-text__editable {
-			margin-bottom: space(s);
+			margin: space(stack, s);
 		}
 	}
 
 	ol {
-		margin-left: 0;
-		padding-left: 1em;
 
 		> li {
 			list-style-type: decimal;
@@ -62,8 +95,6 @@
 	}
 
 	ul {
-		margin-left: 0;
-		padding-left: 1em;
 
 		> li {
 			list-style-type: disc;
@@ -75,23 +106,20 @@
 				}
 			}
 		}
-
-		&.is-style-checkbox {
-
-			li {
-				padding-left: 0.25rem;
-
-				&::before {
-					top: 0;
-					transform: scale(0.5);
-
-					@include mq($from: phone) {
-						top: 4.25px;
-					}
-				}
-			}
-		}
 	}
+}
+
+/* Tables */
+
+.wp-block-table {
+
+	td {
+		border-top: none;
+	}
+}
+
+.wp-block-table__cell-content {
+	padding: 0;
 }
 
 /* --------- Development --------- */
@@ -114,6 +142,33 @@
 	}
 }
 
+/* Columns */
+
+// Need work.
+.wp-block-columns {
+
+	> .block-editor-inner-blocks {
+
+		> .block-editor-block-list__layout {
+
+			> [data-type="core/column"] {
+
+				> .block-editor-block-list__block-edit {
+
+					> div {
+
+						> .block-editor-inner-blocks {
+
+							margin-top: 0;
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 /* Components Panel */
 
 &.editor-block-preview__content {
@@ -131,8 +186,16 @@
 		margin-left: auto;
 		margin-right: auto;
 
+		&.is-style-dots,
+		&.is-style-empty {
+			margin-bottom: 0;
+			margin-top: 0;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
 		&.is-style-dots {
-			margin-top: 1rem;
 
 			&::before {
 				letter-spacing: 0.8em;

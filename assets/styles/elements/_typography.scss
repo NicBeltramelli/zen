@@ -171,7 +171,9 @@ h3,
 h4,
 h5,
 h6 {
+	color: color(dark, strong);
 	font-family: $base-font-sans;
+	font-weight: 700;
 	margin: space(stack, s);
 }
 
