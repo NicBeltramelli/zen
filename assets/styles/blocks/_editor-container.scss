@@ -1,0 +1,48 @@
+/* Blocks Editor Container */
+
+.block-editor__container {
+
+	@media (min-width: 600px) { // Fix editor position on 600px width.
+		top: 46px;
+	}
+
+	@include mq($from: phone) {
+		top: 0;
+	}
+}
+
+.editor-styles-wrapper {
+	background-color: color(light, soft);
+	font-family: $base-font-serif;
+	font-weight: 400;
+	margin: 0 auto;
+	padding: 4rem 2rem 4rem 3rem; // Keep space for the mover button.
+	width: 100%;
+
+	@extend %font-size-m;
+
+	@include mq($from: tablet) {
+		padding-left: 2rem;
+	}
+
+	@include mq($from: desktop) {
+		max-width: breakpoint(desktop);
+	}
+
+	@include mq($from: large-screen) {
+		max-width: breakpoint(large-screen);
+	}
+}
+
+.editor-writing-flow {
+	max-width: breakpoint(tablet);
+
+	.is-fullscreen-mode & {
+		max-width: 100%;
+
+		@include mq($from: tablet) {
+			margin: 0 auto;
+			width: calc(65% + 28px);
+		}
+	}
+}

@@ -17,10 +17,14 @@
 /* Root font size */
 @import "elements/root";
 
+/* Editor style */
+@import "blocks/editor-container";
+
 .editor-styles-wrapper { // Ensure it only applies to the editor.
 
 	/* Elements */
 	@import "elements/typography";
+	@import "elements/tables";
 
 	/* Blocks */
 	@import "blocks/front-end";
