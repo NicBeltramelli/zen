@@ -171,7 +171,6 @@ $color-palette: (
 		transition: all $base-transition;
 		white-space: normal;
 		min-width: space(xl);
-		width: auto;
 
 		@extend %font-size-s;
 

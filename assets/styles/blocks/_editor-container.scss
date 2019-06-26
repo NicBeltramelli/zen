@@ -16,14 +16,10 @@
 	font-family: $base-font-serif;
 	font-weight: 400;
 	margin: 0 auto;
-	padding: 4rem 2rem 4rem 3rem; // Keep space for the mover button.
+	padding: space(m); // Keep space for the inserter/mover buttons.
 	width: 100%;
 
 	@extend %font-size-m;
-
-	@include mq($from: tablet) {
-		padding-left: 2rem;
-	}
 
 	@include mq($from: desktop) {
 		max-width: breakpoint(desktop);
@@ -31,6 +27,11 @@
 
 	@include mq($from: large-screen) {
 		max-width: breakpoint(large-screen);
+	}
+
+	.is-fullscreen-mode & {
+		padding-left: space(s);
+		padding-right: space(s);
 	}
 }
 
