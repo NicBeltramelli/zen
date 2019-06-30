@@ -6,7 +6,7 @@
 
 Genesis Advanced is a starter child theme for the Genesis Framework widh a modern development workflow. 
 
-Tested up to WordPress 5.1.1 and Genesis 2.8.1.
+Tested up to WordPress 5.2.1 and Genesis 2.10.1.
 
 
 ## Features
