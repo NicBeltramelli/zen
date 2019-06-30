@@ -1,5 +1,7 @@
 /* Blocks Editor Container */
 
+/* --------- Still under development --------- */
+
 .block-editor__container {
 
 	@media (min-width: 600px) { // Fix editor position on 600px width.
@@ -10,6 +12,9 @@
 		top: 0;
 	}
 }
+
+// Need work.
+// Align editor width with front end.
 
 .editor-styles-wrapper {
 	background-color: color(light, soft);
@@ -37,6 +42,10 @@
 
 .editor-writing-flow {
 	max-width: breakpoint(tablet);
+
+	@include mq($from: large-screen) {
+		max-width: breakpoint(desktop);
+	}
 
 	.is-fullscreen-mode & {
 		max-width: 100%;

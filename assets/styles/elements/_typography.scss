@@ -97,7 +97,6 @@ strong {
 }
 
 blockquote,
-cite,
 em,
 i {
 	font-style: italic;
@@ -109,7 +108,7 @@ mark {
 }
 
 blockquote {
-	margin: space(s);
+	margin: space(divider, s);
 	position: relative;
 
 	&::before {
@@ -121,12 +120,32 @@ blockquote {
 		left: -(space(s));
 		top: -(space(xs));
 	}
+
+	p {
+		margin: space(stack, xs);
+	}
 }
 
+cite,
 label,
 .small {
 
 	@extend %font-size-s;
+}
+
+cite {
+	font-family: $base-font-sans;
+	font-weight: 700;
+	font-style: normal;
+	text-transform: uppercase;
+}
+
+label {
+	font-family: $base-font-sans;
+
+	.required {
+		color: color(danger, base);
+	}
 }
 
 .small {
@@ -136,14 +155,6 @@ label,
 		@include mq($from: tablet) {
 			line-height: line-height(xs); // Break the vertical rhythm.
 		}
-	}
-}
-
-label {
-	font-family: $base-font-sans;
-
-	.required {
-		color: color(danger, base);
 	}
 }
 
