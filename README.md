@@ -4,7 +4,7 @@
 [![Build Status](https://img.shields.io/travis/NicBeltramelli/genesis-advanced.svg?style=for-the-badge)](https://travis-ci.org/NicBeltramelli/genesis-advanced)
 
 
-Genesis Advanced is a starter child theme for the Genesis Framework widh a modern development workflow. 
+Genesis Advanced is a starter child theme for the Genesis Framework with a modern development workflow. 
 
 Tested up to WordPress 5.2.1 and Genesis 2.10.1.
 
@@ -111,7 +111,7 @@ themes/your-theme-name/  # → Root of your child theme
 
 ### Export for distribution
 
-* `composer export` — Create a zip archive excluding dev files
+* `composer export` — Creates a zip archive excluding dev files
 
 
 ### Front-end dependencies
