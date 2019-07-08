@@ -389,6 +389,7 @@ $color-palette: (
 		margin: space(stack, xs);
 		max-width: 100%;
 		padding: 0;
+		text-align: left;
 
 		@include mq($from: phone) {
 			max-width: 200px;
@@ -412,7 +413,7 @@ $color-palette: (
 		margin-right: 2rem;
 
 		@include mq($from: tablet) {
-			margin-left: -150px;
+			margin-left: -25%;
 		}
 	}
 
@@ -420,7 +421,7 @@ $color-palette: (
 		margin-left: 2rem;
 
 		@include mq($from: tablet) {
-			margin-right: -150px;
+			margin-right: -25%;
 		}
 	}
 

@@ -276,10 +276,6 @@
 
 /* Quotes */
 
-// Need work.
-// Fix blockquotes left and right margins.
-// Refine pull quotes left and right alignment style.
-
 .wp-block-pullquote,
 .wp-block-quote {
 
@@ -314,17 +310,15 @@
 .wp-block[data-type="core/pullquote"] {
 
 	&[data-align="left"] {
-		margin-right: 2rem;
 
 		.wp-block-pullquote {
+			margin-right: 2rem;
+		}
 
-			@include mq($from: tablet) {
-				margin-left: -150px;
-			}
+		@include mq($from: tablet) {
 
-			p,
-			.wp-block-pullquote__citation {
-				text-align: left;
+			.is-fullscreen-mode & {
+				margin-left: -150px; // Value in percentage gives unexpected result.
 			}
 		}
 	}
@@ -333,14 +327,12 @@
 
 		.wp-block-pullquote {
 			margin-left: 2rem;
+		}
 
-			@include mq($from: tablet) {
-				margin-right: -150px;
-			}
+		@include mq($from: tablet) {
 
-			p,
-			.wp-block-pullquote__citation {
-				text-align: right;
+			.is-fullscreen-mode & {
+				margin-right: -150px; // Value in percentage gives unexpected result.
 			}
 		}
 	}
@@ -352,6 +344,11 @@
 			border: none;
 			max-width: 100%;
 			padding: 0;
+
+			p,
+			.wp-block-pullquote__citation {
+				text-align: left;
+			}
 
 			@include mq($from: phone) {
 				max-width: 200px;
