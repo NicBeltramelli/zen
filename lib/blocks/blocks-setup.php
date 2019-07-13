@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Enqueue assets
  *
- * @since 3.3.0
+ * @since 3.3.1
  */
 add_action(
 	'enqueue_block_editor_assets',
@@ -47,6 +47,29 @@ add_action(
 			CHILD_THEME_VERSION,
 			true
 		);
+
+		/* Output link color inline css */
+		$color_link = get_theme_mod( 'genesis_advanced_link_color', genesis_advanced_customizer_get_default_link_color() );
+
+		$css = '';
+
+		$css .= ( genesis_advanced_customizer_get_default_link_color() !== $color_link ) ? sprintf(
+			'
+			.editor-styles-wrapper a,
+			.editor-styles-wrapper a:focus,
+			.editor-styles-wrapper a:focus {
+				color: %s;
+			}
+			',
+			$color_link
+		) : '';
+
+		if ( $css ) {
+			wp_add_inline_style(
+				CHILD_THEME_HANDLE . '-editor-style',
+				$css
+			);
+		}
 	}
 );
 
