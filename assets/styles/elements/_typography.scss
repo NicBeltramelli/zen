@@ -117,7 +117,7 @@ blockquote {
 		display: block;
 
 		@extend %font-size-xl;
-		left: -(space(s));
+		left: -(space(xs));
 		top: -(space(xs));
 	}
 

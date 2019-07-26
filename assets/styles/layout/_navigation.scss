@@ -354,6 +354,10 @@
 		padding-top: space(xs);
 		text-align: right;
 		width: auto;
+
+		.wrap {
+			padding: 0;
+		}
 	}
 
 	.genesis-nav-menu {

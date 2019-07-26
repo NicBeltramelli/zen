@@ -37,10 +37,6 @@
 		margin-top: space(l);
 	}
 
-	@include mq($from: desktop) {
-		max-width: breakpoint(desktop);
-	}
-
 	@include mq($from: large-screen) {
 		max-width: breakpoint(large-screen);
 	}
@@ -60,10 +56,6 @@
 .wrap {
 	margin: 0 auto;
 	padding: space(column, s);
-
-	@include mq($from: desktop) {
-		max-width: breakpoint(desktop);
-	}
 
 	@include mq($from: large-screen) {
 		max-width: breakpoint(large-screen);

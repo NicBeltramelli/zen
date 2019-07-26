@@ -25,17 +25,13 @@
 			display: flex;
 			flex-wrap: nowrap;
 			justify-content: space-between;
-			padding: space(column, xs);
+			padding: space(column, s);
 
 			// Prevent pseudo-elements from impacting the space-between calculation.
 			&::after,
 			&::before {
 				content: none;
 			}
-		}
-
-		@include mq($from: desktop) {
-			padding: 0;
 		}
 	}
 

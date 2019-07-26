@@ -16,7 +16,7 @@
 // Need work.
 // Align editor width with front end.
 
-.editor-styles-wrapper {
+.editor-styles-wrapper:not(.editor-block-preview__content) {
 	background-color: color(light, soft);
 	font-family: $base-font-serif;
 	font-weight: 400;
@@ -26,33 +26,8 @@
 
 	@extend %font-size-m;
 
-	@include mq($from: desktop) {
-		max-width: breakpoint(desktop);
-	}
-
-	@include mq($from: large-screen) {
-		max-width: breakpoint(large-screen);
-	}
-
 	.is-fullscreen-mode & {
 		padding-left: space(s);
 		padding-right: space(s);
-	}
-}
-
-.editor-writing-flow {
-	max-width: breakpoint(tablet);
-
-	@include mq($from: large-screen) {
-		max-width: breakpoint(desktop);
-	}
-
-	.is-fullscreen-mode & {
-		max-width: 100%;
-
-		@include mq($from: tablet) {
-			margin: 0 auto;
-			width: calc(65% + 28px);
-		}
 	}
 }

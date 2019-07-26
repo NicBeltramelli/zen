@@ -1,5 +1,8 @@
 # Genesis Advanced Changelog
 
+## [dev - 3.3.1]
+* Output link color inline css on gutenberg blocks editor
+
 ## [3.3.0] - 2019-06-30
 * Improve style
 * Add support for gutenbeg blocks

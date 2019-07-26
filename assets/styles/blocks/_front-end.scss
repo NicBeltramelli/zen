@@ -1,51 +1,54 @@
 /**
 * Blocks Front-end
 *
-*	- Common
 *	- Alignment
 *	- Preformatted
 *	- Paragraph
 *	- Color Palette
 *	- Buttons
 *	- Lists
+*	- Categories
 *	- Tables
 *	- Separators
 *	- Quotes
+*	- Columns
 *	- Images
+*	- Gallery
 *	- Cover Image
 */
 
 /* --------- Still under development --------- */
 
-/* Common */
-.wp-block,
-.wp-block-column,
-.wp-block-cover,
-.wp-block-media-text {
-	margin-bottom: space(s);
-}
-
 /* Alignment */
 
 .full-width-content {
 
+	.alignfull,
 	.alignwide {
-
-		margin-left: calc(-100vw / 2 + 100% / 2);
-		margin-right: calc(-100vw / 2 + 100% / 2);
-		max-width: 100vw;
 
 		// Cover Image
 		&.wp-block-cover {
 			width: 100vw;
 		}
 	}
+
+	.alignfull {
+		margin-left: calc(50% - 50vw);
+		margin-right: calc(50% - 50vw);
+		max-width: 100vw;
+	}
+
+	.alignwide {
+		margin-left: calc(50% - 50vw + 2rem);
+		margin-right: calc(50% - 50vw + 2rem);
+		max-width: calc(100vw - 4rem);
+	}
 }
 
 .content-sidebar,
 .sidebar-content {
 
-	.alignwide {
+	.alignfull {
 		margin: space(stack, s);
 		width: 100%;
 	}
@@ -260,18 +263,35 @@ $color-palette: (
 
 		ul {
 
-			&.wp-block-latest-posts,
-			&.wp-block-latest-posts,
+			&.wp-block-archives,
 			&.wp-block-categories,
-			&.wp-block-archives {
+			&.wp-block-latest-posts {
 				list-style: none;
-				margin-left: 0;
+				padding: 0;
+
+				ul {
+					margin: space(divider, xs);
+					padding: 0;
+				}
 
 				li {
+					font-family: $base-font-sans;
 					list-style: none;
+				}
 
-					a {
-						font-family: $base-font-sans;
+				&.alignleft {
+					margin-right: space(s);
+
+					ul {
+						padding-left: 1em;
+					}
+				}
+
+				&.alignright {
+					margin-left: space(s);
+
+					ul {
+						padding-left: 1em;
 					}
 				}
 			}
@@ -285,6 +305,10 @@ $color-palette: (
 					}
 				}
 			}
+
+			&.wp-block-gallery {
+				padding-left: 0;
+			}
 		}
 	}
 }
@@ -292,6 +316,14 @@ $color-palette: (
 /* Tables */
 
 .wp-block-table {
+
+	&.alignwide {
+		width: calc(100vw - 4rem);
+	}
+
+	&.alignfull {
+		width: 100vw;
+	}
 
 	&.is-style-stripes {
 		border-bottom: none;
@@ -302,13 +334,17 @@ $color-palette: (
 /* Separators */
 
 .wp-block-separator {
-	width: 20%;
 
-	&.is-style-empty,
+	&:not(.is-style-dots),
+	&:not(.is-style-empty),
+	&:not(.is-style-wide) {
+		max-width: 20%;
+	}
+
 	&.is-style-dots,
+	&.is-style-empty,
 	&.is-style-wide {
-		min-width: 100%;
-		width: 100%;
+		max-width: 100%;
 	}
 
 	&.is-style-dots {
@@ -327,7 +363,7 @@ $color-palette: (
 	&.is-style-empty {
 		border: none;
 		height: space(s);
-		margin: 0;
+		margin: space(stack, s);
 		padding: 0;
 	}
 }
@@ -386,10 +422,9 @@ $color-palette: (
 	&.alignleft,
 	&.alignright {
 		border: none;
-		margin: space(stack, xs);
+		margin: space(stack, s);
 		max-width: 100%;
 		padding: 0;
-		text-align: left;
 
 		@include mq($from: phone) {
 			max-width: 200px;
@@ -410,17 +445,19 @@ $color-palette: (
 	}
 
 	&.alignleft {
-		margin-right: 2rem;
+		text-align: left;
 
 		@include mq($from: tablet) {
+			margin-right: space(s);
 			margin-left: -25%;
 		}
 	}
 
 	&.alignright {
-		margin-left: 2rem;
+		text-align: right;
 
 		@include mq($from: tablet) {
+			margin-left: space(s);
 			margin-right: -25%;
 		}
 	}
@@ -448,9 +485,62 @@ $color-palette: (
 	}
 }
 
+/* Columns */
+
+.wp-block-columns {
+
+	@include mq($from: tablet) {
+
+		.wp-block-columns {
+			flex-wrap: nowrap;
+		}
+	}
+
+	.wp-block-column {
+		margin-bottom: space(s);
+
+		@include mq($from: phone) {
+			flex-basis: calc(50% - 1rem);
+
+			&:nth-child(even) {
+				margin-left: 2rem;
+			}
+		}
+
+		@include mq($from: tablet) {
+
+			&:not(:first-child) {
+				margin-left: 2rem;
+			}
+		}
+
+		@include mq($until: phone) {
+
+			.wp-block-columns {
+
+				> .wp-block-column {
+
+					&:last-child {
+						margin-bottom: 0; // Remove margin bottom on nested columns.
+					}
+				}
+			}
+		}
+	}
+}
+
 /* Images */
 
 .wp-block-image {
+	margin-bottom: space(s);
+
+	&.alignleft {
+		margin-right: space(s);
+	}
+
+	&.alignright {
+		margin-left: space(s);
+	}
 
 	figcaption {
 		color: color(dark, soft);
@@ -458,6 +548,22 @@ $color-palette: (
 		text-align: center;
 
 		@extend %font-size-s;
+	}
+}
+
+/* Gallery */
+
+.wp-block-gallery {
+
+	.blocks-gallery-image,
+	.blocks-gallery-item {
+
+		figcaption {
+			color: color(light, soft);
+			padding: space(s) space(xs) space(xs);
+
+			@extend %font-size-s;
+		}
 	}
 }
 

@@ -6,7 +6,6 @@
 *	- Lists
 *	- Tables
 *	- Code
-*	- Separators
 *	- Cover Image
 *	- Columns
 *	- Quotes
@@ -19,13 +18,16 @@
 
 /* Common */
 
-// Need work.
-// Fix full and wide width alignment.
-// Treat native spacing (padding and margin).
-// Fix mover buttons on wide width alignment (not visible on some breakpoints).
-
-.block-editor-block-list__layout { // Need work
+.block-editor-block-list__layout {
 	padding: 0;
+
+	.block-editor-block-list__block-edit {
+
+		@include mq($from: tablet) {
+			margin-top: space(s);
+			margin-bottom: space(s);
+		}
+	}
 }
 
 .wp-block {
@@ -35,11 +37,6 @@
 	max-width: none;
 
 	@extend %font-size-m;
-
-	> .block-editor-block-list__block-edit {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
 
 	p {
 
@@ -82,38 +79,48 @@
 		}
 	}
 
-	&[data-align="wide"] {
+	&[data-align="full"] {
 		margin-left: -(space(m));
 		margin-right: -(space(m));
 
-		> .block-editor-block-list__block-edit {
+		.wp-block-columns {
 
-			@include mq($from: phone) {
-				margin-left: -44px;
-				margin-right: -44px;
+			> .block-editor-inner-blocks {
+				padding-left: 14px;
+				padding-right: 14px;
 			}
 		}
 	}
 
-	&[data-align="full"] {
-		margin-left: auto;
-		margin-right: auto;
-
-		> .block-editor-block-list__block-edit {
-
-			@include mq($from: phone) {
-				margin-left: -28px;
-				margin-right: -28px;
-			}
-		}
+	&[data-type="core/separator"] {
+		clear: both;
 	}
 
 	.is-fullscreen-mode & {
 
-		&[data-align="wide"] {
-			margin-left: calc(-100vw / 2 + 100% / 2);
-			margin-right: calc(-100vw / 2 + 100% / 2);
-			max-width: 100vw;
+		@include mq($from: tablet) {
+			max-width: calc(65% + 28px + 2px);
+
+			&[data-align="full"] {
+				max-width: none;
+				margin-left: -(space(s));
+				margin-right: -(space(s));
+			}
+
+			&[data-align="wide"] {
+				max-width: 100%;
+			}
+
+			&[data-type="core/columns"],
+			&[data-type="atomic-blocks/ab-columns"] {
+
+				.block-editor-block-list__layout {
+
+					.block-editor-block-list__block {
+						max-width: 100%;
+					}
+				}
+			}
 		}
 	}
 }
@@ -137,8 +144,7 @@
 			color: color(dark, strong);
 			font-family: $base-font-sans;
 			margin-bottom: space(s);
-			padding-left: 14px;
-			padding-right: 14px;
+			padding: 0 14px;
 
 			@extend %font-size-xxl;
 
@@ -158,16 +164,21 @@
 
 /* Lists */
 
+.wp-block-latest-posts,
+ul.wp-block-archives {
+	padding-left: 0;
+
+	li {
+		font-family: $base-font-sans;
+	}
+}
+
 .block-library-list {
 
 	ol,
 	ul {
 		margin-left: 0;
 		padding-left: 1em;
-
-		&.block-editor-rich-text__editable {
-			margin: space(stack, s);
-		}
 	}
 
 	ol {
@@ -192,6 +203,32 @@
 	}
 }
 
+.wp-block[data-type="core/categories"] {
+
+	.wp-block-categories {
+
+		ul {
+			padding-left: 0;
+
+			li {
+				font-family: $base-font-sans;
+
+				ul {
+					margin: space(divider, xs);
+				}
+			}
+		}
+	}
+
+	&[data-align="left"],
+	&[data-align="right"] {
+
+		ul li ul {
+			padding-left: 1em;
+		}
+	}
+}
+
 /* Tables */
 
 .wp-block-table {
@@ -207,36 +244,20 @@
 
 /* Block Code */
 
-// Need work.
-
 .wp-block-code {
 	background-color: color(light, base);
 	font-family: $base-font-mono;
 	padding: space(xs);
 
 	@extend %font-size-s;
-
-	.editor-plain-text {
-		background-color: color(light, base);
-		font-family: $base-font-mono;
-
-		@extend %font-size-s;
-	}
-}
-
-/* Separators */
-
-.wp-block-separator {
-
-	&.is-style-empty {
-		margin-bottom: -(space(s));
-	}
 }
 
 /* Cover Image */
 
-// Need work.
-// Fix inner paragraph font sizes.
+.wp-block-cover,
+.wp-block-cover-image {
+	margin-bottom: 0;
+}
 
 .wp-block-cover {
 
@@ -247,28 +268,34 @@
 
 /* Columns */
 
-// Need work.
-// Align with front end.
+.wp-block-columns > .block-editor-inner-blocks > .block-editor-block-list__layout {
 
-.wp-block-columns {
+	@include mq($from: tablet) {
+		flex-wrap: nowrap;
+	}
 
-	> .block-editor-inner-blocks {
+	> [data-type="core/column"] {
+		margin-bottom: space(s);
 
-		> .block-editor-block-list__layout {
+		@include mq($from: phone) {
+			flex-basis: calc(50% - (1rem + 28px));
 
-			> [data-type="core/column"] {
+			&:nth-child(even) {
+				margin-left: calc(2rem + 14px);
+			}
+		}
 
-				> .block-editor-block-list__block-edit {
+		@include mq($from: tablet) {
 
-					> div {
+			&:not(:first-child) {
+				margin-left: calc(1rem + 14px);
+			}
+		}
 
-						> .block-editor-inner-blocks {
+		@include mq($until: phone) {
 
-							margin-top: 0;
-							margin-bottom: 0;
-						}
-					}
-				}
+			&:last-child {
+				margin-bottom: 0;
 			}
 		}
 	}
@@ -309,46 +336,14 @@
 
 .wp-block[data-type="core/pullquote"] {
 
-	&[data-align="left"] {
-
-		.wp-block-pullquote {
-			margin-right: 2rem;
-		}
-
-		@include mq($from: tablet) {
-
-			.is-fullscreen-mode & {
-				margin-left: -150px; // Value in percentage gives unexpected result.
-			}
-		}
-	}
-
-	&[data-align="right"] {
-
-		.wp-block-pullquote {
-			margin-left: 2rem;
-		}
-
-		@include mq($from: tablet) {
-
-			.is-fullscreen-mode & {
-				margin-right: -150px; // Value in percentage gives unexpected result.
-			}
-		}
-	}
-
 	&[data-align="left"],
 	&[data-align="right"] {
 
 		.wp-block-pullquote {
 			border: none;
 			max-width: 100%;
+			margin-bottom: 0;
 			padding: 0;
-
-			p,
-			.wp-block-pullquote__citation {
-				text-align: left;
-			}
 
 			@include mq($from: phone) {
 				max-width: 200px;
@@ -364,6 +359,44 @@
 				p {
 
 					@extend %font-size-l;
+				}
+			}
+		}
+	}
+
+	&[data-align="left"] {
+
+		.wp-block-pullquote {
+			text-align: left;
+		}
+
+		.is-fullscreen-mode & {
+
+			> .block-editor-block-list__block-edit {
+				margin-right: 0;
+
+				@include mq($from: tablet) {
+					margin-right: space(s);
+					margin-left: -25%;
+				}
+			}
+		}
+	}
+
+	&[data-align="right"] {
+
+		.wp-block-pullquote {
+			text-align: right;
+		}
+
+		.is-fullscreen-mode & {
+
+			> .block-editor-block-list__block-edit {
+				margin-left: 0;
+
+				@include mq($from: tablet) {
+					margin-left: space(s);
+					margin-right: -25%;
 				}
 			}
 		}
