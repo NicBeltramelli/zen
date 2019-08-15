@@ -116,7 +116,6 @@ themes/your-theme-name/  # → Root of your child theme
 
 ### Front-end dependencies
 
- * [ResponsiveMenus.js](https://github.com/studiopress/responsive-menus)
  * [jquery.matchHeight.js](https://github.com/liabru/jquery-match-height)
  * [jquery.scrollTo](https://github.com/flesler/jquery.scrollTo)
  * [normalize-scss](https://github.com/JohnAlbin/normalize-scss)
