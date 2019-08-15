@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Enqueue assets
  *
- * @since 3.4.0
+ * @since 3.0.0
  */
 add_action(
 	'wp_enqueue_scripts',

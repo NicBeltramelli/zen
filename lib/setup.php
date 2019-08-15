@@ -61,7 +61,7 @@ add_theme_support(
 /**
  * Add custom logo in Customizer > Site Identity
  *
- * @since 3.3.0
+ * @since 3.0.0
  */
 add_theme_support(
 	'custom-logo',

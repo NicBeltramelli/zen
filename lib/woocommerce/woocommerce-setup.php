@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Enqueue custom WooCommerce style
  *
- * @since 3.4.0
+ * @since 3.0.0
  */
 add_action(
 	'wp_enqueue_scripts',
@@ -40,7 +40,7 @@ add_action(
 /**
  * Print an inline script to the footer to keep products the same height
  *
- * @since 3.4.0
+ * @since 3.0.0
  */
 add_action(
 	'wp_enqueue_scripts',

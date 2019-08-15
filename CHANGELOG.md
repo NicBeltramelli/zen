@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev - 3.4.0]
+* Fix @since versioning
 * Replace all constants with new helpers
 * Add the layout setting through the configuration api
 * Improve style

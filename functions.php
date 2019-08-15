@@ -24,7 +24,7 @@ require_once get_template_directory() . '/lib/init.php'; // Initialize Genesis F
  * Add or remove files to the array as needed.
  * Please note that missing files will produce a fatal error.
  *
- * @since 3.3.0
+ * @since 3.0.0
  */
 $genesis_advanced_includes = [
 

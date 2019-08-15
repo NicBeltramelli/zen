@@ -112,7 +112,7 @@ function genesis_advanced_dismiss_woocommerce_notice() {
 /**
  * Enqueue script to clear the Genesis Connect for WooCommerce plugin install prompt on dismissal
  *
- * @since 3.4.0
+ * @since 3.0.0
  */
 add_action(
 	'admin_enqueue_scripts',

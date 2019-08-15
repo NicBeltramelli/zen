@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Enqueue assets
  *
- * @since 3.4.0
+ * @since 3.3.0
  */
 add_action(
 	'enqueue_block_editor_assets',

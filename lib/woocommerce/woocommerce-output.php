@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Add the themes's custom CSS to the WooCommerce stylesheet
  *
- * @since 3.4.0
+ * @since 3.0.0
  *
  * @return string CSS to be outputted after the theme's custom WooCommerce stylesheet.
  */
