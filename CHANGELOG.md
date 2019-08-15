@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev - 3.4.0]
+* Add the layout setting through the configuration api
 * Improve style
 * Output link color inline css on gutenberg blocks editor
 
