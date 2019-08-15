@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev - 3.4.0]
+* Replace responsive-menu scripts with genesis_register_responsive_menus()
 * Fix @since versioning
 * Replace all constants with new helpers
 * Add the layout setting through the configuration api

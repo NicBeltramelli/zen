@@ -15,30 +15,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Define responsive menu settings
+ * Register the responsive menus
  *
- * @since 3.0.0
+ * @since 3.4.0
  */
-function genesis_advanced_responsive_menu_settings() {
-
-	$settings =
-	[
-		'mainMenu'         => __( 'Menu', 'genesis-advanced' ),
-		'menuIconClass'    => 'dashicons-before dashicons-menu',
-		'subMenu'          => __( 'Submenu', 'genesis-advanced' ),
-		'subMenuIconClass' => 'dashicons-before dashicons-arrow-down-alt2',
-		'menuClasses'      =>
-		[
-			'combine' =>
-			[
-				'.nav-primary',
-			],
-			'others'  => [],
-		],
-	];
-
-	return $settings;
-
+if ( function_exists( 'genesis_register_responsive_menus' ) ) {
+	genesis_register_responsive_menus(
+		genesis_get_config(
+			'responsive-menus'
+		)
+	);
 }
 
 /* Remove output of primary navigation right extras */

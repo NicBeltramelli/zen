@@ -8,6 +8,3 @@ import 'jquery.scrollto/jquery.scrollTo.min';
 
 // Import scrollreveal
 import 'scrollreveal/dist/scrollreveal.min';
-
-// Import responsive-menus
-import 'responsive-menus/dist/responsive-menus.min';

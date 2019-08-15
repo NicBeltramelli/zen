@@ -64,13 +64,6 @@ add_action(
 			);
 		}
 
-		/* Localize Genesis Responsive Menu */
-		wp_localize_script(
-			genesis_get_theme_handle() . '-scripts',
-			'genesis_responsive_menu',
-			genesis_advanced_responsive_menu_settings()
-		);
-
 	},
 	99
 );
