@@ -25,26 +25,26 @@ add_action(
 
 		/* Enqueue Google Fonts */
 		wp_enqueue_style(
-			CHILD_THEME_HANDLE . '-editor-fonts',
+			genesis_get_theme_handle() . '-editor-fonts',
 			'//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700|Roboto+Mono',
 			[],
-			CHILD_THEME_VERSION
+			genesis_get_theme_version()
 		);
 
 		/* Enqueue editor style */
 		wp_enqueue_style(
-			CHILD_THEME_HANDLE . '-editor-style',
+			genesis_get_theme_handle() . '-editor-style',
 			genesis_advanced_asset_path( 'styles/editor.css' ),
 			[],
-			CHILD_THEME_VERSION
+			genesis_get_theme_version()
 		);
 
 		/* Enqueue blocks script */
 		wp_enqueue_script(
-			CHILD_THEME_HANDLE . '-blocks-scripts',
+			genesis_get_theme_handle() . '-blocks-scripts',
 			genesis_advanced_asset_path( 'scripts/blocks.js' ),
 			[ 'wp-blocks', 'wp-dom' ],
-			CHILD_THEME_VERSION,
+			genesis_get_theme_version(),
 			true
 		);
 
@@ -66,7 +66,7 @@ add_action(
 
 		if ( $css ) {
 			wp_add_inline_style(
-				CHILD_THEME_HANDLE . '-editor-style',
+				genesis_get_theme_handle() . '-editor-style',
 				$css
 			);
 		}

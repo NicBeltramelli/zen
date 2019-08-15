@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Add the themes's custom CSS to the WooCommerce stylesheet
  *
- * @since 3.3.0
+ * @since 3.4.0
  *
  * @return string CSS to be outputted after the theme's custom WooCommerce stylesheet.
  */
@@ -85,7 +85,7 @@ add_action(
 
 		if ( $woo_css ) {
 			wp_add_inline_style(
-				CHILD_THEME_HANDLE . '-woocommerce-styles',
+				genesis_get_theme_handle() . '-woocommerce-styles',
 				$woo_css
 			);
 		}
