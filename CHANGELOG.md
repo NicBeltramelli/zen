@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev - 3.4.0]
+* Remove the link from the hidden site title if a custom logo is in use
 * Delete genesis nav right extra filter removal
 * Replace responsive-menu scripts with genesis_register_responsive_menus()
 * Fix @since versioning
