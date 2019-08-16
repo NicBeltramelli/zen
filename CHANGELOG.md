@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev - 3.4.0]
+* Delete genesis nav right extra filter removal
 * Replace responsive-menu scripts with genesis_register_responsive_menus()
 * Fix @since versioning
 * Replace all constants with new helpers
