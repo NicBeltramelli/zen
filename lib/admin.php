@@ -15,24 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Remove output of unused admin settings metaboxes
- *
- * @since 3.0.0
- *
- * @param string $_genesis_admin_settings The admin screen to remove meta boxes from.
- */
-add_action(
-	'genesis_theme_settings_metaboxes',
-	function ( $_genesis_admin_settings ) {
-
-		remove_meta_box( 'genesis-theme-settings-header', $_genesis_admin_settings, 'main' );
-		remove_meta_box( 'genesis-theme-settings-nav', $_genesis_admin_settings, 'main' );
-
-	}
-);
-
-/**
- * Remove output of header settings in the Customizer
+ * Remove output of header and front page breadcrumb settings in the Customizer
  *
  * @since 3.0.0
  *
@@ -44,7 +27,8 @@ add_filter(
 	function ( $config ) {
 
 		unset( $config['genesis']['sections']['genesis_header'] );
-		return $config;
+		unset( $config['genesis']['sections']['genesis_breadcrumbs']['controls']['breadcrumb_front_page'] );
 
+		return $config;
 	}
 );
