@@ -28,69 +28,23 @@ add_action(
 	}
 );
 
-/* Add support for HTML5 markup structure */
-add_theme_support(
-	'html5',
-	[
-		'caption',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'search-form',
-	]
-);
-
-/* Add support for accessibility */
-add_theme_support(
-	'genesis-accessibility',
-	[
-		'404-page',
-		'drop-down-menu',
-		'headings',
-		'rems',
-		'search-form',
-		'skip-links',
-	]
-);
-
-/* Add viewport meta tag for mobile browsers */
-add_theme_support(
-	'genesis-responsive-viewport'
-);
-
 /**
- * Add custom logo in Customizer > Site Identity
+ * Add theme supports.
  *
- * @since 3.0.0
+ * See config file at `config/theme-supports.php`.
+ *
+ * @since 3.4.0
  */
-add_theme_support(
-	'custom-logo',
-	[
-		'height'      => 120,
-		'width'       => 500,
-		'flex-height' => true,
-		'flex-width'  => true,
-	]
-);
+add_action(
+	'after_setup_theme',
+	function () {
 
-/* Rename primary and secondary navigation menus */
-add_theme_support(
-	'genesis-menus',
-	[
-		'primary'   => __( 'Header Menu', 'genesis-advanced' ),
-		'secondary' => __( 'Footer Menu', 'genesis-advanced' ),
-	]
-);
-
-/* Add support for after entry widget */
-add_theme_support(
-	'genesis-after-entry-widget-area'
-);
-
-/* Add support for 3-column footer widgets */
-add_theme_support(
-	'genesis-footer-widgets',
-	3
+		$theme_supports = genesis_get_config( 'theme-supports' );
+		foreach ( $theme_supports as $feature => $args ) {
+			add_theme_support( $feature, $args );
+		}
+	},
+	9
 );
 
 /* Remove header right widget area */
