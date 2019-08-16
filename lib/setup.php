@@ -29,11 +29,11 @@ add_action(
 );
 
 /**
- * Add theme supports.
- *
- * See config file at `config/theme-supports.php`.
+ * Add theme supports
  *
  * @since 3.4.0
+ *
+ * See config file at `config/theme-supports.php`.
  */
 add_action(
 	'after_setup_theme',

@@ -18,6 +18,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register the responsive menus
  *
  * @since 3.4.0
+ *
+ * See config file at `config/responsive-menus.php`.
  */
 if ( function_exists( 'genesis_register_responsive_menus' ) ) {
 	genesis_register_responsive_menus(
