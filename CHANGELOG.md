@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev - 3.4.0]
+* Move widgets settings in separate file
 * Add theme supports through the configuration api
 * Prevent layout caching on shop page
 * Use flexbox instead of jquery-match-height

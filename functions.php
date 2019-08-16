@@ -49,6 +49,7 @@ $genesis_advanced_includes = [
 	'lib/structure/content.php',
 	'lib/structure/header.php',
 	'lib/structure/navigation.php',
+	'lib/structure/widgets.php',
 
 	/* WooCommerce */
 	'lib/woocommerce/woocommerce-setup.php',

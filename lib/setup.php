@@ -46,13 +46,3 @@ add_action(
 	},
 	9
 );
-
-/* Remove header right widget area */
-unregister_sidebar(
-	'header-right'
-);
-
-/* Remove secondary sidebar */
-unregister_sidebar(
-	'sidebar-alt'
-);
