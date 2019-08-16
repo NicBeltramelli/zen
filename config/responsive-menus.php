@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Genesis responsive menus settings
- * 
+ *
  * @since 3.4.0
  */
 return [
