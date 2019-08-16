@@ -4,8 +4,6 @@
  *
  * This file overrides `genesis/config/layouts.php` to set default theme layouts.
  *
- * @since 3.4.0
- *
  * @package Genesis Advanced
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
@@ -15,6 +13,12 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+
+/**
+ * Genesis layouts settings
+ * 
+ * @since 3.4.0
+ */
 
 $genesis_advanced_layouts = array();
 

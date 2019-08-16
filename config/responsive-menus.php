@@ -4,8 +4,6 @@
  *
  * This file adds the responsive menus settings (Requires Genesis 3.0+).
  *
- * @since 3.4.0
- *
  * @package Genesis Advanced
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
@@ -18,6 +16,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Genesis responsive menus settings
+ * 
+ * @since 3.4.0
  */
 return [
 	'script' => [
