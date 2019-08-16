@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev - 3.4.0]
+* Prevent layout caching on shop page
 * Use flexbox instead of jquery-match-height
 * Clarify customizer color descriptions
 * Remove the link from the hidden site title if a custom logo is in use

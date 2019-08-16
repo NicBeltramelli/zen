@@ -63,7 +63,7 @@ add_filter(
 	'woocommerce_style_smallscreen_breakpoint',
 	function () {
 
-		$current = genesis_site_layout();
+		$current = genesis_site_layout( false );
 		$layouts =
 		[
 			'one-sidebar' =>
