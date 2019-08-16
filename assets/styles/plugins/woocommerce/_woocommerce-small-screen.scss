@@ -225,7 +225,7 @@
 			li.product {
 				clear: none;
 				float: left;
-				margin: 0 0 space(stack, m) $margin-left;
+				margin: 0 0 space(m) $margin-left;
 				width: $one-half;
 
 				&:nth-child(odd) {

@@ -28,10 +28,34 @@
 	.products ul,
 	ul.products {
 		margin: space(stack, m);
+
+		&::after,
+		&::before {
+			display: none;
+		}
+	}
+
+	ul.products {
+		display: flex;
+		flex-wrap: wrap;
 	}
 
 	ul.products li.product {
+		align-items: self-start;
+		display: flex;
+		flex-direction: column;
 		list-style-type: none;
+		justify-content: space-between;
+
+		&::after,
+		&::before {
+			display: none;
+		}
+
+		.woocommerce-LoopProduct-link {
+			display: block;
+			flex-shrink: 0; /* IE 11 height fix */
+		}
 
 		a {
 			clear: both;

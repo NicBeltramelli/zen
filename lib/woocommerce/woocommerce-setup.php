@@ -37,35 +37,6 @@ add_action(
 	99
 );
 
-/**
- * Print an inline script to the footer to keep products the same height
- *
- * @since 3.0.0
- */
-add_action(
-	'wp_enqueue_scripts',
-	function () {
-
-		if ( ! class_exists( 'WooCommerce' ) ||
-			! is_shop() &&
-			! is_product_category() &&
-			! is_product_tag() &&
-			! is_product() &&
-			! is_cart() ) {
-
-			return;
-
-		}
-
-		wp_add_inline_script(
-			genesis_get_theme_handle() . '-scripts',
-			"jQuery(document).ready( function() { jQuery( '.product .woocommerce-LoopProduct-link').matchHeight(); });"
-		);
-
-	},
-	99
-);
-
 /* Add product gallery support */
 if ( class_exists( 'WooCommerce' ) ) {
 
