@@ -39,7 +39,7 @@ add_action(
 				$wp_customize,
 				'genesis_advanced_link_color',
 				[
-					'description' => __( 'Change the color of post info links, hover color of linked titles, hover color of menu items, and more.', 'genesis-advanced' ),
+					'description' => __( 'Change the default color of post info links, the hover color of linked titles and menu items, and more.', 'genesis-advanced' ),
 					'label'       => __( 'Link Color', 'genesis-advanced' ),
 					'section'     => 'colors',
 					'settings'    => 'genesis_advanced_link_color',
@@ -61,7 +61,7 @@ add_action(
 				$wp_customize,
 				'genesis_advanced_accent_color',
 				[
-					'description' => __( 'Change the default hovers color for button.', 'genesis-advanced' ),
+					'description' => __( 'Change the default hovers color for buttons.', 'genesis-advanced' ),
 					'label'       => __( 'Accent Color', 'genesis-advanced' ),
 					'section'     => 'colors',
 					'settings'    => 'genesis_advanced_accent_color',
