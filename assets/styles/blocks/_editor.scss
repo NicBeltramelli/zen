@@ -9,6 +9,7 @@
 *	- Cover Image
 *	- Columns
 *	- Quotes
+*	- Video
 *	- Components Panel
 *		- Buttons
 *		- Separators
@@ -250,6 +251,10 @@ ul.wp-block-archives {
 	padding: space(xs);
 
 	@extend %font-size-s;
+
+	textarea {
+		background: inherit;
+	}
 }
 
 /* Cover Image */
@@ -410,6 +415,19 @@ ul.wp-block-archives {
 	&[style*="text-align: right"] {
 		border-right: 0;
 		padding-right: 0;
+	}
+}
+
+/* Video */
+
+.wp-block[data-type="core/video"] {
+
+	&[data-align="full"],
+	&[data-align="wide"] {
+
+		video {
+			width: 100vw;
+		}
 	}
 }
 

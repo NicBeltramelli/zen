@@ -15,6 +15,7 @@
 *	- Images
 *	- Gallery
 *	- Cover Image
+*	- File
 */
 
 /* --------- Still under development --------- */
@@ -30,6 +31,15 @@
 		&.wp-block-cover {
 			width: 100vw;
 		}
+
+		// Video
+		&.wp-block-video {
+
+			video {
+				width: 100vw;
+			}
+		}
+
 	}
 
 	.alignfull {
@@ -598,5 +608,34 @@ $color-palette: (
 			}
 		}
 		// stylelint-enable
+	}
+}
+
+/* File */
+
+.wp-block-file {
+
+	.wp-block-file__button {
+		border: none;
+		border-radius: $base-border-radius;
+		cursor: pointer;
+		font-weight: 700;
+		font-family: $base-font-sans;
+		height: 3rem; // Break vertical rhythm.
+		min-width: space(l);
+		padding: space(inset-squish, xxs);
+		text-align: center;
+		text-decoration: none;
+		transition: all $base-transition;
+		white-space: normal;
+
+		@extend %font-size-xs;
+
+		&:focus,
+		&:hover {
+			opacity: 1;
+
+			@extend %box-shadow-buttons;
+		}
 	}
 }
