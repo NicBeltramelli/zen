@@ -14,11 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-/**
- * Genesis theme supports
- *
- * @since 3.4.0
- */
 return [
 	'html5'                           => [
 		'caption',

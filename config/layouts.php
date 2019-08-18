@@ -14,11 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-/**
- * Genesis layouts settings
- *
- * @since 3.4.0
- */
 $genesis_advanced_layouts = array();
 
 $genesis_advanced_layouts_config = PARENT_DIR . '/config/layouts.php';

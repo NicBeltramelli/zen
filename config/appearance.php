@@ -14,11 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-/**
- * Genesis appearance settings
- *
- * @since 3.4.0
- */
 $genesis_advanced_default_colors = [
 	'link'   => '#0073e5',
 	'accent' => '#d30c7b',

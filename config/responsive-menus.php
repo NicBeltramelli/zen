@@ -14,11 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-/**
- * Genesis responsive menus settings
- *
- * @since 3.4.0
- */
 return [
 	'script' => [
 		'mainMenu'         => __( 'Menu', 'genesis-advanced' ),
