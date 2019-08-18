@@ -14,8 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-return array(
-	GENESIS_SETTINGS_FIELD => array(
+return [
+	GENESIS_SETTINGS_FIELD => [
 		'blog_cat_num'              => 6,
 		'breadcrumb_home'           => 0,
 		'breadcrumb_front_page'     => 0,
@@ -32,6 +32,6 @@ return array(
 		'image_alignment'           => 'alignleft',
 		'posts_nav'                 => 'numeric',
 		'site_layout'               => 'content-sidebar',
-	),
+	],
 	'posts_per_page'       => 6,
-);
+];
