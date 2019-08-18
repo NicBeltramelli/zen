@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev - 3.4.0]
+* Add version number to zip package
 * Prevent saving a logo with width lower than 100
 * Generate the language .pot file
 * Add node scripts for translation and package theme for production
