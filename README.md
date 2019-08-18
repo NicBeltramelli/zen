@@ -1,12 +1,11 @@
 # Genesis Advanced
 [![Packagist](https://img.shields.io/packagist/v/nicbeltramelli/genesis-advanced.svg?style=for-the-badge)](https://packagist.org/packages/nicbeltramelli/genesis-advanced)
-[![Codacy grade](https://img.shields.io/codacy/grade/7062e310ad2f4c2ba0fbce7cc32f6064.svg?style=for-the-badge)](https://www.codacy.com/app/NicBeltramelli/genesis-advanced?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=NicBeltramelli/genesis-advanced&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://img.shields.io/travis/NicBeltramelli/genesis-advanced.svg?style=for-the-badge)](https://travis-ci.org/NicBeltramelli/genesis-advanced)
 
 
 Genesis Advanced is a starter child theme for the Genesis Framework with a modern development workflow. 
 
-Tested up to WordPress 5.2.1 and Genesis 2.10.1.
+Tested up to WordPress 5.2.1 and Genesis 3.0.3.
 
 
 ## Features
@@ -42,6 +41,7 @@ $ composer create-project nicbeltramelli/genesis-advanced your-theme-name
 
 ```shell
 themes/your-theme-name/  # → Root of your child theme
+├── .scripts/            # → Node scripts
 ├── assets/              # → Front-end assets
 │   ├── config.json      # → Settings for compiled assets
 │   ├── build/           # → Webpack and ESLint config
@@ -49,8 +49,10 @@ themes/your-theme-name/  # → Root of your child theme
 │   ├── images/          # → Theme images
 │   ├── scripts/         # → Theme JS
 │   └── styles/          # → Theme stylesheets
+├── config/              # → Theme configuration data
 ├── dist/                # → Built theme assets (never edit)
 ├── lib/                 # → Theme PHP library
+│   ├── blocks/          # → Add support for Gutenberg blocks
 │   ├── classes/         # → Theme classes
 │   ├── structure/       # → Theme structure
 │   ├── woocommerce/     # → WooCommerce PHP library
@@ -101,6 +103,8 @@ themes/your-theme-name/  # → Root of your child theme
 * `yarn lint` — Runs JavaScript and styles linter
 * `yarn lint:scripts` — Runs JavaScript linter
 * `yarn lint:styles` — Runs styles linter
+* `yarn makepot` — Regenerates the `languages/genesis-advanced.pot` file
+* `yarn zip` — Creates .zip package for production. Files in the `excludes` array in `scripts/makezip.js` are omitted
 
 
 ### WordPress coding standard
@@ -109,14 +113,8 @@ themes/your-theme-name/  # → Root of your child theme
 * `composer phpcbf` — Fix php sniff violations automatically
 
 
-### Export for distribution
-
-* `composer export` — Creates a zip archive excluding dev files
-
-
 ### Front-end dependencies
 
- * [jquery.matchHeight.js](https://github.com/liabru/jquery-match-height)
  * [jquery.scrollTo](https://github.com/flesler/jquery.scrollTo)
  * [normalize-scss](https://github.com/JohnAlbin/normalize-scss)
  * [sass-mq](https://github.com/sass-mq/sass-mq)
