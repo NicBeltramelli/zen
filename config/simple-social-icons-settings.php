@@ -16,11 +16,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 return [
 	'alignment'              => 'alignleft',
-	'background_color'       => '#f5f5f5',
-	'background_color_hover' => '#333333',
+	'background_color'       => '#f4f4f4',
+	'background_color_hover' => '#1b1b1b',
 	'border_radius'          => 3,
 	'border_width'           => 0,
-	'icon_color'             => '#333333',
+	'icon_color'             => '#1b1b1b',
 	'icon_color_hover'       => '#ffffff',
 	'size'                   => 40,
 ];
