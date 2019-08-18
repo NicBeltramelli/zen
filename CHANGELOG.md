@@ -1,6 +1,6 @@
 # Genesis Advanced Changelog
 
-## [dev - 3.4.0]
+## [3.4.0] - 2019-08-18
 * Add version number to zip package
 * Prevent saving a logo with width lower than 100
 * Generate the language .pot file
