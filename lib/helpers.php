@@ -15,36 +15,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Get default link color for Customizer
- *
- * Abstracted here since at least two functions use it.
- *
- * @since 3.0.0
- *
- * @return string Hex color code for link color.
- */
-function genesis_advanced_customizer_get_default_link_color() {
-
-	return '#0073e5';
-
-}
-
-/**
- * Get default accent color for Customizer
- *
- * Abstracted here since at least two functions use it.
- *
- * @since 3.0.0
- *
- * @return string Hex color code for accent color.
- */
-function genesis_advanced_customizer_get_default_accent_color() {
-
-	return '#d30c7b';
-
-}
-
-/**
  * Calculate if white or gray would contrast more with the provided color
  *
  * @since 3.0.0

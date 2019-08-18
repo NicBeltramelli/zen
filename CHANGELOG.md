@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev - 3.4.0]
+* Add appearance settings through the configuration api
 * Remove output of front page breadcrumb settings in the Customizer
 * Move widgets settings in separate file
 * Add theme supports through the configuration api

@@ -23,10 +23,13 @@ add_action(
 	'enqueue_block_editor_assets',
 	function () {
 
+		/* Locate the config file */
+		$appearance = genesis_get_config( 'appearance' );
+
 		/* Enqueue Google Fonts */
 		wp_enqueue_style(
 			genesis_get_theme_handle() . '-editor-fonts',
-			'//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700|Roboto+Mono',
+			$appearance['fonts-url'],
 			[],
 			genesis_get_theme_version()
 		);
@@ -49,11 +52,11 @@ add_action(
 		);
 
 		/* Output link color inline css */
-		$color_link = get_theme_mod( 'genesis_advanced_link_color', genesis_advanced_customizer_get_default_link_color() );
+		$color_link = get_theme_mod( 'genesis_advanced_link_color', $appearance['default-colors']['link'] );
 
 		$css = '';
 
-		$css .= ( genesis_advanced_customizer_get_default_link_color() !== $color_link ) ? sprintf(
+		$css .= ( $appearance['default-colors']['link'] !== $color_link ) ? sprintf(
 			'
 			.editor-styles-wrapper a,
 			.editor-styles-wrapper a:focus,
@@ -83,69 +86,20 @@ add_theme_support(
 );
 
 /**
+ * Locate the config file
+ *
+ * @since 3.4.0
+ */
+$genesis_advanced_appearance = genesis_get_config( 'appearance' );
+
+/**
  * Add support for editor color palette
  *
  * @since 3.3.0
  */
 add_theme_support(
 	'editor-color-palette',
-	[
-		[
-			'name'  => __( 'Accent', 'genesis-advanced' ),
-			'slug'  => 'accent',
-			'color' => get_theme_mod( 'genesis_advanced_accent_color', genesis_advanced_customizer_get_default_accent_color() ),
-		],
-		[
-			'name'  => __( 'White', 'genesis-advanced' ),
-			'slug'  => 'white',
-			'color' => '#ffffff',
-		],
-		[
-			'name'  => __( 'Light', 'genesis-advanced' ),
-			'slug'  => 'light',
-			'color' => '#f4f4f4',
-		],
-		[
-			'name'  => __( 'Grey', 'genesis-advanced' ),
-			'slug'  => 'grey',
-			'color' => '#cecece',
-		],
-		[
-			'name'  => __( 'Dark', 'genesis-advanced' ),
-			'slug'  => 'dark',
-			'color' => '#414141',
-		],
-		[
-			'name'  => __( 'Black', 'genesis-advanced' ),
-			'slug'  => 'black',
-			'color' => '#1b1b1b',
-		],
-		[
-			'name'  => __( 'Info', 'genesis-advanced' ),
-			'slug'  => 'info',
-			'color' => '#0073e5',
-		],
-		[
-			'name'  => __( 'Danger', 'genesis-advanced' ),
-			'slug'  => 'danger',
-			'color' => '#ed254e',
-		],
-		[
-			'name'  => __( 'Success', 'genesis-advanced' ),
-			'slug'  => 'success',
-			'color' => '#00a878',
-		],
-		[
-			'name'  => __( 'Warning', 'genesis-advanced' ),
-			'slug'  => 'warning',
-			'color' => '#f15025',
-		],
-		[
-			'name'  => __( 'Star', 'genesis-advanced' ),
-			'slug'  => 'star',
-			'color' => '#f2ff49',
-		],
-	]
+	$genesis_advanced_appearance['editor-color-palette']
 );
 
 /**
@@ -182,38 +136,7 @@ add_theme_support(
  */
 add_theme_support(
 	'editor-font-sizes',
-	array(
-		array(
-			'name'      => __( 'Small', 'genesis-advanced' ),
-			'shortName' => __( 'S', 'genesis-advanced' ),
-			'size'      => '15',
-			'slug'      => 'small',
-		),
-		array(
-			'name'      => __( 'Normal', 'genesis-advanced' ),
-			'shortName' => __( 'N', 'genesis-advanced' ),
-			'size'      => '18',
-			'slug'      => 'normal',
-		),
-		array(
-			'name'      => __( 'Medium', 'genesis-advanced' ),
-			'shortName' => __( 'M', 'genesis-advanced' ),
-			'size'      => '21.6',
-			'slug'      => 'medium',
-		),
-		array(
-			'name'      => __( 'Large', 'genesis-advanced' ),
-			'shortName' => __( 'L', 'genesis-advanced' ),
-			'size'      => '25.92',
-			'slug'      => 'large',
-		),
-		array(
-			'name'      => __( 'Huge', 'genesis-advanced' ),
-			'shortName' => __( 'XL', 'genesis-advanced' ),
-			'size'      => '44.79',
-			'slug'      => 'huge',
-		),
-	)
+	$genesis_advanced_appearance['editor-font-sizes']
 );
 
 /**

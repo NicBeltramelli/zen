@@ -25,11 +25,14 @@ add_action(
 	'customize_register',
 	function ( $wp_customize ) {
 
+		/* Locate the config file */
+		$appearance = genesis_get_config( 'appearance' );
+
 		/* Link color addition */
 		$wp_customize->add_setting(
 			'genesis_advanced_link_color',
 			[
-				'default'           => genesis_advanced_customizer_get_default_link_color(),
+				'default'           => $appearance['default-colors']['link'],
 				'sanitize_callback' => 'sanitize_hex_color',
 			]
 		);
@@ -51,7 +54,7 @@ add_action(
 		$wp_customize->add_setting(
 			'genesis_advanced_accent_color',
 			[
-				'default'           => genesis_advanced_customizer_get_default_accent_color(),
+				'default'           => $appearance['default-colors']['accent'],
 				'sanitize_callback' => 'sanitize_hex_color',
 			]
 		);
@@ -73,7 +76,7 @@ add_action(
 		$wp_customize->add_setting(
 			'genesis_advanced_logo_width',
 			[
-				'default'           => 350,
+				'default'           => 250,
 				'sanitize_callback' => 'absint',
 			]
 		);

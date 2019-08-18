@@ -30,12 +30,15 @@ add_action(
 			return;
 		}
 
-		$color_link   = get_theme_mod( 'genesis_advanced_link_color', genesis_advanced_customizer_get_default_link_color() );
-		$color_accent = get_theme_mod( 'genesis_advanced_accent_color', genesis_advanced_customizer_get_default_accent_color() );
+		/* Locate the config file */
+		$appearance = genesis_get_config( 'appearance' );
+
+		$color_link   = get_theme_mod( 'genesis_advanced_link_color', $appearance['default-colors']['link'] );
+		$color_accent = get_theme_mod( 'genesis_advanced_accent_color', $appearance['default-colors']['accent'] );
 
 		$woo_css = '';
 
-		$woo_css .= ( genesis_advanced_customizer_get_default_link_color() !== $color_link ) ? sprintf(
+		$woo_css .= ( $appearance['default-colors']['link'] !== $color_link ) ? sprintf(
 			'
 			.woocommerce .woocommerce-breadcrumb a:hover,
 			.woocommerce .woocommerce-breadcrumb a:focus,
@@ -48,7 +51,7 @@ add_action(
 			$color_link
 		) : '';
 
-		$woo_css .= ( genesis_advanced_customizer_get_default_accent_color() !== $color_accent ) ? sprintf(
+		$woo_css .= ( $appearance['default-colors']['accent'] !== $color_accent ) ? sprintf(
 			'
 			.woocommerce a.button.alt,
 			.woocommerce a.button.alt,

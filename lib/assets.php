@@ -23,10 +23,13 @@ add_action(
 	'wp_enqueue_scripts',
 	function () {
 
+		/* Locate the config file */
+		$appearance = genesis_get_config( 'appearance' );
+
 		/* Enqueue Google Fonts */
 		wp_enqueue_style(
 			genesis_get_theme_handle() . '-fonts',
-			'//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700|Roboto+Mono',
+			$appearance['fonts-url'],
 			[],
 			genesis_get_theme_version()
 		);
