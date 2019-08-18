@@ -31,18 +31,22 @@
 		"lint": "npm run -s lint:scripts && npm run -s lint:styles",
 		"lint:scripts": "eslint assets/scripts assets/build",
 		"lint:styles": "stylelint \"assets/styles/**/*.{css,sass,scss,sss,less}\"",
-		"test": "npm run -s lint"
+		"test": "npm run -s lint",
+		"makepot": "node .scripts/makepot.js",
+		"zip": "node .scripts/makezip.js"
 	},
 	"engines": {
 		"node": ">= 8.0.0"
 	},
 	"devDependencies": {
+		"archiver": "^3.1.1",
 		"autoprefixer": "~8.2.0",
 		"browser-sync": "~2.24.7",
 		"browsersync-webpack-plugin": "^0.6.0",
 		"bs-html-injector": "~3.0",
 		"buble-loader": "^0.4.1",
 		"cache-loader": "~1.2.5",
+		"chalk": "^2.4.2",
 		"clean-webpack-plugin": "^0.1.18",
 		"copy-globs-webpack-plugin": "^0.2.0",
 		"css-loader": "^0.28.9",
@@ -57,8 +61,11 @@
 		"imagemin-webpack-plugin": "~2.2.0",
 		"import-glob": "~1.5",
 		"node-sass": "~4.9.4",
+		"node-wp-i18n": "^1.2.3",
 		"postcss-loader": "~2.1.0",
 		"postcss-safe-parser": "~3.0",
+		"pretty-bytes": "^5.3.0",
+		"recursive-readdir": "^2.2.2",
 		"resolve-url-loader": "~2.3.1",
 		"rimraf": "~2.6",
 		"sass-loader": "~6.0",
