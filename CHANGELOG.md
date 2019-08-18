@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev - 3.4.0]
+* Generate the language .pot file
 * Add node scripts for translation and package theme for production
 * Add simple social icons default settings through the configuration api
 * Add child theme settings through the configuration api
