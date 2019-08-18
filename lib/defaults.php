@@ -15,58 +15,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Update theme settings on reset
- *
- * @since 3.0.0
- *
- * @param array $defaults Original theme settings defaults.
- * @return array Modified defaults.
- */
-add_filter(
-	'genesis_theme_settings_defaults',
-	function ( $defaults ) {
-
-		$defaults['blog_cat_num']              = 6;
-		$defaults['content_archive']           = 'full';
-		$defaults['content_archive_limit']     = 0;
-		$defaults['content_archive_thumbnail'] = 0;
-		$defaults['posts_nav']                 = 'numeric';
-		$defaults['site_layout']               = 'content-sidebar';
-
-		return $defaults;
-
-	}
-);
-
-/**
- * Update theme settings on activation
- *
- * @since 3.0.0
- */
-add_action(
-	'after_switch_theme',
-	function () {
-
-		if ( function_exists( 'genesis_update_settings' ) ) {
-
-			genesis_update_settings(
-				[
-					'blog_cat_num'              => 6,
-					'content_archive'           => 'full',
-					'content_archive_limit'     => 0,
-					'content_archive_thumbnail' => 0,
-					'posts_nav'                 => 'numeric',
-					'site_layout'               => 'content-sidebar',
-				]
-			);
-		}
-
-		update_option( 'posts_per_page', 6 );
-
-	}
-);
-
-/**
  * Set Simple Social Icon defaults
  *
  * @since 3.0.0
