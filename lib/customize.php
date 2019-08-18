@@ -78,6 +78,7 @@ add_action(
 			[
 				'default'           => 250,
 				'sanitize_callback' => 'absint',
+				'validate_callback' => 'genesis_advanced_validate_logo_width',
 			]
 		);
 
@@ -100,3 +101,23 @@ add_action(
 
 	}
 );
+
+/**
+ * Display a message if the entered width is not numeric or greater than 100
+ *
+ * @since 3.4.0
+ *
+ * @param object $validity The validity status.
+ * @param int    $width The width entered by the user.
+ * @return int The new width.
+ */
+function genesis_advanced_validate_logo_width( $validity, $width ) {
+
+	if ( empty( $width ) || ! is_numeric( $width ) ) {
+		$validity->add( 'required', __( 'You must supply a valid number.', 'genesis-advanced' ) );
+	} elseif ( $width < 100 ) {
+		$validity->add( 'logo_too_small', __( 'The logo width cannot be less than 100.', 'genesis-advanced' ) );
+	}
+
+	return $validity;
+}
