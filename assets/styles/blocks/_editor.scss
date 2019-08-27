@@ -143,6 +143,7 @@
 		.editor-post-title__input {
 			border-right-width: 1px; // Fix right border.
 			color: color(dark, strong);
+			float: left;
 			font-family: $base-font-sans;
 			margin-bottom: space(s);
 			padding: 0 14px;
