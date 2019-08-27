@@ -34,6 +34,14 @@ add_action(
 			genesis_get_theme_version()
 		);
 
+		/* Enqueue ionicons icons */
+		wp_enqueue_style(
+			genesis_get_theme_handle() . '-ionicons',
+			$appearance['ionicons'],
+			[],
+			genesis_get_theme_version()
+		);
+
 		/* Enqueue Dashicons */
 		wp_enqueue_style(
 			'dashicons'

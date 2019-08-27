@@ -166,12 +166,13 @@ caption {
 }
 
 i,
-.dashicons {
+.dashicons,
+.ion {
 	height: auto;
 	text-decoration: none;
 	width: auto;
 
-	@extend %font-size-l;
+	@extend %font-size-xl;
 }
 
 /* Headings */
