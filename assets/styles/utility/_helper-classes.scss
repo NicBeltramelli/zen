@@ -2,9 +2,13 @@
 * Helper Classes
 *
 *	- Visibility
+*	- Content Wrap
 *	- Centering
 *	- Flexbox
 *	- Box Shadow
+*	- Margin
+*	- Padding
+*	- Featured Icons
 */
 
 /* Visibility */
@@ -39,6 +43,17 @@
 	}
 }
 
+/* Content Wrap */
+
+.content-wrap {
+
+	@include mq($from: tablet) {
+		width: 65%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
 /* Centering */
 
 .center {
@@ -61,7 +76,52 @@
 }
 
 /* Box Shadow */
+
 .has-box-shadow {
 
 	@extend %box-shadow;
+}
+
+.has-box-shadow-hover {
+
+	@extend %box-shadow;
+
+	&:focus,
+	&:hover {
+
+		@extend %box-shadow-hover;
+	}
+}
+
+/* Margin */
+
+.remove-margin-bottom {
+	margin-bottom: 0 !important;
+}
+
+.has-margin-bottom-m {
+	margin-bottom: space(m) !important;
+}
+
+/* Padding */
+
+.has-padding {
+	padding: space(s);
+}
+
+.has-section-padding {
+	padding: space(l) space(s) space(m);
+}
+
+/* Featured Icons */
+
+.dashicons,
+.ion {
+
+	&.featured-icon {
+		font-size: 3rem;
+		margin-bottom: space(xs);
+		text-shadow: 0.1em 0.1em 0 color(shadow);
+		text-rendering: optimizeLegibility;
+	}
 }
