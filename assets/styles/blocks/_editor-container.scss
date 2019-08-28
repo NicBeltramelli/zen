@@ -21,7 +21,7 @@
 	font-family: $base-font-serif;
 	font-weight: 400;
 	margin: 0 auto;
-	padding: space(m); // Keep space for the inserter/mover buttons.
+	padding: space(m) space(m) space(l); // Keep space for the inserter/mover buttons.
 	width: 100%;
 
 	@extend %font-size-m;
