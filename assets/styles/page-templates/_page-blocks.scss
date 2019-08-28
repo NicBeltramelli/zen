@@ -1,0 +1,20 @@
+/* Blocks Page Template */
+
+.page-blocks {
+
+	.site-inner {
+		padding-top: 0;
+
+		.content {
+			margin-bottom: 0;
+
+			> .entry {
+				margin-bottom: 0;
+			}
+
+			.entry-content {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

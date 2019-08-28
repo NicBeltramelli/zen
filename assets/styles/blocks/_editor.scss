@@ -20,10 +20,7 @@
 /* Common */
 
 .block-editor-block-list__layout {
-	clear: both;
-	float: left;
 	padding: 0;
-	width: 100%;
 
 	.block-editor-block-list__block-edit {
 
@@ -133,7 +130,7 @@
 
 .editor-post-title {
 	margin-top: -6px; // Keep space for the permalink editor.
-	padding: 0;
+	padding: 0 0 space(s);
 
 	@include mq($from: tablet) {
 		margin-top: -20px; // Subtract the post title input padding.
@@ -147,7 +144,6 @@
 			border-right-width: 1px; // Fix right border.
 			color: color(dark, strong);
 			font-family: $base-font-sans;
-			margin-bottom: space(s);
 			padding: 0 14px;
 
 			@extend %font-size-xxl;

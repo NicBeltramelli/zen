@@ -1,0 +1,24 @@
+/* Landing Page Template */
+
+.page-landing {
+
+	.site-inner {
+		padding-top: 0;
+
+		.content {
+			margin-bottom: 0;
+
+			> .entry {
+				margin-bottom: 0;
+			}
+
+			.entry-content {
+				margin-bottom: 0;
+			}
+		}
+
+		@include mq($from: tablet) {
+			margin-top: 0;
+		}
+	}
+}
