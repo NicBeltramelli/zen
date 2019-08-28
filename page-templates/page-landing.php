@@ -62,6 +62,12 @@ remove_theme_support(
 	'genesis-menus'
 );
 
+/* Remove page title */
+remove_action(
+	'genesis_entry_header',
+	'genesis_do_post_title'
+);
+
 /* Remove breadcrumbs */
 remove_action(
 	'genesis_before_loop',
