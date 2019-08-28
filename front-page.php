@@ -14,4 +14,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+/* Remove page title */
+remove_action(
+	'genesis_entry_header',
+	'genesis_do_post_title'
+);
+
 genesis();
