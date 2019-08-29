@@ -58,6 +58,22 @@ add_filter(
 			$classes[]      = $template_class;
 		}
 
+		if ( ! is_singular() || ! function_exists( 'has_blocks' ) || ! function_exists( 'parse_blocks' ) ) {
+
+			return $classes;
+		}
+
+		$post_object = get_post( get_the_ID() );
+		$blocks      = (array) parse_blocks( $post_object->post_content );
+
+		if ( isset( $blocks[0]['blockName'] ) ) {
+			$classes[] = 'first-block-' . str_replace( '/', '-', $blocks[0]['blockName'] );
+		}
+
+		if ( isset( $blocks[0]['attrs']['align'] ) ) {
+			$classes[] = 'first-block-align-' . $blocks[0]['attrs']['align'];
+		}
+
 		return $classes;
 	}
 );
