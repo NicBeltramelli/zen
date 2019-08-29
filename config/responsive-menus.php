@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 return [
 	'script' => [
-		'mainMenu'         => __( 'Menu', 'genesis-advanced' ),
+		'mainMenu'         => __( '', 'genesis-advanced' ), // phpcs:ignore
 		'menuIconClass'    => 'dashicons-before dashicons-menu',
 		'subMenu'          => __( 'Submenu', 'genesis-advanced' ),
 		'subMenuIconClass' => 'dashicons-before dashicons-arrow-down-alt2',

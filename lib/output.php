@@ -63,13 +63,6 @@ add_action(
 				background-color: %1$s;
 			}
 
-			.genesis-nav-menu a:focus,
-			.genesis-nav-menu a:hover,
-			.genesis-nav-menu .menu-item.current-menu-item > a,
-			.menu-toggle:focus,
-			.menu-toggle:hover,
-			.sub-menu-toggle:focus,
-			.sub-menu-toggle:hover,
 			.entry-title > a:focus,
 			.entry-title > a:hover,
 			.pagination-previous > a:focus,

@@ -242,52 +242,6 @@
 	}
 }
 
-.menu-toggle {
-	height: auto; // Prevent height of default buttons.
-	margin: 0 auto;
-	padding: space(s) 0;
-	position: relative;
-	z-index: 1000;
-
-	&::before {
-		float: left;
-		height: auto;
-		font-size: 2rem;
-		line-height: line-height(s);
-		margin-right: 5px;
-		position: relative;
-		text-rendering: auto;
-		width: auto;
-	}
-
-	&.activated::before {
-		content: "\f335";
-	}
-}
-
-.sub-menu-toggle {
-	float: right;
-	height: auto;
-	padding: space(xs);
-	position: absolute;
-	right: 0;
-	top: 0;
-	z-index: 100;
-
-	&::before {
-		display: inline-block;
-		height: auto;
-		line-height: line-height(s);
-		text-rendering: auto;
-		transition: transform 0.25s ease-in-out;
-		width: auto;
-	}
-
-	&.activated::before {
-		transform: rotate(180deg);
-	}
-}
-
 .menu-toggle,
 .sub-menu-toggle {
 	background-color: transparent;
@@ -299,17 +253,84 @@
 	visibility: visible;
 
 	@extend %font-size-s;
+}
+
+.menu-toggle {
+	height: auto; // Prevent height of default buttons.
+	margin: 0 auto;
+	padding: space(s) 0;
+	position: relative;
+	z-index: 1000;
+
+	&::before {
+		float: right;
+		height: auto;
+		font-size: 2rem;
+		line-height: line-height(s);
+		position: relative;
+		text-rendering: auto;
+		width: auto;
+	}
+
+	&.activated::before {
+		content: "\f335";
+	}
 
 	&:focus,
 	&:hover {
 		background-color: transparent;
 		box-shadow: none; // Prevent box shadow of default buttons.
-		color: color(accent, base);
 	}
 
 	@include mq($from: tablet) {
 		display: none;
 		visibility: hidden;
+	}
+}
+
+.sub-menu-toggle {
+	float: right;
+	height: auto;
+	padding: space(inset-squish, xs);
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+
+	&::before {
+		content: "\f132";
+		display: inline-block;
+		float: right;
+		height: auto;
+		line-height: line-height(s);
+		text-rendering: auto;
+		transition: transform 0.25s ease-in-out;
+		width: auto;
+	}
+
+	&.activated::before {
+		content: "\f460";
+	}
+
+	&:focus,
+	&:hover {
+		background-color: transparent;
+		box-shadow: none; // Prevent box shadow of default buttons.
+	}
+
+	@include mq($from: tablet) {
+		height: space(m);
+		padding: 0;
+
+		&::before,
+		&.activated::before {
+			content: "\f140";
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
 	}
 }
 
