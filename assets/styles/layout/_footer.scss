@@ -14,6 +14,15 @@
 
 	@extend %box-shadow;
 
+	.wrap {
+		display: flex;
+		flex-wrap: wrap;
+
+		@include mq($from: tablet) {
+			flex-wrap: nowrap;
+		}
+	}
+
 	.footer-widget-area {
 		margin-bottom: space(m);
 		padding: space(column, s);
@@ -24,9 +33,9 @@
 		}
 
 		@include mq($from: tablet) {
-			float: left;
+			flex-basis: 0;
+			flex-grow: 1;
 			margin-bottom: 0;
-			width: calc(100% / 3);
 		}
 	}
 }
@@ -35,7 +44,6 @@
 
 .site-footer {
 	background-color: color(light, soft);
-	margin: space(stack, s);
 	padding: space(s) 0;
 	text-align: center;
 
