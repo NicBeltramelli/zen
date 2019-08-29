@@ -66,7 +66,7 @@ add_action(
 );
 
 /**
- * Disable Comments URL field
+ * Disable comments URL field
  *
  * @since 3.0.0
  *
@@ -79,6 +79,18 @@ add_filter(
 
 		unset( $fields['url'] );
 		return $fields;
+
+	}
+);
+
+/* Customize the read more text */
+add_filter(
+	'genesis_more_text',
+	function () {
+
+		$more_text = genesis_a11y_more_link( __( '[ Read More ]', 'genesis-advanced' ) );
+
+		return $more_text;
 
 	}
 );

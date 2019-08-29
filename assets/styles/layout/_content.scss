@@ -3,6 +3,7 @@
 *
 *	- Content
 *		- Entry
+		- Read More Link
 *		- Pagination
 *		- Comments
 *	- Entry Meta
@@ -15,7 +16,7 @@
 
 	/* Entry */
 	.entry {
-		margin: space(stack, l);
+		margin: space(stack, m);
 
 		&.sticky {
 			background-color: color(light, base);
@@ -63,6 +64,14 @@
 				}
 			}
 		}
+	}
+
+	/* Read More Link */
+	.more-link {
+		position: relative;
+		text-decoration: none;
+
+		@extend %font-size-s;
 	}
 
 	/* Pagination */
