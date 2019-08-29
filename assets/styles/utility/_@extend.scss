@@ -25,6 +25,15 @@
 	}
 }
 
+%font-size-xl-break {
+	font-size: font-size(phone, xl);
+	line-height: line-height(xl-break);
+
+	@include mq($from: tablet) {
+		font-size: font-size(tablet, xl);
+	}
+}
+
 %font-size-l {
 	font-size: font-size(phone, l);
 	line-height: line-height(l);

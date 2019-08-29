@@ -16,11 +16,11 @@
 
 	/* Entry */
 	.entry {
-		margin: space(stack, m);
 
 		&.sticky {
 			background-color: color(light, base);
 			border-radius: $base-border-radius;
+			margin-bottom: space(s);
 			padding: space(s);
 
 			@extend %box-shadow;
@@ -70,6 +70,7 @@
 	.more-link {
 		position: relative;
 		text-decoration: none;
+		white-space: nowrap;
 
 		@extend %font-size-s;
 	}
@@ -303,15 +304,6 @@ p.entry-meta {
 	}
 }
 
-.entry-footer {
-
-	.entry-meta {
-		border-top: 1px solid color(border);
-		margin-top: -1px; // Compensate border.
-		padding-top: space(s);
-	}
-}
-
 .entry-categories,
 .entry-tags {
 	display: block;
@@ -324,5 +316,15 @@ p.entry-meta {
 	&::before {
 		content: "\2014";
 		margin: 0 6px 0 2px;
+	}
+}
+
+.blog,
+.archive {
+
+	.entry {
+		border-bottom: 1px solid color(border);
+		margin-bottom: space(s);
+		padding-bottom: space(s);
 	}
 }

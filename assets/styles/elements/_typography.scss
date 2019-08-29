@@ -32,7 +32,6 @@ a {
 
 	&:focus,
 	&:hover {
-		color: color(info, strong);
 		text-decoration: none;
 	}
 
@@ -51,6 +50,13 @@ dd,
 pre {
 	margin: space(stack, s);
 	padding: 0;
+}
+
+p {
+
+	&.s-break {
+		margin-bottom: space(xs);
+	}
 }
 
 code,

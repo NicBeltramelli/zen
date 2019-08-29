@@ -278,6 +278,7 @@ $color-palette: (
 			&.wp-block-categories,
 			&.wp-block-latest-posts {
 				list-style: none;
+				margin-bottom: space(m);
 				padding: 0;
 
 				ul {
