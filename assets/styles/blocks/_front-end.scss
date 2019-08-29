@@ -16,6 +16,7 @@
 *	- Gallery
 *	- Cover Image
 *	- File
+*	- Media Text
 */
 
 /* --------- Still under development --------- */
@@ -647,6 +648,18 @@ $color-palette: (
 			opacity: 1;
 
 			@extend %box-shadow-buttons;
+		}
+	}
+}
+
+/* Media Text */
+
+.wp-block-media-text {
+
+	.wp-block-media-text__media {
+
+		@include mq($until: tablet) {
+			margin-bottom: space(s);
 		}
 	}
 }
