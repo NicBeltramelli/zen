@@ -1,5 +1,23 @@
 # Genesis Advanced Changelog
 
+## [3.5.0] - 2019-08-29
+* Improve style
+* Adds blocks body classes
+* Add search template
+* Improve genesis responsive navigation
+* Customize the read more link
+* Add style for gravityforms plugin
+* Improve style of media text block
+* Improve style of blocks lists
+* Add flexbox style to footer widgets
+* Improve blocks editor style
+* Remove fixed header
+* Add blocks page template
+* Remove page title from front page and landing page
+* Improve CSS helper classes
+* Add Ionicons icons
+* Remove genesis author box
+
 ## [3.4.0] - 2019-08-18
 * Add version number to zip package
 * Prevent saving a logo with width lower than 100

@@ -20,8 +20,9 @@ Tested up to WordPress 5.2.1 and Genesis 3.0.3.
 
 Make sure all dependencies have been installed before moving on:
 
-* [WordPress](https://wordpress.org/) >= 4.7
-* [PHP](https://secure.php.net/manual/en/install.php) >= 7.1 (with [`php-mbstring`](https://secure.php.net/manual/en/book.mbstring.php) enabled)
+* [WordPress](https://wordpress.org/) >= 5.0
+* [Genesis Framework](https://my.studiopress.com/themes/genesis/) >= 2.8.0
+* [PHP](https://secure.php.net/manual/en/install.php) >= 7.1
 * [Composer](https://getcomposer.org/download/)
 * [Node.js](http://nodejs.org/) >= 8.0.0
 * [Yarn](https://yarnpkg.com/en/docs/install)
@@ -74,6 +75,7 @@ themes/your-theme-name/  # → Root of your child theme
 ├── front-page.php       # → Front page template
 ├── function.php         # → Includes the theme PHP library
 ├── package.json         # → Node.js dependencies and scripts
+├── search.php           # → Search template
 ├── style.css            # → Theme meta informations
 └── yarn.lock            # → Yarn lock file (never edit)
 ```
@@ -104,7 +106,7 @@ themes/your-theme-name/  # → Root of your child theme
 * `yarn lint:scripts` — Runs JavaScript linter
 * `yarn lint:styles` — Runs styles linter
 * `yarn makepot` — Regenerates the `languages/genesis-advanced.pot` file
-* `yarn zip` — Creates .zip package for production. Files in the `excludes` array in `scripts/makezip.js` are omitted
+* `yarn zip` — Creates .zip package for production
 
 
 ### WordPress coding standard
