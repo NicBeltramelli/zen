@@ -20,10 +20,7 @@
 /* Common */
 
 .block-editor-block-list__layout {
-	clear: both;
-	float: left;
 	padding: 0;
-	width: 100%;
 
 	.block-editor-block-list__block-edit {
 
@@ -116,7 +113,8 @@
 			}
 
 			&[data-type="core/columns"],
-			&[data-type="atomic-blocks/ab-columns"] {
+			&[data-type="atomic-blocks/ab-columns"],
+			&[data-type="atomic-blocks/ab-container"] {
 
 				.block-editor-block-list__layout {
 
@@ -140,6 +138,7 @@
 	}
 
 	.editor-post-title__block {
+		margin-bottom: space(s);
 		padding-top: 0;
 		padding-bottom: 0;
 
@@ -147,7 +146,6 @@
 			border-right-width: 1px; // Fix right border.
 			color: color(dark, strong);
 			font-family: $base-font-sans;
-			margin-bottom: space(s);
 			padding: 0 14px;
 
 			@extend %font-size-xxl;

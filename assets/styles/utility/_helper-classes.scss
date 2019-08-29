@@ -48,9 +48,9 @@
 .content-wrap {
 
 	@include mq($from: tablet) {
+		margin-left: auto !important;
+		margin-right: auto !important;
 		width: 65%;
-		margin-left: auto;
-		margin-right: auto;
 	}
 }
 
