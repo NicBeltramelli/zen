@@ -287,6 +287,18 @@ $color-palette: (
 				li {
 					font-family: $base-font-sans;
 					list-style: none;
+
+					> a {
+						color: color(dark, base);
+						font-family: $base-font-sans;
+						font-weight: 700;
+						text-decoration: none;
+
+						&:focus,
+						&:hover {
+							color: color(accent, base);
+						}
+					}
 				}
 
 				&.alignleft {
@@ -308,11 +320,10 @@ $color-palette: (
 
 			&.wp-block-latest-posts {
 
-				&.is-grid {
-
-					li {
-						margin-bottom: 0;
-					}
+				li {
+					border-bottom: 1px solid color(border);
+					margin-bottom: calc(2rem - 1px); // Compensate border.
+					padding-bottom: space(s);
 				}
 			}
 
