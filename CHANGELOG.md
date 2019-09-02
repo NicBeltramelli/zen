@@ -1,5 +1,8 @@
 # Genesis Advanced Changelog
 
+## [dev-3.5.1] - 
+* Update flexbox helper classes
+
 ## [3.5.0] - 2019-08-29
 * Improve style
 * Adds blocks body classes
