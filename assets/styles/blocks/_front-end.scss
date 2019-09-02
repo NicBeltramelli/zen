@@ -511,29 +511,38 @@ $color-palette: (
 /* Columns */
 
 .wp-block-columns {
+	flex-wrap: wrap;
 
 	@include mq($from: tablet) {
-
-		.wp-block-columns {
-			flex-wrap: nowrap;
-		}
+		flex-wrap: nowrap;
 	}
 
 	.wp-block-column {
+		margin-left: 0;
 		margin-bottom: space(s);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
 
 		@include mq($from: phone) {
 			flex-basis: calc(50% - 1rem);
 
 			&:nth-child(even) {
-				margin-left: 2rem;
+				margin-left: space(s);
+			}
+
+			&:last-child,
+			&:nth-last-child(2) {
+				margin-bottom: 0;
 			}
 		}
 
 		@include mq($from: tablet) {
+			margin-bottom: 0;
 
 			&:not(:first-child) {
-				margin-left: 2rem;
+				margin-left: space(s);
 			}
 		}
 
@@ -546,6 +555,24 @@ $color-palette: (
 					&:last-child {
 						margin-bottom: 0; // Remove margin bottom on nested columns.
 					}
+				}
+			}
+		}
+	}
+
+	&.has-3-columns {
+
+		@include mq($from: phone) {
+			flex-wrap: nowrap;
+		}
+
+		.wp-block-column {
+
+			@include mq($from: phone) {
+				margin-bottom: 0;
+
+				&:not(:first-child) {
+					margin-left: space(s);
 				}
 			}
 		}

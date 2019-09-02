@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev-3.5.1] - 
+* Improve blocks columns style
 * Update flexbox helper classes
 
 ## [3.5.0] - 2019-08-29

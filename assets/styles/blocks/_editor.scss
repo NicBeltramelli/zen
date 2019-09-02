@@ -83,14 +83,6 @@
 	&[data-align="full"] {
 		margin-left: -(space(m));
 		margin-right: -(space(m));
-
-		.wp-block-columns {
-
-			> .block-editor-inner-blocks {
-				padding-left: 14px;
-				padding-right: 14px;
-			}
-		}
 	}
 
 	&[data-type="core/separator"] {
@@ -99,13 +91,16 @@
 
 	.is-fullscreen-mode & {
 
+		&[data-align="full"] {
+			margin-left: -(space(s));
+			margin-right: -(space(s));
+		}
+
 		@include mq($from: tablet) {
 			max-width: calc(65% + 28px + 2px);
 
 			&[data-align="full"] {
 				max-width: none;
-				margin-left: -(space(s));
-				margin-right: -(space(s));
 			}
 
 			&[data-align="wide"] {
@@ -304,36 +299,76 @@ ul.wp-block-archives {
 
 /* Columns */
 
-.wp-block-columns > .block-editor-inner-blocks > .block-editor-block-list__layout {
+.wp-block-columns {
 
-	@include mq($from: tablet) {
-		flex-wrap: nowrap;
-	}
-
-	> [data-type="core/column"] {
-		margin-bottom: space(s);
-
-		@include mq($from: phone) {
-			flex-basis: calc(50% - (1rem + 28px));
-
-			&:nth-child(even) {
-				margin-left: calc(2rem + 14px);
-			}
-		}
+	> .block-editor-inner-blocks > .block-editor-block-list__layout {
+		flex-wrap: wrap;
 
 		@include mq($from: tablet) {
-
-			&:not(:first-child) {
-				margin-left: calc(1rem + 14px);
-			}
+			flex-wrap: nowrap;
 		}
 
-		@include mq($until: phone) {
+		> [data-type="core/column"] {
+			margin-bottom: space(s);
 
-			&:last-child {
+			@include mq($from: phone) {
+				flex-basis: calc(50% - (1rem + 28px));
+				margin-left: 14px;
+
+				&:nth-child(even) {
+					margin-left: calc(1rem + 14px);
+				}
+
+				&:last-child,
+				&:nth-last-child(2) {
+					margin-bottom: 0;
+				}
+			}
+
+			@include mq($from: tablet) {
 				margin-bottom: 0;
+
+				&:not(:first-child) {
+					margin-left: calc(1rem + 14px);
+				}
+			}
+
+			@include mq($until: phone) {
+
+				&:last-child {
+					margin-bottom: 0;
+				}
 			}
 		}
+	}
+
+	&.has-3-columns {
+
+		> .block-editor-inner-blocks > .block-editor-block-list__layout {
+
+			@include mq($from: phone) {
+				flex-wrap: nowrap;
+			}
+
+			> [data-type="core/column"] {
+
+				@include mq($from: phone) {
+					margin-bottom: 0;
+
+					&:not(:first-child) {
+						margin-left: calc(1rem + 14px);
+					}
+				}
+			}
+		}
+	}
+}
+
+.block-editor-block-list__block[data-align="full"] {
+
+	.wp-block-columns > .block-editor-inner-blocks {
+		padding-left: 14px;
+		padding-right: 14px;
 	}
 }
 
