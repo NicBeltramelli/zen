@@ -2,6 +2,7 @@
 * Blocks Editor
 *
 *	- Common
+*	- Helper Classes
 *	- Post Title
 *	- Lists
 *	- Tables
@@ -119,6 +120,36 @@
 				}
 			}
 		}
+	}
+}
+
+/* Helper Classes */
+
+.hide-phone {
+
+	@include mq($until: phone) {
+		display: block;
+	}
+}
+
+.visible-phone {
+
+	@include mq($from: phone) {
+		display: block;
+	}
+}
+
+.hide-tablet {
+
+	@include mq($until: tablet) {
+		display: block;
+	}
+}
+
+.visible-tablet {
+
+	@include mq($from: tablet) {
+		display: block;
 	}
 }
 

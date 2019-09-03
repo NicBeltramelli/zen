@@ -87,6 +87,14 @@
 	@extend %box-shadow;
 }
 
+.image-has-box-shadow {
+
+	img {
+
+		@extend %box-shadow;
+	}
+}
+
 .has-box-shadow-hover {
 
 	@extend %box-shadow;
@@ -104,6 +112,10 @@
 	margin-bottom: 0 !important;
 }
 
+.has-margin-bottom {
+	margin-bottom: space(s) !important;
+}
+
 .has-margin-bottom-m {
 	margin-bottom: space(m) !important;
 }
@@ -114,8 +126,8 @@
 	padding: space(s);
 }
 
-.has-section-padding {
-	padding: space(l) space(s) space(m);
+.has-padding-section {
+	padding: space(l) space(s) space(l);
 }
 
 /* Featured Icons */

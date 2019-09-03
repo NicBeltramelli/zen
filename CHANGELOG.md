@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev-3.5.1] - 
+* Improve helper classes style
 * Add has-full-height helper class
 * Improve blocks columns style
 * Update flexbox helper classes
