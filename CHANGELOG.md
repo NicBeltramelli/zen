@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev-3] - 
+* Improve front page template
 * Improve style
 
 ## [3.5.1] - 2019-09-03
