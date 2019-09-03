@@ -1,6 +1,6 @@
 # Genesis Advanced Changelog
 
-## [dev-3.5.1] - 
+## [3.5.1] - 2019-09-03
 * Improve gravityforms style
 * Improve helper classes style
 * Add has-full-height helper class
