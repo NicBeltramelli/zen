@@ -19,7 +19,7 @@
 				list-style-type: none;
 				margin: space(stack, s);
 
-				input {
+				.large {
 					width: 100%;
 				}
 
@@ -86,15 +86,27 @@
 
 				&.left,
 				&.right {
-					width: 50%;
+					text-align: left;
+
+					@include mq($from: tablet) {
+						width: 50%;
+					}
 				}
 
 				&.left {
-					padding-right: space(xs);
+
+					@include mq($from: tablet) {
+						float: left;
+						padding-right: space(xs);
+					}
 				}
 
 				&.right {
-					padding-left: space(xs);
+
+					@include mq($from: tablet) {
+						float: right;
+						padding-left: space(xs);
+					}
 				}
 
 				&.privacy-authorise,
