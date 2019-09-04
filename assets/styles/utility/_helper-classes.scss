@@ -2,6 +2,7 @@
 * Helper Classes
 *
 *	- Box Shadow
+*	- Border Radius
 *	- Centering
 *	- Content Wrap
 *	- Featured Icons
@@ -36,6 +37,12 @@
 
 		@extend %box-shadow-hover;
 	}
+}
+
+/* Border Radius */
+
+.has-border-radius {
+	border-radius: $base-border-radius;
 }
 
 /* Centering */
