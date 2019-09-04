@@ -1,16 +1,137 @@
 /**
 * Helper Classes
 *
-*	- Visibility
-*	- Content Wrap
-*	- Centering
-*	- Flexbox
 *	- Box Shadow
-*	- Margin
-*	- Padding
+*	- Centering
+*	- Content Wrap
 *	- Featured Icons
+*	- Flexbox
 *	- Full Height
+*	- Margins
+*	- Paddings
+*	- Visibility
 */
+
+/* Box Shadow */
+
+.has-box-shadow {
+
+	@extend %box-shadow;
+}
+
+.image-has-box-shadow {
+
+	img {
+
+		@extend %box-shadow;
+	}
+}
+
+.has-box-shadow-hover {
+
+	@extend %box-shadow;
+
+	&:focus,
+	&:hover {
+
+		@extend %box-shadow-hover;
+	}
+}
+
+/* Centering */
+
+.center {
+	text-align: center;
+}
+
+.center-x {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Content Wrap */
+
+.content-wrap {
+
+	@include mq($from: tablet) {
+		margin-left: auto !important;
+		margin-right: auto !important;
+		width: 65%;
+	}
+}
+
+/* Featured Icons */
+
+.dashicons,
+.ion {
+
+	&.featured-icon {
+		font-size: 3rem;
+		margin-bottom: space(xs);
+		text-shadow: 0.1em 0.1em 0 color(shadow);
+		text-rendering: optimizeLegibility;
+	}
+}
+
+/* Flexbox */
+
+.flex-align-baseline {
+	align-items: baseline;
+}
+
+.flex-align-center {
+	align-items: center;
+}
+
+.flex-align-stretch {
+	align-items: stretch;
+}
+
+/* Full Height */
+
+.has-full-height {
+
+	min-height: calc(100vh - 6rem);
+
+	.admin-bar & {
+
+		@include mq($until: admin-bar) {
+			min-height: calc(100vh - 6rem - 46px);
+		}
+
+		@include mq($from: admin-bar) {
+			min-height: calc(100vh - 6rem - 32px);
+		}
+	}
+}
+
+/* Margins */
+
+.remove-margin-bottom {
+	margin-bottom: 0 !important;
+}
+
+.has-margin-bottom {
+	margin-bottom: space(s) !important;
+}
+
+.has-margin-bottom-m {
+	margin-bottom: space(m) !important;
+}
+
+/* Paddings */
+
+.has-padding {
+	padding: space(s);
+}
+
+.has-padding-section-m {
+	padding: space(m) space(s) space(m);
+}
+
+.has-padding-section-l {
+	padding: space(l) space(s) space(l);
+}
 
 /* Visibility */
 
@@ -41,122 +162,5 @@
 
 	@include mq($from: tablet) {
 		display: none;
-	}
-}
-
-/* Content Wrap */
-
-.content-wrap {
-
-	@include mq($from: tablet) {
-		margin-left: auto !important;
-		margin-right: auto !important;
-		width: 65%;
-	}
-}
-
-/* Centering */
-
-.center {
-	text-align: center;
-}
-
-.center-x {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-/* Flexbox */
-
-.flex-align-baseline {
-	align-items: baseline;
-}
-
-.flex-align-center {
-	align-items: center;
-}
-
-.flex-align-stretch {
-	align-items: stretch;
-}
-
-/* Box Shadow */
-
-.has-box-shadow {
-
-	@extend %box-shadow;
-}
-
-.image-has-box-shadow {
-
-	img {
-
-		@extend %box-shadow;
-	}
-}
-
-.has-box-shadow-hover {
-
-	@extend %box-shadow;
-
-	&:focus,
-	&:hover {
-
-		@extend %box-shadow-hover;
-	}
-}
-
-/* Margin */
-
-.remove-margin-bottom {
-	margin-bottom: 0 !important;
-}
-
-.has-margin-bottom {
-	margin-bottom: space(s) !important;
-}
-
-.has-margin-bottom-m {
-	margin-bottom: space(m) !important;
-}
-
-/* Padding */
-
-.has-padding {
-	padding: space(s);
-}
-
-.has-padding-section {
-	padding: space(l) space(s) space(l);
-}
-
-/* Featured Icons */
-
-.dashicons,
-.ion {
-
-	&.featured-icon {
-		font-size: 3rem;
-		margin-bottom: space(xs);
-		text-shadow: 0.1em 0.1em 0 color(shadow);
-		text-rendering: optimizeLegibility;
-	}
-}
-
-/* Full Height */
-
-.has-full-height {
-
-	min-height: calc(100vh - 6rem);
-
-	.admin-bar & {
-
-		@include mq($until: admin-bar) {
-			min-height: calc(100vh - 6rem - 46px);
-		}
-
-		@include mq($from: admin-bar) {
-			min-height: calc(100vh - 6rem - 32px);
-		}
 	}
 }
