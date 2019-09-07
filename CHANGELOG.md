@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev-3] - 
+* Improve navigation style
 * Improve WooCommerce Style
 * Improve avatar style
 * Improve content style

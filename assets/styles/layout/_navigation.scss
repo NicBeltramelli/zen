@@ -51,17 +51,6 @@
 
 			@include box-shadow (0, 0, 2rem, color(shadow), false);
 
-			&::before {
-				border: 0.5rem solid transparent;
-				border-bottom-color: color(border);
-				content: "";
-				display: block;
-				left: 50%;
-				position: absolute;
-				top: -1rem;
-				transform: translateX(-50%);
-			}
-
 			> li {
 				background: color(light, soft);
 				border-left: 1px solid color(border);
@@ -89,6 +78,14 @@
 					&::after {
 						border: none;
 					}
+				}
+			}
+
+			.sub-menu-toggle {
+
+				&::before {
+					content: "\f139";
+					top: calc(50% - 3px);
 				}
 			}
 
@@ -291,6 +288,7 @@
 .sub-menu-toggle {
 	float: right;
 	height: auto;
+	min-width: 0;
 	padding: space(inset-squish, xs);
 	position: absolute;
 	right: 0;
