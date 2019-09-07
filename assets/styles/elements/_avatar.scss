@@ -3,8 +3,9 @@
 .avatar {
 	border-radius: 50%;
 	float: left;
-	width: space(l);
-	margin: space(right, xs);
+	height: space(m);
+	margin: space(right-bottom, xs);
+	width: space(m);
 }
 
 .alignright {
