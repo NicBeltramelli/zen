@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev-3] - 
+* Improve content style
 * Improve helper classes
 * Update screenshot
 * Improve front page template

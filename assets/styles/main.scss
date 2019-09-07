@@ -36,6 +36,7 @@
 @import "layout/header";
 @import "layout/navigation";
 @import "layout/content";
+@import "layout/pagination";
 @import "layout/widgets";
 @import "layout/sidebar";
 @import "layout/footer";
@@ -44,6 +45,7 @@
 @import "blocks/front-end";
 
 /* Page Templates */
+@import "page-templates/archives";
 @import "page-templates/page-blocks";
 @import "page-templates/page-front";
 @import "page-templates/page-landing";

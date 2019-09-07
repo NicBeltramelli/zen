@@ -1,0 +1,42 @@
+/**
+* Archives
+*
+*	- Common
+*	- More Link
+*	- Blog
+*/
+
+/* Common */
+
+.blog,
+.archive {
+
+	.entry {
+		border-radius: $base-border-radius;
+		padding: space(s);
+
+		@extend %box-shadow;
+	}
+}
+
+/* More Link */
+
+.more-link {
+	position: relative;
+	text-decoration: none;
+	white-space: nowrap;
+
+	@extend %font-size-s;
+}
+
+/* Blog */
+
+.blog {
+
+	.post-image {
+
+		&.aligncenter {
+			margin-bottom: space(s);
+		}
+	}
+}
