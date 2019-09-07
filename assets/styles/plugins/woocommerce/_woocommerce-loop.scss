@@ -46,6 +46,7 @@
 		flex-direction: column;
 		list-style-type: none;
 		justify-content: space-between;
+		padding: space(xs);
 
 		&::after,
 		&::before {

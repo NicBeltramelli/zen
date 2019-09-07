@@ -36,17 +36,15 @@
 }
 
 .author-box {
-
 	padding: space(s) space(s) 0;
 
-	img {
-		margin-bottom: space(s);
+	.avatar {
+		margin-top: -(space(xs));
 	}
 
 	.author-box-title {
-		margin: space(divider, s);
 
-		@extend %font-size-xl;
+		@extend %font-size-l;
 	}
 
 	.author-box-content {

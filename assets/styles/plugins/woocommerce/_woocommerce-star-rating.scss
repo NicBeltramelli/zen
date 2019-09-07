@@ -53,6 +53,7 @@
 	p.stars {
 
 		a {
+			color: $star;
 
 			&::before {
 				line-height: line-height(s);
