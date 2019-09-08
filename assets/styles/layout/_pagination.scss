@@ -48,23 +48,18 @@
 
 		.pagination-previous,
 		.pagination-next {
-			clear: both;
-			float: left;
-			font-weight: 700;
-			text-align: center;
+			margin: 0;
 			width: 100%;
 
-			@include mq($from: tablet) {
-				padding: space(column, m);
+			@include mq($from: phone) {
+				padding: space(xs);
+				text-align: center;
+				width: 50%;
 			}
 		}
 
 		.pagination-previous {
 			margin: space(stack, s);
-		}
-
-		.pagination-next {
-			margin-bottom: 0;
 		}
 	}
 }

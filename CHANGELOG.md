@@ -2,6 +2,7 @@
 
 ## [dev-3] - 
 * Remove outline on focus
+* Improve adjacent pagination style
 * Improve navigation style
 * Improve WooCommerce Style
 * Improve avatar style
