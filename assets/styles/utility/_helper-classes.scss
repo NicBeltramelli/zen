@@ -83,14 +83,17 @@
 /* Flexbox */
 
 .flex-align-baseline {
+	display: flex;
 	align-items: baseline;
 }
 
 .flex-align-center {
+	display: flex;
 	align-items: center;
 }
 
 .flex-align-stretch {
+	display: flex;
 	align-items: stretch;
 }
 

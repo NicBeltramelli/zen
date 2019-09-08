@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev-3] - 
+* Fix flexbox helper classes
 * Remove outline on focus
 * Improve adjacent pagination style
 * Improve navigation style
