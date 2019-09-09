@@ -82,10 +82,7 @@ p.entry-meta {
 .entry-header {
 
 	.entry-meta {
-		clear: both;
-		float: left;
-		margin: space(stack, xs);
-		width: 100%;
+		margin: space(stack, s);
 
 		.avatar {
 			margin-top: -(space(xs));
