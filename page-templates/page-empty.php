@@ -2,7 +2,7 @@
 /**
  * Genesis Advanced
  *
- * Template Name: Landing Page
+ * Template Name: Empty Page
  *
  * @package Genesis Advanced
  * @author  NicBeltramelli
@@ -76,8 +76,9 @@ remove_action(
 
 /* Remove footer widgets */
 remove_action(
-	'genesis_before_footer',
-	'genesis_footer_widget_areas'
+	'genesis_footer',
+	'genesis_footer_widget_areas',
+	5
 );
 
 /* Remove site footer elements */
