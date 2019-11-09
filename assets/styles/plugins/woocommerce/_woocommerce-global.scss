@@ -6,6 +6,9 @@
 *	- Breadcrumb
 *	- Product Remove
 *	- Product on Sale
+* 	- Related Upsells
+*	- Social Login
+*	- Reset Password
 */
 
 /* Store Notice */
@@ -104,3 +107,36 @@ p.demo_store {
 		@extend %font-size-s;
 	}
 }
+
+/* Related Upsells */
+.related,
+.upsells {
+	clear: both;
+
+	h2 {
+		margin-bottom: space(s);
+		text-align: center;
+
+		@extend %font-size-xxl;
+	}
+}
+
+/* Social Login */
+
+.wc-social-login {
+
+	a.button-social-login {
+		color: color(light, soft) !important;
+	}
+}
+
+/* Reset Password */
+
+.woocommerce-ResetPassword {
+
+	p:last-of-type {
+		clear: both;
+		float: left;
+	}
+}
+
