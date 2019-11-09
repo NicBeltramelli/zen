@@ -29,5 +29,10 @@
 	.is-fullscreen-mode & {
 		padding-left: space(s);
 		padding-right: space(s);
+
+		@include mq($from: tablet) {
+			padding-left: space(m);
+			padding-right: space(m);
+		}
 	}
 }

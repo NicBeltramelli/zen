@@ -96,6 +96,11 @@
 		&[data-align="full"] {
 			margin-left: -(space(s));
 			margin-right: -(space(s));
+
+			@include mq($from: tablet) {
+				margin-left: -(space(m));
+				margin-right: -(space(m));
+			}
 		}
 
 		@include mq($from: tablet) {

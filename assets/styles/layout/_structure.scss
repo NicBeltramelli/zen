@@ -33,8 +33,9 @@
 	min-height: calc(100vh - 6rem);
 	padding: space(m) space(s) 0;
 
-	@include mq($from: tablet) {
-		margin-top: space(l);
+	@include mq($from: phone) {
+		padding-left: space(m);
+		padding-right: space(m);
 	}
 
 	@include mq($from: large-screen) {
@@ -56,6 +57,10 @@
 .wrap {
 	margin: 0 auto;
 	padding: space(column, s);
+
+	@include mq($from: phone) {
+		padding: 0 space(m);
+	}
 
 	@include mq($from: large-screen) {
 		max-width: breakpoint(large-screen);

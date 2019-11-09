@@ -17,7 +17,6 @@ input[type="submit"] {
 	cursor: pointer;
 	font-weight: 700;
 	font-family: $base-font-sans;
-	height: space(m); // Preserve height despite borders.
 	padding: space(inset-squish, xs);
 	text-align: center;
 	text-decoration: none;
@@ -36,7 +35,6 @@ input[type="submit"] {
 	}
 
 	&.small {
-		height: 3rem; // Break vertical rhythm.
 		min-width: space(l);
 		padding: space(inset-squish, xxs);
 
