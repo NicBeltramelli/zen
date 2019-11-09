@@ -14,7 +14,11 @@
 		/* Product Gallery */
 
 		div.images {
-			margin: space(stack, m);
+			margin: space(stack, s);
+
+			@include mq($from: tablet) {
+				margin-bottom: space(m);
+			}
 
 			div.thumbnails {
 				padding-top: space(s);
