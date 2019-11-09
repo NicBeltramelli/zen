@@ -7,6 +7,15 @@
 
 /* Font Sizes */
 
+%font-size-xxxl {
+	font-size: font-size(phone, xxxl);
+	line-height: line-height(xxxl);
+
+	@include mq($from: tablet) {
+		font-size: font-size(tablet, xxxl);
+	}
+}
+
 %font-size-xxl {
 	font-size: font-size(phone, xxl);
 	line-height: line-height(xxl);
@@ -37,6 +46,15 @@
 %font-size-l {
 	font-size: font-size(phone, l);
 	line-height: line-height(l);
+
+	@include mq($from: tablet) {
+		font-size: font-size(tablet, l);
+	}
+}
+
+%font-size-l-break {
+	font-size: font-size(phone, l);
+	line-height: line-height(l-break);
 
 	@include mq($from: tablet) {
 		font-size: font-size(tablet, l);
@@ -95,9 +113,19 @@
 	@include box-shadow (0, 0, 2rem, color(shadow), false);
 }
 
+%box-shadow-top {
+
+	@include box-shadow (0, -1rem, 2rem, color(shadow), false);
+}
+
+%box-shadow-bottom {
+
+	@include box-shadow (0, 1rem, 2rem, color(shadow), false);
+}
+
 %box-shadow-hover {
 
-	@include box-shadow (0, 0, 4rem, color(shadow), false);
+	@include box-shadow (0, 2rem, 4rem, color(shadow), false);
 }
 
 %box-shadow-buttons {

@@ -65,7 +65,8 @@ $base-font-sizes: (
 
 	// See: https://www.modularscale.com/?16&px&1.125
 	phone: (
-		xxl:		32.437px,
+		xxxl:		36.491px,
+		xxl:		28.833px,
 		xl:			20.25px,
 		l:			18px,
 		m:			16px,		// Base value - ratio: 1.125
@@ -75,7 +76,8 @@ $base-font-sizes: (
 
 	// See: https://www.modularscale.com/?18&px&1.2
 	tablet: (
-		xxl:		44.79px,
+		xxxl:		44.79px,
+		xxl:		37.325px,
 		xl:			25.92px,
 		l:			21.6px,
 		m:			18px,		// Base value - ratio: 1.2
@@ -92,8 +94,9 @@ $base-font-sizes: (
 */
 
 $base-line-height: (
-	xxl:			4rem,
-	xl-break:		3rem,		// Break vertical rhythm
+	xxxl:			4rem,
+	xxl:			3rem,
+	xl-break:		2.5rem,		// Break vertical rhythm
 	xl:				2rem,
 	l-break:		2.5rem,		// Break vertical rhythm
 	l:				2rem,
@@ -102,11 +105,13 @@ $base-line-height: (
 	xs:				1.5rem,		// Break vertical rhythm
 
 	// Drop-cap letter
-	drop-cap-xxl:	12rem,
-	drop-cap-xl:	6rem,
-	drop-cap-l:		6rem,
-	drop-cap:		6rem,
-	drop-cap-s:		4rem,
+	drop-cap-xxl:		11rem,
+	drop-cap-xl:		6rem,
+	drop-cap-xl-break:	7rem,
+	drop-cap-l:			6rem,
+	drop-cap-l-break:	7rem,
+	drop-cap:			6rem,
+	drop-cap-s:			4rem,
 );
 
 /*
