@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev-3] - 
+* Improve GravityForms style
 * Add flexfix mixin
 * Add Atomic Blocks editor style
 * Fix flexbox helper classes

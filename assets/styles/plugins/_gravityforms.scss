@@ -1,19 +1,39 @@
 /* Gravity Forms */
 
 .gform_wrapper {
-	margin: space(stack, s);
+
+	.has-dark-background & {
+
+		.gform_heading {
+			color: color(light, base);
+		}
+	}
 
 	.gform_body {
 		margin: space(stack, s);
 
 		.gfield_label {
+			float: left;
+			clear: both;
+			margin: space(stack, xxs);
+		}
+
+		.gfield_label,
+		label {
 			color: color(dark, soft);
 			font-weight: 700;
-			margin: space(stack, xxs);
+
+			.has-dark-background & {
+				color: color(light, strong);
+			}
 		}
 
 		.gform_fields {
 			padding-left: 0;
+
+			ul {
+				padding-left: 0;
+			}
 
 			.gfield {
 				list-style-type: none;
@@ -34,23 +54,27 @@
 
 				.gfield_required {
 					margin-left: space(xxs);
-					color: color(danger, base);
+					color: color(accent, soft);
+				}
+
+				&.hide-required {
+
+					.gfield_required {
+						display: none;
+					}
 				}
 
 				.gfield_checkbox,
 				.gfield_radio {
-					margin: space(stack, xxs);
-					line-height: 1;
 
 					label {
-						font-weight: 400;
 						float: right;
-						line-height: line-height(xl-break);
-						padding-left: space(xxs);
+						margin-bottom: 0;
 					}
 
 					li {
 						display: inline-block;
+						margin: space(stack, xs);
 						padding-right: space(xs);
 
 						&:last-child {
@@ -150,6 +174,8 @@
 
 				&.clear {
 					clear: both;
+					float: left;
+					width: 100%;
 				}
 			}
 		}
