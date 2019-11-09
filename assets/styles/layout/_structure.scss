@@ -29,7 +29,7 @@
 
 .site-inner {
 	clear: both;
-	margin: 0 auto;
+	margin: space(l) auto 0 auto;
 	min-height: calc(100vh - 6rem);
 	padding: space(m) space(s) 0;
 
@@ -64,18 +64,28 @@
 
 /* Layouts */
 
+@include mq($from: phone) {
+
+	.content {
+		margin-left: auto;
+		margin-right: auto;
+		width: 85%;
+	}
+}
+
 @include mq($from: tablet) {
 
 	/* Content */
 	.content {
 		float: left;
+		margin-left: 10%;
 		width: 65%;
 	}
 
 	/* Sidebar */
 	.sidebar {
 		float: right;
-		width: 30%;
+		width: 20%;
 	}
 
 	/* Sidebar Content */
@@ -83,6 +93,8 @@
 
 		.content {
 			float: right;
+			margin-left: 0;
+			margin-right: 10%;
 		}
 
 		.sidebar {
@@ -91,8 +103,7 @@
 	}
 
 	/* Full Width & Landing Page */
-	.full-width-content,
-	.page-landing {
+	.full-width-content {
 
 		.content {
 			float: none;
