@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev-3] - 
+* Add flexfix mixin
 * Add Atomic Blocks editor style
 * Fix flexbox helper classes
 * Remove outline on focus

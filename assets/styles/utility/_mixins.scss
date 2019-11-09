@@ -3,6 +3,7 @@
 *
 *	- Clearfix
 *	- Box Shadow
+*	- Flexfix
 */
 
 /* Clearfix */
@@ -34,5 +35,15 @@
 		-webkit-box-shadow: $top $left $blur $color;
 		-moz-box-shadow: $top $left $blur $color;
 		box-shadow: $top $left $blur $color;
+	}
+}
+
+/* Flexfix */
+
+@mixin flexfix {
+
+	&::before,
+	&::after {
+		position: absolute;
 	}
 }
