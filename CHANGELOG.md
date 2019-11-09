@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev-3] - 
+* Add page privacy template
 * Replace page landing with page empty template
 * Improve GravityForms style
 * Add flexfix mixin

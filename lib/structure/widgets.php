@@ -23,3 +23,12 @@ unregister_sidebar(
 unregister_sidebar(
 	'sidebar-alt'
 );
+
+/* Register privacy widget area */
+genesis_register_sidebar(
+	[
+		'id'          => 'privacy',
+		'name'        => __( 'Privacy', 'genesis-advanced' ),
+		'description' => __( 'This area is designed to display the Privacy sidebar menu.', 'genesis-advanced' ),
+	]
+);
