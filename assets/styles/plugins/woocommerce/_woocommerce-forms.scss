@@ -160,16 +160,26 @@
 	form.login,
 	form.checkout_coupon,
 	form.register {
-		border: 1px solid $border;
+		border: none;
 		border-radius: $base-border-radius;
 		margin: space(stack, s);
 		padding: space(xs);
 
+		@extend %box-shadow;
 		@extend %font-size-s;
+
+		.woocommerce-form-login__rememberme {
+			margin-top: space(xs);
+		}
 
 		#rememberme {
 			margin: 0 space(xxs) 0 space(xs);
 		}
+	}
+
+	form.login,
+	form.register {
+		padding: space(s);
 	}
 
 	/* Form Shipping */

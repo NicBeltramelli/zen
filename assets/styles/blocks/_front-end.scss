@@ -165,6 +165,21 @@ $color-palette: (
 	success: color(success, base),
 	warning: color(warning, base),
 	star: color(star, base),
+
+	// Additional colors
+	dark-strong: color(dark, strong),
+	accent-soft: color(accent, soft),
+	accent-strong: color(accent, strong),
+	info-soft: color(info, soft),
+	info-strong: color(info, strong),
+	danger-soft: color(danger, soft),
+	danger-strong: color(danger, strong),
+	success-soft: color(success, soft),
+	success-strong: color(success, strong),
+	warning-soft: color(warning, soft),
+	warning-strong: color(warning, strong),
+	star-soft: color(star, soft),
+	star-strong: color(star, strong),
 );
 
 @each $name, $color in $color-palette {

@@ -8,7 +8,7 @@
 *	- Cart Sidebar
 *	- Forms
 *	- oEmbeds
-*	- Account Navigation
+*	- My Account
 *	- RTL Style
 */
 
@@ -319,7 +319,7 @@
 	}
 
 	#payment {
-		float: right;
+		margin: 0 auto;
     	width: 48%;
 
 		.form-row {
@@ -356,16 +356,74 @@
 	}
 }
 
-/* Account Navigation */
+/* My Account */
 
 .woocommerce-account {
 
+	&:not(.logged-in) {
+
+		.entry-header {
+			display: none;
+		}
+
+		.entry-content {
+			margin-top: space(m);
+
+			h2 {
+				display: none;
+				margin-bottom: space(s);
+			}
+
+			@include mq($from: phone) {
+				margin-left: auto;
+				margin-right: auto;
+				width: 65%;
+			}
+
+			@include mq($from: tablet) {
+				width: 45%;
+			}
+		}
+	}
+
+	&.full-width-content {
+
+		.content {
+
+			.entry-header {
+
+				@include mq($from: phone) {
+					margin-left: 25%;
+					width: 75%;
+				}
+
+				@include mq($from: tablet) {
+					margin-right: 10%;
+					width: 65%;
+				}
+
+				.entry-title {
+					text-align: center;
+
+					@include mq($from: phone) {
+						text-align: left;
+					}
+				}
+			}
+		}
+	}
+
 	.woocommerce-MyAccount-navigation {
-		width: 25%;
+		width: 20%;
 	}
 
 	.woocommerce-MyAccount-content {
-		width: 72%;
+		width: 75%;
+
+		@include mq($from: tablet) {
+			margin-right: 10%;
+			width: 65%;
+		}
 	}
 
 	&.content-sidebar.woocommerce-account,

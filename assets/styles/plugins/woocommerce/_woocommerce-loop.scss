@@ -45,8 +45,7 @@
 		display: flex;
 		flex-direction: column;
 		list-style-type: none;
-		justify-content: space-between;
-		padding: space(xs);
+		padding-bottom: space(xs);
 
 		&::after,
 		&::before {
@@ -64,6 +63,7 @@
 			text-decoration: none;
 
 			&.added_to_cart {
+				margin: 0 auto;
 				text-decoration: underline;
 
 				&:focus,
@@ -82,19 +82,21 @@
 		.woocommerce-loop-category__title {
 			color: $primarytext;
 			margin: space(stack, xs);
-			padding: 0;
+			padding: space(column, xs);
+			text-align: center;
 
 			@extend %font-size-m;
 		}
 
 		.star-rating {
-			margin: space(stack, xs);
+			margin: 0 auto space(xs) auto;
 
 			@extend %font-size-s;
 		}
 
 		.button {
-			height: 3rem;
+			margin-left: auto;
+			margin-right: auto;
 			margin-top: 0;
 			padding: space(inset-squish, xxs);
 		}
@@ -102,6 +104,7 @@
 		.price {
 			color: $primarytext;
 			margin: space(stack, xs);
+			text-align: center;
 
 			@extend %font-size-s;
 

@@ -83,10 +83,8 @@ p.entry-meta {
 
 	.entry-meta {
 		margin: space(stack, s);
-
-		.avatar {
-			margin-top: -(space(xs));
-		}
+		position: relative;
+		text-align: center;
 	}
 }
 

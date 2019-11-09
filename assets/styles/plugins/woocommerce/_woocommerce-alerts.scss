@@ -8,7 +8,10 @@
 	color: $primarytext;
 	font-weight: 700;
 	margin: space(stack, s) !important; // Fix default entry-content ul margin.
-	padding: calc(1rem - 1.5px) 0.5rem calc(5rem - 1.5px) 3rem; // Compensate top border.
+	padding-bottom: calc(5rem - 1.5px);
+	padding-left: 3rem !important; // Override the default content list padding.
+	padding-right: 0.5rem;
+	padding-top: calc(1rem - 1.5px);
 
 	@extend %box-shadow;
 	@extend %font-size-s;
@@ -53,6 +56,7 @@
 .woocommerce-info {
 	border-top-color: $primary;
 
+	a,
 	&::before {
 		color: $primary;
 	}
@@ -61,6 +65,7 @@
 .woocommerce-error {
 	border-top-color: $red;
 
+	a,
 	&::before {
 		color: $red;
 	}

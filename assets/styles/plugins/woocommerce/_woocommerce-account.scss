@@ -31,18 +31,18 @@
 				@extend %font-size-s;
 
 				&.is-active > a {
-					color: $primary;
+					color: $primary !important;
 				}
 
 				a {
-					color: $primarytext;
+					color: $primarytext !important;
 					font-weight: 700;
 					text-decoration: none;
 					text-transform: uppercase;
 
 					&:focus,
 					&:hover {
-						color: $primary;
+						color: $primary !important;
 					}
 				}
 			}

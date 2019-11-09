@@ -41,9 +41,9 @@ add_action(
 		/* Output link color inline css */
 		$css .= ( $appearance['default-colors']['link'] !== $color_link ) ? sprintf(
 			'
-			a,
-			a:focus,
-			a:hover {
+			a:not(.button):not(.wp-block-button__link):not(.menu-highlight),
+			a:not(.button):not(.wp-block-button__link):not(.menu-highlight):focus,
+			a:not(.button):not(.wp-block-button__link):not(.menu-highlight):hover {
 				color: %s;
 			}
 			',

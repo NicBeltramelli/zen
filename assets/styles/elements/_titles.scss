@@ -17,6 +17,26 @@
 	}
 }
 
+.entry-title,
 .archive-title {
-	margin-bottom: space(m);
+	margin: space(stack, s);
+}
+
+.archive-title,
+.entry-title,
+.page-title {
+	text-align: center;
+}
+
+.content-sidebar,
+.sidebar-content {
+
+	@include mq($from: tablet) {
+
+		.archive-title,
+		.entry-title,
+		.page-title {
+			text-align: left;
+		}
+	}
 }

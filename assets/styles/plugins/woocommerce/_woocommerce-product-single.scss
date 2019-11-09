@@ -74,15 +74,29 @@
 
 		div.summary {
 			margin: space(stack, m);
+
+			.product_title {
+				text-align: center;
+			}
+		}
+
+		.woocommerce-product-rating {
+			display: flex;
+			justify-content: center;
+			margin-bottom: space(s);
 		}
 
 		span.price,
 		p.price {
 			color: $primarytext;
 			font-family: $base-font-sans;
-			font-weight: 700;
+			text-align: center;
 
-			@extend %font-size-m;
+			@extend %font-size-l;
+
+			ins {
+				font-weight: 400;
+			}
 		}
 
 		p.stock {
@@ -100,7 +114,6 @@
 			color: $red;
 		}
 
-		.woocommerce-product-rating,
 		.woocommerce-variation-price,
 		div.social {
 			margin-bottom: space(s);
@@ -116,6 +129,8 @@
 			clear: both;
 			float: left;
 			font-family: $base-font-sans;
+			margin-top: space(s);
+			text-align: center;
 			width: 100%;
 
 			> span {
@@ -137,7 +152,17 @@
 		}
 
 		form.cart {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 0;
 			margin-bottom: space(s);
+			margin-top: space(m);
+
+			&.variations_form {
+				display: block;
+				float: left;
+				clear: both;
+			}
 
 			div.quantity {
 				margin: space(right, xxs);
@@ -149,7 +174,7 @@
 
 			.variations {
 				margin-bottom: 0;
-				margin-top: space(xs);
+				position: relative;
 				table-layout: fixed;
 
 				td {
@@ -165,6 +190,10 @@
 
 					&.value {
 						padding-right: 0;
+
+						select {
+							min-width: 100%;
+						}
 					}
 				}
 
@@ -176,12 +205,13 @@
 			}
 
 			.reset_variations {
+				bottom: -(space(s));
 				color: $red;
 				float: right;
 				font-weight: 700;
-				margin-bottom: -(space(xs));
 				padding: space(top, xs);
-				position: relative;
+				position: absolute;
+				right: 0;
 				text-decoration: none;
 
 				@extend %font-size-s;
@@ -193,6 +223,35 @@
 					left: -2rem;
 					padding-right: 1rem;
 					position: absolute;
+				}
+			}
+
+			.single_variation_wrap {
+				margin-top: space(m);
+
+				.single_variation {
+					display: inline-block;
+
+					.woocommerce-variation-description {
+						width: 100%;
+					}
+
+					p {
+						font-weight: 700;
+
+						@extend %font-size-s;
+					}
+				}
+
+				.variations_button {
+					display: flex;
+					justify-content: center;
+					margin-top: space(s);
+				}
+
+				.stock {
+					margin-bottom: 0;
+					margin-left: space(s);
 				}
 			}
 
