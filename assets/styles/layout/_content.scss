@@ -4,6 +4,7 @@
 *	- Content
 *	- Entry Content
 *	- Entry Meta
+*	- More Link
 *	- Comments
 */
 
@@ -13,7 +14,6 @@
 	margin: space(stack, m);
 
 	.entry {
-		margin-bottom: space(m);
 
 		&.sticky {
 			background-color: color(light, base);
@@ -28,7 +28,7 @@
 /* Entry Content */
 
 .entry-content {
-	margin: space(stack, s);
+	margin: space(stack, m);
 
 	p {
 

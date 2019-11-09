@@ -1,0 +1,32 @@
+/* Page Empty Template */
+
+.page-empty {
+
+	.site-inner {
+		margin-top: 0;
+		padding: 0;
+
+		.admin-bar & {
+
+			@include mq($until: admin-bar) {
+				min-height: calc(100vh - 46px);
+			}
+
+			@include mq($from: admin-bar) {
+				min-height: calc(100vh - 32px);
+			}
+		}
+
+		.content {
+			margin-bottom: 0;
+
+			@include mq($from: tablet) {
+				width: 100%;
+			}
+		}
+
+		.entry-content {
+			margin-bottom: 0;
+		}
+	}
+}
