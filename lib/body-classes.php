@@ -58,7 +58,9 @@ add_filter(
 			$classes[]      = $template_class;
 		}
 
-		if ( ! is_singular() || ! function_exists( 'has_blocks' ) || ! function_exists( 'parse_blocks' ) ) {
+		if ( ! is_singular() ||
+			! function_exists( 'has_blocks' ) ||
+			! function_exists( 'parse_blocks' ) ) {
 
 			return $classes;
 		}
