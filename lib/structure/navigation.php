@@ -37,7 +37,7 @@ remove_action(
 add_action(
 	'genesis_header',
 	'genesis_do_nav',
-	12
+	10
 );
 
 /* Reposition the secondary navigation menu */
@@ -46,15 +46,15 @@ remove_action(
 	'genesis_do_subnav'
 );
 add_action(
-	'genesis_after_footer',
+	'genesis_header',
 	'genesis_do_subnav',
-	10
+	5
 );
 
 /**
- * Reduce secondary navigation menu to one level depth
+ * Reduce tertiary navigation menu to one level depth
  *
- * @since 3.0.0
+ * @since 3.6.0
  *
  * @param array $args Original menu options.
  * @return array Menu options with depth set to 1.
@@ -63,7 +63,7 @@ add_filter(
 	'wp_nav_menu_args',
 	function ( $args ) {
 
-		if ( 'secondary' !== $args['theme_location'] ) {
+		if ( 'tertiary' !== $args['theme_location'] ) {
 
 			return $args;
 		}
@@ -72,4 +72,99 @@ add_filter(
 
 		return $args;
 	}
+);
+
+/**
+ * Add attributes for navigation elements
+ *
+ * @since 3.6.0
+ */
+add_filter( 'genesis_attr_nav-custom', 'genesis_attributes_nav' );
+
+/**
+ * Add ID markup to custom navigation
+ *
+ * @since 3.6.0
+ *
+ * @param array $attributes Existing attributes for custom navigation element.
+ * @return array Amended attributes for custom navigation element.
+ */
+add_filter(
+	'genesis_attr_nav-custom', function ( $attributes ) {
+
+		$attributes['id'] = 'genesis-nav-tertiary';
+
+		return $attributes;
+	}
+);
+
+/**
+ * Add skip link for tertiary navigation
+ *
+ * @since 3.6.0
+ *
+ * @param array $links Existing skiplinks.
+ * @return array Amended skiplinks.
+ */
+add_filter(
+	'genesis_skip_links_output', function ( $links ) {
+
+		if ( genesis_nav_menu_supported( 'tertiary' ) &&
+			has_nav_menu( 'tertiary' ) ) :
+
+			$links['genesis-nav-tertiary'] = __( 'Skip to tertiary navigation', 'genesis-advanced' );
+
+		endif;
+
+		return $links;
+	}
+);
+
+/**
+ * Display the tertiary menu
+ *
+ * @since 3.6.0
+ */
+add_action(
+	'genesis_after_footer', function () {
+
+		// Do nothing if menu not supported.
+		if ( ! genesis_nav_menu_supported( 'tertiary' ) ||
+			! has_nav_menu( 'tertiary' ) ) :
+
+			return;
+
+		endif;
+
+		$class = 'menu genesis-nav-menu menu-tertiary';
+
+		if ( genesis_superfish_enabled() ) :
+
+			$class .= ' js-superfish';
+
+		endif;
+
+		$menu_name = 'tertiary';
+		$locations = get_nav_menu_locations();
+		$menu_id   = $locations[ $menu_name ];
+		wp_get_nav_menu_object( $menu_id );
+
+		$menu_obj = wp_get_nav_menu_object( $menu_id );
+
+		echo '<div id="tertiary-menu-wrapper" class="tertiary-menu-wrapper">';
+
+		echo '<h3 class="tertiary-menu-name">' . esc_html( $menu_obj->name ) . '</h3>';
+
+		genesis_nav_menu(
+			[
+				'theme_location'  => 'tertiary',
+				'menu_class'      => $class,
+				'container'       => 'div',
+				'container_class' => 'wrap',
+			]
+		);
+
+		echo '</div>';
+
+	}, 10
 );

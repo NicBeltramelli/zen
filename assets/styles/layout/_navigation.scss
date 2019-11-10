@@ -4,7 +4,10 @@
 *	- Site Navigation
 *	- Responsive Menu
 *	- Secondary Menu
+*	- Header Menus
 *	- Primary Menu
+*	- Secondary Menu
+*	- Tertiary Menu
 */
 
 /* Site Navigation */
@@ -16,19 +19,12 @@
 	a {
 		color: color(dark, base);
 		display: block;
-		font-family: $base-font-sans;
 		outline-offset: -1px;
 		padding-bottom: space(xxs);
 		padding-top: space(xxs);
 		text-decoration: none;
 
 		@extend %font-size-s;
-
-		&:focus,
-		&:hover {
-			color: color(accent, base);
-			text-decoration: none;
-		}
 	}
 
 	.sub-menu {
@@ -104,6 +100,7 @@
 			}
 
 			.sub-menu-toggle {
+				color: color(light, base);
 
 				&::before {
 					content: "\f139";
@@ -209,7 +206,7 @@
 	nav {
 		display: none; // Prevent responsive menu flashing on mobile.
 
-		&.nav-secondary {
+		&.nav-tertiary {
 			display: block;
 		}
 
@@ -347,60 +344,35 @@
 	}
 }
 
-/* Secondary Menu */
+/* Header Menu */
 
+.nav-primary,
 .nav-secondary {
-	border-top: 1px solid color(border);
-	padding: calc(2rem - 1px) 0 space(s); // Compensate top border.
-	text-align: center;
-
-	.genesis-nav-menu {
-
-		.menu-item {
-			display: block;
-
-			@include mq($from: tablet) {
-				display: inline-block;
-			}
-
-			> a {
-				margin: 0 1.5rem;
-
-				@include mq($from: tablet) {
-					margin: 0;
-					padding: space(xxs) 1.5rem;
-				}
-			}
-		}
-	}
-}
-
-/* Primary Menu */
-
-.nav-primary {
 	clear: left;
+	float: left;
 	width: 100%;
 
 	@include mq($from: tablet) {
-		clear: none;
-		float: right;
+		flex: 1;
 		padding-bottom: space(xs);
 		padding-top: space(xs);
-		text-align: right;
-		width: auto;
 
 		.wrap {
 			padding: 0;
 		}
 	}
 
+	@include mq($from: desktop) {
+		flex: 2;
+	}
+
 	.genesis-nav-menu {
 
 		.menu-item {
 
 			> a {
-				padding-bottom: space(xs);
-				padding-top: space(xs);
+				padding-bottom: space(s);
+				padding-top: space(s);
 
 				@include mq($from: tablet) {
 					padding: space(xs) 1.5rem;
@@ -413,6 +385,62 @@
 
 					@include mq($from: tablet) {
 						margin: space(divider, xxs);
+						padding: space(xxs) 1.5rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Primary Menu */
+.nav-primary {
+
+	.wrap {
+		text-align: left;
+
+		@include mq($from: tablet) {
+			text-align: right;
+		}
+	}
+}
+
+/* Secondary Menu */
+.nav-secondary {
+
+	.wrap {
+		text-align: left;
+	}
+}
+
+
+/* Tertiary Menu */
+
+.tertiary-menu-name {
+	display: none;
+}
+
+.tertiary-menu-wrapper {
+
+	.nav-tertiary {
+		border-top: 1px solid color(border);
+		padding: calc(2rem - 1px) 0 space(s); // Compensate top border.
+		text-align: center;
+
+		.genesis-nav-menu {
+
+			.menu-item {
+				display: block;
+
+				@include mq($from: tablet) {
+					display: inline-block;
+				}
+
+				> a {
+					margin: 0 1.5rem;
+
+					@include mq($from: tablet) {
+						margin: 0;
 						padding: space(xxs) 1.5rem;
 					}
 				}

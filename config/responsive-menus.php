@@ -23,6 +23,7 @@ return [
 
 		'menuClasses'      => [
 			'combine' => [
+				'.nav-secondary',
 				'.nav-primary',
 			],
 			'others'  => [],

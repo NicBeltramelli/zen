@@ -38,7 +38,8 @@ return [
 	'genesis-after-entry-widget-area' => '',
 	'genesis-footer-widgets'          => 3,
 	'genesis-menus'                   => [
-		'primary'   => __( 'Header Menu', 'genesis-advanced' ),
-		'secondary' => __( 'Footer Menu', 'genesis-advanced' ),
+		'primary'   => __( 'Header Right', 'genesis-advanced' ),
+		'secondary' => __( 'Header Left', 'genesis-advanced' ),
+		'tertiary'  => __( 'Footer', 'genesis-advanced' ),
 	],
 ];
