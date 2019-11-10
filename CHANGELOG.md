@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
-## [dev-3] - 
+## [dev-3] -
+* Remove scrollreveal
 * Reorganize page templates
 * Add page privacy template
 * Replace page landing with page empty template
