@@ -23,12 +23,15 @@
 			padding: space(xs);
 
 			li.woocommerce-MyAccount-navigation-link {
-				font-family: $base-font-sans;
 				list-style-type: none;
 				margin: 0;
 				padding: space(divider, xs);
 
 				@extend %font-size-s;
+
+				&:last-child {
+					padding-bottom: 0;
+				}
 
 				&.is-active > a {
 					color: $primary !important;

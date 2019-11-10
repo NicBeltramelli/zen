@@ -366,22 +366,18 @@
 
 		/* Account */
 
-		.lost_reset_password {
-
-			.form-row-first,
-			.form-row-last {
-			}
-		}
-
 		&.woocommerce-account {
 
 			.woocommerce-MyAccount-navigation,
 			.woocommerce-MyAccount-content {
+				margin-right: 0;
 				width: 100%;
 			}
 
 			.woocommerce-MyAccount-navigation {
-				margin-bottom: calc(4rem - 2px); // Compensate border.
+				border-bottom: 1px solid color(border);
+				margin-bottom: calc(3rem - 1px); // Compensate border.
+				padding: space(xs) 0 3rem;
 			}
 
 			&.content-sidebar.woocommerce-account,

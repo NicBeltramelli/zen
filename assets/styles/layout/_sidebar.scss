@@ -11,10 +11,14 @@
 	}
 
 	.widget {
-		margin: space(stack, l);
+		margin: space(stack, m);
 
 		&.widget_search {
 			margin: space(stack, s);
+		}
+
+		&:first-of-type {
+			margin-top: space(xs);
 		}
 
 		&:last-of-type {
@@ -22,8 +26,9 @@
 		}
 
 		.widget-title {
-			border-bottom: 1px solid;
-			padding-bottom: calc(2rem - 1px); // Compensate bottom border.
+			margin: space(stack, s);
+
+			@extend %font-size-l;
 		}
 
 		ul {
@@ -37,13 +42,23 @@
 
 				> a {
 					color: color(dark, base);
-					font-family: $base-font-sans;
 					font-weight: 700;
 					text-decoration: none;
 
 					&:focus,
 					&:hover {
 						color: color(accent, base);
+					}
+				}
+			}
+
+			&.menu {
+
+				li {
+					padding-bottom: space(xs);
+
+					&:last-child {
+						padding-bottom: 0;
 					}
 				}
 			}
