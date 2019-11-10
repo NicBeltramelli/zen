@@ -259,6 +259,7 @@
 				.variations_button {
 					display: flex;
 					justify-content: center;
+					margin-top: space(xs);
 				}
 
 				.stock {
@@ -273,6 +274,7 @@
 			.woocommerce-variation-price,
 			.woocommerce-variation-availability {
 				display: inline-block;
+				margin-top: space(xs);
 			}
 
 			.woocommerce-variation-availability {
