@@ -120,7 +120,7 @@ return [
 		[
 			'name'      => __( 'Huge', 'genesis-advanced' ),
 			'shortName' => __( 'XL', 'genesis-advanced' ),
-			'size'      => '44.79',
+			'size'      => '37.325',
 			'slug'      => 'huge',
 		],
 	],
