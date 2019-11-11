@@ -41,9 +41,18 @@ add_action(
 		/* Output link color inline css */
 		$css .= ( $appearance['default-colors']['link'] !== $color_link ) ? sprintf(
 			'
-			a:not(.button):not(.wp-block-button__link):not(.menu-highlight),
-			a:not(.button):not(.wp-block-button__link):not(.menu-highlight):focus,
-			a:not(.button):not(.wp-block-button__link):not(.menu-highlight):hover {
+			.entry a:not(.button):not(.wp-block-button__link),
+			.entry a:not(.button):not(.wp-block-button__link):focus,
+			.entry a:not(.button):not(.wp-block-button__link):hover,
+			.breadcrumb a,
+			.breadcrumb a:focus,
+			.breadcrumb a:hover,
+			.footer-widgets a:not(.button),
+			.footer-widgets a:not(.button):focus,
+			.footer-widgets a:not(.button):hover,
+			.site-footer a:not(.button),
+			.site-footer a:not(.button):focus,
+			.site-footer a:not(.button):hover {
 				color: %s;
 			}
 			',
@@ -59,7 +68,8 @@ add_action(
 			input[type="button"].accent,
 			input[type="reset"].accent,
 			input[type="submit"].accent,
-			.has-accent-background-color {
+			.has-accent-background-color,
+			.has-dark-background input[type="submit"] {
 				background-color: %1$s;
 			}
 
@@ -73,7 +83,12 @@ add_action(
 			.widget-title > a:hover,
 			.sidebar .widget ul li > a:focus,
 			.sidebar .widget ul li > a:hover,
-			.has-accent-color {
+			.has-accent-color,
+			.genesis-nav-menu .menu-item:not(.menu-highlight):focus > a,
+			.genesis-nav-menu .menu-item:not(.menu-highlight):focus > button,
+			.genesis-nav-menu .menu-item:not(.menu-highlight):hover > a,
+			.genesis-nav-menu .menu-item:not(.menu-highlight):hover > button,
+			.genesis-nav-menu .menu-item.current-menu-item:not(.menu-highlight) > a {
 				color: %1$s;
 			}
 
@@ -91,6 +106,18 @@ add_action(
 				.genesis-nav-menu > .menu-item.menu-highlight > a,
 				.genesis-nav-menu > .menu-item.menu-highlight.current-menu-item > a {
 					background-color: %1$s;
+				}
+
+				.genesis-nav-menu .sub-menu a:focus,
+				.genesis-nav-menu .sub-menu a:hover,
+				.genesis-nav-menu .sub-menu .menu-item:focus > a,
+				.genesis-nav-menu .sub-menu .menu-item:focus > button,
+				.genesis-nav-menu .sub-menu .menu-item:hover > a,
+				.genesis-nav-menu .sub-menu .menu-item:hover > button,
+				.genesis-nav-menu .sub-menu .menu-item.current-menu-item > a,
+				.genesis-nav-menu .sub-menu .menu-item.current-menu-item > a:focus,
+				.genesis-nav-menu .sub-menu .menu-item.current-menu-item > a:hover {
+					color: %1$s;
 				}
 			}
 			',
