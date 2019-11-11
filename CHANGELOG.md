@@ -1,6 +1,6 @@
 # Genesis Advanced Changelog
 
-## [dev-3.6.0] -
+## [3.6.0] - 2019-11-11
 * Set full-width-content default layout
 * Add anchor navigation powered by jquery.scrollTo
 * Improve typography
