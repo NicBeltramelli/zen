@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev-3.6.0] -
+* Improve typography
 * Reorganize navigation
 * Remove scrollreveal
 * Reorganize page templates

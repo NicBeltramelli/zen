@@ -19,7 +19,6 @@
 
 	.select2-container,
 	.select2-container--default {
-		font-family: $base-font-sans;
 		vertical-align: middle;
 
 		.select2-selection--single {
@@ -56,7 +55,6 @@
 	/* Form Default */
 
 	form .form-row {
-		font-family: $base-font-sans;
 		margin: space(stack, s);
 		padding: 0;
 

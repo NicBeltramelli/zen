@@ -44,7 +44,6 @@ p.demo_store {
 		padding: calc(1rem - 1px) space(xs); // Compensate border.
 
 		legend {
-			font-family: $base-font-sans;
 			font-weight: 700;
 		}
 	}
@@ -63,12 +62,6 @@ p.demo_store {
 
 			@extend %font-size-s;
 		}
-	}
-
-	.quantity,
-	.amount,
-	.total {
-		font-family: $base-font-sans;
 	}
 
 	/* Breadcrumb */
@@ -100,7 +93,6 @@ p.demo_store {
 		background-color: $primary;
 		border-radius: 0;
 		color: $highlightext;
-		font-family: $base-font-sans;
 		min-height: auto;
 		padding: space(inset-squish, xxs);
 

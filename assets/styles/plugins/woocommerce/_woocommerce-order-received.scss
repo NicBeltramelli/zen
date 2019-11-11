@@ -18,7 +18,6 @@
 
 	ul.order_details {
 		border: 1px dashed $border;
-		font-family: $base-font-sans;
 		margin: 0 0 calc(4rem - 1px) 0; // Compensate border.
 		padding: space(column, xs);
 
@@ -79,7 +78,6 @@
 		address {
 			border: 1px dashed $border;
 			border-radius: 0;
-			font-family: $base-font-sans;
 			padding: calc(1rem - 1px) 1rem; // Compensate border.
 
 			@extend %font-size-s;

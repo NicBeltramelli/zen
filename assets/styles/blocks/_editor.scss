@@ -36,7 +36,6 @@
 .wp-block {
 	border: none;
 	color: color(dark, base);
-	font-family: $base-font-serif;
 	max-width: none;
 
 	@extend %font-size-m;
@@ -177,7 +176,7 @@
 		.editor-post-title__input {
 			border-right-width: 1px; // Fix right border.
 			color: color(dark, strong);
-			font-family: $base-font-sans;
+			font-family: $base-font-serif;
 			padding: 0 14px;
 
 			@extend %font-size-xxl;
@@ -203,7 +202,7 @@ ul.wp-block-archives {
 	padding-left: 0;
 
 	li {
-		font-family: $base-font-sans;
+		font-family: $base-font-serif;
 	}
 }
 
@@ -242,12 +241,12 @@ ul.wp-block-archives {
 .wp-block[data-type="core/latest-posts"] {
 
 	li {
-		font-family: $base-font-sans;
+		font-family: $base-font-serif;
 		list-style: none;
 
 		> a {
 			color: color(dark, base);
-			font-family: $base-font-sans;
+			font-family: $base-font-serif;
 			font-weight: 700;
 			text-decoration: none;
 
@@ -417,7 +416,6 @@ ul.wp-block-archives {
 	.wp-block-pullquote__citation,
 	.wp-block-quote__citation {
 		color: inherit;
-		font-family: $base-font-sans;
 		font-weight: 700;
 		font-style: normal;
 		text-transform: uppercase;

@@ -26,7 +26,6 @@
 			border-left: 1px solid $border;
 			border-right: 1px solid $border;
 			border-top: 0;
-			font-family: $base-font-sans;
 			padding: space(xs);
 			text-align: left;
 
@@ -120,7 +119,6 @@
 		td {
 			border-bottom: 1px solid $border;
 			border-top: 0;
-			font-family: $base-font-sans;
 			padding: space(xs);
 
 			@extend %font-size-s;

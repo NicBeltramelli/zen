@@ -16,7 +16,7 @@ body {
 	}
 	background-color: color(light, soft);
 	color: color(dark, base);
-	font-family: $base-font-serif;
+	font-family: $base-font-sans;
 	font-weight: 400;
 	margin: 0;
 
@@ -72,7 +72,6 @@ code {
 }
 
 dt {
-	font-family: $base-font-sans;
 	font-weight: 700;
 }
 
@@ -140,14 +139,12 @@ label,
 }
 
 cite {
-	font-family: $base-font-sans;
 	font-weight: 700;
 	font-style: normal;
 	text-transform: uppercase;
 }
 
 label {
-	font-family: $base-font-sans;
 
 	.required {
 		color: color(danger, soft);
@@ -165,7 +162,6 @@ label {
 }
 
 caption {
-	font-family: $base-font-sans;
 	margin: space(stack, s);
 
 	@extend %font-size-s;
@@ -191,7 +187,7 @@ h4,
 h5,
 h6 {
 	color: color(dark, strong);
-	font-family: $base-font-sans;
+	font-family: $base-font-serif;
 	font-weight: 700;
 	margin: space(stack, s);
 }

@@ -160,7 +160,7 @@ p.entry-meta {
 						&.comment-author {
 
 							span:nth-of-type(1) {
-								font-family: $base-font-sans;
+								font-family: $base-font-serif;
 								font-weight: 700;
 							}
 						}
@@ -217,7 +217,7 @@ p.entry-meta {
 
 	.comment-reply-title {
 		display: inline-block;
-		font-family: $base-font-sans;
+		font-family: $base-font-serif;
 		font-weight: 700;
 		margin: space(stack, s);
 

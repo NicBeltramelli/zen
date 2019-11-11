@@ -144,8 +144,9 @@ p {
 
 		&.has-drop-cap:not(:focus)::first-letter {
 			line-height: line-height(drop-cap-xxl);
-			font-size: 14rem;
+			font-size: 12rem;
 			margin-right: 0.75rem;
+			margin-top: 0.5rem;
 		}
 	}
 }
@@ -219,7 +220,6 @@ $color-palette: (
 		border-radius: $base-border-radius;
 		cursor: pointer;
 		font-weight: 700;
-		font-family: $base-font-sans;
 		padding: space(inset-squish, xs);
 		text-align: center;
 		text-decoration: none;
@@ -309,12 +309,12 @@ $color-palette: (
 				}
 
 				li {
-					font-family: $base-font-sans;
+					font-family: $base-font-serif;
 					list-style: none;
 
 					> a {
 						color: color(dark, base);
-						font-family: $base-font-sans;
+						font-family: $base-font-serif;
 						font-weight: 700;
 						text-decoration: none;
 
@@ -682,7 +682,6 @@ $color-palette: (
 		border-radius: $base-border-radius;
 		cursor: pointer;
 		font-weight: 700;
-		font-family: $base-font-sans;
 		height: 3rem; // Break vertical rhythm.
 		min-width: space(l);
 		padding: space(inset-squish, xxs);

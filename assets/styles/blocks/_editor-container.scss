@@ -18,7 +18,7 @@
 
 .editor-styles-wrapper:not(.editor-block-preview__content) {
 	background-color: color(light, soft);
-	font-family: $base-font-serif;
+	font-family: $base-font-sans;
 	font-weight: 400;
 	margin: 0 auto;
 	padding: space(m) space(m) space(l); // Keep space for the inserter/mover buttons.

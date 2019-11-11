@@ -46,7 +46,6 @@
 
 			dl {
 				border: 0;
-				font-family: $base-font-sans;
 				margin: space(left, xxs);
 				padding: 0;
 
@@ -141,7 +140,6 @@
 		}
 
 		.price_slider_amount {
-			font-family: $base-font-sans;
 			font-weight: 700;
 
 			@extend %font-size-s;
