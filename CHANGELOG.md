@@ -1,6 +1,7 @@
 # Genesis Advanced Changelog
 
 ## [dev-3.6.0] -
+* Add anchor navigation powered by jquery.scrollTo
 * Improve typography
 * Reorganize navigation
 * Remove scrollreveal
