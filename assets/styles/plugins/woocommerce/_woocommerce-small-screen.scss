@@ -375,9 +375,8 @@
 			}
 
 			.woocommerce-MyAccount-navigation {
-				border-bottom: 1px solid color(border);
-				margin-bottom: calc(3rem - 1px); // Compensate border.
-				padding: space(xs) 0 3rem;
+				margin-bottom: space(s);
+				padding: space(xs) 0 space(s);
 			}
 
 			&.content-sidebar.woocommerce-account,
