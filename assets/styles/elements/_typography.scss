@@ -9,18 +9,19 @@
 /* Body */
 
 body {
-
-	> div { // Chrome fix.
-
-		@extend %font-size-m;
-	}
 	background-color: color(light, soft);
 	color: color(dark, base);
 	font-family: $base-font-sans;
 	font-weight: 400;
 	margin: 0;
+	z-index: 99;
 
 	@extend %font-size-m;
+
+	> div { // Chrome fix.
+
+		@extend %font-size-m;
+	}
 }
 
 /* Typographical Elements */

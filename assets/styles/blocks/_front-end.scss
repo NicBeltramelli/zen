@@ -124,7 +124,13 @@ p {
 		}
 
 		&.m-break {
-			line-height: line-height(l-break); // Break the vertical rhythm.
+
+			@extend %font-size-l-break; // Break the vertical rhythm.
+
+			&.has-drop-cap:not(:focus)::first-letter {
+				line-height: line-height(drop-cap-l-break);
+				font-size: 9rem;
+			}
 		}
 	}
 
@@ -135,6 +141,16 @@ p {
 		&.has-drop-cap:not(:focus)::first-letter {
 			line-height: line-height(drop-cap-xl);
 			font-size: 7rem;
+		}
+
+		&.l-break {
+
+			@extend %font-size-xl-break; // Break the vertical rhythm.
+
+			&.has-drop-cap:not(:focus)::first-letter {
+				line-height: line-height(drop-cap-xl-break);
+				font-size: 9rem;
+			}
 		}
 	}
 
