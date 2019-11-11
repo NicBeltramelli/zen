@@ -231,12 +231,14 @@ $color-shade-amount: 15%;
 $color-strong-shade-amount: 85%;
 $color-trans-amount: 0.7;
 $color-strong-trans-amount: 0.9;
+$color-extrastrong-trans-amount: 0.95;
 
 // Colors Map
 $base-colors: (
 	border:			darken(lighten($dark, $color-strong-shade-amount), $color-shade-amount),
 	outline:		transparentize($dark, $color-trans-amount),
 	shadow:			transparentize(darken($dark, $color-shade-amount), $color-strong-trans-amount),
+	shadow-light:	transparentize(darken($dark, $color-shade-amount), $color-extrastrong-trans-amount),
 
 	// Nested values
 	dark: (

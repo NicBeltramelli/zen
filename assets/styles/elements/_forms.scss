@@ -9,6 +9,7 @@ textarea {
 	color: color(dark, base);
 	font-family: $base-font-sans;
 	font-weight: 400;
+	max-width: 100%;
 	padding: space(xs);
 
 	@extend %font-size-s;

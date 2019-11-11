@@ -115,12 +115,12 @@
 
 %box-shadow-top {
 
-	@include box-shadow (0, -1rem, 2rem, color(shadow), false);
+	@include box-shadow (0, -1rem, 1rem, color(shadow-light), false);
 }
 
 %box-shadow-bottom {
 
-	@include box-shadow (0, 1rem, 2rem, color(shadow), false);
+	@include box-shadow (0, 1rem, 1rem, color(shadow-light), false);
 }
 
 %box-shadow-hover {

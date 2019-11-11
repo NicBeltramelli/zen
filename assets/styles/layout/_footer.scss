@@ -1,22 +1,45 @@
 /**
 * Footer
 *
+*	- Common
 *	- Footer Widgets
 *	- Site Footer
 */
 
+/* Common */
+
+.footer-widgets,
+.site-footer {
+	clear: both;
+	text-align: center;
+
+	@extend %font-size-s;
+
+	a {
+		text-decoration: none;
+	}
+
+	p {
+		padding: space(column, s);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
 /* Footer Widgets */
 
 .footer-widgets {
-	background-color: #fff;
-	clear: both;
-	padding: space(divider, m);
+	padding-bottom: space(s);
+	padding-top: space(m);
 
-	@extend %box-shadow;
+	@extend %box-shadow-top;
 
 	.wrap {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: center;
 
 		@include mq($from: tablet) {
 			flex-wrap: nowrap;
@@ -26,9 +49,10 @@
 	.footer-widget-area {
 		margin-bottom: space(m);
 		padding: space(column, s);
+		width: 100%;
+		text-align: left;
 
-		&:last-of-type,
-		.widget:last-of-type {
+		&:last-of-type {
 			margin-bottom: 0;
 		}
 
@@ -43,14 +67,6 @@
 /* Site Footer */
 
 .site-footer {
-	background-color: color(light, soft);
-	padding: space(s) 0;
-	text-align: center;
-
-	@extend %font-size-s;
-
-	p {
-		margin-bottom: 0;
-		padding: space(column, s);
-	}
+	padding-bottom: space(m);
+	padding-top: space(s);
 }

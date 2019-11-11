@@ -8,15 +8,11 @@
 /* Site Header */
 
 .site-header {
-	background-color: color(light, soft);
+	position: absolute;
+	width: 100%;
+	z-index: 9999;
 
-	@extend %box-shadow;
-
-	@include mq($from: tablet) {
-		position: absolute;
-		width: 100%;
-		z-index: 9999;
-	}
+	@extend %box-shadow-bottom;
 
 	.wrap {
 		padding: 0;
@@ -57,11 +53,16 @@
 /* Title Area */
 
 .title-area {
-	float: left;
+	color: color(dark, base);
 	padding: space(left, s);
+	position: absolute;
+	text-align: left;
 
 	@include mq($from: tablet) {
 		padding: 0;
+		position: relative;
+		text-align: center;
+		width: auto;
 	}
 }
 
@@ -82,12 +83,10 @@
 .wp-custom-logo {
 
 	.title-area {
-		float: left;
 		height: 6rem;
 		margin-left: space(xs);
 		max-width: 68%;
 		padding: 0;
-		position: relative;
 		width: 100%;
 
 		@include mq($from: small-phone) {

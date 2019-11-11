@@ -240,23 +240,19 @@ p.entry-meta {
 		margin-left: 0;
 	}
 
-	input,
+	input:not([type="checkbox"]),
 	textarea {
 		width: 100%;
 	}
 
 	.comment-form-cookies-consent {
-		float: left;
 		clear: both;
+		float: left;
+		width: 100%;
 
 		input,
 		label {
 			display: inline-block;
-		}
-
-		input {
-			margin-right: space(xs);
-			vertical-align: middle;
 		}
 	}
 
