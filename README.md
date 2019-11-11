@@ -120,7 +120,6 @@ themes/your-theme-name/  # → Root of your child theme
  * [jquery.scrollTo](https://github.com/flesler/jquery.scrollTo)
  * [normalize-scss](https://github.com/JohnAlbin/normalize-scss)
  * [sass-mq](https://github.com/sass-mq/sass-mq)
- * [ScrollReveal](https://github.com/jlmakes/scrollreveal)
 
 
 ## Credits
