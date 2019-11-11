@@ -40,7 +40,9 @@ html {
 .site-inner,
 .widget,
 .wrap,
-.widget-area {
+.widget-area,
+.gform_wrapper,
+.content {
 
 	@include clearfix;
 }
