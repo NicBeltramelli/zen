@@ -1,37 +1,31 @@
 <?php
 /**
- * Genesis Advanced
+ * Space
  *
  * This file adds the WooCommerce setup functions.
  *
- * @package Genesis Advanced
+ * @package Space
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/space.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-/**
- * Enqueue custom WooCommerce style
- *
- * @since 3.0.0
- */
+/* Enqueue custom WooCommerce style */
 add_action(
 	'wp_enqueue_scripts',
 	function () {
 
 		if ( class_exists( 'woocommerce' ) ) {
 
-			wp_enqueue_style(
-				genesis_get_theme_handle() . '-woocommerce-styles',
-				genesis_advanced_asset_path( 'styles/woocommerce.css' ),
-				[],
-				genesis_get_theme_version()
-			);
+			/* Access the wpackio global var */
+			global $space_assets;
 
+			/* Main styles */
+			$space_assets->enqueue( 'woocommerce', 'main', [] );
 		}
 	},
 	99
@@ -54,8 +48,6 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 /**
  * Modify the WooCommerce breakpoints
- *
- * @since 3.0.0
  *
  * @return string Pixel width of the theme's breakpoint.
  */
@@ -87,8 +79,6 @@ add_filter(
 /**
  * Set the default products per page
  *
- * @since 3.0.0
- *
  * @return int Number of products to show per page.
  */
 add_filter(
@@ -103,8 +93,6 @@ add_filter(
 /**
  * Update the next and previous arrows to the default Genesis style
  *
- * @since 3.0.0
- *
  * @param array $args The previous and next text arguments.
  * @return array New next and previous text arguments.
  */
@@ -112,19 +100,15 @@ add_filter(
 	'woocommerce_pagination_args',
 	function ( $args ) {
 
-		$args['prev_text'] = sprintf( '&laquo; %s', __( 'Previous Page', 'genesis-advanced' ) );
-		$args['next_text'] = sprintf( '%s &raquo;', __( 'Next Page', 'genesis-advanced' ) );
+		$args['prev_text'] = sprintf( '&laquo; %s', __( 'Previous Page', 'space' ) );
+		$args['next_text'] = sprintf( '%s &raquo;', __( 'Next Page', 'space' ) );
 
 		return $args;
 
 	}
 );
 
-/**
- * Define WooCommerce image sizes on theme activation
- *
- * @since 3.0.0
- */
+/* Define WooCommerce image sizes on theme activation */
 add_action(
 	'after_switch_theme',
 	function () {
@@ -136,7 +120,7 @@ add_action(
 			return;
 		}
 
-		genesis_advanced_update_woocommerce_image_dimensions();
+		space_update_woocommerce_image_dimensions();
 
 	},
 	1
@@ -144,8 +128,6 @@ add_action(
 
 /**
  * Define the WooCommerce image sizes on WooCommerce activation
- *
- * @since 3.0.0
  *
  * @param string $plugin The path of the plugin being activated.
  */
@@ -158,7 +140,7 @@ add_action(
 			return;
 		}
 
-		genesis_advanced_update_woocommerce_image_dimensions();
+		space_update_woocommerce_image_dimensions();
 
 	},
 	10,
@@ -167,10 +149,8 @@ add_action(
 
 /**
  * Update WooCommerce image dimensions
- *
- * @since 3.0.0
  */
-function genesis_advanced_update_woocommerce_image_dimensions() {
+function space_update_woocommerce_image_dimensions() {
 
 	/* Update image size options */
 	update_option( 'woocommerce_single_image_width', 655 );    // Single product image.
@@ -183,8 +163,6 @@ function genesis_advanced_update_woocommerce_image_dimensions() {
 
 /**
  * Filter the WooCommerce gallery image dimensions
- *
- * @since 3.0.0
  *
  * @param array $size The gallery image size and crop arguments.
  * @return array The modified gallery image size and crop arguments.
@@ -207,8 +185,6 @@ add_filter(
 
 /**
  * Change number of thumbnails per row on product gallery
- *
- * @since 3.1.1
  *
  * @param array $wrapper_classes The number of thumbnails per row.
  * @return array The modified number of thumbnails per row.

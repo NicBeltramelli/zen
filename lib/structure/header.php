@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Advanced
+ * Space
  *
  * This file adds the header setting.
  *
- * @package Genesis Advanced
+ * @package Space
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/space.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -19,8 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Without this filter, the site title is hidden with CSS when a custom logo
  * is in use, but the link it contains is still accessible by keyboard.
- *
- * @since 3.4.0
  *
  * @param string $title  The full title.
  * @param string $inside The content inside the title element.

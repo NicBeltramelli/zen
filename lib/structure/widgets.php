@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Advanced
+ * Space
  *
  * This file adds the widgets settings.
  *
- * @package Genesis Advanced
+ * @package Space
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/space.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -28,7 +28,7 @@ unregister_sidebar(
 genesis_register_sidebar(
 	[
 		'id'          => 'privacy',
-		'name'        => __( 'Privacy', 'genesis-advanced' ),
-		'description' => __( 'This area is designed to display the Privacy sidebar menu.', 'genesis-advanced' ),
+		'name'        => __( 'Privacy', 'space' ),
+		'description' => __( 'This area is designed to display the Privacy sidebar menu.', 'space' ),
 	]
 );

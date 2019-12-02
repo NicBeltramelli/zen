@@ -1,9 +1,9 @@
 {
-    "name": "nicbeltramelli/genesis-advanced",
+    "name": "nicbeltramelli/space",
     "type": "wordpress-theme",
     "license": "GPL-2.0-or-later",
     "description": "Starter theme for Genesis Framework with a modern development workflow",
-    "homepage": "https://thematicpress.com/genesis-advanced/",
+    "homepage": "https://thematicpress.com/space/",
     "authors": [
         {
             "name": "Nic Beltramelli",
@@ -17,7 +17,8 @@
     ],
     "require": {
         "php": ">=7.1",
-        "composer/installers": "~1.0"
+        "composer/installers": "~1.0",
+        "wpackio/enqueue": "^2.0"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.2",
@@ -28,6 +29,6 @@
     "scripts": {
         "phpcs": "phpcs",
         "phpcbf": "phpcbf --report=diff -vv",
-        "export": "zip -r ../genesis-advanced.zip * .[^.]* -x '.*' '.git/*' '*.log' '*.lock' '.cache-loader/*' 'phpcs.xml.dist' 'composer.json' 'package.json' 'assets/*' 'node_modules/*' 'vendor/*'"
+        "export": "zip -r ../space.zip * .[^.]* -x '.*' '.git/*' '*.log' '*.lock' '.cache-loader/*' 'phpcs.xml.dist' 'composer.json' 'package.json' 'assets/*' 'node_modules/*' 'vendor/*'"
     }
 }

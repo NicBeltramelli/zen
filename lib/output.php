@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Advanced
+ * Space
  *
  * This file adds the required CSS to the front end.
  *
- * @package Genesis Advanced
+ * @package Space
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/space.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,22 +18,28 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Check the settings for the link color, accent color and logo width
  *
  * If any of these value are set the appropriate CSS is output.
- *
- * @since 3.0.0
  */
 add_action(
 	'wp_enqueue_scripts',
 	function () {
 
+		/* Access the wpackio global var */
+		global $space_assets;
+
+		/* Get CSS handle */
+		$assets      = $space_assets->getAssets( 'theme', 'main', [] );
+		$entry_point = array_pop( $assets['css'] );
+		$css_handle  = $entry_point['handle'];
+
 		/* Locate the config file */
 		$appearance = genesis_get_config( 'appearance' );
 
-		$color_link   = get_theme_mod( 'genesis_advanced_link_color', $appearance['default-colors']['link'] );
-		$color_accent = get_theme_mod( 'genesis_advanced_accent_color', $appearance['default-colors']['accent'] );
+		$color_link   = get_theme_mod( 'space_link_color', $appearance['default-colors']['link'] );
+		$color_accent = get_theme_mod( 'space_accent_color', $appearance['default-colors']['accent'] );
 		$logo         = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
 
 		if ( $logo ) {
-			$logo_max_width = get_theme_mod( 'genesis_advanced_logo_width', 250 );
+			$logo_max_width = get_theme_mod( 'space_logo_width', 250 );
 		}
 
 		$css = '';
@@ -122,7 +128,7 @@ add_action(
 			}
 			',
 			$color_accent,
-			genesis_advanced_color_contrast( $color_accent )
+			space_color_contrast( $color_accent )
 		) : '';
 
 		/* Output custom logo inline css */
@@ -208,7 +214,7 @@ add_action(
 
 		if ( $css ) {
 			wp_add_inline_style(
-				genesis_get_theme_handle() . '-styles',
+				$css_handle,
 				$css
 			);
 		}

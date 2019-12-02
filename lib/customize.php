@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Advanced
+ * Space
  *
  * This file adds the Customizer additions.
  *
- * @package Genesis Advanced
+ * @package Space
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/space.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,8 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Register settings and controls with the Customizer
- *
- * @since 3.0.0
  *
  * @param WP_Customize_Manager $wp_customize Customizer object.
  */
@@ -30,7 +28,7 @@ add_action(
 
 		/* Link color addition */
 		$wp_customize->add_setting(
-			'genesis_advanced_link_color',
+			'space_link_color',
 			[
 				'default'           => $appearance['default-colors']['link'],
 				'sanitize_callback' => 'sanitize_hex_color',
@@ -40,19 +38,19 @@ add_action(
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
-				'genesis_advanced_link_color',
+				'space_link_color',
 				[
-					'description' => __( 'Change the default color of post info links, the hover color of linked titles and menu items, and more.', 'genesis-advanced' ),
-					'label'       => __( 'Link Color', 'genesis-advanced' ),
+					'description' => __( 'Change the default color of post info links, the hover color of linked titles and menu items, and more.', 'space' ),
+					'label'       => __( 'Link Color', 'space' ),
 					'section'     => 'colors',
-					'settings'    => 'genesis_advanced_link_color',
+					'settings'    => 'space_link_color',
 				]
 			)
 		);
 
 		/* Accent color addition */
 		$wp_customize->add_setting(
-			'genesis_advanced_accent_color',
+			'space_accent_color',
 			[
 				'default'           => $appearance['default-colors']['accent'],
 				'sanitize_callback' => 'sanitize_hex_color',
@@ -62,34 +60,34 @@ add_action(
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
-				'genesis_advanced_accent_color',
+				'space_accent_color',
 				[
-					'description' => __( 'Change the default hovers color for buttons.', 'genesis-advanced' ),
-					'label'       => __( 'Accent Color', 'genesis-advanced' ),
+					'description' => __( 'Change the default hovers color for buttons.', 'space' ),
+					'label'       => __( 'Accent Color', 'space' ),
 					'section'     => 'colors',
-					'settings'    => 'genesis_advanced_accent_color',
+					'settings'    => 'space_accent_color',
 				]
 			)
 		);
 
 		/* Logo width addition */
 		$wp_customize->add_setting(
-			'genesis_advanced_logo_width',
+			'space_logo_width',
 			[
 				'default'           => 250,
 				'sanitize_callback' => 'absint',
-				'validate_callback' => 'genesis_advanced_validate_logo_width',
+				'validate_callback' => 'space_validate_logo_width',
 			]
 		);
 
 		$wp_customize->add_control(
-			'genesis_advanced_logo_width',
+			'space_logo_width',
 			[
-				'label'       => __( 'Logo Width', 'genesis-advanced' ),
-				'description' => __( 'The maximum width of the logo in pixels.', 'genesis-advanced' ),
+				'label'       => __( 'Logo Width', 'space' ),
+				'description' => __( 'The maximum width of the logo in pixels.', 'space' ),
 				'priority'    => 9,
 				'section'     => 'title_tagline',
-				'settings'    => 'genesis_advanced_logo_width',
+				'settings'    => 'space_logo_width',
 				'type'        => 'number',
 				'input_attrs' =>
 				[
@@ -105,18 +103,16 @@ add_action(
 /**
  * Display a message if the entered width is not numeric or greater than 100
  *
- * @since 3.4.0
- *
  * @param object $validity The validity status.
  * @param int    $width The width entered by the user.
  * @return int The new width.
  */
-function genesis_advanced_validate_logo_width( $validity, $width ) {
+function space_validate_logo_width( $validity, $width ) {
 
 	if ( empty( $width ) || ! is_numeric( $width ) ) {
-		$validity->add( 'required', __( 'You must supply a valid number.', 'genesis-advanced' ) );
+		$validity->add( 'required', __( 'You must supply a valid number.', 'space' ) );
 	} elseif ( $width < 100 ) {
-		$validity->add( 'logo_too_small', __( 'The logo width cannot be less than 100.', 'genesis-advanced' ) );
+		$validity->add( 'logo_too_small', __( 'The logo width cannot be less than 100.', 'space' ) );
 	}
 
 	return $validity;

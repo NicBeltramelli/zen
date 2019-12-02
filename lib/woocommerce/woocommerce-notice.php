@@ -1,24 +1,20 @@
 <?php
 /**
- * Genesis Advanced
+ * Space
  *
  * This file adds the "Genesis Connect for WooCommerce" notice.
  *
- * @package Genesis Advanced
+ * @package Space
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/space.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-/**
- * Remove the default WooCommerce Notice
- *
- * @since 3.0.0
- */
+/* Remove the default WooCommerce Notice */
 add_action(
 	'admin_print_styles',
 	function () {
@@ -36,8 +32,6 @@ add_action(
 /**
  * Add a prompt to activate Genesis Connect for WooCommerce
  * if WooCommerce is active but Genesis Connect is not
- *
- * @since 3.0.0
  */
 add_action(
 	'admin_notices',
@@ -57,13 +51,13 @@ add_action(
 		}
 
 		// If message dismissed, exit early.
-		if ( get_user_option( 'genesis_advanced_woocommerce_message_dismissed', get_current_user_id() ) ) {
+		if ( get_user_option( 'space_woocommerce_message_dismissed', get_current_user_id() ) ) {
 
 			return;
 		}
 
 		/* translators: %s: child theme name */
-		$notice_html = sprintf( __( 'Please install and activate <a href="https://wordpress.org/plugins/genesis-connect-woocommerce/" target="_blank">Genesis Connect for WooCommerce</a> to <strong>enable WooCommerce support for %s</strong>.', 'genesis-advanced' ), esc_html( CHILD_THEME_NAME ) );
+		$notice_html = sprintf( __( 'Please install and activate <a href="https://wordpress.org/plugins/genesis-connect-woocommerce/" target="_blank">Genesis Connect for WooCommerce</a> to <strong>enable WooCommerce support for %s</strong>.', 'space' ), esc_html( CHILD_THEME_NAME ) );
 
 		if ( current_user_can( 'install_plugins' ) ) {
 
@@ -83,85 +77,75 @@ add_action(
 				),
 				__(
 					'install and activate Genesis Connect for WooCommerce',
-					'genesis-advanced'
+					'space'
 				)
 			);
 
 			/* translators: 1: plugin install prompt presented as link, 2: child theme name */
-			$notice_html = sprintf( __( 'Please %1$s to <strong>enable WooCommerce support for %2$s</strong>.', 'genesis-advanced' ), $install_link, esc_html( CHILD_THEME_NAME ) );
+			$notice_html = sprintf( __( 'Please %1$s to <strong>enable WooCommerce support for %2$s</strong>.', 'space' ), $install_link, esc_html( CHILD_THEME_NAME ) );
 		}
 
-		echo '<div class="notice notice-info is-dismissible genesis-advanced-woocommerce-notice"><p>' . wp_kses_post( $notice_html ) . '</p></div>';
+		echo '<div class="notice notice-info is-dismissible space-woocommerce-notice"><p>' . wp_kses_post( $notice_html ) . '</p></div>';
 
 	}
 );
 
 add_action(
-	'wp_ajax_genesis_advanced_dismiss_woocommerce_notice',
-	'genesis_advanced_dismiss_woocommerce_notice'
+	'wp_ajax_space_dismiss_woocommerce_notice',
+	'space_dismiss_woocommerce_notice'
 );
-/**
- * Add option to dismiss Genesis Connect for WooCommerce plugin install prompt
- *
- * @since 3.0.0
- */
-function genesis_advanced_dismiss_woocommerce_notice() {
-	update_user_option( get_current_user_id(), 'genesis_advanced_woocommerce_message_dismissed', 1 );
-}
 
 /**
- * Enqueue script to clear the Genesis Connect for WooCommerce plugin install prompt on dismissal
- *
- * @since 3.0.0
+ * Add option to dismiss Genesis Connect for WooCommerce plugin install prompt
  */
+function space_dismiss_woocommerce_notice() {
+	update_user_option( get_current_user_id(), 'space_woocommerce_message_dismissed', 1 );
+}
+
+/* Enqueue script to clear the Genesis Connect for WooCommerce plugin install prompt on dismissal */
 add_action(
 	'admin_enqueue_scripts',
 	function () {
 
-		wp_enqueue_script(
-			genesis_get_theme_handle() . '-scripts',
-			genesis_advanced_asset_path( 'scripts/woocommerce-notice-update.js' ),
-			[ 'jquery' ],
-			genesis_get_theme_version(),
-			true
-		);
+		/* Access the wpackio global var */
+		global $space_assets;
+
+		/* Main styles */
+		$space_assets->enqueue( 'woocommerce', 'notice', [] );
 
 	}
 );
 
 add_action(
 	'switch_theme',
-	'genesis_advanced_reset_woocommerce_notice',
+	'space_reset_woocommerce_notice',
 	10,
 	2
 );
+
 /**
  * Clear the Genesis Connect for WooCommerce plugin install prompt on theme change
- *
- * @since 3.0.0
  */
-function genesis_advanced_reset_woocommerce_notice() {
+function space_reset_woocommerce_notice() {
 
 	global $wpdb;
 
 	$args =
 	[
-		'meta_key'   => $wpdb->prefix . 'genesis_advanced_woocommerce_message_dismissed',
+		'meta_key'   => $wpdb->prefix . 'space_woocommerce_message_dismissed',
 		'meta_value' => 1,
 	];
 
 	$users = get_users( $args );
 
 	foreach ( $users as $user ) {
-		delete_user_option( $user->ID, 'genesis_advanced_woocommerce_message_dismissed' );
+		delete_user_option( $user->ID, 'space_woocommerce_message_dismissed' );
 	}
 
 }
 
 /**
  * Clear the Genesis Connect for WooCommerce plugin prompt on deactivation
- *
- * @since 3.0.0
  *
  * @param string $plugin The plugin slug.
  * @param bool   $network_deactivating Whether the plugin is deactivated for all sites in the network. or just the current site.
@@ -175,7 +159,7 @@ add_action(
 			return;
 		}
 
-		genesis_advanced_reset_woocommerce_notice();
+		space_reset_woocommerce_notice();
 
 	},
 	10,

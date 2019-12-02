@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Advanced
+ * Space
  *
  * This file adds the responsive menus settings (Requires Genesis 3.0+).
  *
- * @package Genesis Advanced
+ * @package Space
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/space.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,9 +16,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 return [
 	'script' => [
-		'mainMenu'         => __( '', 'genesis-advanced' ), // phpcs:ignore
+		'mainMenu'         => __( '', 'space' ), // phpcs:ignore
 		'menuIconClass'    => 'dashicons-before dashicons-menu',
-		'subMenu'          => __( 'Submenu', 'genesis-advanced' ),
+		'subMenu'          => __( 'Submenu', 'space' ),
 		'subMenuIconClass' => 'dashicons-before dashicons-arrow-down-alt2',
 
 		'menuClasses'      => [

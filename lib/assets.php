@@ -1,32 +1,31 @@
 <?php
 /**
- * Genesis Advanced
+ * Space
  *
  * This file enqueues assets.
  *
- * @package Genesis Advanced
+ * @package Space
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/space.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-/**
- * Enqueue assets
- *
- * @since 3.0.0
- */
+/* Enqueue assets */
 add_action(
 	'wp_enqueue_scripts',
 	function () {
 
+		/* Access the wpackio global var */
+		global $space_assets;
+
 		/* Locate the config file */
 		$appearance = genesis_get_config( 'appearance' );
 
-		/* Enqueue Google Fonts */
+		/* Google Fonts */
 		wp_enqueue_style(
 			genesis_get_theme_handle() . '-fonts',
 			$appearance['fonts-url'],
@@ -34,7 +33,7 @@ add_action(
 			genesis_get_theme_version()
 		);
 
-		/* Enqueue ionicons icons */
+		/* Ionicons icons */
 		wp_enqueue_style(
 			genesis_get_theme_handle() . '-ionicons',
 			$appearance['ionicons'],
@@ -42,29 +41,15 @@ add_action(
 			genesis_get_theme_version()
 		);
 
-		/* Enqueue Dashicons */
+		/* Dashicons icons */
 		wp_enqueue_style(
 			'dashicons'
 		);
 
-		/* Enqueue main style */
-		wp_enqueue_style(
-			genesis_get_theme_handle() . '-styles',
-			genesis_advanced_asset_path( 'styles/main.css' ),
-			[],
-			genesis_get_theme_version()
-		);
+		/* Theme styles and scripts */
+		$space_assets->enqueue( 'theme', 'main', [] );
 
-		/* Enqueue main script */
-		wp_enqueue_script(
-			genesis_get_theme_handle() . '-scripts',
-			genesis_advanced_asset_path( 'scripts/main.js' ),
-			[ 'jquery' ],
-			genesis_get_theme_version(),
-			true
-		);
-
-		/* Enqueue comment reply js */
+		/* Comment reply js */
 		if (
 		is_single() &&
 		comments_open() &&

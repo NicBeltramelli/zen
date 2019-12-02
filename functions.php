@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Advanced
+ * Space
  *
- * This file adds the function library to Genesis Advanced Theme.
+ * This file adds the function library to Space Theme.
  *
- * @package Genesis Advanced
+ * @package Space
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/space.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -19,17 +19,21 @@ require_once get_stylesheet_directory() . '/lib/errors.php'; // Display error me
 require_once get_template_directory() . '/lib/init.php'; // Initialize Genesis Framework.
 
 /**
- * The $genesis_advanced_includes array determines the code library included in your child theme
+ * Use the WPackio PHP API to consume assets
+ *
+ * @see https://wpack.io/guides/using-wpackio-enqueue/
+ */
+require_once __DIR__ . '/vendor/autoload.php'; // Require composer autoload for access the WPackio API.
+
+$space_assets = new \WPackio\Enqueue( 'space', 'dist', genesis_get_theme_version(), 'theme', false, 'child' ); // Instantiate the WPackio Enqueue class.
+
+/**
+ * The $space_includes array determines the code library included in your child theme
  *
  * Add or remove files to the array as needed.
  * Please note that missing files will produce a fatal error.
- *
- * @since 3.0.0
  */
-$genesis_advanced_includes = [
-
-	/* Classes */
-	'lib/classes/class-genesis-advanced-manifest.php', // Configure paths for assets.
+$space_includes = [
 
 	/* Theme Setup */
 	'lib/assets.php', // Enqueue assets.
@@ -58,27 +62,27 @@ $genesis_advanced_includes = [
 
 ];
 
-foreach ( $genesis_advanced_includes as $genesis_advanced_file ) {
+foreach ( $space_includes as $space_file ) {
 
-	if ( ! locate_template( $genesis_advanced_file, true, true ) ) {
+	if ( ! locate_template( $space_file, true, true ) ) {
 
-		$genesis_advanced_error(
+		$space_error(
 			sprintf(
 				/* translators: %s is replaced with the name of missing file */
 				esc_html__(
 					'Error locating %s for inclusion.',
-					'genesis-advanced'
+					'space'
 				),
 				sprintf(
 					'<code>%s</code>',
-					esc_html( $genesis_advanced_file )
+					esc_html( $space_file )
 				)
 			),
 			esc_html__(
 				'File not found',
-				'genesis-advanced'
+				'space'
 			)
 		);
 	}
 }
-unset( $genesis_advanced_file );
+unset( $space_file );

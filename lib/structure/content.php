@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Advanced
+ * Space
  *
  * This file adds the content setting.
  *
- * @package Genesis Advanced
+ * @package Space
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/space.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,8 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Modify the size of the Gravatar in the author box
- *
- * @since 3.0.0
  *
  * @param int $size Original icon size.
  * @return int Modified icon size.
@@ -34,8 +32,6 @@ add_filter(
 /**
  * Modify the size of the Gravatar in the entry comments
  *
- * @since 3.0.0
- *
  * @param array $args Gravatar settings.
  * @return array Gravatar settings with modified size.
  */
@@ -49,11 +45,7 @@ add_filter(
 	}
 );
 
-/**
- * Add single post navigation
- *
- * @since 3.0.0
- */
+/* Add single post navigation */
 add_action(
 	'genesis_before_while',
 	function () {
@@ -67,8 +59,6 @@ add_action(
 
 /**
  * Disable comments URL field
- *
- * @since 3.0.0
  *
  * @param array $fiels Default comment fields.
  * @return array Comment form fields.
@@ -88,7 +78,7 @@ add_filter(
 	'genesis_more_text',
 	function () {
 
-		$more_text = genesis_a11y_more_link( __( '[ Read More ]', 'genesis-advanced' ) );
+		$more_text = genesis_a11y_more_link( __( '[ Read More ]', 'space' ) );
 
 		return $more_text;
 

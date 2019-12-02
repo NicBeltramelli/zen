@@ -1,27 +1,26 @@
 <?php
 /**
- * Genesis Advanced
+ * Space
  *
  * This file adds support for Gutenberg blocks.
  *
- * @package Genesis Advanced
+ * @package Space
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/space.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-/**
- * Enqueue assets
- *
- * @since 3.3.0
- */
+/* Enqueue assets */
 add_action(
 	'enqueue_block_editor_assets',
 	function () {
+
+		/* Access the wpackio global var */
+		global $space_assets;
 
 		/* Locate the config file */
 		$appearance = genesis_get_config( 'appearance' );
@@ -34,25 +33,14 @@ add_action(
 			genesis_get_theme_version()
 		);
 
-		/* Enqueue editor style */
-		wp_enqueue_style(
-			genesis_get_theme_handle() . '-editor-style',
-			genesis_advanced_asset_path( 'styles/editor.css' ),
-			[],
-			genesis_get_theme_version()
-		);
+		/* Editor styles */
+		$space_assets->enqueue( 'theme', 'editor', [] );
 
-		/* Enqueue blocks script */
-		wp_enqueue_script(
-			genesis_get_theme_handle() . '-blocks-scripts',
-			genesis_advanced_asset_path( 'scripts/blocks.js' ),
-			[ 'wp-blocks', 'wp-dom' ],
-			genesis_get_theme_version(),
-			true
-		);
+		/* Blocks scripts */
+		$space_assets->enqueue( 'theme', 'blocks', [] );
 
 		/* Output link color inline css */
-		$color_link = get_theme_mod( 'genesis_advanced_link_color', $appearance['default-colors']['link'] );
+		$color_link = get_theme_mod( 'space_link_color', $appearance['default-colors']['link'] );
 
 		$css = '';
 
@@ -76,74 +64,42 @@ add_action(
 	}
 );
 
-/**
- * Add support for editor styles
- *
- * @since 3.3.0
- */
+/* Add support for editor styles */
 add_theme_support(
 	'editor-styles'
 );
 
-/**
- * Locate the config file
- *
- * @since 3.4.0
- */
-$genesis_advanced_appearance = genesis_get_config( 'appearance' );
+/* Locate the config file */
+$space_appearance = genesis_get_config( 'appearance' );
 
-/**
- * Add support for editor color palette
- *
- * @since 3.3.0
- */
+/* Add support for editor color palette */
 add_theme_support(
 	'editor-color-palette',
-	$genesis_advanced_appearance['editor-color-palette']
+	$space_appearance['editor-color-palette']
 );
 
-/**
- * Disable Custom Colors
- *
- * @since 3.3.0
- */
+/* Disable Custom Colors */
 add_theme_support(
 	'disable-custom-colors'
 );
 
-/**
- * Add support for block alignments
- *
- * @since 3.3.0
- */
+/* Add support for block alignments */
 add_theme_support(
 	'align-wide'
 );
 
-/**
- * Add support for Responsive Embeds
- *
- * @since 3.3.0
- */
+/* Add support for Responsive Embeds */
 add_theme_support(
 	'responsive-embeds'
 );
 
-/**
- * Add support for Editor Text Size Palette
- *
- * @since 3.3.0
- */
+/* Add support for Editor Text Size Palette */
 add_theme_support(
 	'editor-font-sizes',
-	$genesis_advanced_appearance['editor-font-sizes']
+	$space_appearance['editor-font-sizes']
 );
 
-/**
- * Disable custom font sizes
- *
- * @since 3.3.0
- */
+/* Disable custom font sizes */
 add_theme_support(
 	'disable-custom-font-sizes'
 );

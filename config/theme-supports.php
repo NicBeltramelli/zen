@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Advanced
+ * Space
  *
  * This file adds the desired theme supports
  *
- * @package Genesis Advanced
+ * @package Space
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/space.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -38,8 +38,8 @@ return [
 	'genesis-after-entry-widget-area' => '',
 	'genesis-footer-widgets'          => 3,
 	'genesis-menus'                   => [
-		'primary'   => __( 'Header Right', 'genesis-advanced' ),
-		'secondary' => __( 'Header Left', 'genesis-advanced' ),
-		'tertiary'  => __( 'Footer', 'genesis-advanced' ),
+		'primary'   => __( 'Header Right', 'space' ),
+		'secondary' => __( 'Header Left', 'space' ),
+		'tertiary'  => __( 'Footer', 'space' ),
 	],
 ];

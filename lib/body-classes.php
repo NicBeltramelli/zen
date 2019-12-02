@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Advanced
+ * Space
  *
  * This file adds body classes to the body tag.
  *
- * @package Genesis Advanced
+ * @package Space
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/space.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,10 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Add consistent classes to the body tag
  *
  * @param  array $classes Body classes.
- *
  * @return array
- *
- * @since 3.0.0
  */
 add_filter(
 	'body_class',
@@ -91,8 +88,6 @@ add_filter(
  * Outputting the script immediately also reduces a flash of incorrectly styled
  * content, as the page does not load with no-js styles, then switch to js
  * once everything has finished loading.
- *
- * @since  3.0.0
  *
  * @return void
  */

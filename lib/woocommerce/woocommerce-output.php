@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Advanced
+ * Space
  *
  * This file adds the WooCommerce inline styles.
  *
- * @package Genesis Advanced
+ * @package Space
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/space.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,8 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Add the themes's custom CSS to the WooCommerce stylesheet
- *
- * @since 3.0.0
  *
  * @return string CSS to be outputted after the theme's custom WooCommerce stylesheet.
  */
@@ -30,11 +28,19 @@ add_action(
 			return;
 		}
 
+		/* Access the wpackio global var */
+		global $space_assets;
+
+		/* Get CSS handle */
+		$assets      = $space_assets->getAssets( 'woocommerce', 'main', [] );
+		$entry_point = array_pop( $assets['css'] );
+		$css_handle  = $entry_point['handle'];
+
 		/* Locate the config file */
 		$appearance = genesis_get_config( 'appearance' );
 
-		$color_link   = get_theme_mod( 'genesis_advanced_link_color', $appearance['default-colors']['link'] );
-		$color_accent = get_theme_mod( 'genesis_advanced_accent_color', $appearance['default-colors']['accent'] );
+		$color_link   = get_theme_mod( 'space_link_color', $appearance['default-colors']['link'] );
+		$color_accent = get_theme_mod( 'space_accent_color', $appearance['default-colors']['accent'] );
 
 		$woo_css = '';
 
@@ -83,12 +89,12 @@ add_action(
 			}
 			',
 			$color_accent,
-			genesis_advanced_color_contrast( $color_accent )
+			space_color_contrast( $color_accent )
 		) : '';
 
 		if ( $woo_css ) {
 			wp_add_inline_style(
-				genesis_get_theme_handle() . '-woocommerce-styles',
+				$css_handle,
 				$woo_css
 			);
 		}

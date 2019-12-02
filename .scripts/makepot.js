@@ -14,7 +14,7 @@ wpi18n.makepot(
 		potHeaders: {
 			'poedit': true,
 			'x-poedit-basepath': '..',
-			'report-msgid-bugs-to': 'https://github.com/NicBeltramelli/genesis-advanced'
+			'report-msgid-bugs-to': 'https://github.com/NicBeltramelli/space'
 		}
 	}
 ).then(

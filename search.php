@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Advanced
+ * Space
  *
  * This file adds the search template.
  *
- * @package Genesis Advanced
+ * @package Space
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/space.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -23,7 +23,7 @@ add_action(
 	function () {
 
 		echo '<div class="archive-description">';
-		echo '<h1 class="archive-title">' . esc_html__( 'Search Results:', 'genesis-advanced' ) . '</h1>';
+		echo '<h1 class="archive-title">' . esc_html__( 'Search Results:', 'space' ) . '</h1>';
 		echo '</div>';
 	}
 );

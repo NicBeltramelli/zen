@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Advanced
+ * Space
  *
  * This file adds the navigation setting.
  *
- * @package Genesis Advanced
+ * @package Space
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/space.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,8 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Register the responsive menus
- *
- * @since 3.4.0
  *
  * See config file at `config/responsive-menus.php`.
  */
@@ -54,8 +52,6 @@ add_action(
 /**
  * Reduce tertiary navigation menu to one level depth
  *
- * @since 3.6.0
- *
  * @param array $args Original menu options.
  * @return array Menu options with depth set to 1.
  */
@@ -74,17 +70,11 @@ add_filter(
 	}
 );
 
-/**
- * Add attributes for navigation elements
- *
- * @since 3.6.0
- */
+/* Add attributes for navigation elements */
 add_filter( 'genesis_attr_nav-custom', 'genesis_attributes_nav' );
 
 /**
  * Add ID markup to custom navigation
- *
- * @since 3.6.0
  *
  * @param array $attributes Existing attributes for custom navigation element.
  * @return array Amended attributes for custom navigation element.
@@ -101,8 +91,6 @@ add_filter(
 /**
  * Add skip link for tertiary navigation
  *
- * @since 3.6.0
- *
  * @param array $links Existing skiplinks.
  * @return array Amended skiplinks.
  */
@@ -112,7 +100,7 @@ add_filter(
 		if ( genesis_nav_menu_supported( 'tertiary' ) &&
 			has_nav_menu( 'tertiary' ) ) :
 
-			$links['genesis-nav-tertiary'] = __( 'Skip to tertiary navigation', 'genesis-advanced' );
+			$links['genesis-nav-tertiary'] = __( 'Skip to tertiary navigation', 'space' );
 
 		endif;
 
@@ -120,11 +108,7 @@ add_filter(
 	}
 );
 
-/**
- * Display the tertiary menu
- *
- * @since 3.6.0
- */
+/* Display the tertiary menu */
 add_action(
 	'genesis_after_footer', function () {
 
