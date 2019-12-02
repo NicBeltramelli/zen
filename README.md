@@ -1,3 +1,3 @@
 # Space
 
-**Warning! This project is under development**
+**Warning! This project is under active development**

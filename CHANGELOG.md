@@ -1,7 +1,7 @@
 # Space Changelog
 
 ## [dev]
-* Move to wpackio
+* Move to wpack.io
 * Rebrand as Space
 
 ## [3.6.0] - 2019-11-11
