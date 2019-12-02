@@ -1,6 +1,6 @@
 {
-  "name": "space-2",
-  "version": "0.1.0",
+  "name": "space",
+  "version": "dev",
   "private": true,
   "devDependencies": {
     "@wpackio/scripts": "^4.2.0",
