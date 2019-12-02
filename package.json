@@ -12,6 +12,9 @@
     "start": "wpackio-scripts start",
     "archive": "wpackio-scripts pack"
   },
+  "browserslist": [
+    "defaults"
+  ],
   "dependencies": {
     "@wpackio/entrypoint": "^4.2.0",
     "normalize-scss": "^7.0.1",
