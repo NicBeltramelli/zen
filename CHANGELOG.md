@@ -1,6 +1,7 @@
 # Space Changelog
 
 ## [dev]
+* Add header options
 * Add linters
 * Remove editor font sizes support
 * Move to wpack.io

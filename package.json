@@ -23,6 +23,8 @@
   ],
   "dependencies": {
     "@wpackio/entrypoint": "^4.2.0",
+    "animate.css": "^3.7.2",
+    "headroom.js": "^0.10.3",
     "normalize-scss": "^7.0.1",
     "sass-mq": "^5.0.0"
   }

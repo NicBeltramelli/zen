@@ -15,6 +15,17 @@
 
 	@extend %box-shadow-bottom;
 
+	.has-fixed-header & {
+		position: fixed;
+	}
+
+	.has-floating-header & {
+
+		@include mq($from: tablet) {
+			position: fixed;
+		}
+	}
+
 	.wrap {
 		padding: 0;
 

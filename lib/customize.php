@@ -97,6 +97,35 @@ add_action(
 			]
 		);
 
+		/* Header options addition */
+		$wp_customize->add_setting(
+			'space_header_options',
+			[
+				'capability' => 'edit_theme_options',
+				'default'    => 'normal',
+				'transport'  => 'refresh',
+			]
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'space_header_options',
+				[
+
+					'label'    => __( 'Header Options', 'space' ),
+					'settings' => 'space_header_options',
+					'section'  => 'genesis_layout',
+					'type'     => 'radio',
+					'choices'  =>
+					[
+						'normal'          => __( 'Normal', 'space' ),
+						'fixed-header'    => __( 'Fixed', 'space' ),
+						'floating-header' => __( 'Floating (active from tablet)', 'space' ),
+					],
+				]
+			)
+		);
 	}
 );
 

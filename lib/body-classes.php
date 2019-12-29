@@ -55,6 +55,14 @@ add_filter(
 			$classes[]      = $template_class;
 		}
 
+		if ( 'fixed-header' === get_theme_mod( 'space_header_options', false ) ) {
+			$classes[] = 'has-fixed-header';
+		}
+
+		if ( 'floating-header' === get_theme_mod( 'space_header_options', false ) ) {
+			$classes[] = 'has-floating-header';
+		}
+
 		if ( ! is_singular() ||
 			! function_exists( 'has_blocks' ) ||
 			! function_exists( 'parse_blocks' ) ) {
