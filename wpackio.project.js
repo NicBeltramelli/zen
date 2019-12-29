@@ -1,4 +1,5 @@
 const pkg = require('./package.json');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
 	// Project Identity
@@ -26,8 +27,22 @@ module.exports = {
 				blocks: ['./src/scripts/blocks.js'],
 				editor: ['./src/scripts/editor.js'],
 			},
-		// 	// Extra webpack config to be passed directly
-		// 	webpackConfig: undefined,
+			// Extra webpack config to be passed directly
+		 	webpackConfig: {
+				module: {
+					rules: [
+						{
+							enforce: 'pre',
+							test: /\.js$/,
+							exclude: /node_modules/,
+							loader: 'eslint-loader',
+						},
+					],
+				},
+				plugins: [
+					new StylelintPlugin(),
+				],
+			},
 		},
 		// If has more length, then multi-compiler
 		{

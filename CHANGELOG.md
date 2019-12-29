@@ -1,6 +1,7 @@
 # Space Changelog
 
 ## [dev]
+* Add linters
 * Remove editor font sizes support
 * Move to wpack.io
 * Rebrand as Space
