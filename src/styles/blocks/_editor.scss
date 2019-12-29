@@ -11,26 +11,15 @@
 *	- Columns
 *	- Quotes
 *	- Video
-*	- Components Panel
-*		- Buttons
-*		- Separators
 *	- Atomic Blocks
 */
 
-/* --------- Still under development --------- */
+/* --------- Under development --------- */
 
 /* Common */
 
 .block-editor-block-list__layout {
 	padding: 0;
-
-	.block-editor-block-list__block-edit {
-
-		@include mq($from: tablet) {
-			margin-top: space(s);
-			margin-bottom: space(s);
-		}
-	}
 }
 
 .wp-block {
@@ -528,42 +517,6 @@ ul.wp-block-archives {
 
 		video {
 			width: 100vw;
-		}
-	}
-}
-
-/* Components Panel */
-
-&.editor-block-preview__content {
-
-	/* Buttons */
-	.wp-block-button {
-		left: 50%;
-		top: 50%;
-		position: absolute;
-		transform: translate(-50%, -50%);
-	}
-
-	/* Separators */
-	.wp-block-separator {
-		margin-left: auto;
-		margin-right: auto;
-
-		&.is-style-dots,
-		&.is-style-empty {
-			margin-bottom: 0;
-			margin-top: 0;
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-		}
-
-		&.is-style-dots {
-
-			&::before {
-				letter-spacing: 0.8em;
-				padding-left: 0.8em;
-			}
 		}
 	}
 }

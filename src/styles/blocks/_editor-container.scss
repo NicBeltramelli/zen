@@ -1,6 +1,6 @@
 /* Blocks Editor Container */
 
-/* --------- Still under development --------- */
+/* --------- Under development --------- */
 
 .block-editor__container {
 
@@ -16,7 +16,7 @@
 // Need work.
 // Align editor width with front end.
 
-.editor-styles-wrapper:not(.editor-block-preview__content) {
+.editor-styles-wrapper {
 	background-color: color(light, soft);
 	font-family: $base-font-sans;
 	font-weight: 400;
