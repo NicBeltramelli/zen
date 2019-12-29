@@ -27,6 +27,7 @@ module.exports = {
 				blocks: ['./src/scripts/blocks.js'],
 				editor: ['./src/scripts/editor.js'],
 				floatingHeader: ['./src/scripts/floating-header.js'],
+				blocksanimation: ['./src/scripts/blocksanimation.js'],
 			},
 			// Extra webpack config to be passed directly
 		 	webpackConfig: {

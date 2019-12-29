@@ -1,6 +1,7 @@
 # Space Changelog
 
 ## [dev]
+* Add blocks animation
 * Add header options
 * Add linters
 * Remove editor font sizes support
