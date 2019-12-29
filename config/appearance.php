@@ -92,36 +92,4 @@ return [
 			'color' => '#f2ff49',
 		],
 	],
-	'editor-font-sizes'    => [
-		[
-			'name'      => __( 'Small', 'space' ),
-			'shortName' => __( 'S', 'space' ),
-			'size'      => '15',
-			'slug'      => 'small',
-		],
-		[
-			'name'      => __( 'Normal', 'space' ),
-			'shortName' => __( 'N', 'space' ),
-			'size'      => '18',
-			'slug'      => 'normal',
-		],
-		[
-			'name'      => __( 'Medium', 'space' ),
-			'shortName' => __( 'M', 'space' ),
-			'size'      => '21.6',
-			'slug'      => 'medium',
-		],
-		[
-			'name'      => __( 'Large', 'space' ),
-			'shortName' => __( 'L', 'space' ),
-			'size'      => '25.92',
-			'slug'      => 'large',
-		],
-		[
-			'name'      => __( 'Huge', 'space' ),
-			'shortName' => __( 'XL', 'space' ),
-			'size'      => '37.325',
-			'slug'      => 'huge',
-		],
-	],
 ];

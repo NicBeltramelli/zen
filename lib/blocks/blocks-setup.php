@@ -93,12 +93,6 @@ add_theme_support(
 	'responsive-embeds'
 );
 
-/* Add support for Editor Text Size Palette */
-add_theme_support(
-	'editor-font-sizes',
-	$space_appearance['editor-font-sizes']
-);
-
 /* Disable custom font sizes */
 add_theme_support(
 	'disable-custom-font-sizes'
