@@ -66,7 +66,6 @@ add_filter(
 		if ( ! is_singular() ||
 			! function_exists( 'has_blocks' ) ||
 			! function_exists( 'parse_blocks' ) ) {
-
 			return $classes;
 		}
 
