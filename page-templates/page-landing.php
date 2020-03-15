@@ -2,7 +2,7 @@
 /**
  * Space
  *
- * This file adds the front page template.
+ * Template Name: Landing Page
  *
  * @package Space
  * @author  NicBeltramelli
@@ -14,4 +14,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+/* Run the Genesis loop */
 genesis();

@@ -14,12 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-/* Force full width content layout */
-add_filter(
-	'genesis_site_layout',
-	'__genesis_return_sidebar_content'
-);
-
 remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
 
 /* Display privacy sidebar menu */
