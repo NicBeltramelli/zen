@@ -1,26 +1,4 @@
-/**
-* Reset
-*
-*	- Box Sizing
-*	- Float Clearing
-*/
-
-/* Box Sizing */
-
-html {
-	box-sizing: border-box;
-}
-
-* {
-	box-sizing: inherit;
-
-	&::before,
-	&::after {
-		box-sizing: inherit;
-	}
-}
-
-/* Float Clearing */
+/* Clearfix */
 
 .author-box,
 .clearfix,

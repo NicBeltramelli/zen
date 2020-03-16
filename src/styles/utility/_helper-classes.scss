@@ -20,6 +20,7 @@
 *	- Position
 *	- Tables
 *	- Visibility
+*	- Full height Img
 */
 
 /* Box Shadow */
@@ -30,6 +31,7 @@
 }
 
 .has-box-shadow-hover {
+	transition: $base-transition;
 
 	@extend %box-shadow;
 
@@ -157,7 +159,7 @@
 .ion {
 
 	&.featured-icon {
-		font-size: 4rem;
+		font-size: 3rem;
 		margin-bottom: space(xs);
 		text-shadow: 0.1em 0.1em 0 color(shadow);
 		text-rendering: optimizeLegibility;
@@ -317,6 +319,17 @@
 	}
 }
 
+.has-full-height-from-tablet {
+
+	@include mq($from: tablet) {
+		min-height: calc(100vh);
+
+		.admin-bar & {
+			min-height: calc(100vh - 32px);
+		}
+	}
+}
+
 .has-full-height-header {
 
 	min-height: calc(100vh - 6rem);
@@ -329,6 +342,49 @@
 
 		@include mq($from: admin-bar) {
 			min-height: calc(100vh - 6rem - 32px);
+		}
+	}
+}
+
+.has-full-height-header-from-tablet {
+
+	@include mq($from: tablet) {
+		min-height: calc(100vh - 6rem);
+
+		.admin-bar & {
+			min-height: calc(100vh - 6rem - 32px);
+		}
+	}
+}
+
+.has-max-height-page {
+	max-height: 100vh;
+	overflow: hidden;
+
+	.admin-bar & {
+
+		@include mq($until: admin-bar) {
+			max-height: calc(100vh - 46px);
+		}
+
+		@include mq($from: admin-bar) {
+			max-height: calc(100vh - 32px);
+		}
+	}
+}
+
+.has-max-height-page-header {
+	max-height: calc(100vh - 6rem);
+	overflow: hidden;
+
+	.admin-bar & {
+
+		@include mq($until: admin-bar) {
+			max-height: calc(100vh - 6rem - 46px);
+		}
+
+		@include mq($from: admin-bar) {
+			max-height: calc(100vh - 6rem - 32px);
 		}
 	}
 }
@@ -369,12 +425,24 @@
 	margin-bottom: 0 !important;
 }
 
+.has-margin-bottom-xs {
+	margin-bottom: space(xs) !important;
+}
+
 .has-margin-bottom {
 	margin-bottom: space(s) !important;
 }
 
 .has-margin-bottom-m {
 	margin-bottom: space(m) !important;
+}
+
+.has-margin-bottom-l {
+	margin-bottom: space(l) !important;
+}
+
+.has-margin-bottom-xl {
+	margin-bottom: space(xl) !important;
 }
 
 /* Menu Flex Center */
@@ -688,6 +756,18 @@
 
 /* Visibility */
 
+.hide {
+	display: none;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.visible {
+	visibility: visible;
+}
+
 .hide-phone {
 
 	@include mq($until: phone) {
@@ -697,6 +777,14 @@
 
 .visible-phone {
 	display: block;
+
+	@include mq($from: phone) {
+		display: none;
+	}
+}
+
+.visible-phone-flex {
+	display: flex;
 
 	@include mq($from: phone) {
 		display: none;
@@ -715,5 +803,47 @@
 
 	@include mq($from: tablet) {
 		display: none;
+	}
+}
+
+.visible-tablet-flex {
+	display: flex;
+
+	@include mq($from: tablet) {
+		display: none;
+	}
+}
+
+/* Full Height Img */
+
+.has-full-height-img-from-tablet {
+
+	img {
+
+		@include mq($from: tablet) {
+			min-height: 100vh;
+
+			.admin-bar & {
+				min-height: calc(100vh - 32px);
+			}
+		}
+	}
+}
+
+.has-full-height-img {
+
+	img {
+		min-height: 100vh;
+
+		.admin-bar & {
+
+			@include mq($until: admin-bar) {
+				min-height: calc(100vh - 46px);
+			}
+
+			@include mq($from: admin-bar) {
+				min-height: calc(100vh - 32px);
+			}
+		}
 	}
 }
