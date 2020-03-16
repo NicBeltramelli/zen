@@ -8,12 +8,12 @@
 /* Site Header */
 
 .site-header {
-	background-color: color(light, soft);
+	background: color(dark, strong);
+	height: space(l);
 	position: absolute;
+	transition: $base-transition;
 	width: 100%;
 	z-index: 9999;
-
-	@extend %box-shadow-bottom;
 
 	.has-fixed-header & {
 		position: fixed;
@@ -62,10 +62,23 @@
 	}
 }
 
+.page-landing,
+.has-featured-image {
+
+	.site-header {
+
+		@extend %gradient-top;
+
+		&.header-not-top {
+			background: color(dark, strong);
+		}
+	}
+}
+
 /* Title Area */
 
 .title-area {
-	color: color(dark, base);
+	color: color(light, soft);
 	padding: space(left, s);
 	position: absolute;
 	text-align: left;
@@ -88,7 +101,7 @@
 
 	a {
 		text-decoration: none;
-		color: color(dark, strong);
+		color: color(light, soft);
 	}
 }
 

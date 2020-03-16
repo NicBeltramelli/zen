@@ -4,10 +4,6 @@
 .category,
 .tag {
 
-	.archive-description {
-		margin: space(stack, m);
-	}
-
 	.entry {
 		border-radius: $base-border-radius;
 		margin-bottom: space(m);
@@ -17,6 +13,7 @@
 	}
 
 	.post-image {
+		display: block;
 
 		&.aligncenter {
 			margin-bottom: space(s);

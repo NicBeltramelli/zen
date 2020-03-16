@@ -1,6 +1,7 @@
 # Space Changelog
 
 ## [dev]
+* Improve style
 * Add featured image
 * Add blocks animation
 * Add header options

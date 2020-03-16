@@ -62,20 +62,6 @@
 	}
 }
 
-.content-sidebar,
-.sidebar-content {
-
-	.alignfull {
-		margin-left: calc(50% - 50vw);
-		margin-right: calc(50% - 50vw);
-		max-width: 100vw;
-
-		@include mq($from: tablet) {
-			width: 100%;
-		}
-	}
-}
-
 /* Preformatted */
 pre.wp-block-preformatted {
 	font-family: $base-font-mono;

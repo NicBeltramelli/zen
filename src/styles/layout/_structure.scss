@@ -3,8 +3,8 @@
 *
 *	- Site Container
 *	- Site Inner
+*	- Featured Image
 *	- Layouts
-*	- Column Classes
 */
 
 /* Site Container */
@@ -31,11 +31,11 @@
 	clear: both;
 	margin: space(l) auto 0 auto;
 	min-height: calc(100vh - 6rem);
-	padding: space(m) space(s) 0;
+	padding: space(column, s);
+	z-index: 99;
 
 	@include mq($from: phone) {
-		padding-left: space(m);
-		padding-right: space(m);
+		padding: space(column, m);
 	}
 
 	@include mq($from: large-screen) {
@@ -54,16 +54,63 @@
 	}
 }
 
+.page-landing,
+.page.has-featured-image,
+.single-post.has-featured-image {
+
+	.site-inner {
+		margin-top: 0;
+		min-height: 100vh;
+
+		.admin-bar & {
+
+			@include mq($until: admin-bar) {
+				min-height: calc(100vh - 46px);
+			}
+
+			@include mq($from: admin-bar) {
+				min-height: calc(100vh - 32px);
+			}
+		}
+	}
+}
+
 .wrap {
 	margin: 0 auto;
 	padding: space(column, s);
 
 	@include mq($from: phone) {
-		padding: 0 space(m);
+		padding: space(column, m);
 	}
 
 	@include mq($from: large-screen) {
 		max-width: breakpoint(large-screen);
+	}
+}
+
+/* Featured Image */
+
+.single-post,
+.page {
+
+	.featured-image-wrapper {
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 40vh;
+		margin-bottom: space(s);
+		margin-left: -(space(s));
+		margin-right: -(space(s));
+		position: relative;
+
+		@include mq($from: phone) {
+			margin-left: -(space(m));
+			margin-right: -(space(m));
+		}
+
+		@include mq($from: tablet) {
+			height: 60vh;
+		}
 	}
 }
 
@@ -115,127 +162,5 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
-	}
-}
-
-/* Column Classes */
-
-@include mq($from: tablet) {
-
-	.one-half,
-	.one-third,
-	.one-fourth,
-	.one-fifth,
-	.one-sixth,
-	.one-seventh,
-	.one-eighth,
-	.two-thirds,
-	.two-fourths,
-	.two-fifths,
-	.two-sixths,
-	.two-seventh,
-	.three-fourths,
-	.three-fifths,
-	.three-sixths,
-	.three-sevenths,
-	.three-eighths,
-	.four-fifths,
-	.four-sixths,
-	.four-sevenths,
-	.five-sixths,
-	.five-sevenths,
-	.five-eighths,
-	.six-sevenths,
-	.seven-eighths {
-		float: left;
-		margin-left: $margin-left;
-	}
-
-	.one-half,
-	.three-sixths,
-	.two-fourths,
-	.four-eighths {
-		width: $one-half;
-	}
-
-	.one-third,
-	.two-sixths {
-		width: $one-third;
-	}
-
-	.four-sixths,
-	.two-thirds {
-		width: $two-thirds;
-	}
-
-	.one-fourth,
-	.two-eighth {
-		width: $one-fourth;
-	}
-
-	.three-fourths,
-	.six-eighths {
-		width: $three-fourths;
-	}
-
-	.one-fifth {
-		width: $one-fifth;
-	}
-
-	.two-fifths {
-		width: $two-fifths;
-	}
-
-	.three-fifths {
-		width: $three-fifths;
-	}
-
-	.four-fifths {
-		width: $four-fifths;
-	}
-
-	.one-sixth {
-		width: $one-sixth;
-	}
-
-	.five-sixths {
-		width: $five-sixths;
-	}
-
-	.two-sevenths {
-		width: $two-sevenths;
-	}
-
-	.three-sevenths {
-		width: $three-sevenths;
-	}
-
-	.four-sevenths {
-		width: $four-sevenths;
-	}
-
-	.five-sevenths {
-		width: $five-sevenths;
-	}
-
-	.six-sevenths {
-		width: $six-sevenths;
-	}
-
-	.three-eighths {
-		width: $three-eighths;
-	}
-
-	.five-eighths {
-		width: $five-eighths;
-	}
-
-	.seven-eighths {
-		width: $seven-eighths;
-	}
-
-	.first {
-		clear: both;
-		margin-left: 0;
 	}
 }

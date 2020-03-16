@@ -3,11 +3,16 @@
 .sidebar {
 	display: none;
 	margin: space(stack, m);
+	padding-top: space(s);
 
 	@extend %font-size-s;
 
 	@include mq($from: tablet) {
 		display: block;
+	}
+
+	.has-featured-image & {
+		padding-top: 0;
 	}
 
 	.widget {

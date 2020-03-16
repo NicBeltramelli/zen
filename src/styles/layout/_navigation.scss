@@ -17,7 +17,7 @@
 	width: 100%;
 
 	a {
-		color: color(dark, base);
+		color: color(light, soft);
 		display: block;
 		outline-offset: -1px;
 		padding-bottom: space(xxs);
@@ -40,7 +40,7 @@
 
 		@include mq($from: tablet) {
 			background: color(dark, base);
-			border: 1px solid color(dark, trans);
+			border: 1px solid color(dark, base);
 			border-radius: $base-border-radius;
 			left: 50%;
 			opacity: 0;
@@ -70,11 +70,11 @@
 			}
 
 			a {
-				color: color(light, base);
+				color: color(light, soft);
 
 				&:focus,
 				&:hover {
-					color: color(accent, soft);
+					color: color(accent, base);
 				}
 			}
 
@@ -85,7 +85,7 @@
 
 					> a,
 					> button {
-						color: color(accent, soft);
+						color: color(accent, base);
 					}
 				}
 
@@ -94,13 +94,13 @@
 					> a,
 					> a:focus,
 					> a:hover {
-						color: color(accent, soft);
+						color: color(accent, base);
 					}
 				}
 			}
 
 			.sub-menu-toggle {
-				color: color(light, base);
+				color: color(light, soft);
 
 				&::before {
 					content: "\f139";
@@ -219,9 +219,10 @@
 .genesis-responsive-menu {
 
 	@include mq($until: tablet) {
-		min-height: calc(100vh - 6rem);
+		background: color(dark, base);
+		min-height: 100vh;
 		overflow: scroll;
-		padding: space(divider, m);
+		padding: space(stack, m);
 		text-align: left;
 
 		.menu-item {
@@ -243,11 +244,11 @@
 	.admin-bar & {
 
 		@include mq($until: admin-bar) {
-			min-height: calc(100vh - 6rem - 46px);
+			min-height: calc(100vh - 46px);
 		}
 
 		@include mq($from: admin-bar) {
-			min-height: calc(100vh - 6rem - 32px);
+			min-height: calc(100vh - 32px);
 		}
 
 		@include mq($from: tablet) {
@@ -257,10 +258,11 @@
 }
 
 .menu-toggle {
-	color: color(dark, base);
+	color: color(light, soft);
 	height: auto; // Prevent height of default buttons.
 	padding: space(divider, s);
-	position: relative;
+	position: absolute;
+	right: 0;
 	z-index: 1000;
 
 	&::before {
@@ -284,7 +286,7 @@
 }
 
 .sub-menu-toggle {
-	color: color(dark, base);
+	color: color(light, soft);
 	float: right;
 	height: auto;
 	min-width: 0;
@@ -338,7 +340,7 @@
 
 	&:focus,
 	&:hover {
-		color: color(dark, strong);
+		color: color(light, soft);
 		background-color: transparent;
 		box-shadow: none; // Prevent box shadow of default buttons.
 	}
@@ -367,6 +369,10 @@
 	}
 
 	.genesis-nav-menu {
+
+		@include mq($until: tablet) {
+			padding-top: space(xl);
+		}
 
 		.menu-item {
 
@@ -423,6 +429,7 @@
 .tertiary-menu-wrapper {
 
 	.nav-tertiary {
+		background-color: color(dark, strong);
 		border-top: 1px solid color(border);
 		padding: calc(2rem - 1px) 0 space(s); // Compensate top border.
 		text-align: center;
@@ -437,11 +444,22 @@
 				}
 
 				> a {
+
+					color: color(light, strong);
 					margin: 0 1.5rem;
+					padding: 0;
+					text-decoration: none;
+
+					@extend %font-size-xs;
 
 					@include mq($from: tablet) {
 						margin: 0;
 						padding: space(xxs) 1.5rem;
+					}
+
+					&:focus,
+					&:hover {
+						color: color(light, soft);
 					}
 				}
 			}

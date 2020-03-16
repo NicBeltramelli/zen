@@ -91,8 +91,8 @@ add_action(
 			.sidebar .widget ul li > a:hover,
 			.has-accent-color,
 			.genesis-nav-menu .menu-item:not(.menu-highlight):focus > a,
-			.genesis-nav-menu .menu-item:not(.menu-highlight):focus > button,
 			.genesis-nav-menu .menu-item:not(.menu-highlight):hover > a,
+			.genesis-nav-menu .menu-item:not(.menu-highlight):focus > button,
 			.genesis-nav-menu .menu-item:not(.menu-highlight):hover > button,
 			.genesis-nav-menu .menu-item.current-menu-item:not(.menu-highlight) > a {
 				color: %1$s;

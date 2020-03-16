@@ -132,3 +132,20 @@
 
 	box-shadow: inset 0 0 0 20rem color(shadow), 0 2rem 2rem color(shadow);
 }
+
+%box-shadow-strong {
+
+	@include box-shadow (0, 0, 2rem, color(dark, strong), false);
+}
+
+/* Gradients */
+
+%gradient-top {
+
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+}
+
+%gradient-bottom {
+
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+}

@@ -17,15 +17,18 @@
 	}
 }
 
-.entry-title,
-.archive-title {
-	margin: space(stack, s);
-}
-
 .archive-title,
 .entry-title,
 .page-title {
+	padding-top: space(s);
 	text-align: center;
+}
+
+.has-featured-image {
+
+	.entry-title {
+		padding-top: 0;
+	}
 }
 
 .content-sidebar,
