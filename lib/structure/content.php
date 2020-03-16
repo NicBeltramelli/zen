@@ -84,3 +84,26 @@ add_filter(
 
 	}
 );
+
+/* Display featured image on page and post */
+add_action(
+	'genesis_before_content',
+	function () {
+
+		if ( ! is_singular( [ 'post', 'page', 'project' ] ) ||
+			! has_post_thumbnail() ) {
+
+			return;
+
+		}
+
+		// Display featured image above content.
+		$thumb = get_the_post_thumbnail_url(); ?>
+
+		<div class="featured-image-wrapper" style="background-image: url('<?php echo esc_url( $thumb ); ?>')">
+		</div>
+
+		<?php
+	},
+	5
+);

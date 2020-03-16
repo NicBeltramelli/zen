@@ -63,6 +63,11 @@ add_filter(
 			$classes[] = 'has-floating-header';
 		}
 
+		if ( is_singular( [ 'post', 'page' ] ) &&
+			has_post_thumbnail() ) {
+			$classes[] = 'has-featured-image';
+		}
+
 		if ( ! is_singular() ||
 			! function_exists( 'has_blocks' ) ||
 			! function_exists( 'parse_blocks' ) ) {
