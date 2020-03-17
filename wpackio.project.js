@@ -25,7 +25,6 @@ module.exports = {
 		 	entry: {
 				main: ['./src/scripts/main.js'],
 				blocks: ['./src/scripts/blocks.js'],
-				editor: ['./src/scripts/editor.js'],
 				floatingHeader: ['./src/scripts/floating-header.js'],
 				blocksanimation: ['./src/scripts/blocksanimation.js'],
 			},

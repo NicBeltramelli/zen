@@ -33,10 +33,7 @@ add_action(
 			genesis_get_theme_version()
 		);
 
-		/* Editor styles */
-		$space_assets->enqueue( 'theme', 'editor', [] );
-
-		/* Blocks scripts */
+		/* Blocks styles and scripts */
 		$space_assets->enqueue( 'theme', 'blocks', [] );
 
 		/* Output link color inline css */

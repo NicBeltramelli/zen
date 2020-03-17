@@ -1,6 +1,7 @@
 # Space Changelog
 
 ## [dev]
+* Group Gutenberg editor assets
 * Improve style
 * Add featured image
 * Add blocks animation
