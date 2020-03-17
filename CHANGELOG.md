@@ -1,7 +1,8 @@
 # Space Changelog
 
 ## [dev]
-* Group Gutenberg editor assets
+* Optimize google fonts
+* Group gutenberg editor assets
 * Improve style
 * Add featured image
 * Add blocks animation
