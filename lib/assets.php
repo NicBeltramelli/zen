@@ -54,7 +54,9 @@ add_action(
 
 		/* Floating header scripts */
 		if ( 'floating-header' === get_theme_mod( 'space_header_options', false ) ) {
+
 			$space_assets->enqueue( 'theme', 'floatingHeader', [] );
+
 		}
 
 		/* Comment reply js */
@@ -66,6 +68,7 @@ add_action(
 			wp_enqueue_script(
 				'comment-reply'
 			);
+
 		}
 
 	},
