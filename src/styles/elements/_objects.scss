@@ -18,13 +18,3 @@ img {
 figure {
 	margin: 0;
 }
-
-p {
-
-	img {
-
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
-}

@@ -30,7 +30,7 @@ $space_accent_color = get_theme_mod(
 );
 
 return [
-	'fonts-url'            => 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700|Roboto+Mono&display=optional',
+	'fonts-url'            => 'https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Roboto:400,700|Roboto+Mono&display=optional',
 	'ionicons'             => 'https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css',
 	'content-width'        => 1800,
 	'link-color'           => $space_link_color,

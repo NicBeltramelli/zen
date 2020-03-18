@@ -13,8 +13,7 @@
 *	- Quotes
 *	- Columns
 *	- Images
-*	- Gallery
-*	- Cover Image
+*	- Caption
 *	- File
 *	- Media Text
 */
@@ -98,7 +97,7 @@ p {
 			font-size: 4rem;
 		}
 
-		&.s-break {
+		&.break {
 
 			@include mq($from: tablet) {
 				line-height: line-height(xs); // Break the vertical rhythm.
@@ -115,7 +114,7 @@ p {
 			font-size: 7rem;
 		}
 
-		&.m-break {
+		&.break {
 
 			@extend %font-size-l-break; // Break the vertical rhythm.
 
@@ -135,13 +134,13 @@ p {
 			font-size: 7rem;
 		}
 
-		&.l-break {
+		&.break {
 
 			@extend %font-size-xl-break; // Break the vertical rhythm.
 
 			&.has-drop-cap:not(:focus)::first-letter {
 				line-height: line-height(drop-cap-xl-break);
-				font-size: 9rem;
+				font-size: 8rem;
 			}
 		}
 	}
@@ -152,7 +151,7 @@ p {
 
 		&.has-drop-cap:not(:focus)::first-letter {
 			line-height: line-height(drop-cap-xxl);
-			font-size: 12rem;
+			font-size: 11rem;
 			margin-right: 0.75rem;
 			margin-top: 0.5rem;
 		}
@@ -369,18 +368,14 @@ $color-palette: (
 /* Tables */
 
 .wp-block-table {
-
-	&.alignwide {
-		width: calc(100vw - 4rem);
-	}
-
-	&.alignfull {
-		width: 100vw;
-	}
+	margin-bottom: space(s);
 
 	&.is-style-stripes {
 		border-bottom: none;
-		border-top-color: transparent;
+
+		table {
+			border-top-color: transparent;
+		}
 	}
 }
 
@@ -441,12 +436,13 @@ $color-palette: (
 
 	&.is-style-large,
 	&.is-large {
-		margin: space(divider, s);
+		margin: space(divider, m);
 		padding: 0;
 
 		p {
+			font-style: inherit;
 
-			@extend %font-size-xl;
+			@extend %font-size-xl-break;
 		}
 
 		cite,
@@ -458,14 +454,11 @@ $color-palette: (
 }
 
 .wp-block-pullquote {
-	border-bottom: 2px solid color(dark, base);
-	border-top: 2px solid color(dark, base);
-	padding: space(column, m);
-	margin: space(stack, s);
+	padding: space(m);
+	position: relative;
 
 	blockquote {
-		margin-bottom: calc(2rem - 2px); // Compensate bottom border width.
-		margin-top: calc(2rem - 2px); // Compensate top border width.
+		margin-bottom: 0;
 
 		&::before {
 			display: none;
@@ -621,64 +614,13 @@ $color-palette: (
 	&.alignright {
 		margin-left: space(s);
 	}
-
-	figcaption {
-		color: color(dark, soft);
-		margin: space(divider, xxs); // Break verticat rhythm.
-		text-align: center;
-
-		@extend %font-size-s;
-	}
 }
 
-/* Gallery */
+/* Caption */
 
-.wp-block-gallery {
+figcaption {
 
-	.blocks-gallery-image,
-	.blocks-gallery-item {
-
-		figcaption {
-			color: color(light, soft);
-			padding: space(s) space(xs) space(xs);
-
-			@extend %font-size-s;
-		}
-	}
-}
-
-/* Cover Image */
-
-.wp-block-cover__inner-container,
-.editor-inner-blocks {
-
-	.wp-block-cover-image &,
-	.wp-block-cover & {
-		width: calc(100% - 6rem);
-		color: color(light, base);
-
-		// stylelint-disable
-		// Fix no-descending-specificity for p selector
-		p,
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-
-			&.has-text-color {
-
-				@each $name, $color in $color-palette {
-
-					&.has-#{$name}-color {
-						color: $color;
-					}
-				}
-			}
-		}
-		// stylelint-enable
-	}
+	@extend %font-size-s;
 }
 
 /* File */

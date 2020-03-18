@@ -83,7 +83,6 @@ strong {
 	font-weight: 700;
 }
 
-blockquote,
 em,
 i {
 	font-style: italic;
@@ -95,17 +94,18 @@ mark {
 }
 
 blockquote {
-	margin: space(divider, s);
+	font-family: $base-font-serif;
+	margin: space(stack, s);
 	position: relative;
 
 	&::before {
 		content: "\201C";
+		left: -0.5em;
+		top: -0.5em;
 		position: absolute;
 		display: block;
 
-		@extend %font-size-xl;
-		left: -(space(xs));
-		top: -(space(xs));
+		@extend %font-size-xxl;
 	}
 
 	p {
@@ -121,7 +121,7 @@ label,
 }
 
 cite {
-	font-weight: 700;
+	font-family: $base-font-sans;
 	font-style: normal;
 	text-transform: uppercase;
 }

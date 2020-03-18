@@ -32,18 +32,18 @@
 				}
 
 				&.is-active > a {
-					color: $primary !important;
+					color: $primary;
 				}
 
 				a {
-					color: $primarytext !important;
+					color: $primarytext;
 					font-weight: 700;
 					text-decoration: none;
 					text-transform: uppercase;
 
 					&:focus,
 					&:hover {
-						color: $primary !important;
+						color: $primary;
 					}
 				}
 			}

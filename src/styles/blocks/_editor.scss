@@ -7,7 +7,6 @@
 *	- Lists
 *	- Tables
 *	- Code
-*	- Cover Image
 *	- Columns
 *	- Quotes
 *	- Video
@@ -33,6 +32,17 @@
 
 		&:last-child {
 			margin-bottom: 0;
+		}
+	}
+
+	a {
+		color: color(info, base);
+		text-decoration: underline;
+		transition: $base-transition;
+
+		&:focus,
+		&:hover {
+			text-decoration: none;
 		}
 	}
 
@@ -305,20 +315,6 @@ ul.wp-block-archives {
 
 	textarea {
 		background: inherit;
-	}
-}
-
-/* Cover Image */
-
-.wp-block-cover,
-.wp-block-cover-image {
-	margin-bottom: 0;
-}
-
-.wp-block-cover {
-
-	.editor-rich-text {
-		color: color(light, base);
 	}
 }
 

@@ -10,6 +10,7 @@
 .woocommerce {
 
 	div.product {
+		margin-top: space(s);
 
 		/* Product Gallery */
 
@@ -77,6 +78,10 @@
 
 			.product_title {
 				text-align: center;
+
+				@include mq($from: tablet) {
+					margin-top: space(s);
+				}
 			}
 
 			.woocommerce-product-details__short-description {
@@ -304,8 +309,18 @@
 		/* Product Tabs */
 
 		.woocommerce-tabs {
-			margin: space(stack, m);
+			margin: space(stack, l);
 			padding: 0;
+
+			@include mq($from: phone) {
+				margin-left: auto;
+				margin-right: auto;
+				width: 85%;
+			}
+
+			@include mq($from: tablet) {
+				width: 65%;
+			}
 
 			ul.tabs {
 				padding-left: 5px;

@@ -18,21 +18,12 @@
 	a {
 		text-decoration: none;
 	}
-
-	p {
-		padding: space(column, s);
-
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
 }
 
 /* Footer Widgets */
 
 .footer-widgets {
-	padding-bottom: space(s);
-	padding-top: space(m);
+	padding: space(divider, m);
 
 	@extend %box-shadow-top;
 
@@ -44,6 +35,10 @@
 		@include mq($from: tablet) {
 			flex-wrap: nowrap;
 		}
+	}
+
+	.widget-title {
+		text-align: center;
 	}
 
 	.footer-widget-area {
@@ -67,6 +62,22 @@
 /* Site Footer */
 
 .site-footer {
-	padding-bottom: space(m);
-	padding-top: space(s);
+	background: color(dark, strong);
+	color: color(light, strong);
+	padding: space(divider, m);
+
+	p {
+		color: color(light, strong);
+		margin-bottom: 0;
+
+		a {
+			color: color(light, strong);
+			margin-bottom: 0;
+
+			&:focus,
+			&:hover {
+				color: color(light, soft);
+			}
+		}
+	}
 }

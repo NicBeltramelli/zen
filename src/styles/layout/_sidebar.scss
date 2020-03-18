@@ -16,7 +16,7 @@
 	}
 
 	.widget {
-		margin: space(stack, m);
+		margin: space(stack, s);
 
 		&.widget_search {
 			margin: space(stack, s);
@@ -24,6 +24,11 @@
 
 		&:first-of-type {
 			margin-top: space(xs);
+
+			&.widget_search {
+				margin-bottom: 1.5rem;
+				margin-top: -0.5rem;
+			}
 		}
 
 		&:last-of-type {

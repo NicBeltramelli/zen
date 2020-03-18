@@ -2,33 +2,38 @@
 * Content Area
 *
 *	- Content
+*	- Entry
 *	- Entry Content
 *	- Entry Meta
 *	- More Link
 *	- Comments
+*	- Archives
 */
 
 /* Content */
 
 .content {
 	margin-bottom: space(m);
+}
 
-	.entry {
+/* Entry */
 
-		&.sticky {
-			background-color: color(light, base);
-			border-radius: $base-border-radius;
-			padding: space(s);
+.entry {
+	margin-bottom: space(m);
 
-			@extend %box-shadow;
-		}
+	&.sticky {
+		background-color: color(light, base);
+		border-radius: $base-border-radius;
+		padding: space(s);
+
+		@extend %box-shadow;
 	}
 }
 
 /* Entry Content */
 
 .entry-content {
-	margin: space(stack, m);
+	margin: space(stack, s);
 
 	p {
 
@@ -267,5 +272,20 @@ p.entry-meta {
 
 	.reply {
 		display: none;
+	}
+}
+
+/* Archives */
+
+.blog,
+.category,
+.tag {
+
+	.entry {
+		margin-bottom: space(l);
+	}
+
+	.post-image {
+		display: block;
 	}
 }
