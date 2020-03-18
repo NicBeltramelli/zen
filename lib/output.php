@@ -34,6 +34,7 @@ add_action(
 		/* Locate the config file */
 		$appearance = genesis_get_config( 'appearance' );
 
+		/* Output inline css */
 		$color_link   = get_theme_mod( 'space_link_color', $appearance['default-colors']['link'] );
 		$color_accent = get_theme_mod( 'space_accent_color', $appearance['default-colors']['accent'] );
 		$logo         = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
@@ -55,10 +56,7 @@ add_action(
 			.breadcrumb a:hover,
 			.footer-widgets a:not(.button),
 			.footer-widgets a:not(.button):focus,
-			.footer-widgets a:not(.button):hover,
-			.site-footer a:not(.button),
-			.site-footer a:not(.button):focus,
-			.site-footer a:not(.button):hover {
+			.footer-widgets a:not(.button):hover {
 				color: %s;
 			}
 			',
@@ -90,11 +88,11 @@ add_action(
 			.sidebar .widget ul li > a:focus,
 			.sidebar .widget ul li > a:hover,
 			.has-accent-color,
-			.genesis-nav-menu .menu-item:not(.menu-highlight):focus > a,
-			.genesis-nav-menu .menu-item:not(.menu-highlight):hover > a,
-			.genesis-nav-menu .menu-item:not(.menu-highlight):focus > button,
-			.genesis-nav-menu .menu-item:not(.menu-highlight):hover > button,
-			.genesis-nav-menu .menu-item.current-menu-item:not(.menu-highlight) > a {
+			.genesis-nav-menu .menu-item:focus > a,
+			.genesis-nav-menu .menu-item:hover > a,
+			.genesis-nav-menu .menu-item:focus > button,
+			.genesis-nav-menu .menu-item:hover > button,
+			.genesis-nav-menu .menu-item.current-menu-item > a {
 				color: %1$s;
 			}
 
