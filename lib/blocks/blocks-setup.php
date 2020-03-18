@@ -22,6 +22,11 @@ add_action(
 		/* Access the wpackio global var */
 		global $space_assets;
 
+		/* Get CSS handle */
+		$assets      = $space_assets->getAssets( 'theme', 'blocks', [] );
+		$entry_point = array_pop( $assets['css'] );
+		$css_handle  = $entry_point['handle'];
+
 		/* Locate the config file */
 		$appearance = genesis_get_config( 'appearance' );
 
@@ -36,25 +41,41 @@ add_action(
 		/* Blocks styles and scripts */
 		$space_assets->enqueue( 'theme', 'blocks', [] );
 
-		/* Output link color inline css */
-		$color_link = get_theme_mod( 'space_link_color', $appearance['default-colors']['link'] );
+		/* Output inline css */
+		$color_link   = get_theme_mod( 'space_link_color', $appearance['default-colors']['link'] );
+		$color_accent = get_theme_mod( 'space_accent_color', $appearance['default-colors']['accent'] );
 
 		$css = '';
 
 		$css .= ( $appearance['default-colors']['link'] !== $color_link ) ? sprintf(
 			'
-			.editor-styles-wrapper a,
-			.editor-styles-wrapper a:focus,
-			.editor-styles-wrapper a:focus {
+			.editor-styles-wrapper .wp-block a,
+			.editor-styles-wrapper .wp-block a:focus,
+			.editor-styles-wrapper .wp-block a:focus {
 				color: %s;
 			}
 			',
 			$color_link
 		) : '';
 
+		$css .= ( $appearance['default-colors']['accent'] !== $color_accent ) ? sprintf(
+			'
+			.editor-styles-wrapper .has-accent-background-color,
+			.editor-styles-wrapper .has-dark-background input[type="submit"] {
+				background-color: %1$s;
+			}
+
+			.editor-styles-wrapper .has-accent-color {
+				color: %1$s;
+			}
+			',
+			$color_accent,
+			space_color_contrast( $color_accent )
+		) : '';
+
 		if ( $css ) {
 			wp_add_inline_style(
-				genesis_get_theme_handle() . '-editor-style',
+				$css_handle,
 				$css
 			);
 		}
