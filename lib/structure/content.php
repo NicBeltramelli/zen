@@ -14,6 +14,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+/* Display author box on single posts */
+add_filter(
+	'get_the_author_genesis_author_box_single',
+	'__return_true'
+);
+
+/* Display author box on archive pages */
+add_filter(
+	'get_the_author_genesis_author_box_archive',
+	'__return_true'
+);
+
 /**
  * Modify the size of the Gravatar in the author box
  *
