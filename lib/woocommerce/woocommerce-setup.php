@@ -14,19 +14,59 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+/* Conditionally load WooCommerce assets */
+add_action(
+	'get_header',
+	function () {
+
+		if ( ! class_exists( 'WooCommerce' ) ) {
+
+			return;
+
+		}
+
+		if ( is_woocommerce() ||
+			is_cart() ||
+			is_checkout() ||
+			is_page( [ 'my-account' ] ) ) {
+
+			return;
+
+		}
+
+		// phpcs:disable
+		remove_action( 'wp_enqueue_scripts', [ WC_Frontend_Scripts::class, 'load_scripts' ] );
+		remove_action( 'wp_print_scripts', [ WC_Frontend_Scripts::class, 'localize_printed_scripts' ], 5 );
+		remove_action( 'wp_print_footer_scripts', [ WC_Frontend_Scripts::class, 'localize_printed_scripts' ], 5 );
+		// phpcs:enable
+	}
+);
+
 /* Enqueue custom WooCommerce style */
 add_action(
 	'wp_enqueue_scripts',
 	function () {
 
-		if ( class_exists( 'woocommerce' ) ) {
+		if ( ! class_exists( 'WooCommerce' ) ) {
 
-			/* Access the wpackio global var */
-			global $space_assets;
+			return;
 
-			/* Main styles */
-			$space_assets->enqueue( 'woocommerce', 'main', [] );
 		}
+
+		if ( ! is_woocommerce() &&
+			! is_cart() &&
+			! is_checkout() &&
+			! is_page( [ 'my-account' ] ) ) {
+
+			return;
+
+		}
+
+		/* Access the wpackio global var */
+		global $space_assets;
+
+		/* Main styles */
+		$space_assets->enqueue( 'woocommerce', 'main', [] );
 	},
 	99
 );
