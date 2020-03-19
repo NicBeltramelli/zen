@@ -1,6 +1,7 @@
 # Space Changelog
 
 ## [dev]
+* Update distribution package
 * Fix accessibility of responsive menu toggle
 * Display author box on author page and on single post
 * Enqueue WooCommerce assets only where needed
