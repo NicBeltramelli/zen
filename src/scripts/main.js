@@ -1,7 +1,10 @@
 /* Primary JS entry point */
 
+// CSS
 import './../styles/main.scss';
+import './../styles/animate.scss';
 
+// JS
 import $ from 'jquery';
 
 // Scroll to target function.

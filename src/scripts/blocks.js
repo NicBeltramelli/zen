@@ -1,7 +1,9 @@
 /* Gutenberg Blocks JS entry point */
 
+// CSS
 import './../styles/editor.scss';
 
+// JS
 wp.domReady( () => {
 
 	// Remove buttons styles

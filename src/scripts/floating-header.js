@@ -1,8 +1,5 @@
 /* Floating header JS */
 
-// Import styles
-import './../styles/animate.scss';
-
 // Import headroom.js
 import 'headroom.js/dist/headroom.min';
 import 'headroom.js/dist/jQuery.headroom.min';

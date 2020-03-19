@@ -1,8 +1,13 @@
 # Space Changelog
 
 ## [dev]
+* Fix accessibility of responsive menu toggle
+* Display author box on author page and on single post
+* Enqueue WooCommerce assets only where needed
+* Align inline style
+* Align blocks editor inline style
 * Optimize google fonts
-* Group gutenberg editor assets
+* Group blocks editor assets
 * Improve style
 * Add featured image
 * Add blocks animation

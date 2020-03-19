@@ -47,15 +47,31 @@ add_action(
 		);
 
 		/* Theme styles and scripts */
-		$space_assets->enqueue( 'theme', 'main', [] );
+		$space_assets->enqueue(
+			'theme',
+			'main',
+			[]
+		);
 
 		/* Blocks animation */
-		$space_assets->enqueue( 'theme', 'blocksanimation', [] );
+		$space_assets->enqueue(
+			'theme',
+			'blocksanimation',
+			[
+				'css' => false,
+			]
+		);
 
 		/* Floating header scripts */
 		if ( 'floating-header' === get_theme_mod( 'space_header_options', false ) ) {
 
-			$space_assets->enqueue( 'theme', 'floatingHeader', [] );
+			$space_assets->enqueue(
+				'theme',
+				'floatingHeader',
+				[
+					'css' => false,
+				]
+			);
 
 		}
 
