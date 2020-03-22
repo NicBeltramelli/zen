@@ -49,7 +49,9 @@ add_action(
 		$css .= ( $appearance['default-colors']['link'] !== $color_link ) ? sprintf(
 			'
 			a.url:not(:focus):not(:hover),
-			.entry a:not(.entry-title-link):not(.button):not(.wp-block-button__link):not(:focus):not(:hover),
+			.entry-content a:not(.entry-title-link):not(.button):not(.wp-block-button__link):not(:focus):not(:hover),
+			.entry-meta a:not(:focus):not(:hover),
+			.entry-footer a:not(:focus):not(:hover),
 			.breadcrumb a:not(:focus):not(:hover) {
 				color: %s;
 			}
@@ -77,6 +79,7 @@ add_action(
 			.pagination-next > a:hover,
 			.sidebar .widget ul li > a:focus,
 			.sidebar .widget ul li > a:hover,
+			.sidebar .widget ul.menu li.current_page_item > a,
 			.has-accent-color,
 			.genesis-nav-menu .menu-item:focus > a,
 			.genesis-nav-menu .menu-item:hover > a,

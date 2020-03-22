@@ -30,11 +30,11 @@
 				}
 
 				&.is-active > a {
-					color: $primary;
+					color: $primary !important;
 				}
 
-				a {
-					color: $primarytext;
+				> a {
+					color: $primarytext !important;
 					font-weight: 700;
 					text-decoration: none;
 					text-transform: uppercase;
@@ -43,7 +43,7 @@
 
 					&:focus,
 					&:hover {
-						color: $primary;
+						color: $primary !important;
 					}
 				}
 			}

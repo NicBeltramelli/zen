@@ -56,6 +56,7 @@ add_action(
 
 		$woo_css .= ( $appearance['default-colors']['link'] !== $color_link ) ? sprintf(
 			'
+			.woocommerce .summary a:not(:focus):not(:hover),
 			.woocommerce .woocommerce-breadcrumb a:hover,
 			.woocommerce .woocommerce-breadcrumb a:focus,
 			.woocommerce .widget_layered_nav ul li.chosen a::before,
@@ -95,13 +96,16 @@ add_action(
 			.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover,
 			.woocommerce div.product .woocommerce-tabs ul.tabs li a:focus,
 			.woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
-			.woocommerce-account .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link.is-active > a,
-			.woocommerce-account .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link a:focus,
-			.woocommerce-account .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link a:hover,
 			.woocommerce-info::before,
 			.woocommerce-message::before,
 			.woocommerce a.button.loading::after {
 				color: %1$s;
+			}
+
+			.woocommerce-account .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link.is-active > a,
+			.woocommerce-account .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link a:focus,
+			.woocommerce-account .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link a:hover {
+				color: %1$s !important;
 			}
 			',
 			$color_accent,

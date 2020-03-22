@@ -21,6 +21,14 @@
 		top: calc(1rem - 1.5px);
 	}
 
+	a:not(.button) {
+
+		&:focus,
+		&:hover {
+			color: inherit;
+		}
+	}
+
 	a.button {
 		bottom: space(xs);
 		height: auto;
