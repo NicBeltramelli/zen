@@ -7,12 +7,12 @@
 	color: color(dark, strong);
 
 	> a {
-		color: color(dark, base);
+		color: color(dark, strong);
 		text-decoration: none;
 
 		&:focus,
 		&:hover {
-			color: color(accent, base);
+			color: color(dark, soft);
 		}
 	}
 }
@@ -20,25 +20,12 @@
 .archive-title,
 .entry-title,
 .page-title {
-	padding-top: space(s);
 	text-align: center;
-}
 
-.has-featured-image {
+	.content-sidebar &,
+	.sidebar-content & {
 
-	.entry-title {
-		padding-top: 0;
-	}
-}
-
-.content-sidebar,
-.sidebar-content {
-
-	@include mq($from: tablet) {
-
-		.archive-title,
-		.entry-title,
-		.page-title {
+		@include mq($from: tablet) {
 			text-align: left;
 		}
 	}

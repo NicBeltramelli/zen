@@ -9,12 +9,12 @@
 
 a {
 	color: color(info, base);
-	text-decoration: underline;
+	text-decoration: none;
 	transition: $base-transition;
 
 	&:focus,
 	&:hover {
-		text-decoration: none;
+		color: inherit;
 	}
 
 	&.post-edit-link {

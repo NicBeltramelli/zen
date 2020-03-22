@@ -48,15 +48,9 @@ add_action(
 		/* Output link color inline css */
 		$css .= ( $appearance['default-colors']['link'] !== $color_link ) ? sprintf(
 			'
-			.entry a:not(.button):not(.wp-block-button__link),
-			.entry a:not(.button):not(.wp-block-button__link):focus,
-			.entry a:not(.button):not(.wp-block-button__link):hover,
-			.breadcrumb a,
-			.breadcrumb a:focus,
-			.breadcrumb a:hover,
-			.footer-widgets a:not(.button),
-			.footer-widgets a:not(.button):focus,
-			.footer-widgets a:not(.button):hover {
+			a.url:not(:focus):not(:hover),
+			.entry a:not(.entry-title-link):not(.button):not(.wp-block-button__link):not(:focus):not(:hover),
+			.breadcrumb a:not(:focus):not(:hover) {
 				color: %s;
 			}
 			',
@@ -77,14 +71,10 @@ add_action(
 				background-color: %1$s;
 			}
 
-			.entry-title > a:focus,
-			.entry-title > a:hover,
 			.pagination-previous > a:focus,
 			.pagination-previous > a:hover,
 			.pagination-next > a:focus,
 			.pagination-next > a:hover,
-			.widget-title > a:focus,
-			.widget-title > a:hover,
 			.sidebar .widget ul li > a:focus,
 			.sidebar .widget ul li > a:hover,
 			.has-accent-color,

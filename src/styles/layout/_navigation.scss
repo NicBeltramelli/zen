@@ -448,8 +448,13 @@
 			.menu-item {
 				display: block;
 
+				&:not(:last-child) {
+					margin-bottom: space(xs);
+				}
+
 				@include mq($from: tablet) {
 					display: inline-block;
+					margin-bottom: 0;
 				}
 
 				> a {

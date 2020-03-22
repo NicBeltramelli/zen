@@ -17,6 +17,15 @@
 
 /* Common */
 
+p,
+li,
+ol,
+ul {
+	font-family: $base-font-sans;
+
+	@extend %font-size-m;
+}
+
 .block-editor-block-list__layout {
 	padding: 0;
 }
@@ -32,17 +41,6 @@
 
 		&:last-child {
 			margin-bottom: 0;
-		}
-	}
-
-	a {
-		color: color(info, base);
-		text-decoration: underline;
-		transition: $base-transition;
-
-		&:focus,
-		&:hover {
-			text-decoration: none;
 		}
 	}
 
@@ -244,15 +242,17 @@ ul.wp-block-archives {
 		list-style: none;
 
 		> a {
-			color: color(dark, base);
+			color: color(dark, strong);
 			font-family: $base-font-serif;
 			font-weight: 700;
 			text-decoration: none;
 
 			&:focus,
 			&:hover {
-				color: color(accent, base);
+				color: color(dark, soft);
 			}
+
+			@extend %font-size-l;
 		}
 	}
 }
@@ -263,6 +263,15 @@ ul.wp-block-archives {
 		border-bottom: 1px solid color(border);
 		margin-bottom: calc(2rem - 1px); // Compensate border.
 		padding-bottom: space(s);
+
+		.wp-block-latest-posts__post-excerpt {
+			font-family: $base-font-sans;
+
+			> a {
+
+				@extend %font-size-s;
+			}
+		}
 	}
 }
 

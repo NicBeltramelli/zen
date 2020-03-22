@@ -49,9 +49,7 @@ add_action(
 
 		$css .= ( $appearance['default-colors']['link'] !== $color_link ) ? sprintf(
 			'
-			.editor-styles-wrapper .wp-block a,
-			.editor-styles-wrapper .wp-block a:focus,
-			.editor-styles-wrapper .wp-block a:focus {
+			.editor-styles-wrapper a:not(:focus):not(:hover) {
 				color: %s;
 			}
 			',

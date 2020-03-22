@@ -2,17 +2,17 @@
 
 .sidebar {
 	display: none;
-	margin: space(stack, m);
+	padding-bottom: space(m);
 	padding-top: space(s);
+
+	.genesis-breadcrumbs-visible & {
+		padding-top: space(l);
+	}
 
 	@extend %font-size-s;
 
 	@include mq($from: tablet) {
 		display: block;
-	}
-
-	.has-featured-image & {
-		padding-top: 0;
 	}
 
 	.widget {

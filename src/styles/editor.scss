@@ -12,7 +12,6 @@
 @import "utility/functions";
 @import "utility/mixins";
 @import "utility/@extend";
-@import "utility/helper-classes";
 
 /* Editor style */
 @import "blocks/editor-container";
@@ -26,4 +25,7 @@
 	/* Blocks */
 	@import "blocks/front-end";
 	@import "blocks/editor";
+
+	/* Helpers */
+	@import "utility/helper-classes";
 }

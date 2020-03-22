@@ -2,8 +2,8 @@
 * Footer
 *
 *	- Common
-*	- Footer Widgets
 *	- Site Footer
+*	- Footer Widgets
 */
 
 /* Common */
@@ -20,6 +20,29 @@
 	}
 }
 
+/* Site Footer */
+
+.site-footer {
+	background: color(dark, strong);
+	color: color(light, strong);
+	padding: space(divider, m);
+
+	p {
+		color: color(light, strong);
+		margin-bottom: 0;
+
+		a {
+			color: color(light, strong);
+			margin-bottom: 0;
+
+			&:focus,
+			&:hover {
+				color: color(light, soft);
+			}
+		}
+	}
+}
+
 /* Footer Widgets */
 
 .footer-widgets {
@@ -27,10 +50,14 @@
 
 	@extend %box-shadow-top;
 
-	.wrap {
+	.wrap,
+	.widget {
 		display: flex;
-		flex-wrap: wrap;
 		justify-content: center;
+	}
+
+	.wrap {
+		flex-wrap: wrap;
 
 		@include mq($from: tablet) {
 			flex-wrap: nowrap;
@@ -56,27 +83,25 @@
 			flex-grow: 1;
 			margin-bottom: 0;
 		}
-	}
-}
 
-/* Site Footer */
+		.menu {
 
-.site-footer {
-	background: color(dark, strong);
-	color: color(light, strong);
-	padding: space(divider, m);
+			li:not(:last-child) {
+				margin-bottom: space(xs);
 
-	p {
-		color: color(light, strong);
-		margin-bottom: 0;
+				@include mq($from: tablet) {
+					margin-bottom: 0;
+				}
+			}
 
-		a {
-			color: color(light, strong);
-			margin-bottom: 0;
+			a {
+				color: color(dark, strong);
+				font-weight: 700;
 
-			&:focus,
-			&:hover {
-				color: color(light, soft);
+				&:focus,
+				&:hover {
+					color: color(dark, soft);
+				}
 			}
 		}
 	}

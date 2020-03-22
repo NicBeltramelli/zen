@@ -66,8 +66,8 @@ $base-font-sizes: (
 	// See: https://www.modularscale.com/?16&px&1.125
 	phone: (
 		xxxl:		36.491px,
-		xxl:		28.833px,
-		xl:			20.25px,
+		xxl:		32.437px,
+		xl:			25.629px,
 		l:			18px,
 		m:			16px,		// Base value - ratio: 1.125
 		s:			14.22px,
@@ -76,9 +76,9 @@ $base-font-sizes: (
 
 	// See: https://www.modularscale.com/?18&px&1.2
 	tablet: (
-		xxxl:		44.79px,
-		xxl:		37.325px,
-		xl:			25.92px,
+		xxxl:		53.748px,
+		xxl:		44.79px,
+		xl:			37.325px,
 		l:			21.6px,
 		m:			18px,		// Base value - ratio: 1.2
 		s:			15px,
@@ -97,7 +97,7 @@ $base-line-height: (
 	xxxl:			4rem,
 	xxl:			3rem,
 	xl-break:		2.5rem,		// Break vertical rhythm
-	xl:				2rem,
+	xl:				3rem,
 	l-break:		2.5rem,		// Break vertical rhythm
 	l:				2rem,
 	m:				2rem,

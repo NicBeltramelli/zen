@@ -95,12 +95,12 @@ add_action(
 			.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover,
 			.woocommerce div.product .woocommerce-tabs ul.tabs li a:focus,
 			.woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
-
 			.woocommerce-account .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link.is-active > a,
 			.woocommerce-account .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link a:focus,
 			.woocommerce-account .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link a:hover,
 			.woocommerce-info::before,
-			.woocommerce-message::before {
+			.woocommerce-message::before,
+			.woocommerce a.button.loading::after {
 				color: %1$s;
 			}
 			',

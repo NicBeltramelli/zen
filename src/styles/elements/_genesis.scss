@@ -36,6 +36,7 @@
 }
 
 .author-box {
+	margin: space(divider, m);
 	padding: space(s) space(s) 0;
 
 	.avatar {
@@ -51,13 +52,18 @@
 	.author-box-content {
 		clear: both;
 		float: left;
+
+		p {
+
+			@extend %font-size-s;
+		}
 	}
 }
 
 /* Breadcrumbs */
 
 .breadcrumb {
-	margin-bottom: space(m);
+	margin: space(divider, s);
 
 	@extend %font-size-s;
 }
