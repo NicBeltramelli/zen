@@ -1,6 +1,7 @@
 # Space Changelog
 
 ## [dev]
+* Fix floating header class attribution
 * Bump ionicon 5.0.0
 * Update distribution package
 * Fix accessibility of responsive menu toggle

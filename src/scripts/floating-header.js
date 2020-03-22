@@ -30,6 +30,6 @@ const headroom  = new Headroom(header, {
 });
 
 if ($(window).width() > 900){
-	$( "header" ).addClass( "animated" );
+	$( ".site-header" ).addClass( "animated" );
 	headroom.init();
 }
