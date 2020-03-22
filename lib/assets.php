@@ -34,11 +34,12 @@ add_action(
 		);
 
 		/* Ionicons icons */
-		wp_enqueue_style(
+		wp_enqueue_script(
 			genesis_get_theme_handle() . '-ionicons',
 			$appearance['ionicons'],
 			[],
-			genesis_get_theme_version()
+			genesis_get_theme_version(),
+			true
 		);
 
 		/* Dashicons icons */

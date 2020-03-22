@@ -1,6 +1,7 @@
 # Space Changelog
 
 ## [dev]
+* Bump ionicon 5.0.0
 * Update distribution package
 * Fix accessibility of responsive menu toggle
 * Display author box on author page and on single post
