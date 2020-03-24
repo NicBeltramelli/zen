@@ -1,6 +1,7 @@
 # Zen Changelog
 
 ## [dev]
+* Move @wpackio/entrypoint to dev deps
 * Remove child theme name constant
 * Remove export script
 * Rebrand as Zen
