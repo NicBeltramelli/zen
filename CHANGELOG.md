@@ -1,6 +1,7 @@
 # Zen Changelog
 
 ## [dev]
+* Remove export script
 * Rebrand as Zen
 * Bump deps
 * Fix floating header class attribution

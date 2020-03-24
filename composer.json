@@ -28,7 +28,6 @@
     },
     "scripts": {
         "phpcs": "phpcs",
-        "phpcbf": "phpcbf --report=diff -vv",
-        "export": "zip -r ../zen.zip * .[^.]* -x '.*' '.git/*' '*.log' '*.lock' '.cache-loader/*' 'phpcs.xml.dist' 'composer.json' 'package.json' 'assets/*' 'node_modules/*' 'vendor/*'"
+        "phpcbf": "phpcbf --report=diff -vv"
     }
 }
