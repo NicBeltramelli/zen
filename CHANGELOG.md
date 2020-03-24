@@ -1,6 +1,7 @@
 # Space Changelog
 
 ## [dev]
+* Bump deps
 * Fix floating header class attribution
 * Bump ionicon 5.0.0
 * Update distribution package
