@@ -14,9 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-/* Define constant */
-define( 'CHILD_THEME_NAME', 'Zen' );
-
 /* Set localization */
 add_action(
 	'after_setup_theme',

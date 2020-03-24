@@ -1,6 +1,7 @@
 # Zen Changelog
 
 ## [dev]
+* Remove child theme name constant
 * Remove export script
 * Rebrand as Zen
 * Bump deps

@@ -56,8 +56,7 @@ add_action(
 			return;
 		}
 
-		/* translators: %s: child theme name */
-		$notice_html = sprintf( __( 'Please install and activate <a href="https://wordpress.org/plugins/genesis-connect-woocommerce/" target="_blank">Genesis Connect for WooCommerce</a> to <strong>enable WooCommerce support for %s</strong>.', 'zen' ), esc_html( CHILD_THEME_NAME ) );
+		$notice_html = sprintf( __( 'Please install and activate <a href="https://wordpress.org/plugins/genesis-connect-woocommerce/" target="_blank">Genesis Connect for WooCommerce</a> to <strong>enable WooCommerce support</strong>.', 'zen' ) );
 
 		if ( current_user_can( 'install_plugins' ) ) {
 
@@ -81,8 +80,8 @@ add_action(
 				)
 			);
 
-			/* translators: 1: plugin install prompt presented as link, 2: child theme name */
-			$notice_html = sprintf( __( 'Please %1$s to <strong>enable WooCommerce support for %2$s</strong>.', 'zen' ), $install_link, esc_html( CHILD_THEME_NAME ) );
+			// phpcs:disable WordPress.WP.I18n.MissingTranslatorsComment
+			$notice_html = sprintf( __( 'Please %1$s to <strong>enable WooCommerce support.</strong>.', 'zen' ), $install_link );
 		}
 
 		echo '<div class="notice notice-info is-dismissible zen-woocommerce-notice"><p>' . wp_kses_post( $notice_html ) . '</p></div>';
