@@ -58,7 +58,7 @@ p.demo_store {
 	a {
 
 		&.added_to_cart {
-			padding: space(divider, xxs);
+			padding: space(divider, xs);
 
 			@extend %font-size-s;
 		}

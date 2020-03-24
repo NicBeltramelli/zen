@@ -218,7 +218,12 @@
 		}
 
 		.woocommerce-result-count {
-			margin: space(stack, s);
+			margin-top: space(s);
+			margin-bottom: space(s);
+		}
+
+		.woocommerce-ordering {
+			margin-top: 0;
 		}
 
 		ul.products[class*="columns-"] {
@@ -226,7 +231,7 @@
 			li.product {
 				clear: none;
 				float: left;
-				margin: 0 0 space(m) $margin-left;
+				margin: 0 0 space(l) $margin-left;
 				width: $one-half;
 
 				&:nth-child(odd) {

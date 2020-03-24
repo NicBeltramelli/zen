@@ -10,6 +10,7 @@
 		border-radius: $base-border-radius;
 		color: $contentbg;
 		padding: space(inset-squish, xs);
+		text-transform: uppercase;
 		transition: all $base-transition;
 		white-space: normal;
 		width: auto;
@@ -21,8 +22,8 @@
 
 			&::after {
 				color: $primary;
-				right: -(space(s));
-				top: space(xxs);
+				right: 5px;
+				top: calc(50% - 1rem);
 				vertical-align: middle;
 
 				@extend %font-size-xs;
@@ -32,7 +33,9 @@
 		&.added {
 
 			&::after {
-				margin-left: space(xs);
+				position: absolute;
+				right: 5px;
+				top: calc(50% - 1rem);
 				vertical-align: middle;
 
 				@extend %font-size-xs;
