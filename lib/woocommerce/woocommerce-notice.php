@@ -1,13 +1,13 @@
 <?php
 /**
- * Space
+ * Zen
  *
  * This file adds the "Genesis Connect for WooCommerce" notice.
  *
- * @package Space
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/space.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -51,13 +51,13 @@ add_action(
 		}
 
 		// If message dismissed, exit early.
-		if ( get_user_option( 'space_woocommerce_message_dismissed', get_current_user_id() ) ) {
+		if ( get_user_option( 'zen_woocommerce_message_dismissed', get_current_user_id() ) ) {
 
 			return;
 		}
 
 		/* translators: %s: child theme name */
-		$notice_html = sprintf( __( 'Please install and activate <a href="https://wordpress.org/plugins/genesis-connect-woocommerce/" target="_blank">Genesis Connect for WooCommerce</a> to <strong>enable WooCommerce support for %s</strong>.', 'space' ), esc_html( CHILD_THEME_NAME ) );
+		$notice_html = sprintf( __( 'Please install and activate <a href="https://wordpress.org/plugins/genesis-connect-woocommerce/" target="_blank">Genesis Connect for WooCommerce</a> to <strong>enable WooCommerce support for %s</strong>.', 'zen' ), esc_html( CHILD_THEME_NAME ) );
 
 		if ( current_user_can( 'install_plugins' ) ) {
 
@@ -77,29 +77,29 @@ add_action(
 				),
 				__(
 					'install and activate Genesis Connect for WooCommerce',
-					'space'
+					'zen'
 				)
 			);
 
 			/* translators: 1: plugin install prompt presented as link, 2: child theme name */
-			$notice_html = sprintf( __( 'Please %1$s to <strong>enable WooCommerce support for %2$s</strong>.', 'space' ), $install_link, esc_html( CHILD_THEME_NAME ) );
+			$notice_html = sprintf( __( 'Please %1$s to <strong>enable WooCommerce support for %2$s</strong>.', 'zen' ), $install_link, esc_html( CHILD_THEME_NAME ) );
 		}
 
-		echo '<div class="notice notice-info is-dismissible space-woocommerce-notice"><p>' . wp_kses_post( $notice_html ) . '</p></div>';
+		echo '<div class="notice notice-info is-dismissible zen-woocommerce-notice"><p>' . wp_kses_post( $notice_html ) . '</p></div>';
 
 	}
 );
 
 add_action(
-	'wp_ajax_space_dismiss_woocommerce_notice',
-	'space_dismiss_woocommerce_notice'
+	'wp_ajax_zen_dismiss_woocommerce_notice',
+	'zen_dismiss_woocommerce_notice'
 );
 
 /**
  * Add option to dismiss Genesis Connect for WooCommerce plugin install prompt
  */
-function space_dismiss_woocommerce_notice() {
-	update_user_option( get_current_user_id(), 'space_woocommerce_message_dismissed', 1 );
+function zen_dismiss_woocommerce_notice() {
+	update_user_option( get_current_user_id(), 'zen_woocommerce_message_dismissed', 1 );
 }
 
 /* Enqueue script to clear the Genesis Connect for WooCommerce plugin install prompt on dismissal */
@@ -108,17 +108,17 @@ add_action(
 	function () {
 
 		/* Access the wpackio global var */
-		global $space_assets;
+		global $zen_assets;
 
 		/* Main styles */
-		$space_assets->enqueue( 'woocommerce', 'notice', [] );
+		$zen_assets->enqueue( 'woocommerce', 'notice', [] );
 
 	}
 );
 
 add_action(
 	'switch_theme',
-	'space_reset_woocommerce_notice',
+	'zen_reset_woocommerce_notice',
 	10,
 	2
 );
@@ -126,20 +126,20 @@ add_action(
 /**
  * Clear the Genesis Connect for WooCommerce plugin install prompt on theme change
  */
-function space_reset_woocommerce_notice() {
+function zen_reset_woocommerce_notice() {
 
 	global $wpdb;
 
 	$args =
 	[
-		'meta_key'   => $wpdb->prefix . 'space_woocommerce_message_dismissed',
+		'meta_key'   => $wpdb->prefix . 'zen_woocommerce_message_dismissed',
 		'meta_value' => 1,
 	];
 
 	$users = get_users( $args );
 
 	foreach ( $users as $user ) {
-		delete_user_option( $user->ID, 'space_woocommerce_message_dismissed' );
+		delete_user_option( $user->ID, 'zen_woocommerce_message_dismissed' );
 	}
 
 }
@@ -159,7 +159,7 @@ add_action(
 			return;
 		}
 
-		space_reset_woocommerce_notice();
+		zen_reset_woocommerce_notice();
 
 	},
 	10,

@@ -3,15 +3,15 @@ const StylelintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
 	// Project Identity
-	appName: 'space', // Unique name of your project
+	appName: 'zen', // Unique name of your project
 	type: 'theme', // Plugin or theme
-	slug: 'space', // Plugin or Theme slug, basically the directory name under `wp-content/<themes|plugins>`
+	slug: 'zen', // Plugin or Theme slug, basically the directory name under `wp-content/<themes|plugins>`
 	// Used to generate banners on top of compiled stuff
 	bannerConfig: {
-		name: 'space',
+		name: 'zen',
 		author: 'Nic Beltramelli',
 		license: 'GPL-2.0-or-later',
-		link: 'https://github.com/NicBeltramelli/space',
+		link: 'https://github.com/NicBeltramelli/zen',
 		version: pkg.version,
 		copyrightText:
 			'This software is released under the GPL-2.0-or-later License\nhttps://spdx.org/licenses/GPL-2.0-or-later.html',

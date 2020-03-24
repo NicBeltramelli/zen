@@ -1,13 +1,13 @@
 <?php
 /**
- * Space
+ * Zen
  *
  * This file adds body classes to the body tag.
  *
- * @package Space
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/space.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -55,11 +55,11 @@ add_filter(
 			$classes[]      = $template_class;
 		}
 
-		if ( 'fixed-header' === get_theme_mod( 'space_header_options', false ) ) {
+		if ( 'fixed-header' === get_theme_mod( 'zen_header_options', false ) ) {
 			$classes[] = 'has-fixed-header';
 		}
 
-		if ( 'floating-header' === get_theme_mod( 'space_header_options', false ) ) {
+		if ( 'floating-header' === get_theme_mod( 'zen_header_options', false ) ) {
 			$classes[] = 'has-floating-header';
 		}
 

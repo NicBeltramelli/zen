@@ -1,13 +1,13 @@
 <?php
 /**
- * Space
+ * Zen
  *
  * This file adds the navigation setting.
  *
- * @package Space
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/space.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -100,7 +100,7 @@ add_filter(
 		if ( genesis_nav_menu_supported( 'tertiary' ) &&
 			has_nav_menu( 'tertiary' ) ) :
 
-			$links['genesis-nav-tertiary'] = __( 'Skip to tertiary navigation', 'space' );
+			$links['genesis-nav-tertiary'] = __( 'Skip to tertiary navigation', 'zen' );
 
 		endif;
 

@@ -1,13 +1,13 @@
 <?php
 /**
- * Space
+ * Zen
  *
  * This file adds the WooCommerce setup functions.
  *
- * @package Space
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/space.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -63,10 +63,10 @@ add_action(
 		}
 
 		/* Access the wpackio global var */
-		global $space_assets;
+		global $zen_assets;
 
 		/* Main styles */
-		$space_assets->enqueue( 'woocommerce', 'main', [] );
+		$zen_assets->enqueue( 'woocommerce', 'main', [] );
 	},
 	99
 );
@@ -140,8 +140,8 @@ add_filter(
 	'woocommerce_pagination_args',
 	function ( $args ) {
 
-		$args['prev_text'] = sprintf( '&laquo; %s', __( 'Previous Page', 'space' ) );
-		$args['next_text'] = sprintf( '%s &raquo;', __( 'Next Page', 'space' ) );
+		$args['prev_text'] = sprintf( '&laquo; %s', __( 'Previous Page', 'zen' ) );
+		$args['next_text'] = sprintf( '%s &raquo;', __( 'Next Page', 'zen' ) );
 
 		return $args;
 
@@ -160,7 +160,7 @@ add_action(
 			return;
 		}
 
-		space_update_woocommerce_image_dimensions();
+		zen_update_woocommerce_image_dimensions();
 
 	},
 	1
@@ -180,7 +180,7 @@ add_action(
 			return;
 		}
 
-		space_update_woocommerce_image_dimensions();
+		zen_update_woocommerce_image_dimensions();
 
 	},
 	10,
@@ -190,7 +190,7 @@ add_action(
 /**
  * Update WooCommerce image dimensions
  */
-function space_update_woocommerce_image_dimensions() {
+function zen_update_woocommerce_image_dimensions() {
 
 	/* Update image size options */
 	update_option( 'woocommerce_single_image_width', 655 );    // Single product image.

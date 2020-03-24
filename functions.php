@@ -1,13 +1,13 @@
 <?php
 /**
- * Space
+ * Zen
  *
- * This file adds the function library to Space Theme.
+ * This file adds the function library to Zen Theme.
  *
- * @package Space
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/space.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,15 +25,15 @@ require_once get_template_directory() . '/lib/init.php'; // Initialize Genesis F
  */
 require_once __DIR__ . '/vendor/autoload.php'; // Require composer autoload for access the WPackio API.
 
-$space_assets = new \WPackio\Enqueue( 'space', 'dist', genesis_get_theme_version(), 'theme', false, 'child' ); // Instantiate the WPackio Enqueue class.
+$zen_assets = new \WPackio\Enqueue( 'zen', 'dist', genesis_get_theme_version(), 'theme', false, 'child' ); // Instantiate the WPackio Enqueue class.
 
 /**
- * The $space_includes array determines the code library included in your child theme
+ * The $zen_includes array determines the code library included in your child theme
  *
  * Add or remove files to the array as needed.
  * Please note that missing files will produce a fatal error.
  */
-$space_includes = [
+$zen_includes = [
 
 	/* Theme Setup */
 	'lib/assets.php', // Enqueue assets.
@@ -62,27 +62,27 @@ $space_includes = [
 
 ];
 
-foreach ( $space_includes as $space_file ) {
+foreach ( $zen_includes as $zen_file ) {
 
-	if ( ! locate_template( $space_file, true, true ) ) {
+	if ( ! locate_template( $zen_file, true, true ) ) {
 
-		$space_error(
+		$zen_error(
 			sprintf(
 				/* translators: %s is replaced with the name of missing file */
 				esc_html__(
 					'Error locating %s for inclusion.',
-					'space'
+					'zen'
 				),
 				sprintf(
 					'<code>%s</code>',
-					esc_html( $space_file )
+					esc_html( $zen_file )
 				)
 			),
 			esc_html__(
 				'File not found',
-				'space'
+				'zen'
 			)
 		);
 	}
 }
-unset( $space_file );
+unset( $zen_file );

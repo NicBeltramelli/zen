@@ -1,13 +1,13 @@
 <?php
 /**
- * Space
+ * Zen
  *
  * This file adds the content setting.
  *
- * @package Space
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/space.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -84,7 +84,7 @@ add_filter(
 	'genesis_more_text',
 	function () {
 
-		$more_text = genesis_a11y_more_link( __( '[ Read More ]', 'space' ) );
+		$more_text = genesis_a11y_more_link( __( '[ Read More ]', 'zen' ) );
 
 		return $more_text;
 

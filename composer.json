@@ -1,14 +1,14 @@
 {
-    "name": "nicbeltramelli/space",
+    "name": "nicbeltramelli/zen",
     "type": "wordpress-theme",
     "license": "GPL-2.0-or-later",
-    "description": "Starter theme for Genesis Framework with a modern development workflow",
-    "homepage": "https://thematicpress.com/space/",
+    "description": "Child theme for Genesis Framework with a modern development workflow",
+    "homepage": "https://beltramelli.app/zen/",
     "authors": [
         {
             "name": "Nic Beltramelli",
             "email": "nicbeltramelli@gmail.com",
-            "homepage": "https://github.com/NicBeltramelli/"
+            "homepage": "https://beltramelli.app/"
         }
     ],
     "keywords": [
@@ -29,6 +29,6 @@
     "scripts": {
         "phpcs": "phpcs",
         "phpcbf": "phpcbf --report=diff -vv",
-        "export": "zip -r ../space.zip * .[^.]* -x '.*' '.git/*' '*.log' '*.lock' '.cache-loader/*' 'phpcs.xml.dist' 'composer.json' 'package.json' 'assets/*' 'node_modules/*' 'vendor/*'"
+        "export": "zip -r ../zen.zip * .[^.]* -x '.*' '.git/*' '*.log' '*.lock' '.cache-loader/*' 'phpcs.xml.dist' 'composer.json' 'package.json' 'assets/*' 'node_modules/*' 'vendor/*'"
     }
 }

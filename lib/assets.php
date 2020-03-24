@@ -1,13 +1,13 @@
 <?php
 /**
- * Space
+ * Zen
  *
  * This file enqueues assets.
  *
- * @package Space
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/space.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,7 +20,7 @@ add_action(
 	function () {
 
 		/* Access the wpackio global var */
-		global $space_assets;
+		global $zen_assets;
 
 		/* Locate the config file */
 		$appearance = genesis_get_config( 'appearance' );
@@ -48,14 +48,14 @@ add_action(
 		);
 
 		/* Theme styles and scripts */
-		$space_assets->enqueue(
+		$zen_assets->enqueue(
 			'theme',
 			'main',
 			[]
 		);
 
 		/* Blocks animation */
-		$space_assets->enqueue(
+		$zen_assets->enqueue(
 			'theme',
 			'blocksanimation',
 			[
@@ -64,9 +64,9 @@ add_action(
 		);
 
 		/* Floating header scripts */
-		if ( 'floating-header' === get_theme_mod( 'space_header_options', false ) ) {
+		if ( 'floating-header' === get_theme_mod( 'zen_header_options', false ) ) {
 
-			$space_assets->enqueue(
+			$zen_assets->enqueue(
 				'theme',
 				'floatingHeader',
 				[

@@ -1,28 +1,28 @@
 <?php
 /**
- * Space
+ * Zen
  *
  * This file overrides `genesis/config/layouts.php` to set default theme layouts.
  *
- * @package Space
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/space.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-$space_layouts = array();
+$zen_layouts = array();
 
-$space_layouts_config = PARENT_DIR . '/config/layouts.php';
+$zen_layouts_config = PARENT_DIR . '/config/layouts.php';
 
-if ( is_readable( $space_layouts_config ) ) {
-	$space_layouts = require $space_layouts_config;
-	unset( $space_layouts['content-sidebar-sidebar'] );
-	unset( $space_layouts['sidebar-sidebar-content'] );
-	unset( $space_layouts['sidebar-content-sidebar'] );
+if ( is_readable( $zen_layouts_config ) ) {
+	$zen_layouts = require $zen_layouts_config;
+	unset( $zen_layouts['content-sidebar-sidebar'] );
+	unset( $zen_layouts['sidebar-sidebar-content'] );
+	unset( $zen_layouts['sidebar-content-sidebar'] );
 }
 
-return $space_layouts;
+return $zen_layouts;

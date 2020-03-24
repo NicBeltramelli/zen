@@ -1,13 +1,13 @@
 <?php
 /**
- * Space
+ * Zen
  *
  * This file adds the widgets settings.
  *
- * @package Space
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/space.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -28,7 +28,7 @@ unregister_sidebar(
 genesis_register_sidebar(
 	[
 		'id'          => 'privacy',
-		'name'        => __( 'Privacy', 'space' ),
-		'description' => __( 'This area is designed to display the Privacy sidebar menu.', 'space' ),
+		'name'        => __( 'Privacy', 'zen' ),
+		'description' => __( 'This area is designed to display the Privacy sidebar menu.', 'zen' ),
 	]
 );

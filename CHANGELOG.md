@@ -1,6 +1,7 @@
-# Space Changelog
+# Zen Changelog
 
 ## [dev]
+* Rebrand as Zen
 * Bump deps
 * Fix floating header class attribution
 * Bump ionicon 5.0.0
@@ -19,7 +20,6 @@
 * Add linters
 * Remove editor font sizes support
 * Move to wpack.io
-* Rebrand as Space
 
 ## [3.6.0] - 2019-11-11
 * Set full-width-content default layout

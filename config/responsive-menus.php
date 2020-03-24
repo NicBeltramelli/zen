@@ -1,13 +1,13 @@
 <?php
 /**
- * Space
+ * Zen
  *
  * This file adds the responsive menus settings (Requires Genesis 3.0+).
  *
- * @package Space
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/space.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,9 +16,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 return [
 	'script' => [
-		'mainMenu'         => __( 'Menu', 'space' ), // phpcs:ignore
+		'mainMenu'         => __( 'Menu', 'zen' ), // phpcs:ignore
 		'menuIconClass'    => 'dashicons-before dashicons-menu',
-		'subMenu'          => __( 'Submenu', 'space' ),
+		'subMenu'          => __( 'Submenu', 'zen' ),
 		'subMenuIconClass' => 'dashicons-before dashicons-arrow-down-alt2',
 
 		'menuClasses'      => [

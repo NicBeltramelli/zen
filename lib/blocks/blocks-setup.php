@@ -1,13 +1,13 @@
 <?php
 /**
- * Space
+ * Zen
  *
  * This file adds support for Gutenberg blocks.
  *
- * @package Space
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/space.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,10 +20,10 @@ add_action(
 	function () {
 
 		/* Access the wpackio global var */
-		global $space_assets;
+		global $zen_assets;
 
 		/* Get CSS handle */
-		$assets      = $space_assets->getAssets( 'theme', 'blocks', [] );
+		$assets      = $zen_assets->getAssets( 'theme', 'blocks', [] );
 		$entry_point = array_pop( $assets['css'] );
 		$css_handle  = $entry_point['handle'];
 
@@ -39,11 +39,11 @@ add_action(
 		);
 
 		/* Blocks styles and scripts */
-		$space_assets->enqueue( 'theme', 'blocks', [] );
+		$zen_assets->enqueue( 'theme', 'blocks', [] );
 
 		/* Output inline css */
-		$color_link   = get_theme_mod( 'space_link_color', $appearance['default-colors']['link'] );
-		$color_accent = get_theme_mod( 'space_accent_color', $appearance['default-colors']['accent'] );
+		$color_link   = get_theme_mod( 'zen_link_color', $appearance['default-colors']['link'] );
+		$color_accent = get_theme_mod( 'zen_accent_color', $appearance['default-colors']['accent'] );
 
 		$css = '';
 
@@ -68,7 +68,7 @@ add_action(
 			}
 			',
 			$color_accent,
-			space_color_contrast( $color_accent )
+			zen_color_contrast( $color_accent )
 		) : '';
 
 		if ( $css ) {
@@ -86,12 +86,12 @@ add_theme_support(
 );
 
 /* Locate the config file */
-$space_appearance = genesis_get_config( 'appearance' );
+$zen_appearance = genesis_get_config( 'appearance' );
 
 /* Add support for editor color palette */
 add_theme_support(
 	'editor-color-palette',
-	$space_appearance['editor-color-palette']
+	$zen_appearance['editor-color-palette']
 );
 
 /* Disable Custom Colors */

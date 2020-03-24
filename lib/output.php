@@ -1,13 +1,13 @@
 <?php
 /**
- * Space
+ * Zen
  *
  * This file adds the required CSS to the front end.
  *
- * @package Space
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/space.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,10 +24,10 @@ add_action(
 	function () {
 
 		/* Access the wpackio global var */
-		global $space_assets;
+		global $zen_assets;
 
 		/* Get CSS handle */
-		$assets      = $space_assets->getAssets( 'theme', 'main', [] );
+		$assets      = $zen_assets->getAssets( 'theme', 'main', [] );
 		$entry_point = array_pop( $assets['css'] );
 		$css_handle  = $entry_point['handle'];
 
@@ -35,12 +35,12 @@ add_action(
 		$appearance = genesis_get_config( 'appearance' );
 
 		/* Output inline css */
-		$color_link   = get_theme_mod( 'space_link_color', $appearance['default-colors']['link'] );
-		$color_accent = get_theme_mod( 'space_accent_color', $appearance['default-colors']['accent'] );
+		$color_link   = get_theme_mod( 'zen_link_color', $appearance['default-colors']['link'] );
+		$color_accent = get_theme_mod( 'zen_accent_color', $appearance['default-colors']['accent'] );
 		$logo         = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
 
 		if ( $logo ) {
-			$logo_max_width = get_theme_mod( 'space_logo_width', 250 );
+			$logo_max_width = get_theme_mod( 'zen_logo_width', 250 );
 		}
 
 		$css = '';
@@ -119,7 +119,7 @@ add_action(
 			}
 			',
 			$color_accent,
-			space_color_contrast( $color_accent )
+			zen_color_contrast( $color_accent )
 		) : '';
 
 		/* Output custom logo inline css */

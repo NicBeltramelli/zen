@@ -1,13 +1,13 @@
 <?php
 /**
- * Space
+ * Zen
  *
  * This file adds the functions for displaying error messages.
  *
- * @package Space
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/space.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -21,25 +21,25 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param string $subtitle
  * @param string $title
  */
-$space_error = function ( $message, $space_subtitle = '', $title = '' ) {
+$zen_error = function ( $message, $zen_subtitle = '', $title = '' ) {
 
-	$docs_url = 'https://thematicpress.com/space/docs';
+	$docs_url = 'https://github.com/NicBeltramelli/zen.git/';
 
 	$title = $title ?: esc_html__(
-		'Space &rsaquo; Error',
-		'space'
+		'Zen &rsaquo; Error',
+		'zen'
 	);
 
 	$footer = sprintf(
 		'<a href="%s">%s</a>',
 		esc_url( $docs_url ),
 		esc_html__(
-			'Space Documentation',
-			'space'
+			'Zen Documentation',
+			'zen'
 		)
 	);
 
-	$message = "<h1>{$title}<br><small>{$space_subtitle}</small></h1><p>{$message}</p><p>{$footer}</p>";
+	$message = "<h1>{$title}<br><small>{$zen_subtitle}</small></h1><p>{$message}</p><p>{$footer}</p>";
 
 	wp_die( $message ); // WPCS: xss ok.
 };
@@ -49,14 +49,14 @@ $space_error = function ( $message, $space_subtitle = '', $title = '' ) {
  */
 if ( version_compare( '7.1', phpversion(), '>=' ) ) {
 
-	$space_error(
+	$zen_error(
 		esc_html__(
 			'You must be using PHP 7.1 or greater.',
-			'space'
+			'zen'
 		),
 		esc_html__(
 			'Invalid PHP version',
-			'space'
+			'zen'
 		)
 	);
 }
@@ -66,14 +66,14 @@ if ( version_compare( '7.1', phpversion(), '>=' ) ) {
  */
 if ( version_compare( '4.7.0', get_bloginfo( 'version' ), '>=' ) ) {
 
-	$space_error(
+	$zen_error(
 		esc_html__(
 			'You must be using WordPress 4.7.0 or greater.',
-			'space'
+			'zen'
 		),
 		esc_html__(
 			'Invalid WordPress version',
-			'space'
+			'zen'
 		)
 	);
 }
@@ -81,18 +81,18 @@ if ( version_compare( '4.7.0', get_bloginfo( 'version' ), '>=' ) ) {
 /**
  * Ensure Genesis Framework is installed
  */
-$space_parent_theme = wp_get_theme( 'genesis' );
+$zen_parent_theme = wp_get_theme( 'genesis' );
 
-if ( ! $space_parent_theme->exists() ) {
+if ( ! $zen_parent_theme->exists() ) {
 
-	$space_error(
+	$zen_error(
 		esc_html__(
 			'You must install Genesis Framework.',
-			'space'
+			'zen'
 		),
 		esc_html__(
 			'Missing Genesis Framework',
-			'space'
+			'zen'
 		)
 	);
 }

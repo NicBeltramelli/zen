@@ -1,13 +1,13 @@
 <?php
 /**
- * Space
+ * Zen
  *
  * This file sets localization, defines constants and features.
  *
- * @package Space
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/space.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,14 +15,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /* Define constant */
-define( 'CHILD_THEME_NAME', 'Space' );
+define( 'CHILD_THEME_NAME', 'Zen' );
 
 /* Set localization */
 add_action(
 	'after_setup_theme',
 	function () {
 
-		load_child_theme_textdomain( 'space', get_stylesheet_directory() . '/languages' );
+		load_child_theme_textdomain( 'zen', get_stylesheet_directory() . '/languages' );
 
 	}
 );
@@ -46,19 +46,19 @@ add_action(
 
 add_action(
 	'after_setup_theme',
-	'space_content_width',
+	'zen_content_width',
 	0
 );
 
 /**
  * Set the maximum allowed width for any embedded content
  */
-function space_content_width() {
+function zen_content_width() {
 
 	/* Locate the config file */
 	$appearance = genesis_get_config( 'appearance' );
 
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- See https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/924
-	$GLOBALS['content_width'] = apply_filters( 'space_content_width', $appearance['content-width'] );
+	$GLOBALS['content_width'] = apply_filters( 'zen_content_width', $appearance['content-width'] );
 
 }
