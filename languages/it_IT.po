@@ -1,0 +1,250 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: Zen\n"
+"POT-Creation-Date: 2020-03-25 00:21+0100\n"
+"PO-Revision-Date: 2020-03-25 00:33+0100\n"
+"Language-Team: Nic Beltramelli <nicbeltramelli@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: Nic Beltramelli <nicbeltramelli@gmail.com>\n"
+"Language: it_IT\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+"X-Poedit-SearchPathExcluded-2: node_modules\n"
+
+#: config/appearance.php:40
+msgid "Accent"
+msgstr "In risalto"
+
+#: config/appearance.php:45
+msgid "White"
+msgstr "Bianco"
+
+#: config/appearance.php:50
+msgid "Light"
+msgstr "Chiaro"
+
+#: config/appearance.php:55
+msgid "Grey"
+msgstr "Grigio"
+
+#: config/appearance.php:60
+msgid "Dark"
+msgstr "Scuro"
+
+#: config/appearance.php:65
+msgid "Black"
+msgstr "Nero"
+
+#: config/appearance.php:70
+msgid "Info"
+msgstr "Info"
+
+#: config/appearance.php:75
+msgid "Danger"
+msgstr "Rosso"
+
+#: config/appearance.php:80
+msgid "Success"
+msgstr "Verde"
+
+#: config/appearance.php:85
+msgid "Warning"
+msgstr "Avviso"
+
+#: config/appearance.php:90
+msgid "Star"
+msgstr "Stella"
+
+#: config/responsive-menus.php:19
+msgid "Menu"
+msgstr "Menu"
+
+#: config/responsive-menus.php:21
+msgid "Submenu"
+msgstr ""
+
+#: config/theme-supports.php:41
+msgid "Header Right"
+msgstr "Testata destra"
+
+#: config/theme-supports.php:42
+msgid "Header Left"
+msgstr "Testata sinistra"
+
+#: config/theme-supports.php:43
+msgid "Footer"
+msgstr "Piè di pagina"
+
+#: functions.php:73
+#, php-format
+msgid "Error locating %s for inclusion."
+msgstr "Errore durante l'individuazione di %s per l'inclusione."
+
+#: functions.php:82
+msgid "File not found"
+msgstr "File non trovato"
+
+#: lib/customize.php:43
+msgid ""
+"Change the default color of post info links, the hover color of linked "
+"titles and menu items, and more."
+msgstr ""
+"Modifica il colore predefinito di alcuni link, dei titoli al passaggio del "
+"mouse, delle voci di menu e altro ancora."
+
+#: lib/customize.php:44
+msgid "Link Color"
+msgstr "Colore link"
+
+#: lib/customize.php:65
+msgid "Change the default hovers color for buttons."
+msgstr "Modifica il colore predefinito dei pulsanti al passaggio del mouse."
+
+#: lib/customize.php:66
+msgid "Accent Color"
+msgstr "Colore in risalto"
+
+#: lib/customize.php:86
+msgid "Logo Width"
+msgstr "Larghezza logo"
+
+#: lib/customize.php:87
+msgid "The maximum width of the logo in pixels."
+msgstr "La larghezza massima del logo in pixel."
+
+#: lib/customize.php:116
+msgid "Header Options"
+msgstr "Opzioni testata"
+
+#: lib/customize.php:122
+msgid "Normal"
+msgstr "Normale"
+
+#: lib/customize.php:123
+msgid "Fixed"
+msgstr "Fissa"
+
+#: lib/customize.php:124
+msgid "Floating (active from tablet)"
+msgstr "Dinamica (attiva da tablet)"
+
+#: lib/customize.php:142
+msgid "You must supply a valid number."
+msgstr "È necessario fornire un numero valido."
+
+#: lib/customize.php:144
+msgid "The logo width cannot be less than 100."
+msgstr "La larghezza del logo non può essere inferiore a 100."
+
+#: lib/errors.php:29
+msgid "Zen &rsaquo; Error"
+msgstr "Zen &rsaquo; Errore"
+
+#: lib/errors.php:37
+msgid "Zen Documentation"
+msgstr "Zen Documentazione"
+
+#: lib/errors.php:54
+msgid "You must be using PHP 7.1 or greater."
+msgstr "È necessario utilizzare PHP 7.1 o versioni successive."
+
+#: lib/errors.php:58
+msgid "Invalid PHP version"
+msgstr "Versione PHP non supportata"
+
+#: lib/errors.php:71
+msgid "You must be using WordPress 5.0 or greater."
+msgstr "È necessario utilizzare WordPress 4.7.0 o versioni successive."
+
+#: lib/errors.php:75
+msgid "Invalid WordPress version"
+msgstr "Versione WordPress non valida"
+
+#: lib/errors.php:90
+msgid "You must install Genesis Framework."
+msgstr "È necessario installare Genesis Framework."
+
+#: lib/errors.php:94
+msgid "Missing Genesis Framework"
+msgstr "Genesis Framework mancante"
+
+#: lib/structure/content.php:87
+msgid "[ Read More ]"
+msgstr "[Continua]"
+
+#: lib/structure/navigation.php:103
+msgid "Skip to tertiary navigation"
+msgstr "Passa alla navigazione terziaria"
+
+#: lib/structure/widgets.php:31
+msgid "Privacy"
+msgstr "Privacy"
+
+#: lib/structure/widgets.php:32
+msgid "This area is designed to display the Privacy sidebar menu."
+msgstr "Quest'area è progettata per visualizzare il menu laterale Privacy."
+
+#: lib/woocommerce/woocommerce-notice.php:59
+msgid ""
+"Please install and activate <a href=\"https://wordpress.org/plugins/genesis-"
+"connect-woocommerce/\" target=\"_blank\">Genesis Connect for WooCommerce</a> "
+"to <strong>enable WooCommerce support</strong>."
+msgstr ""
+"Si prega di installare e attivare <a href=\"https://wordpress.org/plugins/"
+"genesis-connect-woocommerce/\" target=\"_blank\">Genesis Connect per "
+"WooCommerce</a> per abilitare il <strong>supporto per WooCommerce</strong>."
+
+#: lib/woocommerce/woocommerce-notice.php:78
+msgid "install and activate Genesis Connect for WooCommerce"
+msgstr "installare e attivare Genesis Connect per WooCommerce"
+
+#: lib/woocommerce/woocommerce-notice.php:84
+#, php-format
+msgid "Please %1$s to <strong>enable WooCommerce support.</strong>."
+msgstr ""
+"Si prega di %1s per abilitare il <strong>supporto per WooCommerce.</"
+"strong>. ."
+
+#: lib/woocommerce/woocommerce-setup.php:143
+msgid "Previous Page"
+msgstr "Precedente"
+
+#: lib/woocommerce/woocommerce-setup.php:144
+msgid "Next Page"
+msgstr "Seguente"
+
+#: search.php:26
+msgid "Search Results:"
+msgstr "Risultati di Ricerca:"
+
+#. Theme Name of the plugin/theme
+msgid "Zen"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/NicBeltramelli/zen"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Child theme for Genesis Framework with a modern development workflow."
+msgstr "Tema per Genesis Framework con un workflow moderno."
+
+#. Author of the plugin/theme
+msgid "Nic Beltramelli"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://github.com/NicBeltramelli/"
+msgstr ""
