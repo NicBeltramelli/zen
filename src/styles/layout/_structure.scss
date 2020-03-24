@@ -1,0 +1,165 @@
+/**
+* Structure
+*
+*	- Site Container
+*	- Site Inner
+*	- Featured Image
+*	- Layouts
+*/
+
+/* Site Container */
+
+.site-container {
+	animation: fadein 1s;
+	word-wrap: break-word;
+}
+
+@keyframes fadein {
+
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+/* Site Inner */
+
+.site-inner {
+	clear: both;
+	margin: space(l) auto 0 auto;
+	min-height: calc(100vh - 6rem);
+	padding: space(column, s);
+	z-index: 99;
+
+	@include mq($from: phone) {
+		padding: space(column, m);
+	}
+
+	@include mq($from: large-screen) {
+		max-width: breakpoint(large-screen);
+	}
+
+	.admin-bar & {
+
+		@include mq($until: admin-bar) {
+			min-height: calc(100vh - 6rem - 46px);
+		}
+
+		@include mq($from: admin-bar) {
+			min-height: calc(100vh - 6rem - 32px);
+		}
+	}
+}
+
+.page-landing,
+.page.has-featured-image,
+.single-post.has-featured-image {
+
+	.site-inner {
+		margin-top: 0;
+		min-height: 100vh;
+
+		.admin-bar & {
+
+			@include mq($until: admin-bar) {
+				min-height: calc(100vh - 46px);
+			}
+
+			@include mq($from: admin-bar) {
+				min-height: calc(100vh - 32px);
+			}
+		}
+	}
+}
+
+.wrap {
+	margin: 0 auto;
+	padding: space(column, s);
+
+	@include mq($from: phone) {
+		padding: space(column, m);
+	}
+
+	@include mq($from: large-screen) {
+		max-width: breakpoint(large-screen);
+	}
+}
+
+/* Featured Image */
+
+.single-post,
+.page {
+
+	.featured-image-wrapper {
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 40vh;
+		margin-left: -(space(s));
+		margin-right: -(space(s));
+		position: relative;
+
+		@include mq($from: phone) {
+			margin-left: -(space(m));
+			margin-right: -(space(m));
+		}
+
+		@include mq($from: tablet) {
+			height: 60vh;
+		}
+	}
+}
+
+/* Layouts */
+
+@include mq($from: phone) {
+
+	.content {
+		margin-left: auto;
+		margin-right: auto;
+		width: 85%;
+	}
+}
+
+@include mq($from: tablet) {
+
+	/* Content */
+	.content {
+		float: left;
+		margin-left: 10%;
+		width: 65%;
+	}
+
+	/* Sidebar */
+	.sidebar {
+		float: right;
+		width: 20%;
+	}
+
+	/* Sidebar Content */
+	.sidebar-content {
+
+		.content {
+			float: right;
+			margin-left: 0;
+			margin-right: 10%;
+		}
+
+		.sidebar {
+			float: left;
+		}
+	}
+
+	/* Full Width */
+	.full-width-content {
+
+		.content {
+			float: none;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}

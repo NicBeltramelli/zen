@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Advanced
+ * Zen
  *
  * This file adds the admin dashboard setting.
  *
- * @package Genesis Advanced
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,8 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Remove output of header and front page breadcrumb settings in the Customizer
- *
- * @since 3.0.0
  *
  * @param array $config Original Customizer items.
  * @return array Filtered Customizer items.

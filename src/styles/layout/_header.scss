@@ -1,0 +1,146 @@
+/**
+* Header
+*
+*	- Site Header
+*	- Title Area
+*/
+
+/* Site Header */
+
+.site-header {
+	background: color(dark, strong);
+	height: space(l);
+	position: absolute;
+	transition: $base-transition;
+	width: 100%;
+	z-index: 9999;
+
+	.has-fixed-header & {
+		position: fixed;
+	}
+
+	.has-floating-header & {
+
+		@include mq($from: tablet) {
+			position: fixed;
+		}
+	}
+
+	.wrap {
+		padding: 0;
+
+		@include mq($from: tablet) {
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			padding: space(column, s);
+
+			// Prevent pseudo-elements from impacting the space-between calculation.
+			&::after,
+			&::before {
+				content: none;
+			}
+		}
+	}
+
+	.genesis-responsive-menu {
+
+		@include mq($from: tablet) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	.menu-toggle {
+		float: right;
+		padding-left: space(xs);
+		padding-right: space(s);
+
+		@include mq($from: tablet) {
+			padding-right: 0;
+		}
+	}
+}
+
+.page-landing,
+.has-featured-image {
+
+	.site-header {
+
+		@extend %gradient-top;
+
+		&.header-not-top {
+			background: color(dark, strong);
+		}
+	}
+}
+
+/* Title Area */
+
+.title-area {
+	color: color(light, soft);
+	padding: space(left, s);
+	position: absolute;
+	text-align: left;
+
+	@include mq($from: tablet) {
+		padding: 0;
+		position: relative;
+		text-align: center;
+		width: auto;
+	}
+}
+
+.site-title {
+	font-family: $base-font-sans;
+	font-weight: 700;
+	margin-bottom: 0;
+	padding: space(divider, s);
+
+	@extend %font-size-l;
+
+	a {
+		text-decoration: none;
+		color: color(light, soft);
+	}
+}
+
+.wp-custom-logo {
+
+	.title-area {
+		height: 6rem;
+		margin-left: space(xs);
+		max-width: 68%;
+		padding: 0;
+		width: 100%;
+
+		@include mq($from: small-phone) {
+			max-width: 250px;
+			text-align: inherit;
+		}
+
+		@include mq($from: tablet) {
+			margin-left: 0;
+		}
+
+		img {
+			position: absolute;
+			max-height: 100%;
+			left: 0;
+			top: 50%;
+			transform: translate(0, -50%);
+			width: auto;
+		}
+	}
+}
+
+.site-description,
+.wp-custom-logo .site-title {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}

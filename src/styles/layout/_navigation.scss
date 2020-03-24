@@ -1,0 +1,489 @@
+/**
+* Navigation
+*
+*	- Site Navigation
+*	- Responsive Menu
+*	- Secondary Menu
+*	- Header Menus
+*	- Primary Menu
+*	- Secondary Menu
+*	- Tertiary Menu
+*/
+
+/* Site Navigation */
+
+.genesis-nav-menu {
+	clear: both;
+	width: 100%;
+
+	a {
+		color: color(light, soft);
+		display: block;
+		outline-offset: -1px;
+		padding-bottom: space(xxs);
+		padding-top: space(xxs);
+		text-decoration: none;
+
+		@extend %font-size-s;
+	}
+
+	.sub-menu {
+		clear: both;
+		display: none;
+		left: -9999px;
+		margin: 0;
+		opacity: 1;
+		position: static;
+		text-align: center;
+		width: 100%;
+		z-index: 99;
+
+		@include mq($from: tablet) {
+			background: color(dark, base);
+			border: 1px solid color(dark, base);
+			border-radius: $base-border-radius;
+			left: 50%;
+			opacity: 0;
+			padding-top: space(xxs);
+			padding-bottom: space(xxs);
+			position: absolute;
+			transform: translateX(-50%);
+			width: 15rem;
+
+			@include box-shadow (0, 0, 2rem, color(shadow), false);
+
+			> li {
+
+				&:first-child {
+					border-top-left-radius: $base-border-radius;
+					border-top-right-radius: $base-border-radius;
+				}
+
+				&:last-child {
+					border-bottom-left-radius: $base-border-radius;
+					border-bottom-right-radius: $base-border-radius;
+
+					&::after {
+						border: none;
+					}
+				}
+			}
+
+			a {
+				color: color(light, soft);
+
+				&:focus,
+				&:hover {
+					color: color(accent, base);
+				}
+			}
+
+			.menu-item {
+
+				&:focus,
+				&:hover {
+
+					> a,
+					> button {
+						color: color(accent, base);
+					}
+				}
+
+				&.current-menu-item {
+
+					> a,
+					> a:focus,
+					> a:hover {
+						color: color(accent, base);
+					}
+				}
+			}
+
+			.sub-menu-toggle {
+				color: color(light, soft);
+
+				&::before {
+					content: "\f139";
+					right: 5px;
+					top: calc(50% - 3px);
+				}
+			}
+
+			.sub-menu {
+				margin: -3.5rem 0 0 15rem;
+
+				&::before {
+					border: none;
+				}
+			}
+		}
+
+		a {
+			position: relative;
+			width: 100%;
+			word-wrap: break-word;
+
+			@include mq($from: tablet) {
+				border-radius: $base-border-radius;
+				line-height: line-height(xs);
+				padding-right: 0;
+				width: 15rem;
+			}
+		}
+	}
+
+	.menu-item {
+		display: block;
+		float: none;
+		position: relative;
+
+		&:focus,
+		&:hover {
+
+			> a,
+			> button {
+				color: color(accent, base);
+			}
+		}
+
+		&:hover > .sub-menu,
+		&.sfHover > ul.sub-menu,
+		a:focus + ul.sub-menu {
+
+			@include mq($from: tablet) {
+				left: 50%;
+				opacity: 1;
+				transform: translateX(-50%);
+			}
+		}
+
+		&.current-menu-item {
+
+			> a {
+				color: color(accent, base);
+				text-decoration: none;
+			}
+		}
+
+		@include mq($from: tablet) {
+			display: inline-block;
+			text-align: center;
+
+			&.menu-bold {
+
+				> a {
+					font-weight: 700;
+				}
+			}
+
+			&.menu-highlight {
+				margin-left: 1.5rem;
+
+				> a {
+					background: color(accent, base);
+					border-radius: $base-border-radius;
+					color: color(light, soft);
+					font-weight: 700;
+					margin: 0;
+					padding: 0.5rem, 1.5rem;
+					transition: all $base-transition;
+
+					&:focus,
+					&:hover {
+						box-shadow: inset 0 0 0 20rem color(shadow), 0 2rem 2rem color(shadow);
+						color: color(light, soft);
+						opacity: 1;
+					}
+				}
+
+				&.current-menu-item {
+
+					> a {
+						color: color(light, soft);
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Responsive Menu */
+
+.js {
+
+	nav {
+		display: none; // Prevent responsive menu flashing on mobile.
+
+		&.nav-tertiary {
+			display: block;
+		}
+
+		@include mq($from: tablet) {
+			display: block;
+		}
+	}
+}
+
+.genesis-responsive-menu {
+
+	@include mq($until: tablet) {
+		background: color(dark, base);
+		min-height: 100vh;
+		overflow: scroll;
+		padding: space(stack, m);
+		text-align: left;
+
+		.menu-item {
+
+			& > a {
+				font-size: font-size(phone, m);
+				line-height: line-height(m);
+				padding-left: space(s);
+				padding-right: space(s);
+			}
+		}
+
+		.sub-menu {
+			padding-left: space(s);
+			text-align: left;
+		}
+	}
+
+	.admin-bar & {
+
+		@include mq($until: admin-bar) {
+			min-height: calc(100vh - 46px);
+		}
+
+		@include mq($from: admin-bar) {
+			min-height: calc(100vh - 32px);
+		}
+
+		@include mq($from: tablet) {
+			min-height: 0;
+		}
+	}
+}
+
+.menu-toggle {
+	color: color(light, soft);
+	height: auto; // Prevent height of default buttons.
+	padding: space(divider, s);
+	position: absolute;
+	right: 0;
+	visibility: hidden;
+	z-index: 1000;
+
+	&::before {
+		float: right;
+		height: auto;
+		font-size: 2rem;
+		padding-left: 0.2em;
+		position: relative;
+		text-rendering: auto;
+		vertical-align: middle;
+		visibility: visible;
+		width: auto;
+	}
+
+	&.activated::before {
+		content: "\f335";
+	}
+
+	@include mq($from: tablet) {
+		display: none;
+	}
+}
+
+.sub-menu-toggle {
+	color: color(light, soft);
+	float: right;
+	height: auto;
+	min-width: 0;
+	padding: space(s);
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+
+	&::before {
+		content: "\f132";
+		display: inline-block;
+		float: right;
+		height: auto;
+		line-height: line-height(s);
+		text-rendering: auto;
+		transition: transform 0.25s ease-in-out;
+		width: auto;
+	}
+
+	&.activated::before {
+		content: "\f460";
+	}
+
+	@include mq($from: tablet) {
+		height: space(m);
+		padding: 0;
+
+		&::before,
+		&.activated::before {
+			content: "\f140";
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+}
+
+.menu-toggle,
+.sub-menu-toggle {
+	background-color: transparent;
+	border-width: 0;
+	margin: 0 auto;
+	overflow: hidden;
+	text-align: center;
+
+	@extend %font-size-s;
+
+	&:focus,
+	&:hover {
+		color: color(light, soft);
+		background-color: transparent;
+		box-shadow: none; // Prevent box shadow of default buttons.
+	}
+}
+
+/* Header Menu */
+
+.nav-primary,
+.nav-secondary {
+	clear: left;
+	float: left;
+	width: 100%;
+
+	@include mq($from: tablet) {
+		flex: 1;
+		padding-bottom: space(xs);
+		padding-top: space(xs);
+
+		.wrap {
+			padding: 0;
+		}
+	}
+
+	@include mq($from: desktop) {
+		flex: 2;
+	}
+
+	.genesis-nav-menu {
+
+		@include mq($until: tablet) {
+			padding-top: space(xl);
+		}
+
+		.menu-item {
+
+			> a {
+				padding-bottom: space(s);
+				padding-top: space(s);
+
+				@include mq($from: tablet) {
+					padding: space(xs) 1.5rem;
+				}
+			}
+
+			&.menu-highlight {
+
+				> a {
+
+					@include mq($from: tablet) {
+						margin: space(divider, xxs);
+						padding: space(xxs) 1.5rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Primary Menu */
+.nav-primary {
+
+	.wrap {
+		text-align: left;
+
+		@include mq($from: tablet) {
+			text-align: right;
+		}
+	}
+}
+
+/* Secondary Menu */
+.nav-secondary {
+
+	.wrap {
+		text-align: left;
+	}
+}
+
+
+/* Tertiary Menu */
+
+.tertiary-menu-name {
+	display: none;
+}
+
+.tertiary-menu-wrapper {
+
+	.nav-tertiary {
+		background-color: color(dark, strong);
+		margin-top: -(space(s));
+		padding: space(stack, m);
+		text-align: center;
+
+		.genesis-nav-menu {
+
+			.menu-item {
+				display: block;
+
+				&:not(:last-child) {
+					margin-bottom: space(xs);
+				}
+
+				@include mq($from: tablet) {
+					display: inline-block;
+					margin-bottom: 0;
+				}
+
+				> a {
+
+					color: color(light, strong);
+					margin: 0 1.5rem;
+					padding: 0;
+					text-decoration: none;
+
+					@extend %font-size-xs;
+
+					@include mq($from: tablet) {
+						margin: 0;
+						padding: space(xxs) 1.5rem;
+					}
+
+					&:focus,
+					&:hover {
+						color: color(light, soft);
+					}
+				}
+
+				&.menu-highlight {
+
+					> a {
+						color: color(light, soft);
+					}
+				}
+			}
+		}
+	}
+}

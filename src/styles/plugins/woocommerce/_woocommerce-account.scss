@@ -1,0 +1,76 @@
+/**
+* WooCommerce Account
+*
+*	- Account Navigation
+*	- Addresses
+*	- Table Order Details
+*/
+
+.woocommerce-account {
+
+	/* Account Navigation */
+
+	.woocommerce-MyAccount-navigation {
+		display: block; // Fix genesis responsive menu inheritance.
+		margin-bottom: space(s);
+		padding: 0;
+
+		ul {
+			margin-bottom: 0;
+			margin-left: 0;
+			padding: 0;
+
+			li.woocommerce-MyAccount-navigation-link {
+				list-style-type: none;
+				margin: 0;
+				padding: space(stack, xs);
+
+				&:last-child {
+					padding-bottom: 0;
+				}
+
+				&.is-active > a {
+					color: $primary !important;
+				}
+
+				> a {
+					color: $primarytext !important;
+					font-weight: 700;
+					text-decoration: none;
+					text-transform: uppercase;
+
+					@extend %font-size-s;
+
+					&:focus,
+					&:hover {
+						color: $primary !important;
+					}
+				}
+			}
+		}
+	}
+
+	/* Addresses */
+
+	.woocommerce-address-fields__field-wrapper {
+		margin: space(stack, s);
+	}
+
+	.addresses {
+
+		address,
+		.edit {
+
+			@extend %font-size-s;
+		}
+	}
+
+	/* Table Order Details */
+
+	table.order_details {
+
+		th.product-total {
+			min-width: 110px;
+		}
+	}
+}

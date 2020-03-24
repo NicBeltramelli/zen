@@ -1,0 +1,32 @@
+/* Titles */
+
+.entry-title,
+.pagination-previous,
+.pagination-next,
+.widget-title {
+	color: color(dark, strong);
+
+	> a {
+		color: color(dark, strong);
+		text-decoration: none;
+
+		&:focus,
+		&:hover {
+			color: color(dark, soft);
+		}
+	}
+}
+
+.archive-title,
+.entry-title,
+.page-title {
+	text-align: center;
+
+	.content-sidebar &,
+	.sidebar-content & {
+
+		@include mq($from: tablet) {
+			text-align: left;
+		}
+	}
+}

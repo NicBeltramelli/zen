@@ -1,0 +1,51 @@
+/**
+* WordPress
+*
+*	- Alignment
+*	- Caption
+*/
+
+/* Alignment */
+
+.aligncenter,
+.alignleft,
+.alignright,
+.alignnone {
+	margin-bottom: space(s);
+}
+
+.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.alignleft {
+	float: left;
+	margin-right: space(s);
+}
+
+.alignright {
+	float: right;
+	margin-left: space(s);
+}
+
+.alignnone {
+	margin: space(stack, s);
+}
+
+/* Caption */
+
+.wp-caption {
+
+	&.aligncenter {
+		margin-bottom: space(s);
+	}
+}
+
+.gallery-caption,
+.wp-caption-text {
+	text-align: left;
+
+	@extend %font-size-s;
+}

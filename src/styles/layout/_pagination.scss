@@ -1,0 +1,58 @@
+/* Pagination */
+
+.pagination {
+	clear: both;
+	margin: space(divider, m);
+	text-align: center;
+
+	&.archive-pagination {
+
+		ul {
+
+			li {
+				display: inline;
+
+				a {
+					background-color: color(light, base);
+					color: color(dark, base);
+					cursor: pointer;
+					display: inline-block;
+					font-weight: 700;
+					padding: space(inset-squish, xxs);
+					text-decoration: none;
+
+					@extend %font-size-s;
+
+					&:hover,
+					&:focus {
+						background-color: color(dark, base);
+						color: color(light, soft);
+					}
+				}
+
+				&.active {
+
+					a {
+						background-color: color(dark, base);
+						color: color(light, soft);
+					}
+				}
+			}
+		}
+	}
+
+	/* Single post pagination */
+	&.adjacent-entry-pagination {
+		margin: space(divider, m);
+
+		.pagination-previous,
+		.pagination-next {
+			margin: 0;
+			width: 100%;
+		}
+
+		.pagination-previous {
+			margin: space(stack, s);
+		}
+	}
+}

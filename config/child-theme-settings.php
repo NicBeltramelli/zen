@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Advanced
+ * Zen
  *
  * This file adds the child theme settings
  *
- * @package Genesis Advanced
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

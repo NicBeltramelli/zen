@@ -1,0 +1,108 @@
+/**
+* Footer
+*
+*	- Common
+*	- Site Footer
+*	- Footer Widgets
+*/
+
+/* Common */
+
+.footer-widgets,
+.site-footer {
+	clear: both;
+	text-align: center;
+
+	@extend %font-size-s;
+
+	a {
+		text-decoration: none;
+	}
+}
+
+/* Site Footer */
+
+.site-footer {
+	background: color(dark, strong);
+	color: color(light, strong);
+	padding: space(divider, m);
+
+	p {
+		color: color(light, strong);
+		margin-bottom: 0;
+
+		a {
+			color: color(light, strong);
+			margin-bottom: 0;
+
+			&:focus,
+			&:hover {
+				color: color(light, soft);
+			}
+		}
+	}
+}
+
+/* Footer Widgets */
+
+.footer-widgets {
+	padding: space(divider, m);
+
+	@extend %box-shadow-top;
+
+	.wrap,
+	.widget {
+		display: flex;
+		justify-content: center;
+	}
+
+	.wrap {
+		flex-wrap: wrap;
+
+		@include mq($from: tablet) {
+			flex-wrap: nowrap;
+		}
+	}
+
+	.widget-title {
+		text-align: center;
+	}
+
+	.footer-widget-area {
+		margin-bottom: space(m);
+		padding: space(column, s);
+		width: 100%;
+		text-align: left;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+
+		@include mq($from: tablet) {
+			flex-basis: 0;
+			flex-grow: 1;
+			margin-bottom: 0;
+		}
+
+		.menu {
+
+			li:not(:last-child) {
+				margin-bottom: space(xs);
+
+				@include mq($from: tablet) {
+					margin-bottom: 0;
+				}
+			}
+
+			a {
+				color: color(dark, strong);
+				font-weight: 700;
+
+				&:focus,
+				&:hover {
+					color: color(dark, soft);
+				}
+			}
+		}
+	}
+}

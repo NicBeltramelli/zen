@@ -1,0 +1,31 @@
+/* Gutenberg Blocks Editor CSS entry point */
+
+/* Import variables */
+@import "utility/variables";
+
+/* Import everything from autoload */
+@import "autoload";
+
+/* Import styles */
+
+/* Utility */
+@import "utility/functions";
+@import "utility/mixins";
+@import "utility/@extend";
+
+/* Editor style */
+@import "blocks/editor-container";
+
+.editor-styles-wrapper { // Ensure it only applies to the editor.
+
+	/* Elements */
+	@import "elements/typography";
+	@import "elements/tables";
+
+	/* Blocks */
+	@import "blocks/front-end";
+	@import "blocks/editor";
+
+	/* Helpers */
+	@import "utility/helper-classes";
+}

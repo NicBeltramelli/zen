@@ -1,0 +1,63 @@
+/* WooCommerce Star Rating */
+
+.woocommerce {
+
+	.star-rating {
+		color: $star;
+		height: space(s);
+
+		@extend %font-size-s;
+
+		span {
+			padding: space(top, s);
+
+			&::before {
+				line-height: line-height(s);
+				vertical-align: middle;
+			}
+		}
+
+		&::before {
+			color: $star;
+			line-height: line-height(s);
+			vertical-align: middle;
+		}
+	}
+
+	.products {
+
+		.star-rating {
+			margin: space(stack, xs);
+
+			@extend %font-size-s;
+		}
+	}
+
+	.woocommerce-product-rating {
+
+		.star-rating {
+			margin: 0;
+
+			@extend %font-size-m;
+		}
+
+		.woocommerce-review-link {
+			margin: space(left, xxs);
+		}
+	}
+
+	.hreview-aggregate .star-rating {
+		margin: space(xxs) 0 0;
+	}
+
+	p.stars {
+
+		a {
+			color: $star !important;
+
+			&::before {
+				line-height: line-height(s);
+			}
+		}
+	}
+}

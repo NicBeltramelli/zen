@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Advanced
+ * Zen
  *
  * This file adds the responsive menus settings (Requires Genesis 3.0+).
  *
- * @package Genesis Advanced
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,9 +16,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 return [
 	'script' => [
-		'mainMenu'         => __( '', 'genesis-advanced' ), // phpcs:ignore
+		'mainMenu'         => __( 'Menu', 'zen' ), // phpcs:ignore
 		'menuIconClass'    => 'dashicons-before dashicons-menu',
-		'subMenu'          => __( 'Submenu', 'genesis-advanced' ),
+		'subMenu'          => __( 'Submenu', 'zen' ),
 		'subMenuIconClass' => 'dashicons-before dashicons-arrow-down-alt2',
 
 		'menuClasses'      => [

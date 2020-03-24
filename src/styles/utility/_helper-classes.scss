@@ -1,0 +1,624 @@
+/**
+* Helper Classes
+*
+*	- Box Shadow
+*	- Borders
+*	- Clear
+*	- Centering
+*	- Content Wrap
+*	- Fonts
+*	- Full Height
+*	- Full Height Image
+*	- Margins
+*	- Paddings
+*	- Position
+*	- Visibility
+*/
+
+/* Box Shadow */
+
+.has-box-shadow {
+
+	@extend %box-shadow;
+}
+
+.has-box-shadow-hover {
+	transition: $base-transition;
+
+	@extend %box-shadow;
+
+	&:focus,
+	&:hover {
+
+		@extend %box-shadow-hover;
+	}
+}
+
+.has-box-shadow-top {
+
+	@extend %box-shadow-top;
+}
+
+.has-box-shadow-bottom {
+
+	@extend %box-shadow-bottom;
+}
+
+.image-has-box-shadow {
+
+	img {
+
+		@extend %box-shadow;
+	}
+}
+
+/* Borders */
+
+.has-border-radius {
+	border-radius: $base-border-radius;
+}
+
+.has-border-radius-img {
+	border-radius: $base-border-radius;
+
+	img {
+		border-radius: $base-border-radius;
+	}
+}
+
+.has-border-radius-image-top {
+	border-radius: $base-border-radius;
+
+	img {
+		border-top-left-radius: $base-border-radius;
+		border-top-right-radius: $base-border-radius;
+	}
+}
+
+.has-border-radius-image-bottom {
+	border-radius: $base-border-radius;
+
+	img {
+		border-bottom-left-radius: $base-border-radius;
+		border-bottom-right-radius: $base-border-radius;
+	}
+}
+
+.remove-border {
+	border: none !important;
+}
+
+/* Clear */
+
+.clear {
+	clear: both;
+	float: left;
+	width: 100%;
+}
+
+/* Centering */
+
+.center {
+	text-align: center;
+}
+
+.center-x {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.center-absolute {
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50% -50%);
+}
+
+/* Content Wrap */
+
+.content-wrap {
+	margin-left: space(s);
+	margin-right: space(s);
+
+	@include mq($from: phone) {
+		margin-left: auto !important;
+		margin-right: auto !important;
+		width: calc((100vw - 8rem) * 0.85);
+	}
+
+	@include mq($from: tablet) {
+		width: calc((100vw - 8rem) * 0.65);
+	}
+}
+
+/* Fonts */
+
+.has-font-sans {
+	font-family: $base-font-sans;
+}
+
+.has-font-serif {
+	font-family: $base-font-serif;
+}
+
+.has-font-bold {
+	font-weight: 700 !important;
+}
+
+.has-font-regular {
+	font-weight: 400 !important;
+}
+
+.has-regular-font-size {
+
+	@extend %font-size-m;
+}
+
+.has-medium-font-size {
+
+	@extend %font-size-l;
+}
+
+.has-medium-font-size-break {
+
+	@extend %font-size-l-break; // Break the vertical rhythm.
+}
+
+.has-large-font-size {
+
+	@extend %font-size-xl;
+}
+
+.has-large-font-size-break {
+
+	@extend %font-size-xl-break; // Break the vertical rhythm.
+}
+
+.has-huge-font-size {
+
+	@extend %font-size-xxl;
+}
+
+/* Full Height */
+
+.has-full-height {
+
+	min-height: calc(100vh);
+
+	.admin-bar & {
+
+		@include mq($until: admin-bar) {
+			min-height: calc(100vh - 46px);
+		}
+
+		@include mq($from: admin-bar) {
+			min-height: calc(100vh - 32px);
+		}
+	}
+}
+
+.has-full-height-from-tablet {
+
+	@include mq($from: tablet) {
+		min-height: calc(100vh);
+
+		.admin-bar & {
+			min-height: calc(100vh - 32px);
+		}
+	}
+}
+
+.has-full-height-header {
+
+	min-height: calc(100vh - 6rem);
+
+	.admin-bar & {
+
+		@include mq($until: admin-bar) {
+			min-height: calc(100vh - 6rem - 46px);
+		}
+
+		@include mq($from: admin-bar) {
+			min-height: calc(100vh - 6rem - 32px);
+		}
+	}
+}
+
+.has-full-height-header-from-tablet {
+
+	@include mq($from: tablet) {
+		min-height: calc(100vh - 6rem);
+
+		.admin-bar & {
+			min-height: calc(100vh - 6rem - 32px);
+		}
+	}
+}
+
+.has-max-height-page {
+	max-height: 100vh;
+	overflow: hidden;
+
+	.admin-bar & {
+
+		@include mq($until: admin-bar) {
+			max-height: calc(100vh - 46px);
+		}
+
+		@include mq($from: admin-bar) {
+			max-height: calc(100vh - 32px);
+		}
+	}
+}
+
+.has-max-height-page-header {
+	max-height: calc(100vh - 6rem);
+	overflow: hidden;
+
+	.admin-bar & {
+
+		@include mq($until: admin-bar) {
+			max-height: calc(100vh - 6rem - 46px);
+		}
+
+		@include mq($from: admin-bar) {
+			max-height: calc(100vh - 6rem - 32px);
+		}
+	}
+}
+
+/* Full Height Image */
+
+.has-full-height-image-from-tablet {
+
+	img {
+
+		@include mq($from: tablet) {
+			min-height: 100vh;
+
+			.admin-bar & {
+				min-height: calc(100vh - 32px);
+			}
+		}
+	}
+}
+
+.has-full-height-image {
+
+	img {
+		min-height: 100vh;
+
+		.admin-bar & {
+
+			@include mq($until: admin-bar) {
+				min-height: calc(100vh - 46px);
+			}
+
+			@include mq($from: admin-bar) {
+				min-height: calc(100vh - 32px);
+			}
+		}
+	}
+}
+
+/* Margins */
+
+.remove-margin-bottom {
+	margin-bottom: 0 !important;
+}
+
+.has-margin-bottom-xs {
+	margin-bottom: space(xs) !important;
+}
+
+.has-margin-bottom {
+	margin-bottom: space(s) !important;
+}
+
+.has-margin-bottom-m {
+	margin-bottom: space(m) !important;
+}
+
+.has-margin-bottom-l {
+	margin-bottom: space(l) !important;
+}
+
+.has-margin-bottom-xl {
+	margin-bottom: space(xl) !important;
+}
+
+/* Paddings */
+
+.has-padding {
+	padding: space(s);
+}
+
+.has-padding-from-phone {
+
+	@include mq($from: phone) {
+		padding: space(s);
+	}
+}
+
+.has-padding-from-tablet {
+
+	@include mq($from: tablet) {
+		padding: space(s);
+	}
+}
+
+.has-padding-xs {
+	padding: space(xs);
+}
+
+.has-padding-xs-from-phone {
+
+	@include mq($from: phone) {
+		padding: space(xs);
+	}
+}
+
+.has-padding-xs-from-tablet {
+
+	@include mq($from: tablet) {
+		padding: space(xs);
+	}
+}
+
+.has-padding-m {
+	padding: space(m);
+}
+
+.has-padding-m-from-phone {
+
+	@include mq($from: phone) {
+		padding: space(m);
+	}
+}
+
+.has-padding-m-from-tablet {
+
+	@include mq($from: tablet) {
+		padding: space(m);
+	}
+}
+
+.has-padding-l {
+	padding: space(l);
+}
+
+.has-padding-l-from-phone {
+
+	@include mq($from: phone) {
+		padding: space(l);
+	}
+}
+
+.has-padding-l-from-tablet {
+
+	@include mq($from: tablet) {
+		padding: space(l);
+	}
+}
+
+/* Padding Divider */
+
+.has-padding-divider-xs {
+	padding-top: space(xs);
+	padding-bottom: space(xs);
+}
+
+.has-padding-divider-xs-from-phone {
+
+	@include mq($from: phone) {
+		padding-bottom: space(xs);
+		padding-top: space(xs);
+	}
+}
+
+.has-padding-divider-xs-from-tablet {
+
+	@include mq($from: tablet) {
+		padding-bottom: space(xs);
+		padding-top: space(xs);
+	}
+}
+
+.has-padding-divider-s {
+	padding-top: space(s);
+	padding-bottom: space(s);
+}
+
+.has-padding-divider-s-from-phone {
+
+	@include mq($from: phone) {
+		padding-bottom: space(s);
+		padding-top: space(s);
+	}
+}
+
+.has-padding-divider-s-from-tablet {
+
+	@include mq($from: tablet) {
+		padding-bottom: space(s);
+		padding-top: space(s);
+	}
+}
+
+.has-padding-divider-m {
+	padding-top: space(m);
+	padding-bottom: space(m);
+}
+
+.has-padding-divider-m-from-phone {
+
+	@include mq($from: phone) {
+		padding-bottom: space(m);
+		padding-top: space(m);
+	}
+}
+
+.has-padding-divider-m-from-tablet {
+
+	@include mq($from: tablet) {
+		padding-bottom: space(m);
+		padding-top: space(m);
+	}
+}
+
+.has-padding-divider-l {
+	padding-top: space(l);
+	padding-bottom: space(l);
+}
+
+.has-padding-divider-l-from-phone {
+
+	@include mq($from: phone) {
+		padding-bottom: space(l);
+		padding-top: space(l);
+	}
+}
+
+.has-padding-divider-l-from-tablet {
+
+	@include mq($from: tablet) {
+		padding-bottom: space(l);
+		padding-top: space(l);
+	}
+}
+
+/* Padding Column */
+
+.has-padding-column-xs {
+	padding-left: space(xs);
+	padding-right: space(xs);
+}
+
+.has-padding-column-xs-from-phone {
+
+	@include mq($from: phone) {
+		padding-left: space(xs);
+		padding-right: space(xs);
+	}
+}
+
+.has-padding-column-xs-from-tablet {
+
+	@include mq($from: tablet) {
+		padding-left: space(xs);
+		padding-right: space(xs);
+	}
+}
+
+.has-padding-column-s {
+	padding-left: space(s);
+	padding-right: space(s);
+}
+
+.has-padding-column-s-from-phone {
+
+	@include mq($from: phone) {
+		padding-left: space(s);
+		padding-right: space(s);
+	}
+}
+
+.has-padding-column-s-from-tablet {
+
+	@include mq($from: tablet) {
+		padding-left: space(s);
+		padding-right: space(s);
+	}
+}
+
+.has-padding-column-m {
+	padding-left: space(m);
+	padding-right: space(m);
+}
+
+.has-padding-column-m-from-phone {
+
+	@include mq($from: phone) {
+		padding-left: space(m);
+		padding-right: space(m);
+	}
+}
+
+.has-padding-column-m-from-tablet {
+
+	@include mq($from: tablet) {
+		padding-left: space(m);
+		padding-right: space(m);
+	}
+}
+
+.has-padding-column-l {
+	padding-left: space(l);
+	padding-right: space(l);
+}
+
+.has-padding-column-l-from-phone {
+
+	@include mq($from: phone) {
+		padding-left: space(l);
+		padding-right: space(l);
+	}
+}
+
+.has-padding-column-l-from-tablet {
+
+	@include mq($from: tablet) {
+		padding-left: space(l);
+		padding-right: space(l);
+	}
+}
+
+/* Position */
+
+.has-position-relative {
+	position: relative;
+}
+
+/* Visibility */
+
+.hide {
+	display: none;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.visible {
+	visibility: visible;
+}
+
+.hide-phone {
+
+	@include mq($until: phone) {
+		display: none;
+	}
+}
+
+.visible-phone {
+	display: block;
+
+	@include mq($from: phone) {
+		display: none;
+	}
+}
+
+.hide-tablet {
+
+	@include mq($until: tablet) {
+		display: none;
+	}
+}
+
+.visible-tablet {
+	display: block;
+
+	@include mq($from: tablet) {
+		display: none;
+	}
+}

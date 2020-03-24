@@ -1,24 +1,18 @@
 <?php
 /**
- * Genesis Advanced
+ * Zen
  *
  * Template Name: Privacy Page
  *
- * @package Genesis Advanced
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-
-/* Force full width content layout */
-add_filter(
-	'genesis_site_layout',
-	'__genesis_return_sidebar_content'
-);
 
 remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
 

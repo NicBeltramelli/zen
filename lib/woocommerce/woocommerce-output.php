@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Advanced
+ * Zen
  *
  * This file adds the WooCommerce inline styles.
  *
- * @package Genesis Advanced
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,29 +17,46 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Add the themes's custom CSS to the WooCommerce stylesheet
  *
- * @since 3.0.0
- *
  * @return string CSS to be outputted after the theme's custom WooCommerce stylesheet.
  */
 add_action(
 	'wp_enqueue_scripts',
 	function () {
 
-		// If WooCommerce isn't active, exit early.
 		if ( ! class_exists( 'WooCommerce' ) ) {
+
 			return;
+
 		}
+
+		if ( ! is_woocommerce() &&
+			! is_cart() &&
+			! is_checkout() &&
+			! is_page( [ 'my-account' ] ) ) {
+
+			return;
+
+		}
+
+		/* Access the wpackio global var */
+		global $zen_assets;
+
+		/* Get CSS handle */
+		$assets      = $zen_assets->getAssets( 'woocommerce', 'main', [] );
+		$entry_point = array_pop( $assets['css'] );
+		$css_handle  = $entry_point['handle'];
 
 		/* Locate the config file */
 		$appearance = genesis_get_config( 'appearance' );
 
-		$color_link   = get_theme_mod( 'genesis_advanced_link_color', $appearance['default-colors']['link'] );
-		$color_accent = get_theme_mod( 'genesis_advanced_accent_color', $appearance['default-colors']['accent'] );
+		$color_link   = get_theme_mod( 'zen_link_color', $appearance['default-colors']['link'] );
+		$color_accent = get_theme_mod( 'zen_accent_color', $appearance['default-colors']['accent'] );
 
 		$woo_css = '';
 
 		$woo_css .= ( $appearance['default-colors']['link'] !== $color_link ) ? sprintf(
 			'
+			.woocommerce .summary a:not(:focus):not(:hover),
 			.woocommerce .woocommerce-breadcrumb a:hover,
 			.woocommerce .woocommerce-breadcrumb a:focus,
 			.woocommerce .widget_layered_nav ul li.chosen a::before,
@@ -71,6 +88,7 @@ add_action(
 				background-color: %1$s;
 			}
 
+			.woocommerce-info,
 			.woocommerce-message {
 				border-top-color: %1$s;
 			}
@@ -78,17 +96,25 @@ add_action(
 			.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover,
 			.woocommerce div.product .woocommerce-tabs ul.tabs li a:focus,
 			.woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
-			.woocommerce-message::before {
+			.woocommerce-info::before,
+			.woocommerce-message::before,
+			.woocommerce a.button.loading::after {
 				color: %1$s;
+			}
+
+			.woocommerce-account .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link.is-active > a,
+			.woocommerce-account .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link a:focus,
+			.woocommerce-account .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link a:hover {
+				color: %1$s !important;
 			}
 			',
 			$color_accent,
-			genesis_advanced_color_contrast( $color_accent )
+			zen_color_contrast( $color_accent )
 		) : '';
 
 		if ( $woo_css ) {
 			wp_add_inline_style(
-				genesis_get_theme_handle() . '-woocommerce-styles',
+				$css_handle,
 				$woo_css
 			);
 		}

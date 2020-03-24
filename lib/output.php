@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Advanced
+ * Zen
  *
  * This file adds the required CSS to the front end.
  *
- * @package Genesis Advanced
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,22 +18,29 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Check the settings for the link color, accent color and logo width
  *
  * If any of these value are set the appropriate CSS is output.
- *
- * @since 3.0.0
  */
 add_action(
 	'wp_enqueue_scripts',
 	function () {
 
+		/* Access the wpackio global var */
+		global $zen_assets;
+
+		/* Get CSS handle */
+		$assets      = $zen_assets->getAssets( 'theme', 'main', [] );
+		$entry_point = array_pop( $assets['css'] );
+		$css_handle  = $entry_point['handle'];
+
 		/* Locate the config file */
 		$appearance = genesis_get_config( 'appearance' );
 
-		$color_link   = get_theme_mod( 'genesis_advanced_link_color', $appearance['default-colors']['link'] );
-		$color_accent = get_theme_mod( 'genesis_advanced_accent_color', $appearance['default-colors']['accent'] );
+		/* Output inline css */
+		$color_link   = get_theme_mod( 'zen_link_color', $appearance['default-colors']['link'] );
+		$color_accent = get_theme_mod( 'zen_accent_color', $appearance['default-colors']['accent'] );
 		$logo         = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
 
 		if ( $logo ) {
-			$logo_max_width = get_theme_mod( 'genesis_advanced_logo_width', 250 );
+			$logo_max_width = get_theme_mod( 'zen_logo_width', 250 );
 		}
 
 		$css = '';
@@ -41,18 +48,11 @@ add_action(
 		/* Output link color inline css */
 		$css .= ( $appearance['default-colors']['link'] !== $color_link ) ? sprintf(
 			'
-			.entry a:not(.button):not(.wp-block-button__link),
-			.entry a:not(.button):not(.wp-block-button__link):focus,
-			.entry a:not(.button):not(.wp-block-button__link):hover,
-			.breadcrumb a,
-			.breadcrumb a:focus,
-			.breadcrumb a:hover,
-			.footer-widgets a:not(.button),
-			.footer-widgets a:not(.button):focus,
-			.footer-widgets a:not(.button):hover,
-			.site-footer a:not(.button),
-			.site-footer a:not(.button):focus,
-			.site-footer a:not(.button):hover {
+			a.url:not(:focus):not(:hover),
+			.entry-content a:not(.entry-title-link):not(.button):not(.wp-block-button__link):not(:focus):not(:hover),
+			.entry-meta a:not(:focus):not(:hover),
+			.entry-footer a:not(:focus):not(:hover),
+			.breadcrumb a:not(:focus):not(:hover) {
 				color: %s;
 			}
 			',
@@ -73,22 +73,19 @@ add_action(
 				background-color: %1$s;
 			}
 
-			.entry-title > a:focus,
-			.entry-title > a:hover,
 			.pagination-previous > a:focus,
 			.pagination-previous > a:hover,
 			.pagination-next > a:focus,
 			.pagination-next > a:hover,
-			.widget-title > a:focus,
-			.widget-title > a:hover,
 			.sidebar .widget ul li > a:focus,
 			.sidebar .widget ul li > a:hover,
+			.sidebar .widget ul.menu li.current_page_item > a,
 			.has-accent-color,
-			.genesis-nav-menu .menu-item:not(.menu-highlight):focus > a,
-			.genesis-nav-menu .menu-item:not(.menu-highlight):focus > button,
-			.genesis-nav-menu .menu-item:not(.menu-highlight):hover > a,
-			.genesis-nav-menu .menu-item:not(.menu-highlight):hover > button,
-			.genesis-nav-menu .menu-item.current-menu-item:not(.menu-highlight) > a {
+			.genesis-nav-menu .menu-item:focus > a,
+			.genesis-nav-menu .menu-item:hover > a,
+			.genesis-nav-menu .menu-item:focus > button,
+			.genesis-nav-menu .menu-item:hover > button,
+			.genesis-nav-menu .menu-item.current-menu-item > a {
 				color: %1$s;
 			}
 
@@ -122,7 +119,7 @@ add_action(
 			}
 			',
 			$color_accent,
-			genesis_advanced_color_contrast( $color_accent )
+			zen_color_contrast( $color_accent )
 		) : '';
 
 		/* Output custom logo inline css */
@@ -208,7 +205,7 @@ add_action(
 
 		if ( $css ) {
 			wp_add_inline_style(
-				genesis_get_theme_handle() . '-styles',
+				$css_handle,
 				$css
 			);
 		}

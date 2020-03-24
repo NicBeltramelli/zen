@@ -1,0 +1,84 @@
+/* Sidebar */
+
+.sidebar {
+	display: none;
+	padding-bottom: space(m);
+	padding-top: space(s);
+
+	.genesis-breadcrumbs-visible & {
+		padding-top: space(l);
+	}
+
+	@extend %font-size-s;
+
+	@include mq($from: tablet) {
+		display: block;
+	}
+
+	.widget {
+		margin: space(stack, s);
+
+		&.widget_search {
+			margin: space(stack, s);
+		}
+
+		&:first-of-type {
+			margin-top: space(xs);
+
+			&.widget_search {
+				margin-bottom: 1.5rem;
+				margin-top: -0.5rem;
+			}
+		}
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+
+		.widget-title {
+			margin: space(stack, s);
+
+			@extend %font-size-l;
+		}
+
+		ul {
+
+			li {
+				margin-bottom: 0;
+
+				ul {
+					padding: space(left, xs);
+				}
+
+				> a {
+					color: color(dark, base);
+					font-weight: 700;
+					text-decoration: none;
+
+					&:focus,
+					&:hover {
+						color: color(accent, base);
+					}
+				}
+			}
+
+			&.menu {
+
+				li {
+					padding-bottom: space(xs);
+
+					&:last-child {
+						padding-bottom: 0;
+					}
+
+					&.current_page_item {
+
+						> a {
+							color: color(accent, base);
+						}
+					}
+				}
+			}
+		}
+	}
+}

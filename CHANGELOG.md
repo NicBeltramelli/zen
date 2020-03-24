@@ -1,7 +1,28 @@
-# Genesis Advanced Changelog
+# Zen Changelog
 
-## [master]
-* Update dev deps
+## [dev]
+* Move @wpackio/entrypoint to dev deps
+* Remove child theme name constant
+* Remove export script
+* Rebrand as Zen
+* Bump deps
+* Fix floating header class attribution
+* Bump ionicon 5.0.0
+* Update distribution package
+* Fix accessibility of responsive menu toggle
+* Display author box on single post
+* Enqueue WooCommerce assets only where needed
+* Align inline style
+* Align blocks editor inline style
+* Optimize google fonts
+* Group blocks editor assets
+* Improve style
+* Add featured image
+* Add blocks animation
+* Add header options
+* Add linters
+* Remove editor font sizes support
+* Move to wpack.io
 
 ## [3.6.0] - 2019-11-11
 * Set full-width-content default layout

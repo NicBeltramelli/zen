@@ -1,127 +1,95 @@
 <?php
 /**
- * Genesis Advanced
+ * Zen
  *
  * This file adds the appearance settings.
  *
- * @package Genesis Advanced
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-$genesis_advanced_default_colors = [
+$zen_default_colors = [
 	'link'   => '#0073e5',
 	'accent' => '#d30c7b',
 ];
 
-$genesis_advanced_link_color = get_theme_mod(
-	'genesis_advanced_link_color',
-	$genesis_advanced_default_colors['link']
+$zen_link_color = get_theme_mod(
+	'zen_link_color',
+	$zen_default_colors['link']
 );
 
-$genesis_advanced_accent_color = get_theme_mod(
-	'genesis_advanced_accent_color',
-	$genesis_advanced_default_colors['accent']
+$zen_accent_color = get_theme_mod(
+	'zen_accent_color',
+	$zen_default_colors['accent']
 );
 
 return [
-	'fonts-url'            => 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700|Roboto+Mono',
-	'ionicons'             => 'https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css',
-	'content-width'        => 1200,
-	'link-color'           => $genesis_advanced_link_color,
-	'default-colors'       => $genesis_advanced_default_colors,
+	'fonts-url'            => 'https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Roboto:400,700|Roboto+Mono&display=optional',
+	'ionicons'             => 'https://unpkg.com/ionicons@5.0.0/dist/ionicons.js',
+	'content-width'        => 1800,
+	'link-color'           => $zen_link_color,
+	'default-colors'       => $zen_default_colors,
 	'editor-color-palette' => [
 		[
-			'name'  => __( 'Accent', 'genesis-advanced' ),
+			'name'  => __( 'Accent', 'zen' ),
 			'slug'  => 'accent',
-			'color' => $genesis_advanced_accent_color,
+			'color' => $zen_accent_color,
 		],
 		[
-			'name'  => __( 'White', 'genesis-advanced' ),
+			'name'  => __( 'White', 'zen' ),
 			'slug'  => 'white',
 			'color' => '#ffffff',
 		],
 		[
-			'name'  => __( 'Light', 'genesis-advanced' ),
+			'name'  => __( 'Light', 'zen' ),
 			'slug'  => 'light',
 			'color' => '#f4f4f4',
 		],
 		[
-			'name'  => __( 'Grey', 'genesis-advanced' ),
+			'name'  => __( 'Grey', 'zen' ),
 			'slug'  => 'grey',
 			'color' => '#cecece',
 		],
 		[
-			'name'  => __( 'Dark', 'genesis-advanced' ),
+			'name'  => __( 'Dark', 'zen' ),
 			'slug'  => 'dark',
 			'color' => '#414141',
 		],
 		[
-			'name'  => __( 'Black', 'genesis-advanced' ),
+			'name'  => __( 'Black', 'zen' ),
 			'slug'  => 'black',
 			'color' => '#1b1b1b',
 		],
 		[
-			'name'  => __( 'Info', 'genesis-advanced' ),
+			'name'  => __( 'Info', 'zen' ),
 			'slug'  => 'info',
 			'color' => '#0073e5',
 		],
 		[
-			'name'  => __( 'Danger', 'genesis-advanced' ),
+			'name'  => __( 'Danger', 'zen' ),
 			'slug'  => 'danger',
 			'color' => '#ed254e',
 		],
 		[
-			'name'  => __( 'Success', 'genesis-advanced' ),
+			'name'  => __( 'Success', 'zen' ),
 			'slug'  => 'success',
 			'color' => '#00a878',
 		],
 		[
-			'name'  => __( 'Warning', 'genesis-advanced' ),
+			'name'  => __( 'Warning', 'zen' ),
 			'slug'  => 'warning',
 			'color' => '#f15025',
 		],
 		[
-			'name'  => __( 'Star', 'genesis-advanced' ),
+			'name'  => __( 'Star', 'zen' ),
 			'slug'  => 'star',
 			'color' => '#f2ff49',
-		],
-	],
-	'editor-font-sizes'    => [
-		[
-			'name'      => __( 'Small', 'genesis-advanced' ),
-			'shortName' => __( 'S', 'genesis-advanced' ),
-			'size'      => '15',
-			'slug'      => 'small',
-		],
-		[
-			'name'      => __( 'Normal', 'genesis-advanced' ),
-			'shortName' => __( 'N', 'genesis-advanced' ),
-			'size'      => '18',
-			'slug'      => 'normal',
-		],
-		[
-			'name'      => __( 'Medium', 'genesis-advanced' ),
-			'shortName' => __( 'M', 'genesis-advanced' ),
-			'size'      => '21.6',
-			'slug'      => 'medium',
-		],
-		[
-			'name'      => __( 'Large', 'genesis-advanced' ),
-			'shortName' => __( 'L', 'genesis-advanced' ),
-			'size'      => '25.92',
-			'slug'      => 'large',
-		],
-		[
-			'name'      => __( 'Huge', 'genesis-advanced' ),
-			'shortName' => __( 'XL', 'genesis-advanced' ),
-			'size'      => '37.325',
-			'slug'      => 'huge',
 		],
 	],
 ];

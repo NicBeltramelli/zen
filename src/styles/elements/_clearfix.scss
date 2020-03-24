@@ -1,0 +1,26 @@
+/* Clearfix */
+
+.author-box,
+.clearfix,
+.entry,
+.entry-header,
+.entry-title,
+.entry-meta,
+.entry-content,
+.entry-footer,
+.footer-widgets,
+.nav-primary,
+.nav-secondary,
+.pagination,
+.site-container,
+.site-footer,
+.site-header,
+.site-inner,
+.widget,
+.wrap,
+.widget-area,
+.gform_wrapper,
+.content {
+
+	@include clearfix;
+}

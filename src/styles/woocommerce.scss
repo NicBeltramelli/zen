@@ -1,0 +1,32 @@
+/* WooCommerce CSS entry point */
+
+/* Import variables */
+@import "utility/variables";
+
+/* Import everything from autoload */
+@import "autoload";
+
+/* Import styles */
+
+/* Utility */
+@import "utility/functions";
+@import "utility/mixins";
+@import "utility/@extend";
+
+/* Import WooCommerce styles */
+@import "plugins/woocommerce/woocommerce-variables";
+@import "plugins/woocommerce/woocommerce-layout";
+@import "plugins/woocommerce/woocommerce-global";
+@import "plugins/woocommerce/woocommerce-buttons";
+@import "plugins/woocommerce/woocommerce-forms";
+@import "plugins/woocommerce/woocommerce-tables";
+@import "plugins/woocommerce/woocommerce-alerts";
+@import "plugins/woocommerce/woocommerce-reviews";
+@import "plugins/woocommerce/woocommerce-star-rating";
+@import "plugins/woocommerce/woocommerce-loop";
+@import "plugins/woocommerce/woocommerce-product-single";
+@import "plugins/woocommerce/woocommerce-cart-checkout";
+@import "plugins/woocommerce/woocommerce-order-received";
+@import "plugins/woocommerce/woocommerce-account";
+@import "plugins/woocommerce/woocommerce-widgets";
+@import "plugins/woocommerce/woocommerce-small-screen";

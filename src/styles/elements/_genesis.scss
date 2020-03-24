@@ -1,0 +1,111 @@
+/**
+* Genesis
+*
+*	- After Entry & Author Box
+*	- Breadcrumbs
+*	- Featured Content
+*/
+
+/* After Entry & Author Box */
+
+.after-entry,
+.author-box {
+	margin-bottom: space(m);
+
+	@extend %box-shadow;
+}
+
+.after-entry {
+	padding: space(s);
+
+	@include mq($from: tablet) {
+		padding: space(inset-squish, s);
+	}
+
+	.widget-title {
+		text-align: center;
+	}
+
+	.widget:last-of-type {
+		margin-bottom: 0;
+	}
+
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+.author-box {
+	margin: space(divider, m);
+	padding: space(s) space(s) 0;
+
+	.avatar {
+		margin-left: -(space(xs));
+		margin-top: -(space(xs));
+	}
+
+	.author-box-title {
+
+		@extend %font-size-l;
+	}
+
+	.author-box-content {
+		clear: both;
+		float: left;
+
+		p {
+
+			@extend %font-size-s;
+		}
+	}
+}
+
+/* Breadcrumbs */
+
+.breadcrumb {
+	margin: space(divider, s);
+
+	@extend %font-size-s;
+}
+
+/* Featured Content */
+
+.featured-content {
+
+	.entry {
+		margin: space(stack, s);
+
+		&:last-of-type {
+			border-bottom: none;
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+
+		img {
+			height: auto;
+			width: space(xl);
+
+			@include mq($from: tablet) {
+				height: space(l);
+				width: space(l);
+			}
+		}
+
+		a {
+
+			&.alignleft,
+			&.alignright {
+				margin-bottom: 0;
+			}
+		}
+
+		.entry-title {
+			margin-bottom: 0;
+		}
+
+		.entry-content {
+
+			@extend %font-size-s-break; // Break vertical rhythm.
+		}
+	}
+}

@@ -1,19 +1,22 @@
-# Genesis Advanced
-[![Packagist](https://img.shields.io/packagist/v/nicbeltramelli/genesis-advanced.svg?style=for-the-badge)](https://packagist.org/packages/nicbeltramelli/genesis-advanced)
-[![Build Status](https://img.shields.io/travis/NicBeltramelli/genesis-advanced.svg?style=for-the-badge)](https://travis-ci.org/NicBeltramelli/genesis-advanced)
+# Zen theme
+[![Packagist](https://img.shields.io/packagist/v/nicbeltramelli/zen.svg?style=for-the-badge)](https://packagist.org/packages/nicbeltramelli/zen)
+[![Build Status](https://img.shields.io/travis/NicBeltramelli/zen.svg?style=for-the-badge)](https://travis-ci.org/NicBeltramelli/zen)
 
 
-Genesis Advanced is a starter child theme for the Genesis Framework with a modern development workflow. 
+Zen is a child theme for the Genesis Framework with a modern development workflow. 
 
-Tested up to WordPress 5.2.4 and Genesis 3.1.2.
+Tested up to WordPress 5.3.2 and Genesis 3.3.0.
 
 
 ## Features
 
-* Sass for stylesheets
+* Consume packages from npm registry
 * Modern JavaScript
-* [Webpack](https://webpack.github.io/) for compiling assets, optimizing images, and concatenating and minifying files
-* [Browsersync](http://www.browsersync.io/) for synchronized browser testing
+* SASS/SCSS language for stylesheets
+* Use autoprefixer to make your CSS work with needed vendor prefixes
+* Minify and bundle code with [Webpack](https://webpack.github.io/)
+* Split large files and enqueue the generated parts
+* Synch browser testing with Browsersync](http://www.browsersync.io/)
 
 
 ## Requirements
@@ -21,7 +24,7 @@ Tested up to WordPress 5.2.4 and Genesis 3.1.2.
 Make sure all dependencies have been installed before moving on:
 
 * [WordPress](https://wordpress.org/) >= 5.0
-* [Genesis Framework](https://my.studiopress.com/themes/genesis/) >= 2.8.0
+* [Genesis Framework](https://my.studiopress.com/themes/genesis/) >= 3.0.0
 * [PHP](https://secure.php.net/manual/en/install.php) >= 7.1
 * [Composer](https://getcomposer.org/download/)
 * [Node.js](http://nodejs.org/) >= 8.0.0
@@ -30,35 +33,67 @@ Make sure all dependencies have been installed before moving on:
 
 ## Theme installation
 
-Install Genesis Advanced using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
+Install Zen using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
 
 ```shell
-# @ app/themes/ or wp-content/themes/
-$ composer create-project nicbeltramelli/genesis-advanced your-theme-name
+# navigate to your themes directory
+$ cd wp-content/themes/
+
+# initialize the theme
+$ composer create-project nicbeltramelli/zen your-theme-name
+
+# install dependencies
+$ yarn
+
+# bootstrap project
+$ yarn bootstrap
+
 ```
+
+
+## Theme setup
+
+1. Edit `wpackio.server.js` that handles the development server:
+* `devUrl` should reflect your local development URL, e.g. `http://your-address.local`
+* `distPublicPath` should reflect the absolute URL path of your dist folder, e.g. `/wp-content/themes/your-theme-name/dist/`, **Remember you must add a forward slash at the end of the value otherwise it will not work.**
+2. Edit `style.css` to define your theme meta information (name, URI, description, version, author)
+
+
+## Theme development
+
+```shell
+# start development server
+$ yarn start
+
+# create production build
+$ yarn build
+
+# create distribution package
+$ yarn archive
+
+```
+
+### WordPress coding standard
+
+* `composer phpcs` — Runs WordPress coding standards checks
+* `composer phpcbf` — Fix php sniff violations automatically
 
 
 ## Theme structure
 
 ```shell
 themes/your-theme-name/  # → Root of your child theme
-├── .scripts/            # → Node scripts
-├── assets/              # → Front-end assets
-│   ├── config.json      # → Settings for compiled assets
-│   ├── build/           # → Webpack and ESLint config
-│   ├── fonts/           # → Theme fonts
-│   ├── images/          # → Theme images
+├── src/                 # → Front-end assets
 │   ├── scripts/         # → Theme JS
 │   └── styles/          # → Theme stylesheets
 ├── config/              # → Theme configuration data
 ├── dist/                # → Built theme assets (never edit)
 ├── lib/                 # → Theme PHP library
 │   ├── blocks/          # → Add support for Gutenberg blocks
-│   ├── classes/         # → Theme classes
 │   ├── structure/       # → Theme structure
 │   ├── woocommerce/     # → WooCommerce PHP library
 │   ├── admin.php        # → Adds the admin dashboard setting
-│   ├── assets.php  	 # → Enqueue fonts, stylesheets and scripts
+│   ├── assets.php  	 # → Enqueue assets
 │   ├── body-classes.php # → Adds consistent classes to the body tag
 │   ├── customize.php    # → Adds the Customizer addition
 │   ├── defaults.php     # → Configures the default theme settings
@@ -77,52 +112,19 @@ themes/your-theme-name/  # → Root of your child theme
 ├── package.json         # → Node.js dependencies and scripts
 ├── search.php           # → Search template
 ├── style.css            # → Theme meta informations
+├── wpackio.project.js   # → Project configuration
+├── wpackio.server.js    # → Dev server configuration
 └── yarn.lock            # → Yarn lock file (never edit)
 ```
 
 
-## Theme setup
-
-1. Edit `lib/setup.php` to define child theme constants and features support
-2. Edit `style.css` to define your theme meta information (name, URI, description, version, author)
+## Dev dependencies
+* [wpack.io](https://github.com/swashata/wp-webpack-script)
 
 
-## Theme development
+## Front-end dependencies
 
-1. Run `yarn` from the theme directory to install dependencies
-2. Update `assets/config.json` settings:
-  * `publicPath` should reflect your WordPress folder structure (`/wp-content/themes/your-theme-name` for non-[Bedrock](https://github.com/roots/bedrock) installs)
-  * `devUrl` should reflect your local development hostname
-
-
-### Build commands
-
-* `yarn build` — Compiles and optimize the files in your assets directory
-* `yarn build:production` — Compiles assets for production
-* `yarn build:profile` — Outputs information for each step of the compilation
-* `yarn start` — Compiles assets when file changes are made, starts Browsersync session
-* `yarn rmdist` — Removes compiled assets
-* `yarn lint` — Runs JavaScript and styles linter
-* `yarn lint:scripts` — Runs JavaScript linter
-* `yarn lint:styles` — Runs styles linter
-* `yarn makepot` — Regenerates the `languages/genesis-advanced.pot` file
-* `yarn zip` — Creates .zip package for production
-
-
-### WordPress coding standard
-
-* `composer phpcs` — Runs WordPress coding standards checks
-* `composer phpcbf` — Fix php sniff violations automatically
-
-
-### Front-end dependencies
-
- * [jquery.scrollTo](https://github.com/flesler/jquery.scrollTo)
- * [normalize-scss](https://github.com/JohnAlbin/normalize-scss)
- * [sass-mq](https://github.com/sass-mq/sass-mq)
-
-
-## Credits
-
-* [Genesis Sample Theme](https://github.com/studiopress/genesis-sample/)
-* [Sage](https://github.com/roots/sage)
+* [Animate.css](https://github.com/daneden/animate.css)
+* [Headroom.js](https://github.com/WickyNilliams/headroom.js)
+* [normalize-scss](https://github.com/JohnAlbin/normalize-scss)
+* [sass-mq](https://github.com/sass-mq/sass-mq)

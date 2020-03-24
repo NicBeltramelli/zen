@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Advanced
+ * Zen
  *
  * This file adds the required helper functions.
  *
- * @package Genesis Advanced
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,12 +17,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Calculate if white or gray would contrast more with the provided color
  *
- * @since 3.0.0
- *
  * @param string $color A color in hex format.
  * @return string The hex code for the most contrasting color: dark grey or white.
  */
-function genesis_advanced_color_contrast( $color ) {
+function zen_color_contrast( $color ) {
 
 	$hexcolor = str_replace( '#', '', $color );
 	$red      = hexdec( substr( $hexcolor, 0, 2 ) );
@@ -40,13 +38,11 @@ function genesis_advanced_color_contrast( $color ) {
  *
  * Used to generate complementary hover tints from user-chosen colors.
  *
- * @since 3.0.0
- *
  * @param string $color A color in hex format.
  * @param int    $change The amount to reduce or increase brightness by.
  * @return string Hex code for the adjusted color brightness.
  */
-function genesis_advanced_color_brightness( $color, $change ) {
+function zen_color_brightness( $color, $change ) {
 
 	$hexcolor = str_replace( '#', '', $color );
 

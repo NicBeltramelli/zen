@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Advanced
+ * Zen
  *
  * This file adds body classes to the body tag.
  *
- * @package Genesis Advanced
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,10 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Add consistent classes to the body tag
  *
  * @param  array $classes Body classes.
- *
  * @return array
- *
- * @since 3.0.0
  */
 add_filter(
 	'body_class',
@@ -58,10 +55,22 @@ add_filter(
 			$classes[]      = $template_class;
 		}
 
+		if ( 'fixed-header' === get_theme_mod( 'zen_header_options', false ) ) {
+			$classes[] = 'has-fixed-header';
+		}
+
+		if ( 'floating-header' === get_theme_mod( 'zen_header_options', false ) ) {
+			$classes[] = 'has-floating-header';
+		}
+
+		if ( is_singular( [ 'post', 'page' ] ) &&
+			has_post_thumbnail() ) {
+			$classes[] = 'has-featured-image';
+		}
+
 		if ( ! is_singular() ||
 			! function_exists( 'has_blocks' ) ||
 			! function_exists( 'parse_blocks' ) ) {
-
 			return $classes;
 		}
 
@@ -91,8 +100,6 @@ add_filter(
  * Outputting the script immediately also reduces a flash of incorrectly styled
  * content, as the page does not load with no-js styles, then switch to js
  * once everything has finished loading.
- *
- * @since  3.0.0
  *
  * @return void
  */

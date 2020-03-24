@@ -1,0 +1,97 @@
+/* WooCommerce Buttons */
+
+.woocommerce {
+
+	a.button,
+	button.button,
+	input.button,
+	#respond input#submit {
+		background-color: $primarytext;
+		border-radius: $base-border-radius;
+		color: $contentbg;
+		padding: space(inset-squish, xs);
+		text-transform: uppercase;
+		transition: all $base-transition;
+		white-space: normal;
+		width: auto;
+
+		@extend %font-size-s;
+
+		&.loading {
+			padding-right: 0;
+
+			&::after {
+				color: $primary;
+				right: 5px;
+				top: calc(50% - 1rem);
+				vertical-align: middle;
+
+				@extend %font-size-xs;
+			}
+		}
+
+		&.added {
+
+			&::after {
+				position: absolute;
+				right: 5px;
+				top: calc(50% - 1rem);
+				vertical-align: middle;
+
+				@extend %font-size-xs;
+			}
+		}
+
+		&:focus,
+		&:hover {
+			background-color: $primarytext;
+			color: $contentbg;
+			opacity: 1;
+
+			@extend %box-shadow-buttons;
+		}
+
+		&.alt {
+			background-color: $primary;
+			color: $contentbg;
+			-webkit-font-smoothing: antialiased;
+
+			&:focus,
+			&:hover {
+				background-color: $primary;
+				opacity: 1;
+
+				@extend %box-shadow-buttons;
+			}
+
+			&.disabled,
+			&:disabled,
+			&:disabled[disabled] {
+				background-color: $secondarybg;
+				color: $subtext;
+				cursor: not-allowed;
+
+				&:hover {
+					background-color: $secondarybg;
+					box-shadow: none;
+					color: $subtext;
+				}
+			}
+		}
+
+		&.disabled,
+		&:disabled,
+		&:disabled[disabled] {
+			background-color: $secondarybg;
+			color: $subtext;
+			cursor: not-allowed;
+			padding: space(inset-squish, xs);
+
+			&:hover {
+				background-color: $secondarybg;
+				box-shadow: none;
+				color: $subtext;
+			}
+		}
+	}
+}

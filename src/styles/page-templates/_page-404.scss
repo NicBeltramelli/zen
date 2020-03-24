@@ -1,0 +1,17 @@
+/* Page 404 Template */
+
+.error404 {
+
+	.entry {
+		margin-top: space(s);
+	}
+
+	.search-form {
+		text-align: center;
+
+		.search-form-input {
+			margin-right: space(xs);
+			min-width: 40%;
+		}
+	}
+}

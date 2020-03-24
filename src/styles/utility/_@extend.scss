@@ -1,0 +1,151 @@
+/**
+* @extend
+*
+* 	- Font Sizes
+* 	- Box Shadow
+*/
+
+/* Font Sizes */
+
+%font-size-xxxl {
+	font-size: font-size(phone, xxxl);
+	line-height: line-height(xxxl);
+
+	@include mq($from: tablet) {
+		font-size: font-size(tablet, xxxl);
+	}
+}
+
+%font-size-xxl {
+	font-size: font-size(phone, xxl);
+	line-height: line-height(xxl);
+
+	@include mq($from: tablet) {
+		font-size: font-size(tablet, xxl);
+	}
+}
+
+%font-size-xl {
+	font-size: font-size(phone, xl);
+	line-height: line-height(xl);
+
+	@include mq($from: tablet) {
+		font-size: font-size(tablet, xl);
+	}
+}
+
+%font-size-xl-break {
+	font-size: font-size(phone, xl);
+	line-height: line-height(xl-break);
+
+	@include mq($from: tablet) {
+		font-size: font-size(tablet, xl);
+	}
+}
+
+%font-size-l {
+	font-size: font-size(phone, l);
+	line-height: line-height(l);
+
+	@include mq($from: tablet) {
+		font-size: font-size(tablet, l);
+	}
+}
+
+%font-size-l-break {
+	font-size: font-size(phone, l);
+	line-height: line-height(l-break);
+
+	@include mq($from: tablet) {
+		font-size: font-size(tablet, l);
+	}
+}
+
+%font-size-m {
+	font-size: font-size(phone, m);
+	line-height: line-height(m);
+
+	@include mq($from: tablet) {
+		font-size: font-size(tablet, m);
+	}
+}
+
+%font-size-s {
+	font-size: font-size(phone, s);
+	line-height: line-height(s);
+
+	@include mq($from: tablet) {
+		font-size: font-size(tablet, s);
+	}
+}
+
+%font-size-s-break {
+	font-size: font-size(phone, s);
+	line-height: line-height(xs); // Break the vertical rhythm.
+
+	@include mq($from: tablet) {
+		font-size: font-size(tablet, s);
+	}
+}
+
+%font-size-xs {
+	font-size: font-size(phone, xs);
+	line-height: line-height(s);
+
+	@include mq($from: tablet) {
+		font-size: font-size(tablet, xs);
+	}
+}
+
+%font-size-xs-break {
+	font-size: font-size(phone, xs);
+	line-height: line-height(xs); // Break the vertical rhythm.
+
+	@include mq($from: tablet) {
+		font-size: font-size(tablet, xs);
+	}
+}
+
+/* Box Shadow */
+
+%box-shadow {
+
+	@include box-shadow (0, 0, 2rem, color(shadow), false);
+}
+
+%box-shadow-top {
+
+	@include box-shadow (0, -1rem, 1rem, color(shadow-light), false);
+}
+
+%box-shadow-bottom {
+
+	@include box-shadow (0, 1rem, 1rem, color(shadow-light), false);
+}
+
+%box-shadow-hover {
+
+	@include box-shadow (0, 2rem, 4rem, color(shadow), false);
+}
+
+%box-shadow-buttons {
+
+	box-shadow: inset 0 0 0 20rem color(shadow), 0 2rem 2rem color(shadow);
+}
+
+%box-shadow-strong {
+
+	@include box-shadow (0, 0, 2rem, color(dark, strong), false);
+}
+
+/* Gradients */
+
+%gradient-top {
+
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+}
+
+%gradient-bottom {
+
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+}

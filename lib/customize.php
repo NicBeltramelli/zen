@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Advanced
+ * Zen
  *
  * This file adds the Customizer additions.
  *
- * @package Genesis Advanced
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,8 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Register settings and controls with the Customizer
- *
- * @since 3.0.0
  *
  * @param WP_Customize_Manager $wp_customize Customizer object.
  */
@@ -30,7 +28,7 @@ add_action(
 
 		/* Link color addition */
 		$wp_customize->add_setting(
-			'genesis_advanced_link_color',
+			'zen_link_color',
 			[
 				'default'           => $appearance['default-colors']['link'],
 				'sanitize_callback' => 'sanitize_hex_color',
@@ -40,19 +38,19 @@ add_action(
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
-				'genesis_advanced_link_color',
+				'zen_link_color',
 				[
-					'description' => __( 'Change the default color of post info links, the hover color of linked titles and menu items, and more.', 'genesis-advanced' ),
-					'label'       => __( 'Link Color', 'genesis-advanced' ),
+					'description' => __( 'Change the default color of post info links, the hover color of linked titles and menu items, and more.', 'zen' ),
+					'label'       => __( 'Link Color', 'zen' ),
 					'section'     => 'colors',
-					'settings'    => 'genesis_advanced_link_color',
+					'settings'    => 'zen_link_color',
 				]
 			)
 		);
 
 		/* Accent color addition */
 		$wp_customize->add_setting(
-			'genesis_advanced_accent_color',
+			'zen_accent_color',
 			[
 				'default'           => $appearance['default-colors']['accent'],
 				'sanitize_callback' => 'sanitize_hex_color',
@@ -62,34 +60,34 @@ add_action(
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
-				'genesis_advanced_accent_color',
+				'zen_accent_color',
 				[
-					'description' => __( 'Change the default hovers color for buttons.', 'genesis-advanced' ),
-					'label'       => __( 'Accent Color', 'genesis-advanced' ),
+					'description' => __( 'Change the default hovers color for buttons.', 'zen' ),
+					'label'       => __( 'Accent Color', 'zen' ),
 					'section'     => 'colors',
-					'settings'    => 'genesis_advanced_accent_color',
+					'settings'    => 'zen_accent_color',
 				]
 			)
 		);
 
 		/* Logo width addition */
 		$wp_customize->add_setting(
-			'genesis_advanced_logo_width',
+			'zen_logo_width',
 			[
 				'default'           => 250,
 				'sanitize_callback' => 'absint',
-				'validate_callback' => 'genesis_advanced_validate_logo_width',
+				'validate_callback' => 'zen_validate_logo_width',
 			]
 		);
 
 		$wp_customize->add_control(
-			'genesis_advanced_logo_width',
+			'zen_logo_width',
 			[
-				'label'       => __( 'Logo Width', 'genesis-advanced' ),
-				'description' => __( 'The maximum width of the logo in pixels.', 'genesis-advanced' ),
+				'label'       => __( 'Logo Width', 'zen' ),
+				'description' => __( 'The maximum width of the logo in pixels.', 'zen' ),
 				'priority'    => 9,
 				'section'     => 'title_tagline',
-				'settings'    => 'genesis_advanced_logo_width',
+				'settings'    => 'zen_logo_width',
 				'type'        => 'number',
 				'input_attrs' =>
 				[
@@ -99,24 +97,51 @@ add_action(
 			]
 		);
 
+		/* Header options addition */
+		$wp_customize->add_setting(
+			'zen_header_options',
+			[
+				'capability' => 'edit_theme_options',
+				'default'    => 'normal',
+				'transport'  => 'refresh',
+			]
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'zen_header_options',
+				[
+
+					'label'    => __( 'Header Options', 'zen' ),
+					'settings' => 'zen_header_options',
+					'section'  => 'genesis_layout',
+					'type'     => 'radio',
+					'choices'  =>
+					[
+						'normal'          => __( 'Normal', 'zen' ),
+						'fixed-header'    => __( 'Fixed', 'zen' ),
+						'floating-header' => __( 'Floating (active from tablet)', 'zen' ),
+					],
+				]
+			)
+		);
 	}
 );
 
 /**
  * Display a message if the entered width is not numeric or greater than 100
  *
- * @since 3.4.0
- *
  * @param object $validity The validity status.
  * @param int    $width The width entered by the user.
  * @return int The new width.
  */
-function genesis_advanced_validate_logo_width( $validity, $width ) {
+function zen_validate_logo_width( $validity, $width ) {
 
 	if ( empty( $width ) || ! is_numeric( $width ) ) {
-		$validity->add( 'required', __( 'You must supply a valid number.', 'genesis-advanced' ) );
+		$validity->add( 'required', __( 'You must supply a valid number.', 'zen' ) );
 	} elseif ( $width < 100 ) {
-		$validity->add( 'logo_too_small', __( 'The logo width cannot be less than 100.', 'genesis-advanced' ) );
+		$validity->add( 'logo_too_small', __( 'The logo width cannot be less than 100.', 'zen' ) );
 	}
 
 	return $validity;

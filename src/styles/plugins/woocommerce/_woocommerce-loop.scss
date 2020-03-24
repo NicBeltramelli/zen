@@ -1,0 +1,173 @@
+/**
+* WooCommerce Loop
+*
+*	- Default Loop
+*	- Pagination
+*/
+
+.woocommerce {
+
+	/* Default Loop */
+
+	.woocommerce-result-count,
+	.woocommerce-ordering {
+		margin-bottom: space(m);
+	}
+
+	.woocommerce-result-count {
+		margin-top: 3rem;
+	}
+
+	.woocommerce-ordering {
+		margin-top: space(s);
+
+		select {
+			vertical-align: middle;
+		}
+	}
+
+	.products ul,
+	ul.products {
+		margin: 0;
+
+		&::after,
+		&::before {
+			display: none;
+		}
+	}
+
+	ul.products {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	ul.products li.product {
+		align-items: self-start;
+		display: flex;
+		flex-direction: column;
+		list-style-type: none;
+
+		&::after,
+		&::before {
+			display: none;
+		}
+
+		.woocommerce-LoopProduct-link {
+			display: block;
+			height: 100%;
+		}
+
+		a {
+			clear: both;
+			float: left;
+			text-decoration: none;
+
+			&.added_to_cart {
+				bottom: -4.5rem;
+				position: absolute;
+				text-align: center;
+				width: 100%;
+			}
+		}
+
+		a img {
+			margin: space(stack, s);
+		}
+
+		h3,
+		.woocommerce-loop-product__title,
+		.woocommerce-loop-category__title {
+			color: $primarytext;
+			margin: space(stack, xs);
+			padding: space(column, xs);
+			text-align: center;
+
+			@extend %font-size-m;
+		}
+
+		.star-rating {
+			margin: 0 auto space(xs) auto;
+
+			@extend %font-size-s;
+		}
+
+		.button {
+			background-color: transparent;
+			border: 1px solid;
+			color: color(dark, base);
+			margin-top: 0;
+			padding: space(inset-squish, xxs);
+			width: 100%;
+
+			@extend %font-size-xs;
+		}
+
+		.price {
+			color: $primarytext;
+			margin: space(stack, xs);
+			text-align: center;
+
+			@extend %font-size-s;
+
+			del {
+				color: inherit;
+				opacity: 0.5;
+				display: inline-block;
+			}
+
+			ins {
+				background: none;
+				font-weight: 700;
+				display: inline-block;
+			}
+
+			.from {
+				font-size: inherit;
+				margin: 0;
+			}
+		}
+	}
+
+	/* Pagination */
+
+	nav.woocommerce-pagination {
+		clear: both;
+		display: block; // Fix genesis responsive menu inheritance.
+		margin: space(stack, s);
+
+		ul {
+			border: none;
+			margin: 0;
+
+			li {
+				border: none;
+				margin-left: 2px;
+				margin-right: 2px;
+
+				a,
+				span {
+
+					display: inline-block;
+					font-weight: 700;
+					padding: space(inset-squish, xxs);
+					text-decoration: none;
+
+					@extend %font-size-s;
+				}
+
+				a {
+					background-color: $secondarybg;
+					color: $primarytext;
+					cursor: pointer;
+				}
+
+				span.current,
+				a:hover,
+				a:focus {
+					background-color: $primarytext;
+					color: $contentbg;
+				}
+			}
+		}
+	}
+}

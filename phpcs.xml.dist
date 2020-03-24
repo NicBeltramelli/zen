@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
-<ruleset name="Genesis Advanced Code Standards">
+<ruleset name="Zen Code Standards">
 	<!-- See https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml -->
 	<!-- See https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards -->
 	<!-- See https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/wiki -->
 	<!-- See https://github.com/wimg/PHPCompatibility -->
 	<!-- See https://github.com/Automattic/_s/blob/master/phpcs.xml.dist -->
 
-	<description>Custom rules for Genesis Advanced.</description>
+	<description>Custom rules for Zen.</description>
 
 	<!-- Check files in this directory and subdirectories. -->
 	<file>.</file>
@@ -42,7 +42,7 @@
 	<!-- Check for correct text domain on all translatable strings. -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="genesis-advanced"/>
+			<property name="text_domain" type="array" value="zen"/>
 		</properties>
 	</rule>
 
@@ -56,7 +56,7 @@
 	<!-- Check all globals have the expected prefix. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
-			<property name="prefixes" type="array" value="genesis_advanced,CHILD_THEME"/>
+			<property name="prefixes" type="array" value="zen,CHILD_THEME"/>
 		</properties>
 	</rule>
 

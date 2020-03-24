@@ -1,0 +1,126 @@
+/* Buttons */
+
+.button {
+	display: inline-block;
+}
+
+button,
+.button,
+a.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background-color: color(dark, base);
+	border: none;
+	border-radius: $base-border-radius;
+	color: color(light, soft);
+	cursor: pointer;
+	font-weight: 700;
+	padding: space(inset-squish, xs);
+	text-align: center;
+	text-decoration: none;
+	transition: all $base-transition;
+	white-space: normal;
+	min-width: space(xl);
+	width: auto;
+
+	@extend %font-size-s;
+
+	&:focus,
+	&:hover {
+		opacity: 1;
+
+		@extend %box-shadow-buttons;
+	}
+
+	&.small {
+		min-width: space(l);
+		padding: space(inset-squish, xxs);
+
+		@extend %font-size-xs;
+	}
+
+	&.outline {
+		border: 1px solid;
+		background-color: transparent;
+		color: color(dark, base);
+	}
+
+	&.accent {
+		background: color(accent, base);
+		border-color: color(accent, base);
+
+		&.outline {
+			background-color: color(light, soft);
+			color: color(accent, base);
+		}
+	}
+
+	&.info {
+		background: color(info, base);
+		border-color: color(info, base);
+
+		&.outline {
+			background-color: color(light, soft);
+			color: color(info, base);
+		}
+	}
+
+	&.danger {
+		background: color(danger, base);
+		border-color: color(danger, base);
+
+		&.outline {
+			background-color: color(light, soft);
+			color: color(danger, base);
+		}
+	}
+
+	&.light {
+		background: color(light, strong);
+		border-color: color(light, strong);
+
+		&.outline {
+			background-color: color(light, soft);
+			color: color(dark, soft);
+		}
+	}
+
+	&.success {
+		background: color(success, base);
+		border-color: color(success, base);
+
+		&.outline {
+			background-color: color(light, soft);
+			color: color(success, base);
+		}
+	}
+
+	&.warning {
+		background: color(warning, base);
+		border-color: color(warning, base);
+
+		&.outline {
+			background-color: color(light, soft);
+			color: color(warning, base);
+		}
+	}
+}
+
+.site-container {
+
+	button,
+	input,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"] {
+
+		&:disabled,
+		&:disabled:hover {
+			background-color: color(light, base);
+			box-shadow: none;
+			color: color(dark, soft);
+			cursor: not-allowed;
+		}
+	}
+}

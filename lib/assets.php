@@ -1,32 +1,31 @@
 <?php
 /**
- * Genesis Advanced
+ * Zen
  *
  * This file enqueues assets.
  *
- * @package Genesis Advanced
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-/**
- * Enqueue assets
- *
- * @since 3.0.0
- */
+/* Enqueue assets */
 add_action(
 	'wp_enqueue_scripts',
 	function () {
 
+		/* Access the wpackio global var */
+		global $zen_assets;
+
 		/* Locate the config file */
 		$appearance = genesis_get_config( 'appearance' );
 
-		/* Enqueue Google Fonts */
+		/* Google Fonts */
 		wp_enqueue_style(
 			genesis_get_theme_handle() . '-fonts',
 			$appearance['fonts-url'],
@@ -34,37 +33,50 @@ add_action(
 			genesis_get_theme_version()
 		);
 
-		/* Enqueue ionicons icons */
-		wp_enqueue_style(
+		/* Ionicons icons */
+		wp_enqueue_script(
 			genesis_get_theme_handle() . '-ionicons',
 			$appearance['ionicons'],
 			[],
-			genesis_get_theme_version()
-		);
-
-		/* Enqueue Dashicons */
-		wp_enqueue_style(
-			'dashicons'
-		);
-
-		/* Enqueue main style */
-		wp_enqueue_style(
-			genesis_get_theme_handle() . '-styles',
-			genesis_advanced_asset_path( 'styles/main.css' ),
-			[],
-			genesis_get_theme_version()
-		);
-
-		/* Enqueue main script */
-		wp_enqueue_script(
-			genesis_get_theme_handle() . '-scripts',
-			genesis_advanced_asset_path( 'scripts/main.js' ),
-			[ 'jquery' ],
 			genesis_get_theme_version(),
 			true
 		);
 
-		/* Enqueue comment reply js */
+		/* Dashicons icons */
+		wp_enqueue_style(
+			'dashicons'
+		);
+
+		/* Theme styles and scripts */
+		$zen_assets->enqueue(
+			'theme',
+			'main',
+			[]
+		);
+
+		/* Blocks animation */
+		$zen_assets->enqueue(
+			'theme',
+			'blocksanimation',
+			[
+				'css' => false,
+			]
+		);
+
+		/* Floating header scripts */
+		if ( 'floating-header' === get_theme_mod( 'zen_header_options', false ) ) {
+
+			$zen_assets->enqueue(
+				'theme',
+				'floatingHeader',
+				[
+					'css' => false,
+				]
+			);
+
+		}
+
+		/* Comment reply js */
 		if (
 		is_single() &&
 		comments_open() &&
@@ -73,6 +85,7 @@ add_action(
 			wp_enqueue_script(
 				'comment-reply'
 			);
+
 		}
 
 	},

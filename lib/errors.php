@@ -1,13 +1,13 @@
 <?php
 /**
- * Genesis Advanced
+ * Zen
  *
  * This file adds the functions for displaying error messages.
  *
- * @package Genesis Advanced
+ * @package Zen
  * @author  NicBeltramelli
  * @license GPL-2.0-or-later
- * @link    https://github.com/NicBeltramelli/genesis-advanced.git
+ * @link    https://github.com/NicBeltramelli/zen.git
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,31 +17,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Helper function for prettying up errors
  *
- * @since 3.0.0
- *
  * @param string $message
  * @param string $subtitle
  * @param string $title
  */
-$genesis_advanced_error = function ( $message, $genesis_advanced_subtitle = '', $title = '' ) {
+$zen_error = function ( $message, $zen_subtitle = '', $title = '' ) {
 
-	$docs_url = 'https://thematicpress.com/genesis-advanced/docs';
+	$docs_url = 'https://github.com/NicBeltramelli/zen.git/';
 
 	$title = $title ?: esc_html__(
-		'Genesis Advanced &rsaquo; Error',
-		'genesis-advanced'
+		'Zen &rsaquo; Error',
+		'zen'
 	);
 
 	$footer = sprintf(
 		'<a href="%s">%s</a>',
 		esc_url( $docs_url ),
 		esc_html__(
-			'Genesis Advanced Documentation',
-			'genesis-advanced'
+			'Zen Documentation',
+			'zen'
 		)
 	);
 
-	$message = "<h1>{$title}<br><small>{$genesis_advanced_subtitle}</small></h1><p>{$message}</p><p>{$footer}</p>";
+	$message = "<h1>{$title}<br><small>{$zen_subtitle}</small></h1><p>{$message}</p><p>{$footer}</p>";
 
 	wp_die( $message ); // WPCS: xss ok.
 };
@@ -51,14 +49,14 @@ $genesis_advanced_error = function ( $message, $genesis_advanced_subtitle = '', 
  */
 if ( version_compare( '7.1', phpversion(), '>=' ) ) {
 
-	$genesis_advanced_error(
+	$zen_error(
 		esc_html__(
 			'You must be using PHP 7.1 or greater.',
-			'genesis-advanced'
+			'zen'
 		),
 		esc_html__(
 			'Invalid PHP version',
-			'genesis-advanced'
+			'zen'
 		)
 	);
 }
@@ -66,16 +64,16 @@ if ( version_compare( '7.1', phpversion(), '>=' ) ) {
 /**
  * Ensure compatible version of WordPress is used
  */
-if ( version_compare( '4.7.0', get_bloginfo( 'version' ), '>=' ) ) {
+if ( version_compare( '5.0', get_bloginfo( 'version' ), '>=' ) ) {
 
-	$genesis_advanced_error(
+	$zen_error(
 		esc_html__(
-			'You must be using WordPress 4.7.0 or greater.',
-			'genesis-advanced'
+			'You must be using WordPress 5.0 or greater.',
+			'zen'
 		),
 		esc_html__(
 			'Invalid WordPress version',
-			'genesis-advanced'
+			'zen'
 		)
 	);
 }
@@ -83,18 +81,18 @@ if ( version_compare( '4.7.0', get_bloginfo( 'version' ), '>=' ) ) {
 /**
  * Ensure Genesis Framework is installed
  */
-$genesis_advanced_parent_theme = wp_get_theme( 'genesis' );
+$zen_parent_theme = wp_get_theme( 'genesis' );
 
-if ( ! $genesis_advanced_parent_theme->exists() ) {
+if ( ! $zen_parent_theme->exists() ) {
 
-	$genesis_advanced_error(
+	$zen_error(
 		esc_html__(
 			'You must install Genesis Framework.',
-			'genesis-advanced'
+			'zen'
 		),
 		esc_html__(
 			'Missing Genesis Framework',
-			'genesis-advanced'
+			'zen'
 		)
 	);
 }
