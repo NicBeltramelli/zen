@@ -82,6 +82,7 @@ p.demo_store {
 	a.remove {
 		display: block;
 		height: space(s);
+		margin: 0 auto;
 		width: space(s);
 
 		@extend %font-size-l;
