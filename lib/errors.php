@@ -64,11 +64,11 @@ if ( version_compare( '7.1', phpversion(), '>=' ) ) {
 /**
  * Ensure compatible version of WordPress is used
  */
-if ( version_compare( '4.7.0', get_bloginfo( 'version' ), '>=' ) ) {
+if ( version_compare( '5.0', get_bloginfo( 'version' ), '>=' ) ) {
 
 	$zen_error(
 		esc_html__(
-			'You must be using WordPress 4.7.0 or greater.',
+			'You must be using WordPress 5.0 or greater.',
 			'zen'
 		),
 		esc_html__(
