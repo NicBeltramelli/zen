@@ -5,7 +5,7 @@
 * Bump ionicon 5.0.0
 * Update distribution package
 * Fix accessibility of responsive menu toggle
-* Display author box on author page and on single post
+* Display author box on single post
 * Enqueue WooCommerce assets only where needed
 * Align inline style
 * Align blocks editor inline style
