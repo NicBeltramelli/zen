@@ -1,4 +1,5 @@
 # Zen theme
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b6b22681b33c46c0bef7cd8d25bf21d1)](https://app.codacy.com/manual/NicBeltramelli/zen?utm_source=github.com&utm_medium=referral&utm_content=NicBeltramelli/zen&utm_campaign=Badge_Grade_Settings)
 [![Packagist](https://img.shields.io/packagist/v/nicbeltramelli/zen.svg?style=for-the-badge)](https://packagist.org/packages/nicbeltramelli/zen)
 [![Build Status](https://img.shields.io/travis/NicBeltramelli/zen.svg?style=for-the-badge)](https://travis-ci.org/NicBeltramelli/zen)
 
