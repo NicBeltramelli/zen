@@ -1,6 +1,8 @@
 # Zen Changelog
 
-## [dev]
+## [4.0] - 2020-03-25
+* Add Travis CI
+* Add translation support
 * Move @wpackio/entrypoint to dev deps
 * Remove child theme name constant
 * Remove export script

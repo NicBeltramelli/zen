@@ -1,7 +1,7 @@
 # Zen theme
 [![Packagist](https://img.shields.io/packagist/v/nicbeltramelli/zen.svg?style=for-the-badge)](https://packagist.org/packages/nicbeltramelli/zen)
+[![Codacy Badge](https://img.shields.io/codacy/grade/b6b22681b33c46c0bef7cd8d25bf21d1?style=for-the-badge)](https://app.codacy.com/manual/NicBeltramelli/zen)
 [![Build Status](https://img.shields.io/travis/NicBeltramelli/zen.svg?style=for-the-badge)](https://travis-ci.org/NicBeltramelli/zen)
-
 
 Zen is a child theme for the Genesis Framework with a modern development workflow. [Live Demo](https://beltramelli.app/zen/)
 
