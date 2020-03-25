@@ -38,9 +38,6 @@ install:
   - composer install -o --prefer-dist --no-interaction
 
 script:
-  - yarn run bootstrap
-  - yarn run start
   - yarn run build
   - yarn run archive
   - composer phpcs
-  
