@@ -368,6 +368,8 @@ $color-palette: (
 
 			.wp-block-latest-posts__post-excerpt {
 				font-family: $base-font-sans;
+				margin-bottom: 0;
+				margin-top: space(xs);
 
 				> a {
 

@@ -15,8 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $zen_default_colors = [
-	'link'   => '#0073e5',
-	'accent' => '#d30c7b',
+	'link'   => '#00a37f',
+	'accent' => '#00a37f',
 ];
 
 $zen_link_color = get_theme_mod(
@@ -69,7 +69,7 @@ return [
 		[
 			'name'  => __( 'Info', 'zen' ),
 			'slug'  => 'info',
-			'color' => '#0073e5',
+			'color' => '#00a37f',
 		],
 		[
 			'name'  => __( 'Danger', 'zen' ),
@@ -79,7 +79,7 @@ return [
 		[
 			'name'  => __( 'Success', 'zen' ),
 			'slug'  => 'success',
-			'color' => '#00a878',
+			'color' => '#1b998b',
 		],
 		[
 			'name'  => __( 'Warning', 'zen' ),
