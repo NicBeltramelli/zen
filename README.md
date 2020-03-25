@@ -36,9 +36,6 @@ Make sure all dependencies have been installed before moving on:
 Install Zen using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
 
 ```shell
-# navigate to your themes directory
-$ cd wp-content/themes/
-
 # initialize the theme
 $ composer create-project nicbeltramelli/zen your-theme-name
 
@@ -53,7 +50,7 @@ $ yarn bootstrap
 
 ## Theme setup
 
-1. Edit `style.css` to define your theme meta information (name, URI, description, version, author)
+1. Edit `style.css` to define your theme meta information (name, URI, description, version, author)  
 2. Edit `wpackio.server.js` that handles the development server:
 * `devUrl` should reflect your local development URL, e.g. `http://your-address.local`
 * `distPublicPath` should reflect the absolute URL path of your dist folder, e.g. `/wp-content/themes/your-theme-name/dist/`  
