@@ -8,7 +8,6 @@ php:
   - nightly
 
 env:
-  - TRAVIS_NODE_VERSION="8"
   - TRAVIS_NODE_VERSION="10"
 
 matrix:
@@ -38,6 +37,6 @@ install:
   - composer install -o --prefer-dist --no-interaction
 
 script:
-  - yarn run build
-  - yarn run archive
+  - yarn build
+  - yarn archive
   - composer phpcs
