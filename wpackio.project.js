@@ -22,14 +22,14 @@ module.exports = {
 		// If this has length === 1, then single compiler
 		{
 			name: 'theme',
-		 	entry: {
+			entry: {
 				main: ['./src/scripts/main.js'],
 				blocks: ['./src/scripts/blocks.js'],
 				floatingHeader: ['./src/scripts/floating-header.js'],
 				blocksanimation: ['./src/scripts/blocksanimation.js'],
 			},
 			// Extra webpack config to be passed directly
-		 	webpackConfig: {
+			webpackConfig: {
 				module: {
 					rules: [
 						{
