@@ -3,7 +3,7 @@
 [![Build Status](https://img.shields.io/travis/NicBeltramelli/zen.svg?style=for-the-badge)](https://travis-ci.org/NicBeltramelli/zen)
 
 
-Zen is a child theme for the Genesis Framework with a modern development workflow. 
+Zen is a child theme for the Genesis Framework with a modern development workflow. [Live Demo](https://beltramelli.app/zen/)
 
 Tested up to WordPress 5.3.2 and Genesis 3.3.0.
 
@@ -12,8 +12,8 @@ Tested up to WordPress 5.3.2 and Genesis 3.3.0.
 
 * Consume packages from npm registry
 * Modern JavaScript
-* SASS/SCSS language for stylesheets
-* Use autoprefixer to make your CSS work with needed vendor prefixes
+* SASS/SCSS for stylesheets
+* Autoprefixer to make your CSS work with needed vendor prefixes
 * Minify and bundle code with [Webpack](https://webpack.github.io/)
 * Split large files and enqueue the generated parts
 * Synch browser testing with Browsersync](http://www.browsersync.io/)
@@ -53,10 +53,11 @@ $ yarn bootstrap
 
 ## Theme setup
 
-1. Edit `wpackio.server.js` that handles the development server:
+1. Edit `style.css` to define your theme meta information (name, URI, description, version, author)
+2. Edit `wpackio.server.js` that handles the development server:
 * `devUrl` should reflect your local development URL, e.g. `http://your-address.local`
-* `distPublicPath` should reflect the absolute URL path of your dist folder, e.g. `/wp-content/themes/your-theme-name/dist/`, **Remember you must add a forward slash at the end of the value otherwise it will not work.**
-2. Edit `style.css` to define your theme meta information (name, URI, description, version, author)
+* `distPublicPath` should reflect the absolute URL path of your dist folder, e.g. `/wp-content/themes/your-theme-name/dist/`  
+**You must add a forward slash at the end otherwise it will not work.**
 
 
 ## Theme development
