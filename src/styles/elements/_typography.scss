@@ -95,7 +95,7 @@ mark {
 
 blockquote {
 	font-family: $base-font-serif;
-	margin: space(m) space(s);
+	margin: space(divider, m);
 	position: relative;
 
 	&::before {

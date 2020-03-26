@@ -1,6 +1,7 @@
 # Zen Changelog
 
 ## [master] - 
+* Improve blockquotes and pullquotes style
 * Update color palette
 
 ## [4.0] - 2020-03-25

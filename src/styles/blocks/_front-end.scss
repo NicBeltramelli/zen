@@ -473,7 +473,7 @@ $color-palette: (
 }
 
 .wp-block-pullquote {
-	padding: space(m);
+	padding: 0;
 	position: relative;
 
 	blockquote {
@@ -536,6 +536,15 @@ $color-palette: (
 
 		blockquote {
 			margin: 0 auto;
+			max-width: 100%;
+
+			@include mq($from: phone) {
+				max-width: 85%;
+			}
+
+			@include mq($from: tablet) {
+				max-width: 65%;
+			}
 
 			p {
 				margin: space(stack, xs);
