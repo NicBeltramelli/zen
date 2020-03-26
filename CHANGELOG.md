@@ -1,5 +1,8 @@
 # Zen Changelog
 
+## [master] - 
+* Update color palette
+
 ## [4.0] - 2020-03-25
 * Add Travis CI
 * Add translation support
