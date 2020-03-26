@@ -69,7 +69,7 @@ return [
 		[
 			'name'  => __( 'Info', 'zen' ),
 			'slug'  => 'info',
-			'color' => '#00a37f',
+			'color' => '#0073e5',
 		],
 		[
 			'name'  => __( 'Danger', 'zen' ),
@@ -79,12 +79,12 @@ return [
 		[
 			'name'  => __( 'Success', 'zen' ),
 			'slug'  => 'success',
-			'color' => '#1b998b',
+			'color' => '#00a37f',
 		],
 		[
 			'name'  => __( 'Warning', 'zen' ),
 			'slug'  => 'warning',
-			'color' => '#f15025',
+			'color' => '#7c6249',
 		],
 		[
 			'name'  => __( 'Star', 'zen' ),
