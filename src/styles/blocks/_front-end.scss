@@ -473,6 +473,8 @@ $color-palette: (
 }
 
 .wp-block-pullquote {
+	margin-bottom: space(s);
+	margin-top: space(s);
 	padding: 0;
 	position: relative;
 
@@ -487,7 +489,6 @@ $color-palette: (
 	&.alignleft,
 	&.alignright {
 		border: none;
-		margin: space(stack, s);
 		max-width: 100%;
 		padding: 0;
 
@@ -512,8 +513,12 @@ $color-palette: (
 	&.alignleft {
 		text-align: left;
 
-		@include mq($from: tablet) {
+		@include mq($from: phone) {
+			margin-left: -(space(s));
 			margin-right: space(s);
+		}
+
+		@include mq($from: tablet) {
 			margin-left: -25%;
 		}
 	}
@@ -521,30 +526,23 @@ $color-palette: (
 	&.alignright {
 		text-align: right;
 
-		@include mq($from: tablet) {
+		@include mq($from: phone) {
 			margin-left: space(s);
+			margin-right: -(space(s));
+		}
+
+		@include mq($from: tablet) {
 			margin-right: -25%;
 		}
 	}
 
 	&.is-style-solid-color {
 		border: none;
-		margin-bottom: space(m);
-		margin-top: space(m);
-		padding-bottom: space(m);
-		padding-top: space(m);
+		padding: space(m) space(s);
 
 		blockquote {
 			margin: 0 auto;
 			max-width: 100%;
-
-			@include mq($from: phone) {
-				max-width: 85%;
-			}
-
-			@include mq($from: tablet) {
-				max-width: 65%;
-			}
 
 			p {
 				margin: space(stack, xs);
@@ -554,6 +552,41 @@ $color-palette: (
 
 			cite {
 				text-transform: uppercase;
+			}
+		}
+	}
+
+	&.alignfull {
+
+		&.is-style-solid-color {
+
+			blockquote {
+				margin-left: space(s);
+				margin-right: space(s);
+
+				@include mq($from: phone) {
+					margin-left: auto !important;
+					margin-right: auto !important;
+					max-width: calc((100vw - 8rem) * 0.85);
+				}
+
+				@include mq($from: tablet) {
+					max-width: calc((100vw - 8rem) * 0.65);
+				}
+			}
+		}
+	}
+
+	&.alignwide {
+
+		&.is-style-solid-color {
+
+			blockquote {
+
+				@include mq($from: phone) {
+					margin-left: space(m);
+					margin-right: space(m);
+				}
 			}
 		}
 	}
