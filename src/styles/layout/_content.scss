@@ -72,6 +72,7 @@ body:not(.genesis-breadcrumbs-visible) {
 	}
 
 	.entry-footer & {
+		margin: space(divider, s);
 
 		.entry-categories,
 		.entry-tags {
@@ -260,12 +261,6 @@ p.entry-meta {
 	.reply {
 		display: none;
 	}
-}
-
-/* Entry Footer */
-
-.entry-footer {
-	margin: space(divider, s);
 }
 
 /* Archives */
