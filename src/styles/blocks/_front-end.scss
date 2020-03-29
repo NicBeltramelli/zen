@@ -12,8 +12,8 @@
 *	- Separators
 *	- Quotes
 *	- Columns
-*	- Images
 *	- Caption
+*	- Images
 *	- File
 *	- Media Text
 */
@@ -309,6 +309,14 @@ $color-palette: (
 
 .entry-content {
 
+	.wp-block-gallery {
+		padding-left: 0;
+
+		ul {
+			padding-left: 0;
+		}
+	}
+
 	.wp-block-archives,
 	.wp-block-categories,
 	.wp-block-latest-posts {
@@ -377,10 +385,6 @@ $color-palette: (
 				}
 			}
 		}
-	}
-
-	.wp-block-gallery {
-		padding-left: 0;
 	}
 }
 
@@ -663,6 +667,13 @@ $color-palette: (
 	}
 }
 
+/* Caption */
+
+figcaption {
+
+	@extend %font-size-s;
+}
+
 /* Images */
 
 .wp-block-image {
@@ -675,13 +686,15 @@ $color-palette: (
 	&.alignright {
 		margin-left: space(s);
 	}
-}
 
-/* Caption */
+	> figure {
+		margin-bottom: 0;
+	}
 
-figcaption {
-
-	@extend %font-size-s;
+	figcaption {
+		margin: 0;
+		padding: space(xxs);
+	}
 }
 
 /* File */

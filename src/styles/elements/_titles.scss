@@ -21,12 +21,4 @@
 .entry-title,
 .page-title {
 	text-align: center;
-
-	.content-sidebar &,
-	.sidebar-content & {
-
-		@include mq($from: tablet) {
-			text-align: left;
-		}
-	}
 }

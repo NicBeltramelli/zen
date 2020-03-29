@@ -265,12 +265,14 @@ p.entry-meta {
 
 /* Archives */
 
-.blog,
-.category,
-.tag {
+.archive:not(.woocommerce-page) {
+
+	.archive-description {
+		margin-bottom: space(m);
+	}
 
 	.entry {
-		margin-bottom: space(l);
+		margin-bottom: space(m);
 
 		.entry-header {
 			margin-top: 0;
