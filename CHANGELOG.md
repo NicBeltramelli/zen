@@ -1,6 +1,7 @@
 # Zen Changelog
 
 ## [master] - 
+* Remove author box from single posts
 * Improve blockquotes and pullquotes style
 * Update color palette
 
