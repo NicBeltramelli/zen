@@ -29,9 +29,10 @@ return [
 		'content_archive_limit'     => 0,
 		'content_archive_thumbnail' => 0,
 		'image_size'                => '',
-		'image_alignment'           => 'alignleft',
+		'image_alignment'           => 'aligncenter',
 		'posts_nav'                 => 'numeric',
 		'site_layout'               => 'full-width-content',
+		'footer_text'               => 'Zen Theme',
 	],
 	'posts_per_page'       => 6,
 ];
