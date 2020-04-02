@@ -28,7 +28,7 @@ add_action(
 		if ( is_woocommerce() ||
 			is_cart() ||
 			is_checkout() ||
-			is_page( [ 'my-account' ] ) ) {
+			is_account_page() ) {
 
 			return;
 
@@ -56,7 +56,7 @@ add_action(
 		if ( ! is_woocommerce() &&
 			! is_cart() &&
 			! is_checkout() &&
-			! is_page( [ 'my-account' ] ) ) {
+			! is_account_page() ) {
 
 			return;
 
