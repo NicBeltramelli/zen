@@ -52,7 +52,7 @@ $ yarn bootstrap
 
 1. Edit `style.css` to define your theme meta information (name, URI, description, version, author)  
 2. Edit `wpackio.server.js` that handles the development server:
-* `devUrl` should reflect your local development URL, e.g. `http://your-address.local`
+* `proxy` should reflect your local development URL, e.g. `http://your-address.local`
 * `distPublicPath` should reflect the absolute URL path of your dist folder, e.g. `/wp-content/themes/your-theme-name/dist/`  
 **You must add a forward slash at the end otherwise it will not work.**
 
