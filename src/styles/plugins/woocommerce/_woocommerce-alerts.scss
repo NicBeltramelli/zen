@@ -7,7 +7,7 @@
 	border-top: 3px solid;
 	color: $primarytext;
 	font-weight: 700;
-	margin: space(stack, s) !important; // Fix default entry-content ul margin.
+	margin: space(divider, s) !important; // Fix default entry-content ul margin.
 	padding-bottom: calc(5rem - 1.5px);
 	padding-left: 3rem !important; // Override the default content list padding.
 	padding-right: 0.5rem;
@@ -19,6 +19,10 @@
 	&::before {
 		left: 1rem;
 		top: calc(1rem - 1.5px);
+	}
+
+	li {
+		position: absolute; // Fix .stripe-source-errors
 	}
 
 	a:not(.button) {
