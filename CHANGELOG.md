@@ -1,5 +1,8 @@
 # Zen Changelog
 
+## [master]
+* Remove site container animation
+
 ## [4.1] - 2020-03-31
 * Add onboarding configuration
 * Remove author box from single posts

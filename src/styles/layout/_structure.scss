@@ -1,29 +1,10 @@
 /**
 * Structure
 *
-*	- Site Container
 *	- Site Inner
 *	- Featured Image
 *	- Layouts
 */
-
-/* Site Container */
-
-.site-container {
-	animation: fadein 1s;
-	word-wrap: break-word;
-}
-
-@keyframes fadein {
-
-	from {
-		opacity: 0;
-	}
-
-	to {
-		opacity: 1;
-	}
-}
 
 /* Site Inner */
 
