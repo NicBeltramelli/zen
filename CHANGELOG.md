@@ -1,6 +1,7 @@
 # Zen Changelog
 
 ## [master]
+* Improve WooCommerce style
 * Remove site container animation
 
 ## [4.1] - 2020-03-31

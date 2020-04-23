@@ -21,10 +21,6 @@
 		top: calc(1rem - 1.5px);
 	}
 
-	li {
-		position: absolute; // Fix .stripe-source-errors
-	}
-
 	a:not(.button) {
 
 		&:focus,
@@ -80,5 +76,12 @@
 	a,
 	&::before {
 		color: $red;
+	}
+}
+
+.wc-stripe-error {
+
+	li {
+		position: absolute; // Fix Stripe error notice
 	}
 }
