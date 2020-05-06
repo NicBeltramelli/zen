@@ -12,10 +12,9 @@
 
 /* Content Header */
 
-body:not(.genesis-breadcrumbs-visible) {
+body:not(.genesis-breadcrumbs-visible):not(.page-empty) {
 
-	.archive-description,
-	.entry-header,
+	> .entry-header,
 	.page-title {
 		margin-top: space(s);
 	}
