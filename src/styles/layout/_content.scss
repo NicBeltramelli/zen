@@ -14,7 +14,7 @@
 
 body:not(.genesis-breadcrumbs-visible):not(.page-empty) {
 
-	> .entry-header,
+	.entry-header,
 	.page-title {
 		margin-top: space(s);
 	}

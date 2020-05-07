@@ -1,6 +1,7 @@
 # Zen Changelog
 
 ## [4.1.2] - 2020-05-07
+* Improve style
 * Improve docs
 * Improve empty page style
 
