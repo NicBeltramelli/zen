@@ -45,6 +45,9 @@ $ yarn
 # bootstrap project
 $ yarn bootstrap
 
+# install php dependencies
+$ composer install
+
 ```
 
 
