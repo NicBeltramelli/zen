@@ -39,14 +39,17 @@ Install Zen using Composer from your WordPress themes directory (replace `your-t
 # initialize the theme
 $ composer create-project nicbeltramelli/zen your-theme-name
 
-# install dependencies
+# move inside your theme folder
+$ cd your-theme-name
+
+# install php dependencies
+$ composer install
+
+# install front-end dependencies
 $ yarn
 
 # bootstrap project
 $ yarn bootstrap
-
-# install php dependencies
-$ composer install
 
 ```
 

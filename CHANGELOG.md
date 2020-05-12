@@ -1,5 +1,8 @@
 # Zen Changelog
 
+# [master]
+* Improve docs
+
 ## [4.1.3] - 2020-05-07
 * Improve style
 
