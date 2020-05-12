@@ -21,7 +21,7 @@ Tested up to WordPress 5.3.2 and Genesis 3.3.0.
 
 ## Requirements
 
-Make sure all dependencies have been installed before moving on:
+Make sure all requirements have been installed before moving on:
 
 * [WordPress](https://wordpress.org/) >= 5.0
 * [Genesis Framework](https://my.studiopress.com/themes/genesis/) >= 3.0.0
