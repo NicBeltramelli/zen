@@ -122,12 +122,8 @@ themes/your-theme-name/  # → Root of your child theme
 ```
 
 
-## Dev dependencies
+## Dependencies
 * [wpack.io](https://github.com/swashata/wp-webpack-script)
-
-
-## Front-end dependencies
-
 * [Animate.css](https://github.com/daneden/animate.css)
 * [Headroom.js](https://github.com/WickyNilliams/headroom.js)
 * [normalize-scss](https://github.com/JohnAlbin/normalize-scss)
