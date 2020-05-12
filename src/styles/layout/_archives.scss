@@ -1,0 +1,33 @@
+/* Archives */
+
+.blog,
+.archive {
+
+	.archive-description {
+		margin-top: space(s);
+
+		.genesis-breadcrumbs-visible & {
+			margin-top: 0;
+		}
+	}
+
+	.entry {
+		margin-bottom: space(m);
+
+		.entry-header {
+			margin-top: 0;
+		}
+
+		&.sticky {
+			background-color: color(light, base);
+			border-radius: $base-border-radius;
+			padding: space(s);
+
+			@extend %box-shadow;
+		}
+	}
+
+	.post-image {
+		display: block;
+	}
+}

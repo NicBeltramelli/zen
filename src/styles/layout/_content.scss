@@ -7,7 +7,6 @@
 *	- More Link
 *	- Comments
 *	- Entry Footer
-*	- Archives
 */
 
 /* Content Header */
@@ -259,34 +258,5 @@ p.entry-meta {
 
 	.reply {
 		display: none;
-	}
-}
-
-/* Archives */
-
-.archive:not(.woocommerce-page) {
-
-	.archive-description {
-		margin-bottom: space(m);
-	}
-
-	.entry {
-		margin-bottom: space(m);
-
-		.entry-header {
-			margin-top: 0;
-		}
-
-		&.sticky {
-			background-color: color(light, base);
-			border-radius: $base-border-radius;
-			padding: space(s);
-
-			@extend %box-shadow;
-		}
-	}
-
-	.post-image {
-		display: block;
 	}
 }

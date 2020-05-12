@@ -163,7 +163,6 @@
 		margin: space(stack, s);
 		padding: space(xs);
 
-		@extend %box-shadow;
 		@extend %font-size-s;
 
 		.woocommerce-form-login__rememberme {
