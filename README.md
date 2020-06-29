@@ -42,9 +42,6 @@ $ composer create-project nicbeltramelli/zen your-theme-name
 # move inside your theme folder
 $ cd your-theme-name
 
-# install php dependencies
-$ composer install
-
 # install front-end dependencies
 $ yarn
 
