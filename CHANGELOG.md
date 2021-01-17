@@ -1,6 +1,7 @@
 # Zen Changelog
 
 # [master]
+* Update content import
 * Remove Ionicons support
 * Update phpcs ruleset and fix sniff violations
 * Update deps

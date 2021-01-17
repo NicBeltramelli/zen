@@ -52,7 +52,7 @@ return <<<CONTENT
 <!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"verticalAlignment":"center","className":"has-padding-xs center"} -->
 <div class="wp-block-column is-vertically-aligned-center has-padding-xs center"><!-- wp:html -->
-<ion-icon name="flash-outline" class="has-large-font-size"></ion-icon>
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path d="M8 24l2.674-9h-9.674l16-15-2.674 9h8.674l-15 15zm-1.586-11h6.912l-1.326 4 5.739-6h-6.065l1.304-4-6.564 6z"></path></svg>
 <!-- /wp:html -->
 
 <!-- wp:paragraph {"align":"center"} -->
@@ -62,7 +62,7 @@ return <<<CONTENT
 
 <!-- wp:column {"className":"has-padding-xs center"} -->
 <div class="wp-block-column has-padding-xs center"><!-- wp:html -->
-<ion-icon name="git-pull-request-outline" class="has-large-font-size"></ion-icon>
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path d="M14 20l-4-4v3h-3c-1.103 0-2-.897-2-2v-10.184c1.163-.413 2-1.511 2-2.816 0-1.657-1.343-3-3-3s-3 1.343-3 3c0 1.305.837 2.403 2 2.816v10.184c0 2.206 1.794 4 4 4h3v3l4-4zm-11.8-16c0-.993.807-1.8 1.8-1.8s1.8.807 1.8 1.8-.807 1.8-1.8 1.8-1.8-.807-1.8-1.8zm7.8 0l4 4v-3h3c1.103 0 2 .897 2 2v10.184c-1.163.413-2 1.512-2 2.816 0 1.657 1.343 3 3 3s3-1.343 3-3c0-1.305-.837-2.403-2-2.816v-10.184c0-2.206-1.794-4-4-4h-3v-3l-4 4zm11.8 16c0 .993-.807 1.8-1.8 1.8s-1.8-.807-1.8-1.8.807-1.8 1.8-1.8 1.8.807 1.8 1.8z"></path></svg>
 <!-- /wp:html -->
 
 <!-- wp:paragraph {"align":"center"} -->
@@ -72,7 +72,7 @@ return <<<CONTENT
 
 <!-- wp:column {"className":"has-padding-xs center"} -->
 <div class="wp-block-column has-padding-xs center"><!-- wp:html -->
-<ion-icon name="grid-outline" class="has-large-font-size"></ion-icon>
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path d="M24 3h-12v-2h12v2zm0 3h-12v2h12v-2zm0 5h-12v2h12v-2zm0 5h-12v2h12v-2zm0 5h-12v2h12v-2zm-14-20h-10v10h10v-10zm0 12h-10v10h10v-10z"></path></svg>
 <!-- /wp:html -->
 
 <!-- wp:paragraph {"align":"center"} -->
@@ -82,7 +82,7 @@ return <<<CONTENT
 
 <!-- wp:column {"className":"has-padding-xs center"} -->
 <div class="wp-block-column has-padding-xs center"><!-- wp:html -->
-<ion-icon name="cart-outline" class="has-large-font-size"></ion-icon>
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path d="M24 3l-.743 2h-1.929l-3.474 12h-13.239l-4.615-11h16.812l-.564 2h-13.24l2.937 7h10.428l3.432-12h4.195zm-15.5 15c-.828 0-1.5.672-1.5 1.5 0 .829.672 1.5 1.5 1.5s1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm6.9-7-1.9 7c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5z"></path></svg>
 <!-- /wp:html -->
 
 <!-- wp:paragraph {"align":"center"} -->
