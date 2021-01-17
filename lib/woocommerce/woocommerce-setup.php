@@ -148,81 +148,6 @@ add_filter(
 	}
 );
 
-/* Define WooCommerce image sizes on theme activation */
-add_action(
-	'after_switch_theme',
-	function () {
-
-		global $pagenow;
-
-		// Check conditionally to see if we're activating the current theme and that WooCommerce is installed.
-		if ( ! isset( $_GET['activated'] ) || 'themes.php' !== $pagenow || ! class_exists( 'WooCommerce' ) ) { // phpcs:ignore WordPress.CSRF.NonceVerification.NoNonceVerification -- low risk, follows official snippet at https://goo.gl/nnHHQa.
-			return;
-		}
-
-		zen_update_woocommerce_image_dimensions();
-
-	},
-	1
-);
-
-/**
- * Define the WooCommerce image sizes on WooCommerce activation
- *
- * @param string $plugin The path of the plugin being activated.
- */
-add_action(
-	'activated_plugin',
-	function ( $plugin ) {
-
-		// Checks to see if WooCommerce is being activated.
-		if ( 'woocommerce/woocommerce.php' !== $plugin ) {
-			return;
-		}
-
-		zen_update_woocommerce_image_dimensions();
-
-	},
-	10,
-	2
-);
-
-/**
- * Update WooCommerce image dimensions
- */
-function zen_update_woocommerce_image_dimensions() {
-
-	/* Update image size options */
-	update_option( 'woocommerce_single_image_width', 655 );    // Single product image.
-	update_option( 'woocommerce_thumbnail_image_width', 500 ); // Catalog image.
-
-	/* Update image cropping option */
-	update_option( 'woocommerce_thumbnail_cropping', '1:1' );
-
-}
-
-/**
- * Filter the WooCommerce gallery image dimensions
- *
- * @param array $size The gallery image size and crop arguments.
- * @return array The modified gallery image size and crop arguments.
- */
-add_filter(
-	'woocommerce_get_image_size_gallery_thumbnail',
-	function ( $size ) {
-
-		$size =
-		[
-			'width'  => 180,
-			'height' => 180,
-			'crop'   => 1,
-		];
-
-		return $size;
-
-	}
-);
-
 /**
  * Change number of thumbnails per row on product gallery
  *
@@ -237,6 +162,28 @@ add_filter(
 		$wrapper_classes[2] = 'woocommerce-product-gallery--columns-' . absint( $columns );
 
 		return $wrapper_classes;
+
+	}
+);
+
+/**
+ * Filter the WooCommerce gallery image dimensions
+ *
+ * @param array $size The gallery image size and crop arguments.
+ * @return array The modified gallery image size and crop arguments.
+ */
+add_filter(
+	'woocommerce_get_image_size_gallery_thumbnail',
+	function ( $size ) {
+
+		$size =
+		[
+			'width'  => 150,
+			'height' => 150,
+			'crop'   => 1,
+		];
+
+		return $size;
 
 	}
 );

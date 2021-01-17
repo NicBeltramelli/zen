@@ -1,6 +1,7 @@
 # Zen Changelog
 
 # [master]
+* Remove unnecessary WooCommerce image setup
 * Update deps
 * Improve docs
 
