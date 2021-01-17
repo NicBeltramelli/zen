@@ -1,9 +1,9 @@
 # Zen Changelog
 
 # [master]
+* Update deps
 * Update Travis CI build
 * Remove unnecessary WooCommerce image setup
-* Update deps
 * Improve docs
 
 ## [4.1.3] - 2020-05-07
