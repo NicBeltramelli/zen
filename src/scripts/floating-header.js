@@ -16,8 +16,8 @@ const headroom  = new Headroom(header, {
 	"offset": 60,
 	"tolerance": 5,
 	"classes": {
-		"pinned": "slideInDown",
-		"unpinned": "slideOutUp",
+		"pinned": "animate__slideInDown",
+		"unpinned": "animate__slideOutUp",
 		// when above offset
 		"top" : "header-top",
 		// when below offset
@@ -30,6 +30,6 @@ const headroom  = new Headroom(header, {
 });
 
 if ($(window).width() > 900){
-	$( ".site-header" ).addClass( "animated" );
+	$( ".site-header" ).addClass( "animate__animated" );
 	headroom.init();
 }

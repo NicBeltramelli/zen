@@ -1,6 +1,7 @@
 # Zen Changelog
 
 # [master]
+* Update deps
 * Improve docs
 
 ## [4.1.3] - 2020-05-07

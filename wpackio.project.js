@@ -41,7 +41,9 @@ module.exports = {
 					],
 				},
 				plugins: [
-					new StylelintPlugin(),
+					new StylelintPlugin({
+						files: "src/styles/**/*.scss"
+					}),
 				],
 			},
 		},
