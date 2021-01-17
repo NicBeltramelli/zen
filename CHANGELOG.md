@@ -1,6 +1,7 @@
 # Zen Changelog
 
 # [master]
+* Update phpcs ruleset and fix sniff violations
 * Update deps
 * Update Travis CI build
 * Remove unnecessary WooCommerce image setup

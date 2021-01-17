@@ -25,6 +25,7 @@ $zen_error = function ( $message, $zen_subtitle = '', $title = '' ) {
 
 	$docs_url = 'https://github.com/NicBeltramelli/zen.git/';
 
+	// phpcs:disable WordPress.PHP.DisallowShortTernary.Found
 	$title = $title ?: esc_html__(
 		'Zen &rsaquo; Error',
 		'zen'
@@ -41,7 +42,8 @@ $zen_error = function ( $message, $zen_subtitle = '', $title = '' ) {
 
 	$message = "<h1>{$title}<br><small>{$zen_subtitle}</small></h1><p>{$message}</p><p>{$footer}</p>";
 
-	wp_die( $message ); // WPCS: xss ok.
+	// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
+	wp_die( $message );
 };
 
 /**

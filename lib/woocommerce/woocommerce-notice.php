@@ -131,7 +131,9 @@ function zen_reset_woocommerce_notice() {
 
 	$args =
 	[
+		// phpcs:disable WordPress.DB.SlowDBQuery.slow_db_query_meta_key
 		'meta_key'   => $wpdb->prefix . 'zen_woocommerce_message_dismissed',
+		// phpcs:disable WordPress.DB.SlowDBQuery.slow_db_query_meta_value
 		'meta_value' => 1,
 	];
 
