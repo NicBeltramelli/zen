@@ -1,6 +1,7 @@
 # Zen Changelog
 
 # [master]
+* Update Travis CI build
 * Remove unnecessary WooCommerce image setup
 * Update deps
 * Improve docs
