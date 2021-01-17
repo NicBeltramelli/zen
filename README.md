@@ -5,7 +5,7 @@
 
 Zen is a child theme for the Genesis Framework with a modern development workflow. [Live Demo](https://beltramelli.app/zen/)
 
-Tested up to WordPress 5.3.2 and Genesis 3.3.0.
+Tested up to WordPress 5.6 and Genesis 3.3.3.
 
 
 ## Features
