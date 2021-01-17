@@ -1,6 +1,7 @@
 # Zen Changelog
 
 # [master]
+* Remove Ionicons support
 * Update phpcs ruleset and fix sniff violations
 * Update deps
 * Update Travis CI build
