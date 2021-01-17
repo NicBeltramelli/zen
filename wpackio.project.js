@@ -42,7 +42,7 @@ module.exports = {
 				},
 				plugins: [
 					new StylelintPlugin({
-						files: "src/styles/**/*.scss"
+						files: "src/styles/**/*.scss",
 					}),
 				],
 			},
