@@ -1,5 +1,9 @@
 # Zen Changelog
 
+## [4.3.0] - 2021-07-05
+* Update deps
+* Fix code style violations
+
 ## [4.2.0] - 2021-01-17
 * Update content import
 * Remove Ionicons support
