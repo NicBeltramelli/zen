@@ -21,7 +21,8 @@ add_action(
 	'genesis_sidebar',
 	function() {
 
-		genesis_widget_area( 'privacy',
+		genesis_widget_area(
+			'privacy',
 			[
 				'before' => '<div id="privacy" class="privacy" tabindex="-1"><div class="widget-area">',
 				'after'  => '</div></div>',

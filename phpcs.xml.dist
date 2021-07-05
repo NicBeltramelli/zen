@@ -31,12 +31,12 @@
 
 	<!-- Use the WordPress ruleset, with exclusions. -->
 	<rule ref="WordPress">
-		<exclude name="WordPress.VIP"/>
 		<exclude name="Squiz.PHP.CommentedOutCode.Found"/>
+		<exclude name="Generic.Arrays.DisallowShortArraySyntax.Found"/>
 	</rule>
 
 	<!-- Test PHP cross-version compatibility. -->
-	<config name="testVersion" value="5.4-"/>
+	<config name="testVersion" value="7.1-"/>
 	<rule ref="PHPCompatibility"/>
 
 	<!-- Check for correct text domain on all translatable strings. -->

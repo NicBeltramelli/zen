@@ -18,10 +18,10 @@
     "require": {
         "php": ">=7.1",
         "composer/installers": "~1.0",
-        "wpackio/enqueue": "^2.2.0"
+        "wpackio/enqueue": "^3.2.1"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "^3.5.8",
+        "squizlabs/php_codesniffer": "^3.6.0",
         "wp-coding-standards/wpcs": "^2.3.0",
         "phpcompatibility/php-compatibility": "^9.3.5",
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1"

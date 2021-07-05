@@ -31,7 +31,6 @@ $zen_accent_color = get_theme_mod(
 
 return [
 	'fonts-url'            => 'https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Roboto:400,700|Roboto+Mono&display=optional',
-	'ionicons'             => 'https://unpkg.com/ionicons@5.0.0/dist/ionicons.js',
 	'content-width'        => 1800,
 	'link-color'           => $zen_link_color,
 	'default-colors'       => $zen_default_colors,

@@ -1,11 +1,10 @@
 # Zen theme
 [![Packagist](https://img.shields.io/packagist/v/nicbeltramelli/zen.svg?style=for-the-badge)](https://packagist.org/packages/nicbeltramelli/zen)
-[![Codacy Badge](https://img.shields.io/codacy/grade/b6b22681b33c46c0bef7cd8d25bf21d1?style=for-the-badge)](https://app.codacy.com/manual/NicBeltramelli/zen)
 [![Build Status](https://img.shields.io/travis/NicBeltramelli/zen.svg?style=for-the-badge)](https://travis-ci.org/NicBeltramelli/zen)
 
 Zen is a child theme for the Genesis Framework with a modern development workflow. [Live Demo](https://beltramelli.app/zen/)
 
-Tested up to WordPress 5.3.2 and Genesis 3.3.0.
+Tested up to WordPress 5.7.2 and Genesis 3.3.3.
 
 
 ## Features
@@ -55,8 +54,8 @@ $ yarn bootstrap
 
 1. Edit `style.css` to define your theme meta information (name, URI, description, version, author)  
 2. Edit `wpackio.server.js` that handles the development server:
-* `proxy` should reflect your local development URL, e.g. `http://your-address.local`
-* `distPublicPath` should reflect the absolute URL path of your dist folder, e.g. `/wp-content/themes/your-theme-name/dist/`  
+* `proxy` should reflect your local development URL, e.g. `'http://your-address.local'`
+* `distPublicPath` should reflect the absolute URL path of your dist folder, e.g. `'/wp-content/themes/your-theme-name/dist/'`  
 **You must add a forward slash at the end otherwise it will not work.**
 
 

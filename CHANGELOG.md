@@ -1,6 +1,16 @@
 # Zen Changelog
 
-# [master]
+## [4.3.1] - 2021-07-05
+* Update vulnerable deps
+
+## [4.3.0] - 2021-07-05
+* Update deps
+* Fix code style violations
+
+## [4.2.0] - 2021-01-17
+* Update content import
+* Remove Ionicons support
+* Update phpcs ruleset and fix sniff violations
 * Update deps
 * Update Travis CI build
 * Remove unnecessary WooCommerce image setup

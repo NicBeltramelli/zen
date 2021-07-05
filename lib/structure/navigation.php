@@ -80,7 +80,8 @@ add_filter( 'genesis_attr_nav-custom', 'genesis_attributes_nav' );
  * @return array Amended attributes for custom navigation element.
  */
 add_filter(
-	'genesis_attr_nav-custom', function ( $attributes ) {
+	'genesis_attr_nav-custom',
+	function ( $attributes ) {
 
 		$attributes['id'] = 'genesis-nav-tertiary';
 
@@ -95,7 +96,8 @@ add_filter(
  * @return array Amended skiplinks.
  */
 add_filter(
-	'genesis_skip_links_output', function ( $links ) {
+	'genesis_skip_links_output',
+	function ( $links ) {
 
 		if ( genesis_nav_menu_supported( 'tertiary' ) &&
 			has_nav_menu( 'tertiary' ) ) :
@@ -110,7 +112,8 @@ add_filter(
 
 /* Display the tertiary menu */
 add_action(
-	'genesis_after_footer', function () {
+	'genesis_after_footer',
+	function () {
 
 		// Do nothing if menu not supported.
 		if ( ! genesis_nav_menu_supported( 'tertiary' ) ||
@@ -150,5 +153,6 @@ add_action(
 
 		echo '</div>';
 
-	}, 10
+	},
+	10
 );
